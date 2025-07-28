@@ -1,0 +1,112 @@
+# LinkedIn Easy Apply Bot Configuration Template
+# Copy this file to config.yaml and replace the placeholder values with your actual credentials
+
+# LinkedIn Credentials - Replace with your actual LinkedIn credentials
+email: YOUR_EMAIL@gmail.com
+password: YOUR_PASSWORD_HERE
+
+# LinkedIn credentials (can be same as above or different account)
+linkedinEmail: YOUR_LINKEDIN_EMAIL@gmail.com
+linkedinPassword: YOUR_LINKEDIN_PASSWORD_HERE
+
+# OpenAI API Key - Get from https://platform.openai.com/api-keys
+# Replace with your actual API key starting with sk-
+openaiApiKey: sk-YOUR_OPENAI_API_KEY_HERE
+
+# Bot Configuration
+disableAntiLock: false
+remote: false
+lessthanTenApplicants: false
+newestPostingsFirst: false
+
+# Experience Level Preferences
+experienceLevel:
+  internship: false
+  entry: true
+  associate: false
+  mid-senior level: false
+  director: false
+  executive: false
+
+# Job Type Preferences
+jobTypes:
+  full-time: true
+  contract: true
+  part-time: false
+  temporary: true
+  internship: false
+  other: false
+  volunteer: false
+
+# Date Filters
+date:
+  all time: true
+  month: false
+  week: false
+  24 hours: false
+
+# Job Positions to Search For
+positions:
+- Artificial Intelligence
+- Machine Learning
+- Networking
+- Cybersecurity
+- Cyber Security Engineer
+- Cyber Security Specialist
+- Cybersecurity Engineer
+- Cybersecurity Specialist
+- Security Engineer
+- Security Analyst
+- SOC Analyst
+- Network Security Engineer
+- Information Security Engineer
+- Threat Detection Engineer
+- Incident Response Analyst
+- Machine Learning Engineer
+- AI Engineer
+- Data Scientist
+- Security Researcher
+
+# Job Locations
+locations:
+- Any
+
+# Other Settings
+residentStatus: false
+distance: 100
+outputFileDirectory: ~/Documents/Applications/EasyApplyBot/EasyApplyBot/
+companyBlacklist: null
+titleBlacklist: null
+posterBlacklist: null
+
+# Resume Upload Path - Update this to point to your resume
+uploads:
+  resume: /path/to/your/resume.pdf
+
+# Checkbox Preferences for Applications
+checkboxes:
+  driversLicence: true
+  requireVisa: false
+  legallyAuthorized: true
+  certifiedProfessional: true
+  urgentFill: true
+  commute: true
+  remote: true
+  drugTest: true
+  assessment: true
+  securityClearance: false
+  degreeCompleted:
+  - High School Diploma
+  - Bachelor's Degree
+  backgroundCheck: true
+
+# Personal Information
+universityGpa: 3.7
+salaryMinimum: 65000
+
+# Language Skills
+languages:
+  english: Native or bilingual
+
+# Notice Period (in weeks)
+noticePeriod: 2 

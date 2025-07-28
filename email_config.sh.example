@@ -1,0 +1,17 @@
+#!/bin/bash
+# ApplyX Email Configuration Template
+# Copy this file to email_config.sh and replace the placeholder values with your actual credentials
+
+# Gmail account for sending emails
+export SENDER_EMAIL="your-email@gmail.com"
+
+# Gmail App Password (not your regular password)
+# Generate this at: https://myaccount.google.com/apppasswords
+export SENDER_APP_PASSWORD="your-16-character-app-password"
+
+# Display name for emails
+export SENDER_NAME="ApplyX Team"
+
+echo "✅ Email configuration loaded!"
+echo "📧 Sender: $SENDER_EMAIL"
+echo "👤 Name: $SENDER_NAME" 
