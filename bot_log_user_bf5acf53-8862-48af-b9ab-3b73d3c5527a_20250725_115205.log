@@ -1,0 +1,51 @@
+2025-07-25 11:52:05,994 - __main__ - INFO - ================================================================================
+2025-07-25 11:52:05,994 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-25 11:52:05,994 - __main__ - INFO - ================================================================================
+2025-07-25 11:52:05,994 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:52:05,994 - __main__ - INFO - 🎯 Max Applications: 5
+2025-07-25 11:52:05,994 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:52:05,994 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753458725
+2025-07-25 11:52:05,994 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-25 11:52:05,994 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-25 11:52:05,995 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-25 11:52:05,995 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-25 11:52:05,995 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-25 11:52:05,997 - __main__ - INFO - ✅ Successfully decrypted credentials for: None
+2025-07-25 11:52:05,998 - __main__ - INFO - ✅ Database configuration built successfully
+2025-07-25 11:52:05,998 - __main__ - INFO - ✅ Configuration loaded from database
+2025-07-25 11:52:05,998 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-25 11:52:05,998 - __main__ - INFO - 👤 LinkedIn Email: None
+2025-07-25 11:52:05,998 - __main__ - INFO - 🎯 Target Positions: Software Engineer
+2025-07-25 11:52:05,998 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-25 11:52:05,998 - __main__ - INFO - ================================================================================
+2025-07-25 11:52:05,998 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-25 11:52:05,998 - __main__ - INFO - ================================================================================
+2025-07-25 11:52:05,998 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:52:05,998 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753458725
+2025-07-25 11:52:05,998 - __main__ - INFO - 📧 LinkedIn Email: None
+2025-07-25 11:52:05,998 - __main__ - INFO - 🔢 Max Applications: 5
+2025-07-25 11:52:05,998 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-25 11:52:05,998 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-25 11:52:05,998 - __main__ - INFO - ✅ Cleared 0 previous activity log entries
+2025-07-25 11:52:05,998 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-25 11:52:05,998 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:52:08,111 - __main__ - INFO - ✅ Browser initialized successfully
+2025-07-25 11:52:08,111 - __main__ - INFO - 🤖 Initializing LinkedIn bot...
+2025-07-25 11:52:08,111 - __main__ - INFO - 📧 Using email: None
+2025-07-25 11:52:08,111 - __main__ - INFO - 🎯 Target positions: ['Software Engineer']
+2025-07-25 11:52:08,111 - __main__ - INFO - 📍 Target locations: ['Remote', 'New Jersey', 'New York']
+2025-07-25 11:52:08,116 - __main__ - INFO - ✅ LinkedIn bot initialized with simple config approach
+2025-07-25 11:52:08,116 - __main__ - INFO - ✅ Database integration enabled for application tracking
+2025-07-25 11:52:08,116 - __main__ - INFO - 🔐 Starting LinkedIn login process...
+2025-07-25 11:52:08,118 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 11:52:18,750 - __main__ - ERROR - ❌ LinkedIn login failed: object of type 'NoneType' has no len()
+2025-07-25 11:52:18,751 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 11:52:18,751 - __main__ - ERROR - ❌ FATAL ERROR in continuous applications: object of type 'NoneType' has no len()
+2025-07-25 11:52:18,756 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 11:52:18,756 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-25 11:52:18,756 - __main__ - INFO - 🌐 Closing browser...
+2025-07-25 11:52:18,851 - __main__ - INFO - ✅ Browser closed successfully
+2025-07-25 11:52:18,851 - __main__ - INFO - 🧹 Cleaning up existing Chrome processes...
+2025-07-25 11:52:20,882 - __main__ - INFO - ✅ Chrome processes cleaned up
+2025-07-25 11:52:20,882 - __main__ - INFO - ✅ Cleanup completed
+2025-07-25 11:52:20,882 - __main__ - ERROR - ❌ Bot execution failed: object of type 'NoneType' has no len()

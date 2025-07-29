@@ -1,0 +1,908 @@
+{
+  "summary": {
+    "total_tests": 110,
+    "passed": 34,
+    "failed": 70,
+    "warnings": 6,
+    "success_rate": 30.909090909090907,
+    "duration": "0:00:16.578293",
+    "timestamp": "2025-07-24T05:56:32.933942"
+  },
+  "test_results": [
+    {
+      "test": "001_Server_Health_Check",
+      "status": "PASS",
+      "details": "Server healthy, response time: 0.005s",
+      "timestamp": "2025-07-24T05:56:16.360154",
+      "error": null,
+      "duration": 0.004708051681518555
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:16.519976",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:16.678962",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "003_User_Registration_Duplicate",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:16.678986",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_1",
+      "status": "FAIL",
+      "details": "Invalid email invalid accepted",
+      "timestamp": "2025-07-24T05:56:16.681007",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_2",
+      "status": "FAIL",
+      "details": "Invalid email test@ accepted",
+      "timestamp": "2025-07-24T05:56:16.682590",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_3",
+      "status": "FAIL",
+      "details": "Invalid email @domain.com accepted",
+      "timestamp": "2025-07-24T05:56:16.683888",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_4",
+      "status": "FAIL",
+      "details": "Invalid email test..test@domain.com accepted",
+      "timestamp": "2025-07-24T05:56:16.685193",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_5",
+      "status": "PASS",
+      "details": "Invalid email  rejected",
+      "timestamp": "2025-07-24T05:56:16.686507",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_1",
+      "status": "WARN",
+      "details": "Weak password accepted (consider strengthening validation)",
+      "timestamp": "2025-07-24T05:56:16.844610",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_2",
+      "status": "WARN",
+      "details": "Weak password accepted (consider strengthening validation)",
+      "timestamp": "2025-07-24T05:56:17.009947",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_3",
+      "status": "WARN",
+      "details": "Weak password accepted (consider strengthening validation)",
+      "timestamp": "2025-07-24T05:56:17.174399",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_4",
+      "status": "PASS",
+      "details": "Weak password rejected",
+      "timestamp": "2025-07-24T05:56:17.175972",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_5",
+      "status": "WARN",
+      "details": "Weak password accepted (consider strengthening validation)",
+      "timestamp": "2025-07-24T05:56:17.339997",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:17.501688",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "006_User_Login_Valid",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:17.501707",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "007_Invalid_Login_1",
+      "status": "PASS",
+      "details": "Invalid credentials rejected",
+      "timestamp": "2025-07-24T05:56:17.503440",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "007_Invalid_Login_2",
+      "status": "PASS",
+      "details": "Invalid credentials rejected",
+      "timestamp": "2025-07-24T05:56:17.668258",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "007_Invalid_Login_3",
+      "status": "FAIL",
+      "details": "Expected 401, got 400",
+      "timestamp": "2025-07-24T05:56:17.669895",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "007_Invalid_Login_4",
+      "status": "FAIL",
+      "details": "Expected 401, got 400",
+      "timestamp": "2025-07-24T05:56:17.671063",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:17.844320",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "008_JWT_Token_Validation",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:17.844339",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "009_Protected_profile",
+      "status": "PASS",
+      "details": "Unauthorized access blocked",
+      "timestamp": "2025-07-24T05:56:17.845838",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_applications",
+      "status": "PASS",
+      "details": "Unauthorized access blocked",
+      "timestamp": "2025-07-24T05:56:17.847202",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_stats",
+      "status": "PASS",
+      "details": "Unauthorized access blocked",
+      "timestamp": "2025-07-24T05:56:17.848418",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_start",
+      "status": "FAIL",
+      "details": "Expected 401, got 405",
+      "timestamp": "2025-07-24T05:56:17.849737",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_stop",
+      "status": "FAIL",
+      "details": "Expected 401, got 405",
+      "timestamp": "2025-07-24T05:56:17.850794",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_status",
+      "status": "PASS",
+      "details": "Unauthorized access blocked",
+      "timestamp": "2025-07-24T05:56:17.851956",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "010_SQL_Injection_1",
+      "status": "PASS",
+      "details": "SQL injection prevented",
+      "timestamp": "2025-07-24T05:56:17.853414",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "010_SQL_Injection_2",
+      "status": "PASS",
+      "details": "SQL injection prevented",
+      "timestamp": "2025-07-24T05:56:17.854920",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "010_SQL_Injection_3",
+      "status": "PASS",
+      "details": "SQL injection prevented",
+      "timestamp": "2025-07-24T05:56:17.856472",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "010_SQL_Injection_4",
+      "status": "PASS",
+      "details": "SQL injection prevented",
+      "timestamp": "2025-07-24T05:56:17.857676",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:18.020786",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "011_Profile_Get_Empty",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:18.020809",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:18.186361",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "012_Profile_Update_Basic",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:18.186384",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:18.345195",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "013_LinkedIn_Credentials_Encryption",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:18.345215",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:18.506575",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "014_Job_Preferences_Storage",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:18.506597",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:18.668428",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "015_Profile_Data_Validation",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:18.668450",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:18.824998",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "016_Agent_Status_Check",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:18.825016",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:18.990083",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "017_Agent_Start_Without_Credentials",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:18.990103",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:19.160794",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:19.327704",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "013_LinkedIn_Credentials_Encryption",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:19.327725",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "018_Agent_Start_With_Credentials",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:19.327731",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:19.488954",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "019_Agent_Stop",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:19.488977",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:19.653914",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "020_Daily_Quota_System",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:19.653936",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:19.816140",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "021_Applications_Get_Empty",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:19.816163",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:19.976447",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "022_Dashboard_Stats_Empty",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:19.976470",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:20.140074",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "023_Applications_Pagination",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:20.140095",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:20.304141",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "024_Application_Status_Update",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:20.304163",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:20.532812",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "025_Resume_Upload_Valid_PDF",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:20.532838",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:20.694494",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "026_Invalid_File_Type_1",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:20.694515",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:20.860589",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "026_Invalid_File_Type_2",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:20.860610",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:21.030109",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "026_Invalid_File_Type_3",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:21.030132",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:21.192425",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "027_Resume_Upload_Large_File",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:21.192449",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "028_Multi_User_Data_Isolation",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:21.519763",
+      "error": "'token'",
+      "duration": null
+    },
+    {
+      "test": "029_Concurrent_User_Sessions",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:21.679422",
+      "error": "'token'",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:21.843255",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "030_Response_Time_Performance",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:21.843277",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:22.004403",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "031_Load_Testing_Basic",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:22.004427",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:22.163881",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "032_Memory_Usage_Stability",
+      "status": "PASS",
+      "details": "50 consecutive requests completed successfully",
+      "timestamp": "2025-07-24T05:56:27.633535",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_1",
+      "status": "PASS",
+      "details": "Malformed JSON rejected",
+      "timestamp": "2025-07-24T05:56:27.639021",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_2",
+      "status": "PASS",
+      "details": "Malformed JSON rejected",
+      "timestamp": "2025-07-24T05:56:27.643102",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_3",
+      "status": "PASS",
+      "details": "Malformed JSON rejected",
+      "timestamp": "2025-07-24T05:56:27.647561",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_4",
+      "status": "PASS",
+      "details": "Malformed JSON rejected",
+      "timestamp": "2025-07-24T05:56:27.651841",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_5",
+      "status": "PASS",
+      "details": "Malformed JSON rejected",
+      "timestamp": "2025-07-24T05:56:27.655163",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "034_Large_Payload_Handling",
+      "status": "WARN",
+      "details": "Large payload status: 409",
+      "timestamp": "2025-07-24T05:56:27.662781",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "035_CORS_Headers",
+      "status": "PASS",
+      "details": "CORS headers present",
+      "timestamp": "2025-07-24T05:56:27.664786",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "036_Rate_Limiting",
+      "status": "WARN",
+      "details": "No rate limiting detected (consider implementing)",
+      "timestamp": "2025-07-24T05:56:28.422494",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "037_Frontend_Main_Page",
+      "status": "FAIL",
+      "details": "Status: 500",
+      "timestamp": "2025-07-24T05:56:29.052658",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "038_Frontend_login",
+      "status": "FAIL",
+      "details": "Status: 500",
+      "timestamp": "2025-07-24T05:56:29.669522",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "038_Frontend_signup",
+      "status": "FAIL",
+      "details": "Status: 500",
+      "timestamp": "2025-07-24T05:56:30.288514",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "039_Frontend_Dashboard_Redirect",
+      "status": "FAIL",
+      "details": "Unexpected status: 500",
+      "timestamp": "2025-07-24T05:56:30.908191",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "040_Database_Connection",
+      "status": "PASS",
+      "details": "Database has required tables: ['users', 'job_applications', 'agent_tasks', 'agent_status', 'billing_events', 'usage_logs', 'referrals', 'user_preferences', 'enhanced_bot_status', 'bot_activity_log', 'sqlite_sequence', 'bot_error_log', 'resumes']",
+      "timestamp": "2025-07-24T05:56:30.910032",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "041_Complete_User_Journey",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:31.093435",
+      "error": "'token'",
+      "duration": null
+    },
+    {
+      "test": "042_XSS_Prevention_1",
+      "status": "PASS",
+      "details": "XSS payload handled",
+      "timestamp": "2025-07-24T05:56:31.253573",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "042_XSS_Prevention_2",
+      "status": "PASS",
+      "details": "XSS payload handled",
+      "timestamp": "2025-07-24T05:56:31.415705",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "042_XSS_Prevention_3",
+      "status": "PASS",
+      "details": "XSS payload handled",
+      "timestamp": "2025-07-24T05:56:31.576260",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "042_XSS_Prevention_4",
+      "status": "PASS",
+      "details": "XSS payload handled",
+      "timestamp": "2025-07-24T05:56:31.735103",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "043_CSRF_Protection",
+      "status": "PASS",
+      "details": "CSRF protection active",
+      "timestamp": "2025-07-24T05:56:31.902111",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Missing token or user data",
+      "timestamp": "2025-07-24T05:56:32.063449",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "044_Password_Security",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:32.063472",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "045_Concurrent_Registrations",
+      "status": "PASS",
+      "details": "Concurrent registrations: 100.0% success",
+      "timestamp": "2025-07-24T05:56:32.313433",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "046_Database_Transaction_Integrity",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-07-24T05:56:32.489445",
+      "error": "'token'",
+      "duration": null
+    },
+    {
+      "test": "047_API_Versioning_1",
+      "status": "PASS",
+      "details": "API version compatible",
+      "timestamp": "2025-07-24T05:56:32.491105",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "047_API_Versioning_2",
+      "status": "PASS",
+      "details": "API version compatible",
+      "timestamp": "2025-07-24T05:56:32.492285",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "047_API_Versioning_3",
+      "status": "PASS",
+      "details": "API version compatible",
+      "timestamp": "2025-07-24T05:56:32.493347",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "047_API_Versioning_4",
+      "status": "PASS",
+      "details": "API version compatible",
+      "timestamp": "2025-07-24T05:56:32.494729",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "048_LinkedIn_Bot_Integration",
+      "status": "PASS",
+      "details": "LinkedIn bot modules accessible",
+      "timestamp": "2025-07-24T05:56:32.924761",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "049_Config_File_Validation",
+      "status": "PASS",
+      "details": "Configuration file valid",
+      "timestamp": "2025-07-24T05:56:32.933661",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "050_Environment_Variables",
+      "status": "PASS",
+      "details": "Required environment variables present",
+      "timestamp": "2025-07-24T05:56:32.933711",
+      "error": null,
+      "duration": null
+    }
+  ],
+  "configuration": {
+    "backend_url": "http://localhost:5001",
+    "frontend_url": "http://localhost:3000",
+    "test_config": {
+      "max_concurrent_users": 10,
+      "load_test_duration": 30,
+      "performance_threshold": 2.0,
+      "rate_limit_requests": 100,
+      "test_file_sizes": [
+        1024,
+        102400,
+        5242880
+      ]
+    }
+  }
+}

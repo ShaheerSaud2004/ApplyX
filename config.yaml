@@ -1,0 +1,273 @@
+# =============================================================================
+# ApplyX Job Search Configuration
+# =============================================================================
+# 🔐 This file contains job preferences and personal information
+# ⚠️ All sensitive credentials are now stored securely in .env file
+# 🎯 Configure your job search preferences below
+# =============================================================================
+
+# Credentials are now loaded from environment variables (.env file)
+# No secrets in this file anymore! ✅
+
+# Bot Behavior Settings
+disableAntiLock: false
+remote: false
+lessthanTenApplicants: false
+newestPostingsFirst: false
+
+# Experience Level Preferences
+experienceLevel:
+  internship: false
+  entry: true
+  associate: false
+  mid-senior level: false
+  director: false
+  executive: false
+
+# Job Type Preferences
+jobTypes:
+  full-time: true
+  contract: true
+  part-time: false
+  temporary: true
+  internship: false
+  other: false
+  volunteer: false
+
+# Date Filters
+date:
+  all time: true
+  month: false
+  week: false
+  24 hours: false
+
+# Job Positions to Search For
+positions:
+- Artificial Intelligence
+- Machine Learning
+- Networking
+- Cybersecurity
+- Cyber Security Engineer
+- Cyber Security Specialist
+- Cybersecurity Engineer
+- Cybersecurity Specialist
+- Security Engineer
+- Security Analyst
+- SOC Analyst
+- Network Security Engineer
+- Information Security Engineer
+- Threat Detection Engineer
+- Incident Response Analyst
+- Machine Learning Engineer
+- AI Engineer
+- Data Scientist
+- Security Researcher
+
+# Job Locations
+locations:
+- Any
+
+# Other Search Settings
+residentStatus: false
+distance: 100
+outputFileDirectory: ~/Documents/Applications/EasyApplyBot/EasyApplyBot/
+companyBlacklist: null
+titleBlacklist: null
+posterBlacklist: null
+
+# Resume Upload Path
+uploads:
+  resume: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/Shaheer_Saud_Resume.pdf
+
+# Checkbox Preferences for Applications
+checkboxes:
+  driversLicence: true
+  requireVisa: false
+  legallyAuthorized: true
+  certifiedProfessional: true
+  urgentFill: true
+  commute: true
+  remote: true
+  drugTest: true
+  assessment: true
+  securityClearance: false
+  degreeCompleted:
+  - High School Diploma
+  - Bachelor's Degree
+  backgroundCheck: true
+
+# Personal Information
+universityGpa: 3.7
+salaryMinimum: 65000
+languages:
+  english: Native or bilingual
+noticePeriod: 2
+
+# Experience Levels (0-4 scale)
+experience:
+  Accounting/Auditing: 0
+  Administrative: 0
+  Advertising: 0
+  Analyst: 2
+  Art/Creative: 0
+  Business Development: 0
+  Consulting: 0
+  Customer Service: 0
+  Distribution Design: 0
+  Education: 0
+  Engineering: 2
+  Finance: 0
+  General Business: 0
+  Health Care Provider: 0
+  Human Resources: 0
+  Information Technology: 2
+  Legal: 0
+  Management: 0
+  Manufacturing: 0
+  Marketing: 0
+  Public Relations: 0
+  Purchasing: 0
+  Product Management: 0
+  Project Management: 4
+  Production: 0
+  Quality Assurance: 0
+  Research: 1
+  Sales: 2
+  Science: 0
+  Strategy/Planning: 0
+  Supply Chain: 0
+  Training: 0
+  Writing/Editing: 0
+  VBA: 0
+  PowerBI: 4
+  PowerQuery: 4
+  Excel: 4
+  PowerPoint: 4
+  Word: 4
+  SQL Server: 0
+  Communication: 2
+  Financial markets: 0
+  Business: 0
+  Financial services: 0
+  Team leadership: 0
+  Cash flow: 0
+  Hedging: 0
+  Treasury services: 0
+  Microsoft Power BI: 0
+  Accounting: 0
+  Auditing: 0
+  Financial modeling: 0
+  Budgeting & forecasting: 0
+  FP&A: 0
+  PQE: 0
+  Training & Development: 0
+  Cybersecurity: 4
+  AI: 4
+  Machine Learning: 3
+  Data Analytics: 3
+  Splunk: 2
+  Okta: 2
+  Tanium: 2
+  LLM: 2
+  RAG: 2
+  Prompt Engineering: 2
+  Python: 4
+  JavaScript: 4
+  Java: 4
+  SQL: 4
+  Git: 3
+  Docker: 3
+  AWS: 2
+  Linux: 2
+  Network Security: 3
+  Incident Response: 3
+  Threat Detection: 2
+  Data Science: 3
+  Statistics: 3
+  default: 0
+  Flask: 4
+  FastAPI: 4
+  Asyncio: 4
+  WebSockets: 4
+  Selenium: 4
+  PowerShell: 4
+  RESTful APIs: 4
+  NLP: 2
+  Chart.js: 2
+  SQLite: 2
+  Telnet: 2
+  GeoIP: 2
+  Jinja2: 2
+  Uvicorn: 2
+  HTML/CSS: 4
+  C/C++: 4
+  Networking: 3
+  Automation: 3
+  Web Development: 3
+  Databases: 3
+  Cloud Technologies: 3
+  DevOps: 2
+  Identity and Access Management: 3
+  SIEM Tools: 2
+  Endpoint Security: 3
+  Penetration Testing: 2
+  APIs: 3
+  Real-time Systems: 4
+  Security Tools: 4
+  Data Visualization: 4
+  Testing and Quality Assurance: 4
+  Troubleshooting: 4
+  Documentation: 4
+  Collaboration: 4
+  Continuous Learning: 4
+  Problem-solving: 4
+  Innovation: 4
+  Outlook: 4
+  Office 365: 4
+  Microsoft Office Suite: 4
+
+# Personal Information for Applications
+personalInfo:
+  Pronouns: Mr.
+  First Name: Shaheer
+  Last Name: Saud
+  Phone Country Code: United States (+1)
+  Mobile Phone Number: 732-314-8699
+  Street address: 24 Pennsbury Way
+  City: East Brunswick, New Jersey
+  State: New Jersey
+  Zip: 08816
+  Linkedin: https://www.linkedin.com/in/shaheer-saud
+  Website: https://github.com/shaheersaud2004
+  MessageToManager: Hi, I am interested to join your organization. Please have a look at my resume. Thank you.
+
+# EEO Information
+eeo:
+  gender: Male
+  race: None
+  veteran: false
+  disability: false
+  citizenship: true
+  clearance: false
+
+# Additional Settings
+evaluateJobFit: true
+textResume: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/Shaheer_Saud_Resume.pdf
+debug: false
+
+# Additional application question responses
+applicationResponses:
+  referral: "I discovered this position through my own research and interest in the company. I am excited about the opportunity and believe my skills align well with the role requirements."
+  citizenship: "U.S. Citizen/Permanent Resident"
+  salary: "65000"
+  startDate: "Immediately available"
+  weekends: "Yes"
+  evenings: "Yes"
+  references: "Available upon request"
+  linkedinUrl: "https://www.linkedin.com/in/shaheer-saud"
+  website: "https://github.com/shaheersaud2004"
+  messageToManager: "Hi, I am interested to join your organization. Please have a look at my resume. Thank you."
+
+# US Citizenship specific settings
+usCitizen: true
+requireVisaSponsorship: false

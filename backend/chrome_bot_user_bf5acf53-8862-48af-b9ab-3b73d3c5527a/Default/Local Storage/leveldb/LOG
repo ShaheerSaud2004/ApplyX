@@ -1,0 +1,9 @@
+2025/07/24-14:04:30.973 506a0 Reusing MANIFEST /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/backend/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a/Default/Local Storage/leveldb/MANIFEST-000001
+2025/07/24-14:04:30.975 506a0 Recovering log #3
+2025/07/24-14:04:30.975 506a0 Reusing old log /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/backend/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a/Default/Local Storage/leveldb/000003.log 
+2025/07/24-14:25:41.886 506a2 Level-0 table #5: started
+2025/07/24-14:25:41.890 506a2 Level-0 table #5: 16080 bytes OK
+2025/07/24-14:25:41.892 506a2 Delete type=0 #3
+2025/07/24-14:49:41.887 506a2 Level-0 table #7: started
+2025/07/24-14:49:41.890 506a2 Level-0 table #7: 11621 bytes OK
+2025/07/24-14:49:41.893 506a2 Delete type=0 #4

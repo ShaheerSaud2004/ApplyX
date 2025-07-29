@@ -1,0 +1,101 @@
+applicationResponses: {}
+checkboxes: {}
+companyBlacklist: null
+date:
+  24 hours: false
+  all time: true
+  month: false
+  week: false
+debug: false
+disableAntiLock: false
+distance: 100
+eeo: {}
+email: shaheersaud2004@gmail.com
+evaluateJobFit: true
+experience:
+  AI: 4
+  AWS: 2
+  Automation: 3
+  C/C++: 4
+  Cloud Technologies: 3
+  Cybersecurity: 4
+  Data Analytics: 3
+  Data Science: 3
+  Databases: 3
+  DevOps: 2
+  Docker: 3
+  Engineering: 2
+  FastAPI: 4
+  Flask: 4
+  Git: 3
+  HTML/CSS: 4
+  Incident Response: 3
+  Information Technology: 2
+  Java: 4
+  JavaScript: 4
+  Linux: 2
+  Machine Learning: 3
+  NLP: 2
+  Network Security: 3
+  Networking: 3
+  PowerShell: 4
+  Project Management: 4
+  Python: 4
+  RESTful APIs: 4
+  Research: 1
+  SQL: 4
+  Sales: 2
+  Selenium: 4
+  Statistics: 3
+  Threat Detection: 2
+  Web Development: 3
+  default: 0
+experienceLevel:
+  associate: false
+  director: false
+  entry: false
+  executive: false
+  internship: false
+  mid-senior level: false
+jobTypes:
+  contract: true
+  full-time: true
+  internship: false
+  other: false
+  part-time: false
+  temporary: false
+  volunteer: false
+languages:
+  english: Native or bilingual
+lessthanTenApplicants: false
+locations:
+- Remote
+- New Jersey
+- New York
+newestPostingsFirst: false
+noticePeriod: 2
+openaiApiKey: ''
+outputFileDirectory: ~/Documents/Applications/EasyApplyBot/
+password: Capricorn@72
+personalInfo:
+  Email: shaheersaud2004@gmail.com
+  First Name: Shaheer
+  Last Name: Saud
+  Phone: 732-314-8699
+positions:
+- Artificial Intelligence
+- Machine Learning
+- Cybersecurity
+- Security Engineer
+posterBlacklist: null
+remote: true
+requireVisaSponsorship: false
+residentStatus: false
+salaryMinimum: 65000
+textResume: ''
+titleBlacklist: null
+universityGpa: 3.7
+uploads:
+  coverLetter: ''
+  resume: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/backend/uploads/bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753375510_Shaheer_Saud_Resume.pdf
+usCitizen: true

@@ -1,0 +1,80 @@
+2025-07-25 11:47:38,795 - __main__ - INFO - ================================================================================
+2025-07-25 11:47:38,795 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-25 11:47:38,796 - __main__ - INFO - ================================================================================
+2025-07-25 11:47:38,796 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:47:38,796 - __main__ - INFO - 🎯 Max Applications: 5
+2025-07-25 11:47:38,796 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:47:38,796 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753458458
+2025-07-25 11:47:38,796 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-25 11:47:38,796 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-25 11:47:38,797 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-25 11:47:38,797 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-25 11:47:38,797 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-25 11:47:38,799 - __main__ - INFO - ✅ Successfully decrypted credentials for: None
+2025-07-25 11:47:38,799 - __main__ - INFO - ✅ Database configuration built successfully
+2025-07-25 11:47:38,799 - __main__ - INFO - ✅ Configuration loaded from database
+2025-07-25 11:47:38,799 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-25 11:47:38,799 - __main__ - INFO - 👤 LinkedIn Email: None
+2025-07-25 11:47:38,799 - __main__ - INFO - 🎯 Target Positions: Software Engineer
+2025-07-25 11:47:38,799 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-25 11:47:38,799 - __main__ - INFO - ================================================================================
+2025-07-25 11:47:38,799 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-25 11:47:38,799 - __main__ - INFO - ================================================================================
+2025-07-25 11:47:38,799 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:47:38,799 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753458458
+2025-07-25 11:47:38,799 - __main__ - INFO - 📧 LinkedIn Email: None
+2025-07-25 11:47:38,799 - __main__ - INFO - 🔢 Max Applications: 5
+2025-07-25 11:47:38,799 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-25 11:47:38,799 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-25 11:47:38,800 - __main__ - INFO - ✅ Cleared 0 previous activity log entries
+2025-07-25 11:47:38,800 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-25 11:47:38,800 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:47:39,333 - __main__ - ERROR - ❌ FATAL ERROR in continuous applications: Message: javascript error: Cannot redefine property: webdriver
+  (Session info: chrome=138.0.7204.169)
+Stacktrace:
+0   chromedriver                        0x0000000102f2755c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000102f1f454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x0000000102a6e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x0000000102a740b0 cxxbridge1$string$len + 114400
+4   chromedriver                        0x0000000102a7667c cxxbridge1$string$len + 124076
+5   chromedriver                        0x0000000102af781c cxxbridge1$string$len + 652876
+6   chromedriver                        0x0000000102af6b1c cxxbridge1$string$len + 649548
+7   chromedriver                        0x0000000102aa9a0c cxxbridge1$string$len + 333884
+8   chromedriver                        0x0000000102eea5e0 cxxbridge1$str$ptr + 2481340
+9   chromedriver                        0x0000000102eed848 cxxbridge1$str$ptr + 2494244
+10  chromedriver                        0x0000000102ecb234 cxxbridge1$str$ptr + 2353424
+11  chromedriver                        0x0000000102eee104 cxxbridge1$str$ptr + 2496480
+12  chromedriver                        0x0000000102ebc2e4 cxxbridge1$str$ptr + 2292160
+13  chromedriver                        0x0000000102f0dff8 cxxbridge1$str$ptr + 2627284
+14  chromedriver                        0x0000000102f0e184 cxxbridge1$str$ptr + 2627680
+15  chromedriver                        0x0000000102f1f090 cxxbridge1$str$ptr + 2697068
+16  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+17  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+
+2025-07-25 11:47:39,338 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 11:47:39,338 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-25 11:47:39,338 - __main__ - INFO - 🧹 Cleaning up existing Chrome processes...
+2025-07-25 11:47:41,376 - __main__ - INFO - ✅ Chrome processes cleaned up
+2025-07-25 11:47:41,376 - __main__ - INFO - ✅ Cleanup completed
+2025-07-25 11:47:41,376 - __main__ - ERROR - ❌ Bot execution failed: Message: javascript error: Cannot redefine property: webdriver
+  (Session info: chrome=138.0.7204.169)
+Stacktrace:
+0   chromedriver                        0x0000000102f2755c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000102f1f454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x0000000102a6e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x0000000102a740b0 cxxbridge1$string$len + 114400
+4   chromedriver                        0x0000000102a7667c cxxbridge1$string$len + 124076
+5   chromedriver                        0x0000000102af781c cxxbridge1$string$len + 652876
+6   chromedriver                        0x0000000102af6b1c cxxbridge1$string$len + 649548
+7   chromedriver                        0x0000000102aa9a0c cxxbridge1$string$len + 333884
+8   chromedriver                        0x0000000102eea5e0 cxxbridge1$str$ptr + 2481340
+9   chromedriver                        0x0000000102eed848 cxxbridge1$str$ptr + 2494244
+10  chromedriver                        0x0000000102ecb234 cxxbridge1$str$ptr + 2353424
+11  chromedriver                        0x0000000102eee104 cxxbridge1$str$ptr + 2496480
+12  chromedriver                        0x0000000102ebc2e4 cxxbridge1$str$ptr + 2292160
+13  chromedriver                        0x0000000102f0dff8 cxxbridge1$str$ptr + 2627284
+14  chromedriver                        0x0000000102f0e184 cxxbridge1$str$ptr + 2627680
+15  chromedriver                        0x0000000102f1f090 cxxbridge1$str$ptr + 2697068
+16  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+17  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+

@@ -12,7 +12,7 @@ import { useAuth } from '@/components/AuthProvider'
 
 export default function LoginPage() {
   const router = useRouter()
-  const { login } = useAuth()
+  const { loginWithCredentials } = useAuth()
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -53,27 +53,13 @@ export default function LoginPage() {
     setMessage({ type: '', text: '' })
 
     try {
-      const response = await fetch('http://localhost:5001/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        // Use auth context to login
-        login(data.token, data.user)
-        
+      const result = await loginWithCredentials(formData.email, formData.password)
+      
+      if (result.success) {
         setMessage({ type: 'success', text: 'Login successful! Redirecting...' })
-        
-        setTimeout(() => {
-          router.push('/dashboard')
-        }, 1500)
+        // AuthProvider will handle the redirect
       } else {
-        setMessage({ type: 'error', text: data.error || 'Login failed' })
+        setMessage({ type: 'error', text: result.message })
       }
     } catch (error) {
       setMessage({ type: 'error', text: 'Network error. Please try again.' })
@@ -88,12 +74,25 @@ export default function LoginPage() {
         <CardHeader className="space-y-1">
           <div className="flex items-center justify-center mb-4">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-primary">Teemo AI</span>
+              <div className="relative">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                  <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-orange-500 to-red-500 rounded-full"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  ApplyX
+                </span>
+                <span className="text-xs text-muted-foreground -mt-1">by Nebula.AI</span>
+              </div>
             </Link>
           </div>
-          <CardTitle className="text-2xl text-center">Welcome Back</CardTitle>
+          <CardTitle className="text-2xl text-center">Welcome Back to ApplyX</CardTitle>
           <CardDescription className="text-center">
-            Sign in to your account to continue automating your job search
+            Sign in to your account and let AI accelerate your job search
           </CardDescription>
         </CardHeader>
         <CardContent>

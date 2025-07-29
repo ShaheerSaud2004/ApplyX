@@ -1,0 +1,67 @@
+2025-07-24 20:13:03,284 - main_fast_user - INFO - 🚀 Initializing Enhanced User Bot for user: 24e82f41-4c81-4419-8c9c-35d8a4bd14b6
+2025-07-24 20:13:03,284 - main_fast_user - INFO - 📝 Session ID: 24e82f41-4c81-4419-8c9c-35d8a4bd14b6_1753402383
+2025-07-24 20:13:03,284 - main_fast_user - INFO - 📋 Loading user configuration...
+2025-07-24 20:13:03,284 - main_fast_user - INFO - 📊 Querying database for user configuration...
+2025-07-24 20:13:03,291 - main_fast_user - INFO - ✅ Successfully decrypted credentials for: None
+2025-07-24 20:13:03,291 - main_fast_user - INFO - ✅ Database configuration built successfully
+2025-07-24 20:13:03,291 - main_fast_user - INFO - ✅ Configuration loaded from database
+2025-07-24 20:13:03,291 - main_fast_user - INFO - ✅ Configuration loaded successfully
+2025-07-24 20:13:03,291 - main_fast_user - INFO - 👤 LinkedIn Email: None
+2025-07-24 20:13:03,291 - main_fast_user - INFO - 🎯 Target Positions: Software Engineer
+2025-07-24 20:13:03,291 - main_fast_user - INFO - 📍 Target Locations: Remote
+2025-07-24 20:13:03,744 - __main__ - INFO - ✅ Parsed configuration from command line
+2025-07-24 20:13:03,745 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: 24e82f41-4c81-4419-8c9c-35d8a4bd14b6
+2025-07-24 20:13:03,745 - __main__ - INFO - 📝 Session ID: 24e82f41-4c81-4419-8c9c-35d8a4bd14b6_1753402383
+2025-07-24 20:13:03,745 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-24 20:13:03,745 - __main__ - INFO - ✅ Using provided configuration data
+2025-07-24 20:13:03,745 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-24 20:13:03,745 - __main__ - INFO - 👤 LinkedIn Email: test@example.com
+2025-07-24 20:13:03,745 - __main__ - INFO - 🎯 Target Positions: Software Engineer
+2025-07-24 20:13:03,745 - __main__ - INFO - 📍 Target Locations: Remote
+2025-07-24 20:13:03,745 - __main__ - INFO - ================================================================================
+2025-07-24 20:13:03,745 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-24 20:13:03,745 - __main__ - INFO - ================================================================================
+2025-07-24 20:13:03,745 - __main__ - INFO - 👤 User ID: 24e82f41-4c81-4419-8c9c-35d8a4bd14b6
+2025-07-24 20:13:03,745 - __main__ - INFO - 📧 LinkedIn Email: test@example.com
+2025-07-24 20:13:03,745 - __main__ - INFO - 🎯 Target Positions: Software Engineer
+2025-07-24 20:13:03,745 - __main__ - INFO - 📍 Target Locations: Remote
+2025-07-24 20:13:03,745 - __main__ - INFO - ⏰ Session Start: 2025-07-24 20:13:03
+2025-07-24 20:13:03,745 - __main__ - INFO - 🎯 Maximum Applications: 1
+2025-07-24 20:13:03,745 - __main__ - INFO - 🔧 Initializing browser...
+2025-07-24 20:13:03,745 - __main__ - INFO - 🌐 Initializing Chrome browser...
+2025-07-24 20:13:03,745 - __main__ - INFO - 🔄 Browser initialization attempt 1/3
+2025-07-24 20:13:03,745 - __main__ - INFO - 🎭 Using user agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+2025-07-24 20:13:03,745 - __main__ - INFO - 🔧 Using chromedriver: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chromedriver
+2025-07-24 20:13:04,434 - __main__ - WARNING - ⚠️ Browser session creation failed (attempt 1): Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+0   chromedriver                        0x000000010503755c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x000000010502f454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x0000000104b7e3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x0000000104bb1eb8 cxxbridge1$string$len + 302312
+4   chromedriver                        0x0000000104bae7d8 cxxbridge1$string$len + 288264
+5   chromedriver                        0x0000000104bf2d3c cxxbridge1$string$len + 568172
+6   chromedriver                        0x0000000104bf25f0 cxxbridge1$string$len + 566304
+7   chromedriver                        0x0000000104bb9a0c cxxbridge1$string$len + 333884
+8   chromedriver                        0x0000000104ffa5e0 cxxbridge1$str$ptr + 2481340
+9   chromedriver                        0x0000000104ffd848 cxxbridge1$str$ptr + 2494244
+10  chromedriver                        0x0000000104fdb234 cxxbridge1$str$ptr + 2353424
+11  chromedriver                        0x0000000104ffe104 cxxbridge1$str$ptr + 2496480
+12  chromedriver                        0x0000000104fcc2e4 cxxbridge1$str$ptr + 2292160
+13  chromedriver                        0x000000010501dff8 cxxbridge1$str$ptr + 2627284
+14  chromedriver                        0x000000010501e184 cxxbridge1$str$ptr + 2627680
+15  chromedriver                        0x000000010502f090 cxxbridge1$str$ptr + 2697068
+16  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+17  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+
+2025-07-24 20:13:06,440 - __main__ - INFO - 🔄 Browser initialization attempt 2/3
+2025-07-24 20:13:06,441 - __main__ - INFO - 🔄 Using alternate Chrome directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_24e82f41-4c81-4419-8c9c-35d8a4bd14b6_ce8f3a
+2025-07-24 20:13:06,441 - __main__ - INFO - 🎭 Using user agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+2025-07-24 20:13:06,441 - __main__ - INFO - 🔧 Using chromedriver: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chromedriver
+2025-07-24 20:13:08,598 - __main__ - INFO - ✅ Browser initialized successfully (attempt 2)
+2025-07-24 20:13:08,599 - __main__ - INFO - 🪟 Browser window size: {'width': 1710, 'height': 1011}
+2025-07-24 20:13:08,599 - __main__ - INFO - ✅ Browser initialization complete
+2025-07-24 20:13:08,599 - __main__ - INFO - 🤖 Initializing LinkedIn Easy Apply bot...
+2025-07-24 20:13:08,602 - __main__ - ERROR - ❌ FATAL ERROR in continuous applications: 'disableAntiLock'
+2025-07-24 20:13:08,605 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-24 20:13:08,680 - __main__ - INFO - ✅ Browser closed successfully
+2025-07-24 20:13:08,680 - __main__ - ERROR - ❌ Bot failed with error: 'disableAntiLock'

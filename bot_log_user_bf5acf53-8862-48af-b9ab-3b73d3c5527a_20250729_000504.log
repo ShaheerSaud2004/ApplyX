@@ -1,0 +1,68 @@
+2025-07-29 00:05:04,825 - __main__ - INFO - ================================================================================
+2025-07-29 00:05:04,825 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-29 00:05:04,825 - __main__ - INFO - ================================================================================
+2025-07-29 00:05:04,825 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:05:04,825 - __main__ - INFO - 🎯 Max Applications: 5
+2025-07-29 00:05:04,825 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:05:04,825 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753761904
+2025-07-29 00:05:04,825 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-29 00:05:04,825 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-29 00:05:04,826 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-29 00:05:04,826 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-29 00:05:04,826 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-29 00:05:04,851 - __main__ - INFO - ✅ Successfully decrypted credentials for: shaheersaud2004@gmail.com
+2025-07-29 00:05:04,852 - __main__ - INFO - 📋 LOADED JOB PREFERENCES FROM WEBSITE:
+2025-07-29 00:05:04,852 - __main__ - INFO -     📝 Job Titles: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 00:05:04,852 - __main__ - INFO -     📍 Locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 00:05:04,852 - __main__ - INFO -     💰 Salary Min: 65000
+2025-07-29 00:05:04,852 - __main__ - INFO -     📊 Experience: ['entry', 'associate']
+2025-07-29 00:05:04,852 - __main__ - INFO - ✅ Database configuration built successfully
+2025-07-29 00:05:04,852 - __main__ - INFO - 🎯 FINAL BOT SEARCH CONFIG:
+2025-07-29 00:05:04,852 - __main__ - INFO -     📝 Will search for: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 00:05:04,852 - __main__ - INFO -     📍 In locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 00:05:04,852 - __main__ - INFO -     🎯 Total job titles to search: 4
+2025-07-29 00:05:04,852 - __main__ - INFO - ✅ Configuration loaded from database
+2025-07-29 00:05:04,852 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-29 00:05:04,852 - __main__ - INFO - 👤 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 00:05:04,852 - __main__ - INFO - 🎯 Target Positions: Artificial Intelligence, Machine Learning, Cybersecurity, Security Engineer
+2025-07-29 00:05:04,852 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-29 00:05:04,852 - __main__ - INFO - ================================================================================
+2025-07-29 00:05:04,852 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-29 00:05:04,852 - __main__ - INFO - ================================================================================
+2025-07-29 00:05:04,852 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:05:04,852 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753761904
+2025-07-29 00:05:04,852 - __main__ - INFO - 📧 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 00:05:04,852 - __main__ - INFO - 🔢 Max Applications: 5
+2025-07-29 00:05:04,852 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-29 00:05:04,852 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-29 00:05:04,852 - __main__ - INFO - ✅ Cleared 0 previous activity log entries
+2025-07-29 00:05:04,852 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-29 00:05:04,852 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:05:07,061 - __main__ - INFO - ✅ Browser initialized successfully
+2025-07-29 00:05:07,061 - __main__ - INFO - 🤖 Initializing LinkedIn bot...
+2025-07-29 00:05:07,061 - __main__ - INFO - 📧 Using email: shaheersaud2004@gmail.com
+2025-07-29 00:05:07,061 - __main__ - INFO - 🎯 Target positions: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 00:05:07,061 - __main__ - INFO - 📍 Target locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 00:05:07,061 - __main__ - INFO - ✅ Credentials verified - Email: shaheersaud2004@gmail.com
+2025-07-29 00:05:07,061 - __main__ - INFO - ✅ Proceeding with bot creation
+2025-07-29 00:05:07,065 - __main__ - INFO - ✅ Bot successfully created with email: sha***.com
+2025-07-29 00:05:07,065 - __main__ - INFO - ✅ LinkedIn bot initialized with simple config approach
+2025-07-29 00:05:07,065 - __main__ - INFO - ✅ Database integration enabled for application tracking
+2025-07-29 00:05:07,065 - __main__ - INFO - 🔐 Starting LinkedIn login process...
+2025-07-29 00:05:30,908 - __main__ - INFO - ✅ LinkedIn login successful
+2025-07-29 00:05:30,910 - __main__ - INFO - 🛡️ Performing security check...
+2025-07-29 00:05:30,911 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1100404c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bb08bef5b4b823cc329acc6be00f04e3/url
+2025-07-29 00:05:30,913 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110040a30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bb08bef5b4b823cc329acc6be00f04e3/url
+2025-07-29 00:05:30,914 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110040910>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bb08bef5b4b823cc329acc6be00f04e3/url
+2025-07-29 00:05:30,914 - __main__ - ERROR - ❌ Security check failed: HTTPConnectionPool(host='localhost', port=56673): Max retries exceeded with url: /session/bb08bef5b4b823cc329acc6be00f04e3/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110040550>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-07-29 00:05:30,915 - __main__ - ERROR - ❌ FATAL ERROR in continuous applications: HTTPConnectionPool(host='localhost', port=56673): Max retries exceeded with url: /session/bb08bef5b4b823cc329acc6be00f04e3/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110040550>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-07-29 00:05:30,927 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-29 00:05:30,927 - __main__ - INFO - 🌐 Closing browser...
+2025-07-29 00:05:30,927 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110040e50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bb08bef5b4b823cc329acc6be00f04e3
+2025-07-29 00:05:30,927 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1100740d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bb08bef5b4b823cc329acc6be00f04e3
+2025-07-29 00:05:30,928 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1100741f0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bb08bef5b4b823cc329acc6be00f04e3
+2025-07-29 00:05:30,929 - __main__ - INFO - ✅ Browser closed successfully
+2025-07-29 00:05:30,929 - __main__ - INFO - 🧹 Cleaning up existing Chrome processes...
+2025-07-29 00:05:32,964 - __main__ - INFO - ✅ Chrome processes cleaned up
+2025-07-29 00:05:32,964 - __main__ - INFO - ✅ Cleanup completed
+2025-07-29 00:05:32,964 - __main__ - ERROR - ❌ Bot execution failed: HTTPConnectionPool(host='localhost', port=56673): Max retries exceeded with url: /session/bb08bef5b4b823cc329acc6be00f04e3/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110040550>: Failed to establish a new connection: [Errno 61] Connection refused'))

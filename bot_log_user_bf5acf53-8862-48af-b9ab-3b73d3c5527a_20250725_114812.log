@@ -1,0 +1,58 @@
+2025-07-25 11:48:12,984 - __main__ - INFO - ================================================================================
+2025-07-25 11:48:12,985 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-25 11:48:12,985 - __main__ - INFO - ================================================================================
+2025-07-25 11:48:12,985 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:48:12,985 - __main__ - INFO - 🎯 Max Applications: 5
+2025-07-25 11:48:12,985 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:48:12,985 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753458492
+2025-07-25 11:48:12,985 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-25 11:48:12,985 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-25 11:48:12,986 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-25 11:48:12,986 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-25 11:48:12,986 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-25 11:48:12,988 - __main__ - INFO - ✅ Successfully decrypted credentials for: None
+2025-07-25 11:48:12,988 - __main__ - INFO - ✅ Database configuration built successfully
+2025-07-25 11:48:12,988 - __main__ - INFO - ✅ Configuration loaded from database
+2025-07-25 11:48:12,988 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-25 11:48:12,988 - __main__ - INFO - 👤 LinkedIn Email: None
+2025-07-25 11:48:12,989 - __main__ - INFO - 🎯 Target Positions: Software Engineer
+2025-07-25 11:48:12,989 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-25 11:48:12,989 - __main__ - INFO - ================================================================================
+2025-07-25 11:48:12,989 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-25 11:48:12,989 - __main__ - INFO - ================================================================================
+2025-07-25 11:48:12,989 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:48:12,989 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753458492
+2025-07-25 11:48:12,989 - __main__ - INFO - 📧 LinkedIn Email: None
+2025-07-25 11:48:12,989 - __main__ - INFO - 🔢 Max Applications: 5
+2025-07-25 11:48:12,989 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-25 11:48:12,989 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-25 11:48:12,989 - __main__ - INFO - ✅ Cleared 0 previous activity log entries
+2025-07-25 11:48:12,989 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-25 11:48:12,989 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 11:48:13,516 - __main__ - WARNING - ⚠️ User-specific directory locked, trying with temporary profile...
+2025-07-25 11:48:14,033 - __main__ - ERROR - ❌ FATAL ERROR in continuous applications: Message: session not created
+from disconnected: unable to connect to renderer
+Stacktrace:
+0   chromedriver                        0x000000010450f55c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000104507454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x00000001040563f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x000000010408e30c cxxbridge1$string$len + 319804
+4   chromedriver                        0x00000001040899e8 cxxbridge1$string$len + 301080
+5   chromedriver                        0x00000001040867d8 cxxbridge1$string$len + 288264
+6   chromedriver                        0x00000001040cad3c cxxbridge1$string$len + 568172
+7   chromedriver                        0x00000001040ca5f0 cxxbridge1$string$len + 566304
+8   chromedriver                        0x0000000104091a0c cxxbridge1$string$len + 333884
+9   chromedriver                        0x00000001044d25e0 cxxbridge1$str$ptr + 2481340
+10  chromedriver                        0x00000001044d5848 cxxbridge1$str$ptr + 2494244
+11  chromedriver                        0x00000001044b3234 cxxbridge1$str$ptr + 2353424
+12  chromedriver                        0x00000001044d6104 cxxbridge1$str$ptr + 2496480
+13  chromedriver                        0x00000001044a42e4 cxxbridge1$str$ptr + 2292160
+14  chromedriver                        0x00000001044f5ff8 cxxbridge1$str$ptr + 2627284
+15  chromedriver                        0x00000001044f6184 cxxbridge1$str$ptr + 2627680
+16  chromedriver                        0x0000000104507090 cxxbridge1$str$ptr + 2697068
+17  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+18  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+
+2025-07-25 11:48:14,039 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 11:48:14,039 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-25 11:48:14,039 - __main__ - INFO - 🧹 Cleaning up existing Chrome processes...

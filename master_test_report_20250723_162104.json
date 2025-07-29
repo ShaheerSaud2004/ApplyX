@@ -1,0 +1,992 @@
+{
+  "master_summary": {
+    "timestamp": "2025-07-23T16:21:04.948115",
+    "total_tests": 122,
+    "success_rate": 83.60655737704919,
+    "duration": "0:00:23.749522",
+    "backend_url": "http://localhost:5001",
+    "frontend_url": "http://localhost:3000"
+  },
+  "suite_results": [
+    {
+      "suite": "Backend API Tests",
+      "results": [
+        {
+          "test": "001_Server_Health_Check",
+          "status": "PASS",
+          "details": "Server healthy, response time: 0.007s",
+          "timestamp": "2025-07-23T16:20:41.331020",
+          "error": null,
+          "duration": 0.0072672367095947266
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "PASS",
+          "details": "User registered successfully",
+          "timestamp": "2025-07-23T16:20:41.525018",
+          "error": null,
+          "duration": 0.19393515586853027
+        },
+        {
+          "test": "003_User_Registration_Duplicate",
+          "status": "PASS",
+          "details": "Duplicate email rejected",
+          "timestamp": "2025-07-23T16:20:41.527027",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_1",
+          "status": "FAIL",
+          "details": "Invalid email invalid accepted",
+          "timestamp": "2025-07-23T16:20:41.528731",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_2",
+          "status": "FAIL",
+          "details": "Invalid email test@ accepted",
+          "timestamp": "2025-07-23T16:20:41.530130",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_3",
+          "status": "FAIL",
+          "details": "Invalid email @domain.com accepted",
+          "timestamp": "2025-07-23T16:20:41.531631",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_4",
+          "status": "FAIL",
+          "details": "Invalid email test..test@domain.com accepted",
+          "timestamp": "2025-07-23T16:20:41.533021",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_5",
+          "status": "PASS",
+          "details": "Invalid email  rejected",
+          "timestamp": "2025-07-23T16:20:41.534476",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_1",
+          "status": "WARN",
+          "details": "Weak password accepted (consider strengthening validation)",
+          "timestamp": "2025-07-23T16:20:41.691676",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_2",
+          "status": "WARN",
+          "details": "Weak password accepted (consider strengthening validation)",
+          "timestamp": "2025-07-23T16:20:41.849763",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_3",
+          "status": "WARN",
+          "details": "Weak password accepted (consider strengthening validation)",
+          "timestamp": "2025-07-23T16:20:42.008252",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_4",
+          "status": "PASS",
+          "details": "Weak password rejected",
+          "timestamp": "2025-07-23T16:20:42.010076",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_5",
+          "status": "WARN",
+          "details": "Weak password accepted (consider strengthening validation)",
+          "timestamp": "2025-07-23T16:20:42.166112",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "006_User_Login_Valid",
+          "status": "PASS",
+          "details": "Login successful",
+          "timestamp": "2025-07-23T16:20:42.324414",
+          "error": null,
+          "duration": 0.15827202796936035
+        },
+        {
+          "test": "007_Invalid_Login_1",
+          "status": "PASS",
+          "details": "Invalid credentials rejected",
+          "timestamp": "2025-07-23T16:20:42.326321",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "007_Invalid_Login_2",
+          "status": "PASS",
+          "details": "Invalid credentials rejected",
+          "timestamp": "2025-07-23T16:20:42.487137",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "007_Invalid_Login_3",
+          "status": "FAIL",
+          "details": "Expected 401, got 400",
+          "timestamp": "2025-07-23T16:20:42.488972",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "007_Invalid_Login_4",
+          "status": "FAIL",
+          "details": "Expected 401, got 400",
+          "timestamp": "2025-07-23T16:20:42.490374",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "008_JWT_Valid_Token",
+          "status": "PASS",
+          "details": "Valid token accepted",
+          "timestamp": "2025-07-23T16:20:42.492258",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "008_JWT_Invalid_Token",
+          "status": "PASS",
+          "details": "Invalid token rejected",
+          "timestamp": "2025-07-23T16:20:42.493530",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_profile",
+          "status": "PASS",
+          "details": "Unauthorized access blocked",
+          "timestamp": "2025-07-23T16:20:42.495435",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_applications",
+          "status": "PASS",
+          "details": "Unauthorized access blocked",
+          "timestamp": "2025-07-23T16:20:42.496756",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_stats",
+          "status": "PASS",
+          "details": "Unauthorized access blocked",
+          "timestamp": "2025-07-23T16:20:42.498019",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_start",
+          "status": "FAIL",
+          "details": "Expected 401, got 405",
+          "timestamp": "2025-07-23T16:20:42.499178",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_stop",
+          "status": "FAIL",
+          "details": "Expected 401, got 405",
+          "timestamp": "2025-07-23T16:20:42.500297",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_status",
+          "status": "PASS",
+          "details": "Unauthorized access blocked",
+          "timestamp": "2025-07-23T16:20:42.501811",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "010_SQL_Injection_1",
+          "status": "PASS",
+          "details": "SQL injection prevented",
+          "timestamp": "2025-07-23T16:20:42.503547",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "010_SQL_Injection_2",
+          "status": "PASS",
+          "details": "SQL injection prevented",
+          "timestamp": "2025-07-23T16:20:42.505044",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "010_SQL_Injection_3",
+          "status": "PASS",
+          "details": "SQL injection prevented",
+          "timestamp": "2025-07-23T16:20:42.506472",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "010_SQL_Injection_4",
+          "status": "PASS",
+          "details": "SQL injection prevented",
+          "timestamp": "2025-07-23T16:20:42.507690",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "011_Profile_Get_Empty",
+          "status": "PASS",
+          "details": "Profile retrieved successfully",
+          "timestamp": "2025-07-23T16:20:42.509164",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "012_Profile_Update_Basic",
+          "status": "PASS",
+          "details": "Profile updated successfully",
+          "timestamp": "2025-07-23T16:20:42.511184",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "013_LinkedIn_Credentials_Encryption",
+          "status": "PASS",
+          "details": "LinkedIn credentials stored and retrieved",
+          "timestamp": "2025-07-23T16:20:42.598112",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "014_Job_Preferences_Storage",
+          "status": "PASS",
+          "details": "Job preferences stored and retrieved",
+          "timestamp": "2025-07-23T16:20:42.642506",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "015_Profile_Validation_1",
+          "status": "PASS",
+          "details": "Invalid data handled properly",
+          "timestamp": "2025-07-23T16:20:42.644770",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "015_Profile_Validation_2",
+          "status": "PASS",
+          "details": "Invalid data handled properly",
+          "timestamp": "2025-07-23T16:20:42.646453",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "015_Profile_Validation_3",
+          "status": "PASS",
+          "details": "Invalid data handled properly",
+          "timestamp": "2025-07-23T16:20:42.647789",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "015_Profile_Validation_4",
+          "status": "PASS",
+          "details": "Invalid data handled properly",
+          "timestamp": "2025-07-23T16:20:42.649580",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "016_Agent_Status_Check",
+          "status": "PASS",
+          "details": "Agent status: idle",
+          "timestamp": "2025-07-23T16:20:42.650668",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "017_Agent_Start_Without_Credentials",
+          "status": "FAIL",
+          "details": "Expected 400, got 200",
+          "timestamp": "2025-07-23T16:20:42.652769",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "013_LinkedIn_Credentials_Encryption",
+          "status": "PASS",
+          "details": "LinkedIn credentials stored and retrieved",
+          "timestamp": "2025-07-23T16:20:42.738559",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "018_Agent_Start_With_Credentials",
+          "status": "PASS",
+          "details": "Agent started successfully",
+          "timestamp": "2025-07-23T16:20:42.740818",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "019_Agent_Stop",
+          "status": "PASS",
+          "details": "Agent stop command handled",
+          "timestamp": "2025-07-23T16:20:44.758428",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "020_Daily_Quota_System",
+          "status": "PASS",
+          "details": "Quota system functioning",
+          "timestamp": "2025-07-23T16:20:44.763038",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "021_Applications_Get_Empty",
+          "status": "PASS",
+          "details": "Retrieved 0 applications",
+          "timestamp": "2025-07-23T16:20:44.766157",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "022_Dashboard_Stats_Empty",
+          "status": "PASS",
+          "details": "Dashboard stats retrieved successfully",
+          "timestamp": "2025-07-23T16:20:44.769962",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "023_Applications_Pagination",
+          "status": "PASS",
+          "details": "Pagination working, returned 0 applications",
+          "timestamp": "2025-07-23T16:20:44.772951",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "024_Application_Status_Update",
+          "status": "WARN",
+          "details": "Unexpected status: 500",
+          "timestamp": "2025-07-23T16:20:44.780554",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "025_Resume_Upload_Valid_PDF",
+          "status": "PASS",
+          "details": "PDF upload successful",
+          "timestamp": "2025-07-23T16:20:44.785441",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "026_Invalid_File_Type_1",
+          "status": "PASS",
+          "details": "Invalid file type .txt rejected",
+          "timestamp": "2025-07-23T16:20:44.789474",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "026_Invalid_File_Type_2",
+          "status": "PASS",
+          "details": "Invalid file type .doc rejected",
+          "timestamp": "2025-07-23T16:20:44.792619",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "026_Invalid_File_Type_3",
+          "status": "PASS",
+          "details": "Invalid file type .jpg rejected",
+          "timestamp": "2025-07-23T16:20:44.795290",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "027_Resume_Upload_Large_File",
+          "status": "PASS",
+          "details": "Large file rejected",
+          "timestamp": "2025-07-23T16:20:44.813595",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "028_Multi_User_Data_Isolation",
+          "status": "PASS",
+          "details": "User data properly isolated",
+          "timestamp": "2025-07-23T16:20:45.129710",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "029_Concurrent_User_Sessions",
+          "status": "PASS",
+          "details": "All 5 concurrent sessions successful",
+          "timestamp": "2025-07-23T16:20:45.919823",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "030_Performance_health",
+          "status": "PASS",
+          "details": "Avg: 0.001s, Max: 0.001s",
+          "timestamp": "2025-07-23T16:20:45.926027",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "030_Performance_profile",
+          "status": "PASS",
+          "details": "Avg: 0.042s, Max: 0.043s",
+          "timestamp": "2025-07-23T16:20:46.137830",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "030_Performance_applications",
+          "status": "PASS",
+          "details": "Avg: 0.002s, Max: 0.002s",
+          "timestamp": "2025-07-23T16:20:46.145533",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "030_Performance_stats",
+          "status": "PASS",
+          "details": "Avg: 0.002s, Max: 0.002s",
+          "timestamp": "2025-07-23T16:20:46.153936",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "030_Performance_status",
+          "status": "PASS",
+          "details": "Avg: 0.001s, Max: 0.001s",
+          "timestamp": "2025-07-23T16:20:46.159811",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "030_Overall_Performance",
+          "status": "PASS",
+          "details": "Overall average response time: 0.010s",
+          "timestamp": "2025-07-23T16:20:46.159823",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "031_Load_Testing_Basic",
+          "status": "PASS",
+          "details": "Load test: 100.0% success rate, 0.01s total",
+          "timestamp": "2025-07-23T16:20:46.173865",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "032_Memory_Usage_Stability",
+          "status": "PASS",
+          "details": "50 consecutive requests completed successfully",
+          "timestamp": "2025-07-23T16:20:51.627213",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_1",
+          "status": "PASS",
+          "details": "Malformed JSON rejected",
+          "timestamp": "2025-07-23T16:20:51.634385",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_2",
+          "status": "PASS",
+          "details": "Malformed JSON rejected",
+          "timestamp": "2025-07-23T16:20:51.638749",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_3",
+          "status": "PASS",
+          "details": "Malformed JSON rejected",
+          "timestamp": "2025-07-23T16:20:51.642040",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_4",
+          "status": "PASS",
+          "details": "Malformed JSON rejected",
+          "timestamp": "2025-07-23T16:20:51.644779",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_5",
+          "status": "PASS",
+          "details": "Malformed JSON rejected",
+          "timestamp": "2025-07-23T16:20:51.647298",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "034_Large_Payload_Handling",
+          "status": "WARN",
+          "details": "Large payload status: 409",
+          "timestamp": "2025-07-23T16:20:51.657263",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "035_CORS_Headers",
+          "status": "PASS",
+          "details": "CORS headers present",
+          "timestamp": "2025-07-23T16:20:51.659723",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "036_Rate_Limiting",
+          "status": "WARN",
+          "details": "No rate limiting detected (consider implementing)",
+          "timestamp": "2025-07-23T16:20:52.398334",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "037_Frontend_Main_Page",
+          "status": "PASS",
+          "details": "Main page accessible",
+          "timestamp": "2025-07-23T16:20:52.417512",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "038_Frontend_login",
+          "status": "PASS",
+          "details": "Page /auth/login accessible",
+          "timestamp": "2025-07-23T16:20:52.663009",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "038_Frontend_signup",
+          "status": "PASS",
+          "details": "Page /auth/signup accessible",
+          "timestamp": "2025-07-23T16:20:52.763971",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "039_Frontend_Dashboard_Redirect",
+          "status": "PASS",
+          "details": "Dashboard auth working",
+          "timestamp": "2025-07-23T16:20:52.930993",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "040_Database_Connection",
+          "status": "PASS",
+          "details": "Database has required tables: ['users', 'job_applications', 'agent_tasks', 'agent_status', 'billing_events', 'usage_logs', 'referrals', 'user_preferences']",
+          "timestamp": "2025-07-23T16:20:52.931734",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "041_Complete_User_Journey",
+          "status": "PASS",
+          "details": "Complete user journey successful",
+          "timestamp": "2025-07-23T16:20:53.171719",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "042_XSS_Prevention_1",
+          "status": "PASS",
+          "details": "XSS payload handled",
+          "timestamp": "2025-07-23T16:20:53.338058",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "042_XSS_Prevention_2",
+          "status": "PASS",
+          "details": "XSS payload handled",
+          "timestamp": "2025-07-23T16:20:53.494016",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "042_XSS_Prevention_3",
+          "status": "PASS",
+          "details": "XSS payload handled",
+          "timestamp": "2025-07-23T16:20:53.650798",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "042_XSS_Prevention_4",
+          "status": "PASS",
+          "details": "XSS payload handled",
+          "timestamp": "2025-07-23T16:20:53.812324",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "043_CSRF_Protection",
+          "status": "PASS",
+          "details": "CSRF protection active",
+          "timestamp": "2025-07-23T16:20:53.977984",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "044_Password_Security",
+          "status": "PASS",
+          "details": "Passwords not exposed",
+          "timestamp": "2025-07-23T16:20:54.022514",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "045_Concurrent_Registrations",
+          "status": "PASS",
+          "details": "Concurrent registrations: 100.0% success",
+          "timestamp": "2025-07-23T16:20:54.294419",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "046_Database_Transaction_Integrity",
+          "status": "PASS",
+          "details": "Database transactions working properly",
+          "timestamp": "2025-07-23T16:20:54.461172",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "047_API_Versioning_1",
+          "status": "PASS",
+          "details": "API version compatible",
+          "timestamp": "2025-07-23T16:20:54.462663",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "047_API_Versioning_2",
+          "status": "PASS",
+          "details": "API version compatible",
+          "timestamp": "2025-07-23T16:20:54.463957",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "047_API_Versioning_3",
+          "status": "PASS",
+          "details": "API version compatible",
+          "timestamp": "2025-07-23T16:20:54.465106",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "047_API_Versioning_4",
+          "status": "PASS",
+          "details": "API version compatible",
+          "timestamp": "2025-07-23T16:20:54.466337",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "048_LinkedIn_Bot_Integration",
+          "status": "PASS",
+          "details": "LinkedIn bot modules accessible",
+          "timestamp": "2025-07-23T16:20:54.955485",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "049_Config_File_Validation",
+          "status": "PASS",
+          "details": "Configuration file valid",
+          "timestamp": "2025-07-23T16:20:54.964247",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "050_Environment_Variables",
+          "status": "PASS",
+          "details": "Required environment variables present",
+          "timestamp": "2025-07-23T16:20:54.964528",
+          "error": null,
+          "duration": null
+        }
+      ],
+      "timestamp": "2025-07-23T16:20:54.968584",
+      "passed": 76,
+      "failed": 9,
+      "warnings": 7,
+      "total": 92
+    },
+    {
+      "suite": "Frontend Component Tests",
+      "results": [
+        {
+          "test": "051_React_Component_Compilation",
+          "status": "PASS",
+          "details": "React components compile successfully",
+          "timestamp": "2025-07-23T16:21:01.942632",
+          "error": null
+        },
+        {
+          "test": "052_TypeScript_Validation",
+          "status": "FAIL",
+          "details": "TypeScript errors: ",
+          "timestamp": "2025-07-23T16:21:02.992531",
+          "error": null
+        },
+        {
+          "test": "053_ESLint_Code_Quality",
+          "status": "PASS",
+          "details": "ESLint completed",
+          "timestamp": "2025-07-23T16:21:03.254615",
+          "error": null
+        },
+        {
+          "test": "054_Dependency_Vulnerabilities",
+          "status": "WARN",
+          "details": "Vulnerabilities: 1 critical, 0 high",
+          "timestamp": "2025-07-23T16:21:04.666964",
+          "error": null
+        },
+        {
+          "test": "055_Component_Imports",
+          "status": "PASS",
+          "details": "All critical components found",
+          "timestamp": "2025-07-23T16:21:04.667072",
+          "error": null
+        },
+        {
+          "test": "056_Package_JSON_Integrity",
+          "status": "PASS",
+          "details": "Package.json is properly configured",
+          "timestamp": "2025-07-23T16:21:04.667246",
+          "error": null
+        },
+        {
+          "test": "057_Environment_Config",
+          "status": "PASS",
+          "details": "Environment config found in .env.local",
+          "timestamp": "2025-07-23T16:21:04.667387",
+          "error": null
+        },
+        {
+          "test": "058_Tailwind_Config",
+          "status": "PASS",
+          "details": "Tailwind config found: tailwind.config.ts",
+          "timestamp": "2025-07-23T16:21:04.667418",
+          "error": null
+        },
+        {
+          "test": "059_Next_Config",
+          "status": "PASS",
+          "details": "Next.js config found: next.config.js",
+          "timestamp": "2025-07-23T16:21:04.667435",
+          "error": null
+        },
+        {
+          "test": "060_Static_Assets",
+          "status": "WARN",
+          "details": "Missing assets: ['public/', 'src/app/favicon.ico']",
+          "timestamp": "2025-07-23T16:21:04.667458",
+          "error": null
+        }
+      ],
+      "timestamp": "2025-07-23T16:21:04.667480",
+      "passed": 7,
+      "failed": 1,
+      "warnings": 2,
+      "total": 10
+    },
+    {
+      "suite": "Bot Functionality Tests",
+      "results": [
+        {
+          "test": "061_Bot_Import_linkedineasyapply",
+          "status": "PASS",
+          "details": "Module linkedineasyapply imported successfully",
+          "timestamp": "2025-07-23T16:21:04.667549",
+          "error": null
+        },
+        {
+          "test": "061_Bot_Import_main_fast",
+          "status": "PASS",
+          "details": "Module main_fast imported successfully",
+          "timestamp": "2025-07-23T16:21:04.667569",
+          "error": null
+        },
+        {
+          "test": "061_Bot_Import_easyapplybot.utils",
+          "status": "PASS",
+          "details": "Module easyapplybot.utils imported successfully",
+          "timestamp": "2025-07-23T16:21:04.671434",
+          "error": null
+        },
+        {
+          "test": "062_Config_File_Validation",
+          "status": "PASS",
+          "details": "Configuration file config.yaml is valid",
+          "timestamp": "2025-07-23T16:21:04.680218",
+          "error": null
+        },
+        {
+          "test": "063_Resume_File_Validation",
+          "status": "PASS",
+          "details": "Resume file found: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/Shaheer_Saud_Resume.pdf (186000 bytes)",
+          "timestamp": "2025-07-23T16:21:04.689535",
+          "error": null
+        },
+        {
+          "test": "064_ChromeDriver_Availability",
+          "status": "PASS",
+          "details": "ChromeDriver found: ./chromedriver (15794896 bytes)",
+          "timestamp": "2025-07-23T16:21:04.689593",
+          "error": null
+        },
+        {
+          "test": "065_Selenium_Dependencies",
+          "status": "PASS",
+          "details": "Selenium version 4.14.0 available",
+          "timestamp": "2025-07-23T16:21:04.689642",
+          "error": null
+        },
+        {
+          "test": "066_OpenAI_Integration",
+          "status": "PASS",
+          "details": "OpenAI API key configured",
+          "timestamp": "2025-07-23T16:21:04.698001",
+          "error": null
+        },
+        {
+          "test": "067_Job_Search_Parameters",
+          "status": "PASS",
+          "details": "Positions configured; Locations configured; Experience levels configured; Job types configured",
+          "timestamp": "2025-07-23T16:21:04.706521",
+          "error": null
+        },
+        {
+          "test": "068_Application_Responses",
+          "status": "PASS",
+          "details": "Application responses properly configured",
+          "timestamp": "2025-07-23T16:21:04.714920",
+          "error": null
+        },
+        {
+          "test": "069_Database_Integration",
+          "status": "PASS",
+          "details": "Bot database integration working",
+          "timestamp": "2025-07-23T16:21:04.715752",
+          "error": null
+        },
+        {
+          "test": "070_Output_File_Management",
+          "status": "PASS",
+          "details": "Output directory accessible: ~/Documents/Applications/EasyApplyBot/EasyApplyBot/",
+          "timestamp": "2025-07-23T16:21:04.724424",
+          "error": null
+        },
+        {
+          "test": "071_Bot_Error_Handling",
+          "status": "PASS",
+          "details": "Error handling working: ['Empty email', 'No positions']",
+          "timestamp": "2025-07-23T16:21:04.725160",
+          "error": null
+        },
+        {
+          "test": "072_LinkedIn_URL_Validation",
+          "status": "PASS",
+          "details": "All URL validations passed",
+          "timestamp": "2025-07-23T16:21:04.725216",
+          "error": null
+        },
+        {
+          "test": "073_Application_Quota_Management",
+          "status": "PASS",
+          "details": "All quota management tests passed",
+          "timestamp": "2025-07-23T16:21:04.725226",
+          "error": null
+        },
+        {
+          "test": "074_Bot_Performance_Limits",
+          "status": "PASS",
+          "details": "Anti-lock measures enabled for safety",
+          "timestamp": "2025-07-23T16:21:04.733537",
+          "error": null
+        },
+        {
+          "test": "075_Web_Agent_Integration",
+          "status": "PASS",
+          "details": "Web agent found and importable: web_agent.py",
+          "timestamp": "2025-07-23T16:21:04.734127",
+          "error": null
+        }
+      ],
+      "timestamp": "2025-07-23T16:21:04.734148",
+      "passed": 17,
+      "failed": 0,
+      "warnings": 0,
+      "total": 17
+    },
+    {
+      "suite": "Integration Tests",
+      "results": [
+        {
+          "test": "076_Full_Integration_Workflow",
+          "status": "PASS",
+          "details": "Complete user workflow tested"
+        },
+        {
+          "test": "077_Database_Consistency",
+          "status": "PASS",
+          "details": "Database integrity verified"
+        },
+        {
+          "test": "078_Configuration_Validation",
+          "status": "WARN",
+          "details": "config.yaml: \u2713; package.json: \u2713; .env.example: \u2717"
+        }
+      ],
+      "timestamp": "2025-07-23T16:21:04.947973",
+      "passed": 2,
+      "failed": 0,
+      "warnings": 1,
+      "total": 3
+    }
+  ]
+}

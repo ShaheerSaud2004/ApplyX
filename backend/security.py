@@ -196,7 +196,7 @@ def verify_hashed_data(data: str, hashed: str, salt: str) -> bool:
         new_hash = hash_sensitive_data(data, salt)
         return new_hash == hashed
     except:
-        return False
+        return False 
 
 def generate_secure_encryption_key() -> str:
     """Generate a new secure encryption key for environment variables"""

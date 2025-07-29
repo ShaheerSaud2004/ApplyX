@@ -1,0 +1,192 @@
+2025-07-29 00:46:07,687 - __main__ - INFO - ================================================================================
+2025-07-29 00:46:07,687 - __main__ - INFO - ================================================================================
+2025-07-29 00:46:07,800 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-29 00:46:07,801 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-29 00:46:07,874 - __main__ - INFO - ================================================================================
+2025-07-29 00:46:07,884 - __main__ - INFO - ================================================================================
+2025-07-29 00:46:07,901 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:46:07,927 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:46:07,951 - __main__ - INFO - 🎯 Max Applications: 5
+2025-07-29 00:46:07,951 - __main__ - INFO - 🎯 Max Applications: 5
+2025-07-29 00:46:07,979 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:46:07,979 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:46:07,988 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753764367
+2025-07-29 00:46:07,986 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753764367
+2025-07-29 00:46:07,989 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-29 00:46:07,992 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-29 00:46:07,999 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-29 00:46:07,999 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-29 00:46:08,009 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-29 00:46:08,009 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-29 00:46:08,014 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-29 00:46:08,014 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-29 00:46:08,014 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-29 00:46:08,014 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-29 00:46:08,132 - __main__ - INFO - ✅ Successfully decrypted credentials for: shaheersaud2004@gmail.com
+2025-07-29 00:46:08,132 - __main__ - INFO - ✅ Successfully decrypted credentials for: shaheersaud2004@gmail.com
+2025-07-29 00:46:08,133 - __main__ - INFO - 📋 LOADED JOB PREFERENCES FROM WEBSITE:
+2025-07-29 00:46:08,133 - __main__ - INFO - 📋 LOADED JOB PREFERENCES FROM WEBSITE:
+2025-07-29 00:46:08,133 - __main__ - INFO -     📝 Job Titles: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 00:46:08,133 - __main__ - INFO -     📝 Job Titles: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 00:46:08,133 - __main__ - INFO -     📍 Locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 00:46:08,133 - __main__ - INFO -     💰 Salary Min: 65000
+2025-07-29 00:46:08,133 - __main__ - INFO -     📊 Experience: ['entry', 'associate']
+2025-07-29 00:46:08,133 - __main__ - INFO -     📍 Locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 00:46:08,133 - __main__ - INFO -     💰 Salary Min: 65000
+2025-07-29 00:46:08,133 - __main__ - INFO -     📊 Experience: ['entry', 'associate']
+2025-07-29 00:46:08,133 - __main__ - INFO - ✅ Database configuration built successfully
+2025-07-29 00:46:08,134 - __main__ - INFO - 🎯 FINAL BOT SEARCH CONFIG:
+2025-07-29 00:46:08,134 - __main__ - INFO -     📝 Will search for: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 00:46:08,134 - __main__ - INFO - ✅ Database configuration built successfully
+2025-07-29 00:46:08,134 - __main__ - INFO -     📍 In locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 00:46:08,134 - __main__ - INFO - 🎯 FINAL BOT SEARCH CONFIG:
+2025-07-29 00:46:08,134 - __main__ - INFO -     📝 Will search for: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 00:46:08,134 - __main__ - INFO -     🎯 Total job titles to search: 4
+2025-07-29 00:46:08,134 - __main__ - INFO -     📍 In locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 00:46:08,134 - __main__ - INFO - ✅ Configuration loaded from database
+2025-07-29 00:46:08,134 - __main__ - INFO -     🎯 Total job titles to search: 4
+2025-07-29 00:46:08,134 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-29 00:46:08,134 - __main__ - INFO - ✅ Configuration loaded from database
+2025-07-29 00:46:08,134 - __main__ - INFO - 👤 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 00:46:08,134 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-29 00:46:08,134 - __main__ - INFO - 🎯 Target Positions: Artificial Intelligence, Machine Learning, Cybersecurity, Security Engineer
+2025-07-29 00:46:08,134 - __main__ - INFO - 👤 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 00:46:08,134 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-29 00:46:08,134 - __main__ - INFO - 🎯 Target Positions: Artificial Intelligence, Machine Learning, Cybersecurity, Security Engineer
+2025-07-29 00:46:08,134 - __main__ - INFO - ================================================================================
+2025-07-29 00:46:08,134 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-29 00:46:08,134 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-29 00:46:08,134 - __main__ - INFO - ================================================================================
+2025-07-29 00:46:08,134 - __main__ - INFO - ================================================================================
+2025-07-29 00:46:08,135 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-29 00:46:08,135 - __main__ - INFO - ================================================================================
+2025-07-29 00:46:08,135 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:46:08,135 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753764367
+2025-07-29 00:46:08,135 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:46:08,135 - __main__ - INFO - 📧 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 00:46:08,135 - __main__ - INFO - 🔢 Max Applications: 5
+2025-07-29 00:46:08,135 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-29 00:46:08,135 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-29 00:46:08,135 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753764367
+2025-07-29 00:46:08,135 - __main__ - INFO - 📧 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 00:46:08,135 - __main__ - INFO - 🔢 Max Applications: 5
+2025-07-29 00:46:08,135 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-29 00:46:08,135 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-29 00:46:08,137 - __main__ - INFO - ✅ Cleared 2 previous activity log entries
+2025-07-29 00:46:08,138 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-29 00:46:08,138 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:46:08,138 - __main__ - INFO - ✅ Cleared 0 previous activity log entries
+2025-07-29 00:46:08,138 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-29 00:46:08,138 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 00:46:41,579 - __main__ - INFO - ✅ Browser initialized successfully
+2025-07-29 00:46:41,577 - __main__ - INFO - ✅ Browser initialized successfully
+2025-07-29 00:46:42,200 - __main__ - INFO - 🤖 Initializing LinkedIn bot...
+2025-07-29 00:46:42,241 - __main__ - INFO - 🤖 Initializing LinkedIn bot...
+2025-07-29 00:46:42,258 - __main__ - INFO - 📧 Using email: shaheersaud2004@gmail.com
+2025-07-29 00:46:42,275 - __main__ - INFO - 📧 Using email: shaheersaud2004@gmail.com
+2025-07-29 00:46:42,276 - __main__ - INFO - 🎯 Target positions: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 00:46:42,342 - __main__ - INFO - 📍 Target locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 00:46:42,343 - __main__ - INFO - ✅ Credentials verified - Email: shaheersaud2004@gmail.com
+2025-07-29 00:46:42,343 - __main__ - INFO - ✅ Proceeding with bot creation
+2025-07-29 00:46:42,350 - __main__ - INFO - 🎯 Target positions: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 00:46:42,350 - __main__ - INFO - 📍 Target locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 00:46:42,350 - __main__ - INFO - ✅ Credentials verified - Email: shaheersaud2004@gmail.com
+2025-07-29 00:46:42,350 - __main__ - INFO - ✅ Proceeding with bot creation
+2025-07-29 00:46:42,374 - __main__ - INFO - ✅ Bot successfully created with email: sha***.com
+2025-07-29 00:46:42,375 - __main__ - INFO - ✅ LinkedIn bot initialized with simple config approach
+2025-07-29 00:46:42,383 - __main__ - INFO - ✅ Database integration enabled for application tracking
+2025-07-29 00:46:42,383 - __main__ - INFO - ✅ Bot successfully created with email: sha***.com
+2025-07-29 00:46:42,400 - __main__ - INFO - ✅ LinkedIn bot initialized with simple config approach
+2025-07-29 00:46:42,400 - __main__ - INFO - 🔐 Starting LinkedIn login process...
+2025-07-29 00:46:42,403 - __main__ - INFO - ✅ Database integration enabled for application tracking
+2025-07-29 00:46:42,403 - __main__ - INFO - 🔐 Starting LinkedIn login process...
+2025-07-29 00:50:31,905 - __main__ - ERROR - ❌ LinkedIn login failed: Message: stale element reference: stale element not found
+  (Session info: chrome=138.0.7204.169); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x00000001008eb55c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001008e3454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x00000001004323f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x0000000100442e30 cxxbridge1$string$len + 158816
+4   chromedriver                        0x0000000100441f0c cxxbridge1$string$len + 154940
+5   chromedriver                        0x00000001004389c0 cxxbridge1$string$len + 116720
+6   chromedriver                        0x0000000100437168 cxxbridge1$string$len + 110488
+7   chromedriver                        0x000000010043a3f4 cxxbridge1$string$len + 123428
+8   chromedriver                        0x000000010043a49c cxxbridge1$string$len + 123596
+9   chromedriver                        0x000000010047b098 cxxbridge1$string$len + 388808
+10  chromedriver                        0x000000010046f4a4 cxxbridge1$string$len + 340692
+11  chromedriver                        0x000000010046efbc cxxbridge1$string$len + 339436
+12  chromedriver                        0x00000001004bab1c cxxbridge1$string$len + 649548
+13  chromedriver                        0x000000010046da0c cxxbridge1$string$len + 333884
+14  chromedriver                        0x00000001008ae5e0 cxxbridge1$str$ptr + 2481340
+15  chromedriver                        0x00000001008b1848 cxxbridge1$str$ptr + 2494244
+16  chromedriver                        0x000000010088f234 cxxbridge1$str$ptr + 2353424
+17  chromedriver                        0x00000001008b2104 cxxbridge1$str$ptr + 2496480
+18  chromedriver                        0x00000001008802e4 cxxbridge1$str$ptr + 2292160
+19  chromedriver                        0x00000001008d1ff8 cxxbridge1$str$ptr + 2627284
+20  chromedriver                        0x00000001008d2184 cxxbridge1$str$ptr + 2627680
+21  chromedriver                        0x00000001008e3090 cxxbridge1$str$ptr + 2697068
+22  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+23  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+
+2025-07-29 00:50:32,257 - __main__ - ERROR - ❌ FATAL ERROR in continuous applications: Message: stale element reference: stale element not found
+  (Session info: chrome=138.0.7204.169); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x00000001008eb55c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001008e3454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x00000001004323f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x0000000100442e30 cxxbridge1$string$len + 158816
+4   chromedriver                        0x0000000100441f0c cxxbridge1$string$len + 154940
+5   chromedriver                        0x00000001004389c0 cxxbridge1$string$len + 116720
+6   chromedriver                        0x0000000100437168 cxxbridge1$string$len + 110488
+7   chromedriver                        0x000000010043a3f4 cxxbridge1$string$len + 123428
+8   chromedriver                        0x000000010043a49c cxxbridge1$string$len + 123596
+9   chromedriver                        0x000000010047b098 cxxbridge1$string$len + 388808
+10  chromedriver                        0x000000010046f4a4 cxxbridge1$string$len + 340692
+11  chromedriver                        0x000000010046efbc cxxbridge1$string$len + 339436
+12  chromedriver                        0x00000001004bab1c cxxbridge1$string$len + 649548
+13  chromedriver                        0x000000010046da0c cxxbridge1$string$len + 333884
+14  chromedriver                        0x00000001008ae5e0 cxxbridge1$str$ptr + 2481340
+15  chromedriver                        0x00000001008b1848 cxxbridge1$str$ptr + 2494244
+16  chromedriver                        0x000000010088f234 cxxbridge1$str$ptr + 2353424
+17  chromedriver                        0x00000001008b2104 cxxbridge1$str$ptr + 2496480
+18  chromedriver                        0x00000001008802e4 cxxbridge1$str$ptr + 2292160
+19  chromedriver                        0x00000001008d1ff8 cxxbridge1$str$ptr + 2627284
+20  chromedriver                        0x00000001008d2184 cxxbridge1$str$ptr + 2627680
+21  chromedriver                        0x00000001008e3090 cxxbridge1$str$ptr + 2697068
+22  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+23  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+
+2025-07-29 00:50:32,654 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-29 00:50:32,654 - __main__ - INFO - 🌐 Closing browser...
+2025-07-29 00:50:41,900 - __main__ - INFO - ✅ Browser closed successfully
+2025-07-29 00:50:41,907 - __main__ - INFO - 🧹 Cleaning up existing Chrome processes...
+2025-07-29 00:50:57,019 - __main__ - INFO - ✅ Chrome processes cleaned up
+2025-07-29 00:51:01,921 - __main__ - INFO - ✅ Cleanup completed
+2025-07-29 00:51:02,894 - __main__ - ERROR - ❌ Bot execution failed: Message: stale element reference: stale element not found
+  (Session info: chrome=138.0.7204.169); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x00000001008eb55c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x00000001008e3454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x00000001004323f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x0000000100442e30 cxxbridge1$string$len + 158816
+4   chromedriver                        0x0000000100441f0c cxxbridge1$string$len + 154940
+5   chromedriver                        0x00000001004389c0 cxxbridge1$string$len + 116720
+6   chromedriver                        0x0000000100437168 cxxbridge1$string$len + 110488
+7   chromedriver                        0x000000010043a3f4 cxxbridge1$string$len + 123428
+8   chromedriver                        0x000000010043a49c cxxbridge1$string$len + 123596
+9   chromedriver                        0x000000010047b098 cxxbridge1$string$len + 388808
+10  chromedriver                        0x000000010046f4a4 cxxbridge1$string$len + 340692
+11  chromedriver                        0x000000010046efbc cxxbridge1$string$len + 339436
+12  chromedriver                        0x00000001004bab1c cxxbridge1$string$len + 649548
+13  chromedriver                        0x000000010046da0c cxxbridge1$string$len + 333884
+14  chromedriver                        0x00000001008ae5e0 cxxbridge1$str$ptr + 2481340
+15  chromedriver                        0x00000001008b1848 cxxbridge1$str$ptr + 2494244
+16  chromedriver                        0x000000010088f234 cxxbridge1$str$ptr + 2353424
+17  chromedriver                        0x00000001008b2104 cxxbridge1$str$ptr + 2496480
+18  chromedriver                        0x00000001008802e4 cxxbridge1$str$ptr + 2292160
+19  chromedriver                        0x00000001008d1ff8 cxxbridge1$str$ptr + 2627284
+20  chromedriver                        0x00000001008d2184 cxxbridge1$str$ptr + 2627680
+21  chromedriver                        0x00000001008e3090 cxxbridge1$str$ptr + 2697068
+22  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+23  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+

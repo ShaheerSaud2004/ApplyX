@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from validate_email import validate_email
 from webdriver_manager.chrome import ChromeDriverManager
 from linkedineasyapply import LinkedinEasyApply
+from easyapplybot.utils import init_browser as shared_init_browser, validate_yaml as shared_validate_yaml
 
 def init_browser():
     browser_options = Options()
@@ -25,7 +26,8 @@ def init_browser():
     for option in options:
         browser_options.add_argument(option)
 
-    service = Service(ChromeDriverManager().install())
+    # Use local chromedriver binary
+    service = Service(os.path.join(os.getcwd(), "chromedriver"))
     driver = webdriver.Chrome(service=service, options=browser_options)
     driver.implicitly_wait(1)  # Wait time in seconds to allow loading of elements
     driver.set_window_position(0, 0)
@@ -145,8 +147,8 @@ def validate_yaml():
     return parameters
 
 if __name__ == '__main__':
-    parameters = validate_yaml()
-    browser = init_browser()
+    parameters = shared_validate_yaml()
+    browser = shared_init_browser()
 
     bot = LinkedinEasyApply(parameters, browser)
     bot.login()

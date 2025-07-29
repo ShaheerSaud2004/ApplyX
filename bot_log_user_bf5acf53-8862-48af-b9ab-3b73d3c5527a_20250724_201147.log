@@ -1,0 +1,31 @@
+2025-07-24 20:11:47,885 - __main__ - INFO - ✅ Parsed configuration from command line
+2025-07-24 20:11:47,885 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-24 20:11:47,885 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753402307
+2025-07-24 20:11:47,885 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-24 20:11:47,885 - __main__ - INFO - ✅ Using provided configuration data
+2025-07-24 20:11:47,885 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-24 20:11:47,885 - __main__ - INFO - 👤 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-24 20:11:47,885 - __main__ - INFO - 🎯 Target Positions: Software Engineer, Developer
+2025-07-24 20:11:47,885 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-24 20:11:47,885 - __main__ - INFO - ================================================================================
+2025-07-24 20:11:47,885 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-24 20:11:47,885 - __main__ - INFO - ================================================================================
+2025-07-24 20:11:47,885 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-24 20:11:47,885 - __main__ - INFO - 📧 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-24 20:11:47,885 - __main__ - INFO - 🎯 Target Positions: Software Engineer, Developer
+2025-07-24 20:11:47,885 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-24 20:11:47,885 - __main__ - INFO - ⏰ Session Start: 2025-07-24 20:11:47
+2025-07-24 20:11:47,885 - __main__ - INFO - 🎯 Maximum Applications: 5
+2025-07-24 20:11:47,885 - __main__ - INFO - 🔧 Initializing browser...
+2025-07-24 20:11:47,885 - __main__ - INFO - 🌐 Initializing Chrome browser...
+2025-07-24 20:11:47,885 - __main__ - INFO - 🔄 Browser initialization attempt 1/3
+2025-07-24 20:11:47,885 - __main__ - INFO - 🎭 Using user agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+2025-07-24 20:11:47,885 - __main__ - INFO - 🔧 Using chromedriver: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chromedriver
+2025-07-24 20:11:49,149 - __main__ - INFO - ✅ Browser initialized successfully (attempt 1)
+2025-07-24 20:11:49,151 - __main__ - INFO - 🪟 Browser window size: {'width': 1710, 'height': 1011}
+2025-07-24 20:11:49,151 - __main__ - INFO - ✅ Browser initialization complete
+2025-07-24 20:11:49,151 - __main__ - INFO - 🤖 Initializing LinkedIn Easy Apply bot...
+2025-07-24 20:11:49,155 - __main__ - ERROR - ❌ FATAL ERROR in continuous applications: 'disableAntiLock'
+2025-07-24 20:11:49,160 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-24 20:11:49,231 - __main__ - INFO - ✅ Browser closed successfully
+2025-07-24 20:11:49,231 - __main__ - ERROR - ❌ Bot failed with error: 'disableAntiLock'

@@ -1,6 +1,6 @@
 # 🔑 Admin Credentials Setup Guide
 
-This guide shows you exactly what credentials you need to configure to run the Teemo AI platform in production.
+This guide shows you exactly what credentials you need to configure to run the ApplyX platform in production.
 
 ## 📋 Required Credentials Checklist
 
@@ -148,7 +148,7 @@ python3 test_e2e.py
 ## 👑 **Admin Access**
 
 ### **Default Admin Account**
-- **Email**: `admin@teemoai.com`
+- **Email**: `admin@applyx.ai`
 - **Password**: `admin123`
 - **Dashboard**: `http://localhost:3000/admin`
 

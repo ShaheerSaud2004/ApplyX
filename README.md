@@ -1,52 +1,75 @@
 # LinkedIn Easy Apply Bot
 
-_Automate your LinkedIn job applications with ease!_
+A Python-based LinkedIn job application bot that automates the application process for job seekers.
 
-This Python and Selenium-based bot automates applying to jobs using the Easy Apply feature on LinkedIn.
+## 🚀 Quick Start
 
-## Key Features
+### Prerequisites
+- Python 3.9+
+- Chrome browser
+- LinkedIn account
 
-- Apply to thousands of jobs effortlessly.
-- Track application dates and times for performance analysis.
+### Installation
+1. Clone this repository
+2. Install dependencies: `pip install -r requirements.txt`
+3. Configure `config.yaml` with your LinkedIn credentials and preferences
+4. Place your resume as `Shaheer_Saud_Resume.pdf` in the root directory
 
-## Important
+## 📁 Project Structure
 
-- Use at your own risk. LinkedIn may restrict or suspend accounts for bot usage.
-- Consider this an educational project.
-
-## Getting Started
-
-1. Modify the `config.py` file locally to include your LinkedIn credentials, personal information, and job preferences.
-
-2. Install python3 and pip3 on your system. Then, install the required dependencies using the following commands: (Unix commands)
-```bash
-sudo apt-get install python3
-python3 -m pip install -r requirements.txt
+```
+├── main.py              # Standard application mode
+├── main_fast.py         # Continuous application mode (1-2 min delays)
+├── linkedineasyapply.py # Core bot functionality
+├── easyapplybot/        # Utility functions
+│   └── utils.py
+├── config.yaml          # Configuration file
+├── requirements.txt     # Python dependencies
+├── Shaheer_Saud_Resume.pdf # Your resume
+├── chromedriver         # Chrome WebDriver
+└── chrome_bot/         # Browser session data
 ```
 
-3. Run the bot with python
+## 🎯 Usage
+
+### Standard Mode
 ```bash
-python3 main.py
+python main.py
 ```
+- Applies to jobs with safety features
+- Human-like behavior simulation
+- Session breaks and delays
 
-Optionally, watch this video tutorial by [voidbydefault](https://github.com/voidbydefault) during his time maintaining the project, on [YouTube](https://youtu.be/IXflenwJzhQ).
+### Continuous Mode (Fast Apply)
+```bash
+python main_fast.py
+```
+- Continuous applications with 1-2 minute delays
+- Full safety features enabled
+- Press Ctrl+C to stop safely
 
-## Additional Resources
+## ⚙️ Configuration
 
-- Optional BI dashboard setup: Watch this [YouTube](https://youtu.be/4LH8WTrMCxw) video.
-- **Troubleshooting:** Encounter errors? Ensure dependencies are installed.
-- **Issues** Raise issues page at my GitHub.
+Edit `config.yaml` to customize:
+- LinkedIn credentials
+- Job search preferences
+- Personal information
+- Application responses
 
-## Support This Project
+## 📊 Output Files
 
-By supporting this project, you help maintain and improve the bot. Your support is greatly appreciated!
+- `output.csv` - Successful applications
+- `failed.csv` - Failed applications
+- `qa_log.csv` - Question-answer logs
+- `unprepared_questions.csv` - Questions that need manual answers
 
-See the sponsor button on the top right of the page or [click here](https://github.com/sponsors/madingess).
+## 🔒 Safety Features
 
-Also, buy a coffee for [voidbydefault](https://github.com/voidbydefault) through [PayPal](https://paypal.me/voidbydefault) for his efforts maintaining and improving this bot!
+- Human behavior simulation
+- Random delays and breaks
+- Stealth browser configuration
+- Session management
 
-## Credits
+## 📝 License
 
-- Maintenance and significant updates: [Micheal Dingess](https://github.com/madingess/)
-- Improvements and maintenance contributions: [voidbydefault](https://github.com/voidbydefault) with fork [voidbydefault/EasyApplyBot](https://github.com/voidbydefault/EasyApplyBot)
-- Original developer: [Nathan Duma](https://github.com/NathanDuma) with [NathanDuma/LinkedIn-Easy-Apply-Bot](https://github.com/NathanDuma/LinkedIn-Easy-Apply-Bot)
+See LICENSE file for details.

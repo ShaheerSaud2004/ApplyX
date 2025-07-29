@@ -33,13 +33,13 @@ export default function SignupPage() {
   }
 
   const validateForm = () => {
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.password) {
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.password || !formData.confirmPassword) {
       setMessage({ type: 'error', text: 'All fields are required' })
       return false
     }
 
-    if (formData.password !== formData.confirmPassword) {
-      setMessage({ type: 'error', text: 'Passwords do not match' })
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      setMessage({ type: 'error', text: 'Please enter a valid email address' })
       return false
     }
 
@@ -48,8 +48,8 @@ export default function SignupPage() {
       return false
     }
 
-    if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      setMessage({ type: 'error', text: 'Please enter a valid email address' })
+    if (formData.password !== formData.confirmPassword) {
+      setMessage({ type: 'error', text: 'Passwords do not match' })
       return false
     }
 
@@ -67,7 +67,7 @@ export default function SignupPage() {
     setMessage({ type: '', text: '' })
 
     try {
-      const response = await fetch('http://localhost:5001/api/auth/register', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -83,14 +83,14 @@ export default function SignupPage() {
       const data = await response.json()
 
       if (response.ok) {
-        // Use auth context to login
-        login(data.token, data.user)
-        
-        setMessage({ type: 'success', text: 'Account created successfully! Redirecting...' })
-        
-        setTimeout(() => {
-          router.push('/dashboard')
-        }, 1500)
+        // If registration is successful and auto-login is enabled
+        if (data.token && data.user) {
+          login(data.token, data.user)
+          setMessage({ type: 'success', text: 'Account created successfully! Redirecting...' })
+        } else {
+          // If registration requires admin approval
+          setMessage({ type: 'success', text: data.message || 'Account created successfully! Please wait for admin approval.' })
+        }
       } else {
         setMessage({ type: 'error', text: data.error || 'Registration failed' })
       }
@@ -107,12 +107,25 @@ export default function SignupPage() {
         <CardHeader className="space-y-1">
           <div className="flex items-center justify-center mb-4">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-primary">Teemo AI</span>
+              <div className="relative">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                  <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-orange-500 to-red-500 rounded-full"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  ApplyX
+                </span>
+                <span className="text-xs text-muted-foreground -mt-1">by Nebula.AI</span>
+              </div>
             </Link>
           </div>
-          <CardTitle className="text-2xl text-center">Create Account</CardTitle>
+          <CardTitle className="text-2xl text-center">Create Your Account</CardTitle>
           <CardDescription className="text-center">
-            Join thousands of professionals automating their job search
+            Join thousands of professionals using ApplyX to land their dream jobs faster
           </CardDescription>
         </CardHeader>
         <CardContent>

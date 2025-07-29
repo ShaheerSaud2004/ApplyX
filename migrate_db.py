@@ -149,7 +149,7 @@ def migrate_database():
             print(f"✅ Generated referral codes for {len(users_without_codes)} users")
         
         # Create admin user if it doesn't exist
-        admin_email = "admin@teemoai.com"
+        admin_email = "admin@applyx.ai"
         cursor.execute('SELECT id FROM users WHERE email = ?', (admin_email,))
         if not cursor.fetchone():
             admin_id = str(uuid.uuid4())

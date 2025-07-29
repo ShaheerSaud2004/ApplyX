@@ -67,8 +67,10 @@ class BotSession:
 class EnhancedBotManager:
     """Enhanced bot manager with auto-restart, quota tracking, and monitoring"""
     
-    def __init__(self, db_path: str = "easyapply.db"):
-        self.db_path = db_path
+    def __init__(self, db_path: str = None):
+        # Import here to avoid circular imports
+        from quota_manager import get_db_path
+        self.db_path = db_path if db_path else get_db_path()
         self.active_sessions: Dict[str, BotSession] = {}
         self.monitoring_thread: Optional[threading.Thread] = None
         self.is_monitoring = False
@@ -334,6 +336,31 @@ class EnhancedBotManager:
             logger.error(f"Error restarting bot session for user {user_id}: {e}")
             return False
     
+    def stop_bot(self, user_id: str) -> Dict[str, Any]:
+        """Stop bot - wrapper method for compatibility with persistent_bot_manager"""
+        try:
+            success = self.stop_bot_session(user_id, "Manual stop via API")
+            if success:
+                return {
+                    'success': True,
+                    'message': f'Bot stopped successfully for user {user_id}',
+                    'user_id': user_id,
+                    'stopped_at': datetime.now().isoformat()
+                }
+            else:
+                return {
+                    'success': False,
+                    'error': f'Failed to stop bot session for user {user_id}',
+                    'user_id': user_id
+                }
+        except Exception as e:
+            logger.error(f"Error in stop_bot for user {user_id}: {e}")
+            return {
+                'success': False,
+                'error': f'Exception stopping bot: {str(e)}',
+                'user_id': user_id
+            }
+    
     def log_application(self, user_id: str, job_data: Dict[str, Any]):
         """Log a successful job application"""
         try:
@@ -562,6 +589,9 @@ class EnhancedBotManager:
     def _save_application_to_db(self, user_id: str, job_data: Dict[str, Any]):
         """Save application to database - both main table and enhanced tracking"""
         try:
+            # Import use_quota function from quota_manager to avoid circular imports
+            from quota_manager import use_quota
+            
             conn = sqlite3.connect(self.db_path)
             cursor = conn.cursor()
             
@@ -603,6 +633,13 @@ class EnhancedBotManager:
             
             conn.commit()
             conn.close()
+            
+            # Update daily quota usage
+            quota_used = use_quota(user_id, 1, 'application')
+            if quota_used:
+                logger.info(f"✅ QUOTA UPDATED: Used 1 application quota for user {user_id}")
+            else:
+                logger.warning(f"⚠️ QUOTA WARNING: Could not update quota for user {user_id}")
             
             logger.info(f"✅ DASHBOARD UPDATE: Saved application to main table - {job_data.get('job_title', '')} at {job_data.get('company', '')}")
             

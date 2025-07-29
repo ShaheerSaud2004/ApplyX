@@ -1,0 +1,286 @@
+2025-07-28 15:26:59,047 - __main__ - INFO - ================================================================================
+2025-07-28 15:26:59,047 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-28 15:26:59,047 - __main__ - INFO - ================================================================================
+2025-07-28 15:26:59,047 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:26:59,047 - __main__ - INFO - 🎯 Max Applications: 50
+2025-07-28 15:26:59,047 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:26:59,047 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753730819
+2025-07-28 15:26:59,047 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-28 15:26:59,047 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-28 15:26:59,048 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-28 15:26:59,048 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-28 15:26:59,048 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-28 15:26:59,075 - __main__ - INFO - ✅ Successfully decrypted credentials for: shaheersaud2004@gmail.com
+2025-07-28 15:26:59,075 - __main__ - INFO - 📋 LOADED JOB PREFERENCES FROM WEBSITE:
+2025-07-28 15:26:59,075 - __main__ - INFO -     📝 Job Titles: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-28 15:26:59,075 - __main__ - INFO -     📍 Locations: ['Remote', 'New Jersey', 'New York']
+2025-07-28 15:26:59,075 - __main__ - INFO -     💰 Salary Min: 65000
+2025-07-28 15:26:59,075 - __main__ - INFO -     📊 Experience: ['entry', 'associate']
+2025-07-28 15:26:59,075 - __main__ - INFO - ✅ Database configuration built successfully
+2025-07-28 15:26:59,075 - __main__ - INFO - 🎯 FINAL BOT SEARCH CONFIG:
+2025-07-28 15:26:59,075 - __main__ - INFO -     📝 Will search for: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-28 15:26:59,075 - __main__ - INFO -     📍 In locations: ['Remote', 'New Jersey', 'New York']
+2025-07-28 15:26:59,075 - __main__ - INFO -     🎯 Total job titles to search: 4
+2025-07-28 15:26:59,075 - __main__ - INFO - ✅ Configuration loaded from database
+2025-07-28 15:26:59,075 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-28 15:26:59,075 - __main__ - INFO - 👤 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-28 15:26:59,075 - __main__ - INFO - 🎯 Target Positions: Artificial Intelligence, Machine Learning, Cybersecurity, Security Engineer
+2025-07-28 15:26:59,075 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-28 15:26:59,075 - __main__ - INFO - ================================================================================
+2025-07-28 15:26:59,075 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-28 15:26:59,075 - __main__ - INFO - ================================================================================
+2025-07-28 15:26:59,075 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:26:59,075 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753730819
+2025-07-28 15:26:59,075 - __main__ - INFO - 📧 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-28 15:26:59,075 - __main__ - INFO - 🔢 Max Applications: 50
+2025-07-28 15:26:59,075 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-28 15:26:59,075 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-28 15:26:59,076 - __main__ - INFO - ✅ Cleared 0 previous activity log entries
+2025-07-28 15:26:59,076 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-28 15:26:59,076 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:27:01,194 - __main__ - INFO - ✅ Browser initialized successfully
+2025-07-28 15:27:01,195 - __main__ - INFO - 🤖 Initializing LinkedIn bot...
+2025-07-28 15:27:01,195 - __main__ - INFO - 📧 Using email: shaheersaud2004@gmail.com
+2025-07-28 15:27:01,195 - __main__ - INFO - 🎯 Target positions: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-28 15:27:01,195 - __main__ - INFO - 📍 Target locations: ['Remote', 'New Jersey', 'New York']
+2025-07-28 15:27:01,195 - __main__ - INFO - ✅ Credentials verified - Email: shaheersaud2004@gmail.com
+2025-07-28 15:27:01,195 - __main__ - INFO - ✅ Proceeding with bot creation
+2025-07-28 15:27:01,203 - __main__ - INFO - ✅ Bot successfully created with email: sha***.com
+2025-07-28 15:27:01,204 - __main__ - INFO - ✅ LinkedIn bot initialized with simple config approach
+2025-07-28 15:27:01,204 - __main__ - INFO - ✅ Database integration enabled for application tracking
+2025-07-28 15:27:01,204 - __main__ - INFO - 🔐 Starting LinkedIn login process...
+2025-07-28 15:27:01,206 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-28 15:27:24,841 - __main__ - INFO - ✅ LinkedIn login successful
+2025-07-28 15:27:24,842 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-28 15:27:24,842 - __main__ - INFO - 🛡️ Performing security check...
+2025-07-28 15:27:24,918 - __main__ - INFO - ✅ Security check passed
+2025-07-28 15:27:24,919 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-28 15:27:24,919 - __main__ - INFO - 🎯 Starting job application process...
+2025-07-28 15:27:24,919 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-28 15:27:24,919 - __main__ - INFO - 🔍 Looking for job opportunities (attempt 1)...
+2025-07-28 15:27:24,919 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-28 15:28:51,473 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 🏢 Company: CitiusTech
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 💼 Job Title: Data Governance Analyst
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 🔗 URL: https://www.linkedin.com/jobs/view/4277250585/
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 🎯 Search Location: New Jersey
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-28 15:28:51.474417
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:28:51,474 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-28 15:28:51,517 - __main__ - INFO - 🔍 SAVING DISCOVERED JOB TO MANUAL APPLY DATABASE:
+2025-07-28 15:28:51,517 - __main__ - INFO - 🔍    🏢 Company: CitiusTech
+2025-07-28 15:28:51,517 - __main__ - INFO - 🔍    💼 Job Title: Data Governance Analyst
+2025-07-28 15:28:51,517 - __main__ - INFO - 🔍    📍 Location: 
+2025-07-28 15:28:51,517 - __main__ - INFO - 🔍    🆔 Job ID: b0256c5d17b0fdec825e5c8dea0a2db5
+2025-07-28 15:28:51,517 - __main__ - INFO - 🔍    📂 Category: data
+2025-07-28 15:28:51,518 - __main__ - INFO - ✅ Job saved to manual apply database!
+2025-07-28 15:28:51,518 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-28 15:28:51,518 - __main__ - INFO - 💾    🏢 Company: CitiusTech
+2025-07-28 15:28:51,518 - __main__ - INFO - 💾    💼 Job Title: Data Governance Analyst
+2025-07-28 15:28:51,519 - __main__ - INFO - 💾    📍 Location: 
+2025-07-28 15:28:51,519 - __main__ - INFO - 💾    🔗 URL: https://www.linkedin.com/jobs/view/4277250585/
+2025-07-28 15:28:51,519 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:28:51,519 - __main__ - INFO - 💾    🆔 Application ID: 33ff28a5-3fb3-436b-91c0-e0621c35b543
+2025-07-28 15:28:51,519 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:28:51,519 - __main__ - INFO - ✅ Application ID: 33ff28a5-3fb3-436b-91c0-e0621c35b543
+2025-07-28 15:28:51,519 - __main__ - INFO - 📊 Total applications for user: 1
+2025-07-28 15:28:51,519 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:28:51,520 - __main__ - INFO - 🎯 📊 Application ID: 33ff28a5-3fb3-436b-91c0-e0621c35b543
+2025-07-28 15:28:51,520 - __main__ - INFO - 🎯 📈 Total applications today: 1
+2025-07-28 15:28:51,520 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-28 15:28:51,520 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-28 15:28:51,520 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-28 15:28:51,520 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-28 15:28:51,520 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:29:31,914 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-28 15:29:31,914 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:29:31,915 - __main__ - INFO - 🎯 🏢 Company: Peskind Executive Search, Inc. 
+2025-07-28 15:29:31,915 - __main__ - INFO - 🎯 💼 Job Title: Computer Vision & Algorithms Engineer (NJ Based)
+2025-07-28 15:29:31,915 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-28 15:29:31,915 - __main__ - INFO - 🎯 🔗 URL: https://www.linkedin.com/jobs/view/4260713164/
+2025-07-28 15:29:31,915 - __main__ - INFO - 🎯 🎯 Search Location: New Jersey
+2025-07-28 15:29:31,915 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:29:31,915 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-28 15:29:31.915436
+2025-07-28 15:29:31,915 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:29:31,915 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-28 15:29:31,917 - __main__ - INFO - 🔍 SAVING DISCOVERED JOB TO MANUAL APPLY DATABASE:
+2025-07-28 15:29:31,917 - __main__ - INFO - 🔍    🏢 Company: Peskind Executive Search, Inc. 
+2025-07-28 15:29:31,917 - __main__ - INFO - 🔍    💼 Job Title: Computer Vision & Algorithms Engineer (NJ Based)
+2025-07-28 15:29:31,917 - __main__ - INFO - 🔍    📍 Location: 
+2025-07-28 15:29:31,917 - __main__ - INFO - 🔍    🆔 Job ID: 008deab18dcb75a7bee222728bafbba4
+2025-07-28 15:29:31,917 - __main__ - INFO - 🔍    📂 Category: software
+2025-07-28 15:29:31,919 - __main__ - INFO - ✅ Job saved to manual apply database!
+2025-07-28 15:29:31,919 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-28 15:29:31,919 - __main__ - INFO - 💾    🏢 Company: Peskind Executive Search, Inc. 
+2025-07-28 15:29:31,919 - __main__ - INFO - 💾    💼 Job Title: Computer Vision & Algorithms Engineer (NJ Based)
+2025-07-28 15:29:31,919 - __main__ - INFO - 💾    📍 Location: 
+2025-07-28 15:29:31,919 - __main__ - INFO - 💾    🔗 URL: https://www.linkedin.com/jobs/view/4260713164/
+2025-07-28 15:29:31,919 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:29:31,919 - __main__ - INFO - 💾    🆔 Application ID: 2eff2e94-426d-46ed-8725-3a69b81c54af
+2025-07-28 15:29:31,920 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:29:31,920 - __main__ - INFO - ✅ Application ID: 2eff2e94-426d-46ed-8725-3a69b81c54af
+2025-07-28 15:29:31,920 - __main__ - INFO - 📊 Total applications for user: 2
+2025-07-28 15:29:31,921 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:29:31,921 - __main__ - INFO - 🎯 📊 Application ID: 2eff2e94-426d-46ed-8725-3a69b81c54af
+2025-07-28 15:29:31,921 - __main__ - INFO - 🎯 📈 Total applications today: 2
+2025-07-28 15:29:31,921 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-28 15:29:31,921 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-28 15:29:31,922 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-28 15:29:31,922 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-28 15:29:31,922 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:30:53,347 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-28 15:30:53,349 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:30:53,349 - __main__ - INFO - 🎯 🏢 Company: Stratacent
+2025-07-28 15:30:53,349 - __main__ - INFO - 🎯 💼 Job Title: Cloud Data Engineer
+2025-07-28 15:30:53,349 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-28 15:30:53,349 - __main__ - INFO - 🎯 🔗 URL: https://www.linkedin.com/jobs/view/4255952964/
+2025-07-28 15:30:53,349 - __main__ - INFO - 🎯 🎯 Search Location: New Jersey
+2025-07-28 15:30:53,349 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:30:53,350 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-28 15:30:53.349997
+2025-07-28 15:30:53,350 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:30:53,350 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-28 15:30:53,352 - __main__ - INFO - 🔍 SAVING DISCOVERED JOB TO MANUAL APPLY DATABASE:
+2025-07-28 15:30:53,353 - __main__ - INFO - 🔍    🏢 Company: Stratacent
+2025-07-28 15:30:53,353 - __main__ - INFO - 🔍    💼 Job Title: Cloud Data Engineer
+2025-07-28 15:30:53,353 - __main__ - INFO - 🔍    📍 Location: 
+2025-07-28 15:30:53,353 - __main__ - INFO - 🔍    🆔 Job ID: 911cc2ce861eec8d94219140cae9b4da
+2025-07-28 15:30:53,353 - __main__ - INFO - 🔍    📂 Category: software
+2025-07-28 15:30:53,355 - __main__ - INFO - ✅ Job saved to manual apply database!
+2025-07-28 15:30:53,355 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-28 15:30:53,355 - __main__ - INFO - 💾    🏢 Company: Stratacent
+2025-07-28 15:30:53,355 - __main__ - INFO - 💾    💼 Job Title: Cloud Data Engineer
+2025-07-28 15:30:53,355 - __main__ - INFO - 💾    📍 Location: 
+2025-07-28 15:30:53,356 - __main__ - INFO - 💾    🔗 URL: https://www.linkedin.com/jobs/view/4255952964/
+2025-07-28 15:30:53,356 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:30:53,356 - __main__ - INFO - 💾    🆔 Application ID: b5ba84e0-184b-490f-8022-6122b238db4d
+2025-07-28 15:30:53,358 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:30:53,358 - __main__ - INFO - ✅ Application ID: b5ba84e0-184b-490f-8022-6122b238db4d
+2025-07-28 15:30:53,358 - __main__ - INFO - 📊 Total applications for user: 3
+2025-07-28 15:30:53,359 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:30:53,359 - __main__ - INFO - 🎯 📊 Application ID: b5ba84e0-184b-490f-8022-6122b238db4d
+2025-07-28 15:30:53,359 - __main__ - INFO - 🎯 📈 Total applications today: 3
+2025-07-28 15:30:53,359 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-28 15:30:53,359 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-28 15:30:53,361 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-28 15:30:53,361 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-28 15:30:53,361 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:32:08,849 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 🏢 Company: AMISEQ
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 💼 Job Title: DataBricks Architect
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 🔗 URL: https://www.linkedin.com/jobs/view/4260403176/
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 🎯 Search Location: New Jersey
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-28 15:32:08.850278
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:32:08,850 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-28 15:32:08,851 - __main__ - INFO - 🔍 SAVING DISCOVERED JOB TO MANUAL APPLY DATABASE:
+2025-07-28 15:32:08,851 - __main__ - INFO - 🔍    🏢 Company: AMISEQ
+2025-07-28 15:32:08,851 - __main__ - INFO - 🔍    💼 Job Title: DataBricks Architect
+2025-07-28 15:32:08,851 - __main__ - INFO - 🔍    📍 Location: 
+2025-07-28 15:32:08,851 - __main__ - INFO - 🔍    🆔 Job ID: ec88863fa4640a3c22c6a2d5ff74ed60
+2025-07-28 15:32:08,851 - __main__ - INFO - 🔍    📂 Category: data
+2025-07-28 15:32:08,852 - __main__ - INFO - ✅ Job saved to manual apply database!
+2025-07-28 15:32:08,852 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-28 15:32:08,852 - __main__ - INFO - 💾    🏢 Company: AMISEQ
+2025-07-28 15:32:08,852 - __main__ - INFO - 💾    💼 Job Title: DataBricks Architect
+2025-07-28 15:32:08,852 - __main__ - INFO - 💾    📍 Location: 
+2025-07-28 15:32:08,852 - __main__ - INFO - 💾    🔗 URL: https://www.linkedin.com/jobs/view/4260403176/
+2025-07-28 15:32:08,852 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:32:08,852 - __main__ - INFO - 💾    🆔 Application ID: 50d15870-4380-4524-92a9-bd91144dd504
+2025-07-28 15:32:08,853 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:32:08,853 - __main__ - INFO - ✅ Application ID: 50d15870-4380-4524-92a9-bd91144dd504
+2025-07-28 15:32:08,853 - __main__ - INFO - 📊 Total applications for user: 4
+2025-07-28 15:32:08,853 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:32:08,853 - __main__ - INFO - 🎯 📊 Application ID: 50d15870-4380-4524-92a9-bd91144dd504
+2025-07-28 15:32:08,853 - __main__ - INFO - 🎯 📈 Total applications today: 4
+2025-07-28 15:32:08,853 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-28 15:32:08,853 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-28 15:32:08,854 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-28 15:32:08,854 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-28 15:32:08,854 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:33:35,549 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 🏢 Company: Covenant HR
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 💼 Job Title: Cognitive Computing Specialist
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 🔗 URL: https://www.linkedin.com/jobs/view/4275631369/
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 🎯 Search Location: New Jersey
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-28 15:33:35.551517
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:33:35,551 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-28 15:33:35,553 - __main__ - INFO - 🔍 SAVING DISCOVERED JOB TO MANUAL APPLY DATABASE:
+2025-07-28 15:33:35,553 - __main__ - INFO - 🔍    🏢 Company: Covenant HR
+2025-07-28 15:33:35,553 - __main__ - INFO - 🔍    💼 Job Title: Cognitive Computing Specialist
+2025-07-28 15:33:35,553 - __main__ - INFO - 🔍    📍 Location: 
+2025-07-28 15:33:35,553 - __main__ - INFO - 🔍    🆔 Job ID: 3254806b12507dca5eb6596af2a4c8af
+2025-07-28 15:33:35,553 - __main__ - INFO - 🔍    📂 Category: other
+2025-07-28 15:33:35,555 - __main__ - INFO - ✅ Job saved to manual apply database!
+2025-07-28 15:33:35,555 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-28 15:33:35,555 - __main__ - INFO - 💾    🏢 Company: Covenant HR
+2025-07-28 15:33:35,555 - __main__ - INFO - 💾    💼 Job Title: Cognitive Computing Specialist
+2025-07-28 15:33:35,555 - __main__ - INFO - 💾    📍 Location: 
+2025-07-28 15:33:35,555 - __main__ - INFO - 💾    🔗 URL: https://www.linkedin.com/jobs/view/4275631369/
+2025-07-28 15:33:35,555 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:33:35,555 - __main__ - INFO - 💾    🆔 Application ID: 4e227a02-0857-444e-8a9e-06e761664e9e
+2025-07-28 15:33:35,558 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:33:35,558 - __main__ - INFO - ✅ Application ID: 4e227a02-0857-444e-8a9e-06e761664e9e
+2025-07-28 15:33:35,558 - __main__ - INFO - 📊 Total applications for user: 5
+2025-07-28 15:33:35,559 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:33:35,559 - __main__ - INFO - 🎯 📊 Application ID: 4e227a02-0857-444e-8a9e-06e761664e9e
+2025-07-28 15:33:35,559 - __main__ - INFO - 🎯 📈 Total applications today: 5
+2025-07-28 15:33:35,559 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-28 15:33:35,559 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-28 15:33:35,560 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-28 15:33:35,560 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-28 15:33:35,560 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:35:02,537 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 🏢 Company: Bayforce
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 💼 Job Title: Data Engineer
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 🔗 URL: https://www.linkedin.com/jobs/view/4275798256/
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 🎯 Search Location: New Jersey
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-28 15:35:02.539622
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:35:02,539 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-28 15:35:02,541 - __main__ - INFO - 🔍 SAVING DISCOVERED JOB TO MANUAL APPLY DATABASE:
+2025-07-28 15:35:02,541 - __main__ - INFO - 🔍    🏢 Company: Bayforce
+2025-07-28 15:35:02,541 - __main__ - INFO - 🔍    💼 Job Title: Data Engineer
+2025-07-28 15:35:02,541 - __main__ - INFO - 🔍    📍 Location: 
+2025-07-28 15:35:02,541 - __main__ - INFO - 🔍    🆔 Job ID: d39131a1116231df7403112c2df92ed5
+2025-07-28 15:35:02,541 - __main__ - INFO - 🔍    📂 Category: software
+2025-07-28 15:35:02,543 - __main__ - INFO - ✅ Job saved to manual apply database!
+2025-07-28 15:35:02,543 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-28 15:35:02,543 - __main__ - INFO - 💾    🏢 Company: Bayforce
+2025-07-28 15:35:02,543 - __main__ - INFO - 💾    💼 Job Title: Data Engineer
+2025-07-28 15:35:02,543 - __main__ - INFO - 💾    📍 Location: 
+2025-07-28 15:35:02,543 - __main__ - INFO - 💾    🔗 URL: https://www.linkedin.com/jobs/view/4275798256/
+2025-07-28 15:35:02,543 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-28 15:35:02,543 - __main__ - INFO - 💾    🆔 Application ID: 01dc1eb8-0475-436f-ab24-d91e2abd92a1
+2025-07-28 15:35:02,545 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:35:02,545 - __main__ - INFO - ✅ Application ID: 01dc1eb8-0475-436f-ab24-d91e2abd92a1
+2025-07-28 15:35:02,545 - __main__ - INFO - 📊 Total applications for user: 6
+2025-07-28 15:35:02,546 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-28 15:35:02,546 - __main__ - INFO - 🎯 📊 Application ID: 01dc1eb8-0475-436f-ab24-d91e2abd92a1
+2025-07-28 15:35:02,547 - __main__ - INFO - 🎯 📈 Total applications today: 6
+2025-07-28 15:35:02,547 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-28 15:35:02,547 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-28 15:35:02,548 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-28 15:35:02,548 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-28 15:35:02,548 - __main__ - INFO - 🎯 ===============================================
+2025-07-28 15:35:29,304 - __main__ - ERROR - ❌ Error in application cycle: [Errno 32] Broken pipe
+2025-07-28 15:35:29,305 - __main__ - ERROR - ❌ FATAL ERROR in continuous applications: [Errno 32] Broken pipe
+2025-07-28 15:35:29,305 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-28 15:35:29,305 - __main__ - INFO - 🌐 Closing browser...
+2025-07-28 15:35:29,552 - __main__ - INFO - ✅ Browser closed successfully
+2025-07-28 15:35:29,552 - __main__ - INFO - 🧹 Cleaning up existing Chrome processes...
+2025-07-28 15:35:31,592 - __main__ - INFO - ✅ Chrome processes cleaned up
+2025-07-28 15:35:31,592 - __main__ - INFO - ✅ Cleanup completed
+2025-07-28 15:35:31,592 - __main__ - ERROR - ❌ Bot execution failed: [Errno 32] Broken pipe

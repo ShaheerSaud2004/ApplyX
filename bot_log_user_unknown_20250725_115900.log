@@ -1,0 +1,13 @@
+2025-07-25 11:59:06,268 - main_fast_user - INFO - 🚀 Initializing Enhanced User Bot for user: test_user_123
+2025-07-25 11:59:06,268 - main_fast_user - INFO - 📝 Session ID: test_user_123_1753459146
+2025-07-25 11:59:06,268 - main_fast_user - INFO - 💾 Database path: backend/easyapply.db
+2025-07-25 11:59:06,268 - main_fast_user - INFO - 🗄️ Initializing database for application tracking...
+2025-07-25 11:59:06,269 - main_fast_user - INFO - ✅ Database initialized successfully
+2025-07-25 11:59:06,269 - main_fast_user - INFO - 📋 Loading user configuration...
+2025-07-25 11:59:06,269 - main_fast_user - INFO - 📊 Querying database for user configuration...
+2025-07-25 11:59:06,270 - main_fast_user - ERROR - ❌ User not found or missing LinkedIn credentials
+2025-07-25 11:59:06,281 - main_fast_user - WARNING - ⚠️ Using fallback config.yaml file
+2025-07-25 11:59:06,281 - main_fast_user - INFO - ✅ Configuration loaded successfully
+2025-07-25 11:59:06,281 - main_fast_user - INFO - 👤 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-25 11:59:06,281 - main_fast_user - INFO - 🎯 Target Positions: Artificial Intelligence, Machine Learning, Networking, Cybersecurity, Cyber Security Engineer, Cyber Security Specialist, Cybersecurity Engineer, Cybersecurity Specialist, Security Engineer, Security Analyst, SOC Analyst, Network Security Engineer, Information Security Engineer, Threat Detection Engineer, Incident Response Analyst, Machine Learning Engineer, AI Engineer, Data Scientist, Security Researcher
+2025-07-25 11:59:06,282 - main_fast_user - INFO - 📍 Target Locations: Any

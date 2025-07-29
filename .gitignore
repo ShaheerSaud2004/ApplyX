@@ -1,9 +1,73 @@
-failedRemote.csv
-outputRemote.csv
-unprepared_questions.csv
-.idea/
-**/__pycache__/
-chrome_bot/
+# Logs
+*.log
+bot_log_*.txt
+
+# Node modules  
+node_modules/
+
+# Virtual environment
+venv/
+
+# Chrome user data
+chrome_bot*/
+
+# Build outputs
+.next/
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Database files
+*.db
+*.db-journal
+
+# Upload folders
+uploads/
+backend/uploads/
+
+# Cache directories
+.cache/
+.npm/
+.eslintcache
+
+# IDE files
 .vscode/
-failed.csv
-output.csv
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+# Large log files
+backend/bot_log_*.txt
+*.log
+
+# Node modules - should never be committed
+node_modules/
+
+# Build outputs
+.next/
+
+# Large binary files
+*.node
+
+# Database files
+*.db
+*.db-journal
+
+# Upload folders
+uploads/
+backend/uploads/
+
+# Chrome user data
+chrome_bot*/
+
+# Virtual environment
+venv/

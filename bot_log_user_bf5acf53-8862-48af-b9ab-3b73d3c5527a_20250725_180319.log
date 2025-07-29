@@ -1,0 +1,169 @@
+2025-07-25 18:03:19,174 - __main__ - INFO - ================================================================================
+2025-07-25 18:03:19,174 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-25 18:03:19,174 - __main__ - INFO - ================================================================================
+2025-07-25 18:03:19,175 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:03:19,175 - __main__ - INFO - 🎯 Max Applications: 5
+2025-07-25 18:03:19,175 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:03:19,175 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753480999
+2025-07-25 18:03:19,175 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-25 18:03:19,175 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-25 18:03:19,176 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-25 18:03:19,176 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-25 18:03:19,176 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-25 18:03:19,178 - __main__ - ERROR - ❌ Decryption returned empty credentials
+2025-07-25 18:03:19,187 - __main__ - WARNING - ⚠️ Using fallback config.yaml file
+2025-07-25 18:03:19,187 - __main__ - INFO - 📧 Found email in config.yaml: shaheersaud2004@gmail.com
+2025-07-25 18:03:19,188 - __main__ - INFO - 🔒 Found password in config.yaml
+2025-07-25 18:03:19,188 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-25 18:03:19,188 - __main__ - INFO - 👤 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-25 18:03:19,188 - __main__ - INFO - 🎯 Target Positions: Artificial Intelligence, Machine Learning, Networking, Cybersecurity, Cyber Security Engineer, Cyber Security Specialist, Cybersecurity Engineer, Cybersecurity Specialist, Security Engineer, Security Analyst, SOC Analyst, Network Security Engineer, Information Security Engineer, Threat Detection Engineer, Incident Response Analyst, Machine Learning Engineer, AI Engineer, Data Scientist, Security Researcher
+2025-07-25 18:03:19,188 - __main__ - INFO - 📍 Target Locations: Any
+2025-07-25 18:03:19,188 - __main__ - INFO - ================================================================================
+2025-07-25 18:03:19,188 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-25 18:03:19,188 - __main__ - INFO - ================================================================================
+2025-07-25 18:03:19,188 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:03:19,188 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753480999
+2025-07-25 18:03:19,188 - __main__ - INFO - 📧 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-25 18:03:19,188 - __main__ - INFO - 🔢 Max Applications: 5
+2025-07-25 18:03:19,188 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-25 18:03:19,188 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-25 18:03:19,188 - __main__ - INFO - ✅ Cleared 0 previous activity log entries
+2025-07-25 18:03:19,188 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-25 18:03:19,188 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:03:21,423 - __main__ - INFO - ✅ Browser initialized successfully
+2025-07-25 18:03:21,423 - __main__ - INFO - 🤖 Initializing LinkedIn bot...
+2025-07-25 18:03:21,423 - __main__ - INFO - 📧 Using email: shaheersaud2004@gmail.com
+2025-07-25 18:03:21,423 - __main__ - INFO - 🎯 Target positions: ['Artificial Intelligence', 'Machine Learning', 'Networking', 'Cybersecurity', 'Cyber Security Engineer', 'Cyber Security Specialist', 'Cybersecurity Engineer', 'Cybersecurity Specialist', 'Security Engineer', 'Security Analyst', 'SOC Analyst', 'Network Security Engineer', 'Information Security Engineer', 'Threat Detection Engineer', 'Incident Response Analyst', 'Machine Learning Engineer', 'AI Engineer', 'Data Scientist', 'Security Researcher']
+2025-07-25 18:03:21,423 - __main__ - INFO - 📍 Target locations: ['Any']
+2025-07-25 18:03:21,423 - __main__ - INFO - ✅ Credentials verified - Email: shaheersaud2004@gmail.com
+2025-07-25 18:03:21,423 - __main__ - INFO - ✅ Proceeding with bot creation
+2025-07-25 18:03:21,433 - __main__ - INFO - ✅ Bot successfully created with email: sha***.com
+2025-07-25 18:03:21,433 - __main__ - INFO - ✅ LinkedIn bot initialized with simple config approach
+2025-07-25 18:03:21,433 - __main__ - INFO - ✅ Database integration enabled for application tracking
+2025-07-25 18:03:21,433 - __main__ - INFO - 🔐 Starting LinkedIn login process...
+2025-07-25 18:03:21,434 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 18:03:44,809 - __main__ - INFO - ✅ LinkedIn login successful
+2025-07-25 18:03:44,810 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 18:03:44,810 - __main__ - INFO - 🛡️ Performing security check...
+2025-07-25 18:03:44,860 - __main__ - INFO - ✅ Security check passed
+2025-07-25 18:03:44,861 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 18:03:44,862 - __main__ - INFO - 🎯 Starting job application process...
+2025-07-25 18:03:44,862 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 18:03:44,862 - __main__ - INFO - 🔍 Looking for job opportunities (attempt 1)...
+2025-07-25 18:03:44,862 - __main__ - WARNING - ⚠️ Failed to log activity: datatype mismatch
+2025-07-25 18:05:19,404 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 🏢 Company: ISTA Solutions
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 💼 Job Title: Data Analyst - EST Hours (Remote)
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 🔗 URL: https://www.linkedin.com/jobs/view/4228272246/
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 🎯 Search Location: Any
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-25 18:05:19.405552
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:05:19,405 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-25 18:05:19,405 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-25 18:05:19,405 - __main__ - INFO - 💾    🏢 Company: ISTA Solutions
+2025-07-25 18:05:19,405 - __main__ - INFO - 💾    💼 Job Title: Data Analyst - EST Hours (Remote)
+2025-07-25 18:05:19,405 - __main__ - INFO - 💾    📍 Location: 
+2025-07-25 18:05:19,405 - __main__ - INFO - 💾    🔗 URL: https://www.linkedin.com/jobs/view/4228272246/
+2025-07-25 18:05:19,405 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:05:19,405 - __main__ - INFO - 💾    🆔 Application ID: 78407a89-aa95-4f17-9f80-d1858449b273
+2025-07-25 18:05:19,407 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-25 18:05:19,407 - __main__ - INFO - ✅ Application ID: 78407a89-aa95-4f17-9f80-d1858449b273
+2025-07-25 18:05:19,407 - __main__ - INFO - 📊 Total applications for user: 31
+2025-07-25 18:05:19,407 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-25 18:05:19,407 - __main__ - INFO - 🎯 📊 Application ID: 78407a89-aa95-4f17-9f80-d1858449b273
+2025-07-25 18:05:19,407 - __main__ - INFO - 🎯 📈 Total applications today: 1
+2025-07-25 18:05:19,407 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-25 18:05:19,407 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-25 18:05:19,408 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-25 18:05:19,408 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-25 18:05:19,408 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 🏢 Company: 
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 💼 Job Title: 
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 🔗 URL: 
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 🎯 Search Location: Any
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-25 18:05:24.234497
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:05:24,234 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-25 18:05:24,234 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-25 18:05:24,234 - __main__ - INFO - 💾    🏢 Company: 
+2025-07-25 18:05:24,234 - __main__ - INFO - 💾    💼 Job Title: 
+2025-07-25 18:05:24,234 - __main__ - INFO - 💾    📍 Location: 
+2025-07-25 18:05:24,234 - __main__ - INFO - 💾    🔗 URL: 
+2025-07-25 18:05:24,234 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:05:24,234 - __main__ - INFO - 💾    🆔 Application ID: f3ab38a8-dedd-4278-af07-afc8ff4ddaf0
+2025-07-25 18:05:24,235 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-25 18:05:24,236 - __main__ - INFO - ✅ Application ID: f3ab38a8-dedd-4278-af07-afc8ff4ddaf0
+2025-07-25 18:05:24,236 - __main__ - INFO - 📊 Total applications for user: 32
+2025-07-25 18:05:24,236 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-25 18:05:24,236 - __main__ - INFO - 🎯 📊 Application ID: f3ab38a8-dedd-4278-af07-afc8ff4ddaf0
+2025-07-25 18:05:24,236 - __main__ - INFO - 🎯 📈 Total applications today: 2
+2025-07-25 18:05:24,236 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-25 18:05:24,236 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-25 18:05:24,236 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-25 18:05:24,236 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-25 18:05:24,236 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 🏢 Company: ISTA Solutions
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 💼 Job Title: Virtual Healthcare Case Coordinator (Skilled Nursing) - EST hours (Remote)
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 🔗 URL: https://www.linkedin.com/jobs/view/4247437520/
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 🎯 Search Location: Any
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-25 18:07:10.455811
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:07:10,455 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-25 18:07:10,455 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-25 18:07:10,455 - __main__ - INFO - 💾    🏢 Company: ISTA Solutions
+2025-07-25 18:07:10,455 - __main__ - INFO - 💾    💼 Job Title: Virtual Healthcare Case Coordinator (Skilled Nursing) - EST hours (Remote)
+2025-07-25 18:07:10,455 - __main__ - INFO - 💾    📍 Location: 
+2025-07-25 18:07:10,455 - __main__ - INFO - 💾    🔗 URL: https://www.linkedin.com/jobs/view/4247437520/
+2025-07-25 18:07:10,455 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:07:10,456 - __main__ - INFO - 💾    🆔 Application ID: 37528700-d06b-4e65-b538-08c6fceaac69
+2025-07-25 18:07:10,457 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-25 18:07:10,457 - __main__ - INFO - ✅ Application ID: 37528700-d06b-4e65-b538-08c6fceaac69
+2025-07-25 18:07:10,458 - __main__ - INFO - 📊 Total applications for user: 33
+2025-07-25 18:07:10,458 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-25 18:07:10,458 - __main__ - INFO - 🎯 📊 Application ID: 37528700-d06b-4e65-b538-08c6fceaac69
+2025-07-25 18:07:10,458 - __main__ - INFO - 🎯 📈 Total applications today: 3
+2025-07-25 18:07:10,458 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-25 18:07:10,458 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 SUCCESSFUL APPLICATION DETECTED!
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 🏢 Company: ISTA Solutions
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 💼 Job Title: Virtual Healthcare Case Coordinator (Skilled Nursing) - EST hours (Remote)
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 📍 Location: 
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 🔗 URL: https://www.linkedin.com/jobs/view/4247437520/
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 🎯 Search Location: Any
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:07:10,459 - __main__ - INFO - 🎯 🕐 Timestamp: 2025-07-25 18:07:10.459994
+2025-07-25 18:07:10,460 - __main__ - INFO - 🎯 ===============================================
+2025-07-25 18:07:10,460 - __main__ - INFO - 🎯 💾 SAVING TO DATABASE FOR DASHBOARD...
+2025-07-25 18:07:10,460 - __main__ - INFO - 💾 SAVING APPLICATION TO DATABASE:
+2025-07-25 18:07:10,460 - __main__ - INFO - 💾    🏢 Company: ISTA Solutions
+2025-07-25 18:07:10,460 - __main__ - INFO - 💾    💼 Job Title: Virtual Healthcare Case Coordinator (Skilled Nursing) - EST hours (Remote)
+2025-07-25 18:07:10,460 - __main__ - INFO - 💾    📍 Location: 
+2025-07-25 18:07:10,460 - __main__ - INFO - 💾    🔗 URL: https://www.linkedin.com/jobs/view/4247437520/
+2025-07-25 18:07:10,460 - __main__ - INFO - 💾    👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-25 18:07:10,460 - __main__ - INFO - 💾    🆔 Application ID: 9accec8f-836b-4d6e-a0d4-37f815ee7dd5
+2025-07-25 18:07:10,460 - __main__ - INFO - ✅ APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-25 18:07:10,460 - __main__ - INFO - ✅ Application ID: 9accec8f-836b-4d6e-a0d4-37f815ee7dd5
+2025-07-25 18:07:10,460 - __main__ - INFO - 📊 Total applications for user: 34
+2025-07-25 18:07:10,460 - __main__ - INFO - 🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!
+2025-07-25 18:07:10,460 - __main__ - INFO - 🎯 📊 Application ID: 9accec8f-836b-4d6e-a0d4-37f815ee7dd5
+2025-07-25 18:07:10,460 - __main__ - INFO - 🎯 📈 Total applications today: 4
+2025-07-25 18:07:10,460 - __main__ - INFO - 🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!
+2025-07-25 18:07:10,460 - __main__ - INFO - 🎯 📄 SAVING TO CSV FILE (BACKUP)...
+2025-07-25 18:07:10,461 - __main__ - INFO - 🎯 ✅ CSV backup completed successfully
+2025-07-25 18:07:10,461 - __main__ - INFO - 🎯 🎉 APPLICATION PROCESSING COMPLETED!
+2025-07-25 18:07:10,461 - __main__ - INFO - 🎯 ===============================================

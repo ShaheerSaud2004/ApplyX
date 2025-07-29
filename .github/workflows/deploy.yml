@@ -1,0 +1,50 @@
+name: Deploy to Digital Ocean
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        npm install
+        cd backend && pip install -r requirements.txt
+        
+    - name: Build frontend
+      run: |
+        npm run build
+        
+    - name: Deploy to Digital Ocean via SSH
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.DO_HOST }}
+        username: ${{ secrets.DO_USERNAME }}
+        key: ${{ secrets.DO_SSH_KEY }}
+        script: |
+          cd /var/www/applyx
+          git pull origin master
+          npm install
+          npm run build
+          cd backend
+          pip install -r requirements.txt
+          sudo systemctl restart applyx-backend
+          sudo systemctl restart applyx-frontend
+          echo "✅ Deployment completed!" 

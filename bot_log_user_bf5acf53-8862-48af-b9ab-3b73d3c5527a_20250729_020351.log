@@ -1,0 +1,217 @@
+2025-07-29 02:03:51,050 - __main__ - INFO - ================================================================================
+2025-07-29 02:03:51,050 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-29 02:03:51,050 - __main__ - INFO - ================================================================================
+2025-07-29 02:03:51,050 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 02:03:51,050 - __main__ - INFO - ================================================================================
+2025-07-29 02:03:51,050 - __main__ - INFO - 🎯 Max Applications: 5
+2025-07-29 02:03:51,050 - __main__ - INFO - 🚀 ENHANCED LINKEDIN EASY APPLY BOT STARTING
+2025-07-29 02:03:51,051 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 02:03:51,051 - __main__ - INFO - ================================================================================
+2025-07-29 02:03:51,051 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753769031
+2025-07-29 02:03:51,051 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 02:03:51,051 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-29 02:03:51,051 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-29 02:03:51,051 - __main__ - INFO - 🎯 Max Applications: 5
+2025-07-29 02:03:51,051 - __main__ - INFO - 🚀 Initializing Enhanced User Bot for user: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 02:03:51,051 - __main__ - INFO - 📝 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753769031
+2025-07-29 02:03:51,051 - __main__ - INFO - 💾 Database path: backend/easyapply.db
+2025-07-29 02:03:51,051 - __main__ - INFO - 🗄️ Initializing database for application tracking...
+2025-07-29 02:03:51,058 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-29 02:03:51,058 - __main__ - INFO - ✅ Database initialized successfully
+2025-07-29 02:03:51,059 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-29 02:03:51,059 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-29 02:03:51,058 - __main__ - INFO - 📋 Loading user configuration...
+2025-07-29 02:03:51,059 - __main__ - INFO - 📊 Querying database for user configuration...
+2025-07-29 02:03:51,252 - __main__ - INFO - ✅ Successfully decrypted credentials for: shaheersaud2004@gmail.com
+2025-07-29 02:03:51,252 - __main__ - INFO - ✅ Successfully decrypted credentials for: shaheersaud2004@gmail.com
+2025-07-29 02:03:51,254 - __main__ - INFO - 📋 LOADED JOB PREFERENCES FROM WEBSITE:
+2025-07-29 02:03:51,255 - __main__ - INFO - 📋 LOADED JOB PREFERENCES FROM WEBSITE:
+2025-07-29 02:03:51,254 - __main__ - INFO -     📝 Job Titles: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 02:03:51,255 - __main__ - INFO -     📝 Job Titles: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 02:03:51,255 - __main__ - INFO -     📍 Locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 02:03:51,255 - __main__ - INFO -     📍 Locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 02:03:51,255 - __main__ - INFO -     💰 Salary Min: 65000
+2025-07-29 02:03:51,255 - __main__ - INFO -     💰 Salary Min: 65000
+2025-07-29 02:03:51,255 - __main__ - INFO -     📊 Experience: ['entry', 'associate']
+2025-07-29 02:03:51,255 - __main__ - INFO -     📊 Experience: ['entry', 'associate']
+2025-07-29 02:03:51,261 - __main__ - INFO - ✅ Database configuration built successfully
+2025-07-29 02:03:51,261 - __main__ - INFO - 🎯 FINAL BOT SEARCH CONFIG:
+2025-07-29 02:03:51,261 - __main__ - INFO -     📝 Will search for: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 02:03:51,261 - __main__ - INFO -     📍 In locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 02:03:51,261 - __main__ - INFO -     🎯 Total job titles to search: 4
+2025-07-29 02:03:51,262 - __main__ - INFO - ✅ Configuration loaded from database
+2025-07-29 02:03:51,262 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-29 02:03:51,262 - __main__ - INFO - ✅ Database configuration built successfully
+2025-07-29 02:03:51,262 - __main__ - INFO - 👤 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 02:03:51,262 - __main__ - INFO - 🎯 Target Positions: Artificial Intelligence, Machine Learning, Cybersecurity, Security Engineer
+2025-07-29 02:03:51,262 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-29 02:03:51,262 - __main__ - INFO - 🎯 FINAL BOT SEARCH CONFIG:
+2025-07-29 02:03:51,262 - __main__ - INFO -     📝 Will search for: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 02:03:51,262 - __main__ - INFO - ================================================================================
+2025-07-29 02:03:51,262 - __main__ - INFO -     📍 In locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 02:03:51,263 - __main__ - INFO -     🎯 Total job titles to search: 4
+2025-07-29 02:03:51,263 - __main__ - INFO - ✅ Configuration loaded from database
+2025-07-29 02:03:51,263 - __main__ - INFO - ✅ Configuration loaded successfully
+2025-07-29 02:03:51,263 - __main__ - INFO - 👤 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 02:03:51,263 - __main__ - INFO - 🎯 Target Positions: Artificial Intelligence, Machine Learning, Cybersecurity, Security Engineer
+2025-07-29 02:03:51,263 - __main__ - INFO - 📍 Target Locations: Remote, New Jersey, New York
+2025-07-29 02:03:51,262 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-29 02:03:51,263 - __main__ - INFO - ================================================================================
+2025-07-29 02:03:51,263 - __main__ - INFO - ================================================================================
+2025-07-29 02:03:51,263 - __main__ - INFO - 🚀 STARTING CONTINUOUS APPLICATION MODE
+2025-07-29 02:03:51,263 - __main__ - INFO - ================================================================================
+2025-07-29 02:03:51,263 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 02:03:51,263 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753769031
+2025-07-29 02:03:51,263 - __main__ - INFO - 📧 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 02:03:51,263 - __main__ - INFO - 🔢 Max Applications: 5
+2025-07-29 02:03:51,263 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-29 02:03:51,263 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-29 02:03:51,263 - __main__ - INFO - 👤 User ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 02:03:51,264 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753769031
+2025-07-29 02:03:51,264 - __main__ - INFO - 📧 LinkedIn Email: shaheersaud2004@gmail.com
+2025-07-29 02:03:51,264 - __main__ - INFO - 🔢 Max Applications: 5
+2025-07-29 02:03:51,264 - __main__ - INFO - 💾 Database Path: backend/easyapply.db
+2025-07-29 02:03:51,264 - __main__ - INFO - 🧹 Clearing previous activity logs...
+2025-07-29 02:03:51,273 - __main__ - INFO - ✅ Cleared 2 previous activity log entries
+2025-07-29 02:03:51,273 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-29 02:03:51,275 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 02:03:51,278 - __main__ - INFO - ✅ Cleared 0 previous activity log entries
+2025-07-29 02:03:51,278 - __main__ - INFO - 🌐 Starting browser initialization...
+2025-07-29 02:03:51,278 - __main__ - INFO - 🌐 Attempting to launch browser with user directory: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a
+2025-07-29 02:04:12,880 - __main__ - INFO - ✅ Browser initialized successfully
+2025-07-29 02:04:12,881 - __main__ - INFO - 🤖 Initializing LinkedIn bot...
+2025-07-29 02:04:12,885 - __main__ - INFO - 📧 Using email: shaheersaud2004@gmail.com
+2025-07-29 02:04:12,886 - __main__ - INFO - 🎯 Target positions: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 02:04:12,886 - __main__ - INFO - 📍 Target locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 02:04:12,886 - __main__ - INFO - ✅ Credentials verified - Email: shaheersaud2004@gmail.com
+2025-07-29 02:04:12,886 - __main__ - INFO - ✅ Proceeding with bot creation
+2025-07-29 02:04:12,919 - __main__ - INFO - ✅ Bot successfully created with email: sha***.com
+2025-07-29 02:04:12,919 - __main__ - INFO - ✅ LinkedIn bot initialized with simple config approach
+2025-07-29 02:04:12,919 - __main__ - INFO - ✅ Database integration enabled for application tracking
+2025-07-29 02:04:12,921 - __main__ - INFO - 🔐 Starting LinkedIn login process...
+2025-07-29 02:04:35,267 - __main__ - INFO - ✅ Browser initialized successfully
+2025-07-29 02:04:36,105 - __main__ - INFO - 🤖 Initializing LinkedIn bot...
+2025-07-29 02:04:50,646 - __main__ - INFO - 📧 Using email: shaheersaud2004@gmail.com
+2025-07-29 02:05:01,946 - __main__ - INFO - 🎯 Target positions: ['Artificial Intelligence', 'Machine Learning', 'Cybersecurity', 'Security Engineer']
+2025-07-29 02:05:25,963 - __main__ - INFO - 📍 Target locations: ['Remote', 'New Jersey', 'New York']
+2025-07-29 02:05:36,241 - __main__ - INFO - ✅ Credentials verified - Email: shaheersaud2004@gmail.com
+2025-07-29 02:05:36,699 - __main__ - INFO - ✅ Proceeding with bot creation
+2025-07-29 02:06:39,736 - __main__ - INFO - ✅ Bot successfully created with email: sha***.com
+2025-07-29 02:06:51,391 - __main__ - INFO - ✅ LinkedIn bot initialized with simple config approach
+2025-07-29 02:06:51,916 - __main__ - INFO - ✅ Database integration enabled for application tracking
+2025-07-29 02:06:52,000 - __main__ - INFO - 🔐 Starting LinkedIn login process...
+2025-07-29 02:25:56,434 - __main__ - INFO - ✅ LinkedIn login successful
+2025-07-29 02:26:39,990 - __main__ - INFO - 🛡️ Performing security check...
+2025-07-29 02:31:27,300 - __main__ - INFO - ✅ Security check passed
+2025-07-29 02:32:01,431 - __main__ - INFO - 🎯 Starting job application process...
+2025-07-29 02:32:41,525 - __main__ - INFO - 🚫 Daily quota reached: 16/5 applications used
+2025-07-29 02:33:11,438 - __main__ - INFO - ================================================================================
+2025-07-29 02:33:26,305 - __main__ - INFO - 📊 SESSION COMPLETE - SUMMARY
+2025-07-29 02:33:34,637 - __main__ - INFO - ================================================================================
+2025-07-29 02:33:55,681 - __main__ - INFO - ⏰ Total Runtime: 0:29:16.686177
+2025-07-29 02:34:12,729 - __main__ - INFO - 📝 Applications Submitted: 0
+2025-07-29 02:34:26,230 - __main__ - INFO - 📊 Applications Today: 0
+2025-07-29 02:34:39,487 - __main__ - INFO - 📧 User: shaheersaud2004@gmail.com
+2025-07-29 02:35:15,020 - __main__ - INFO - 🎯 Session ID: bf5acf53-8862-48af-b9ab-3b73d3c5527a_1753769031
+2025-07-29 02:35:31,067 - __main__ - INFO - 💾 Database: backend/easyapply.db
+2025-07-29 02:36:17,320 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-29 02:36:37,149 - __main__ - INFO - 🌐 Closing browser...
+2025-07-29 02:39:45,085 - __main__ - ERROR - ❌ LinkedIn login failed: Message: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=138.0.7204.169)
+Stacktrace:
+0   chromedriver                        0x0000000102db355c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000102dab454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x00000001028fa3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x00000001028e51fc cxxbridge1$string$len + 4140
+4   chromedriver                        0x00000001028e4f74 cxxbridge1$string$len + 3492
+5   chromedriver                        0x00000001028e2d2c chromedriver + 191788
+6   chromedriver                        0x00000001028e38bc chromedriver + 194748
+7   chromedriver                        0x00000001028f0afc cxxbridge1$string$len + 51500
+8   chromedriver                        0x0000000102906a18 cxxbridge1$string$len + 141384
+9   chromedriver                        0x00000001028e3f18 chromedriver + 196376
+10  chromedriver                        0x0000000102906820 cxxbridge1$string$len + 140880
+11  chromedriver                        0x0000000102982a64 cxxbridge1$string$len + 649364
+12  chromedriver                        0x0000000102935a0c cxxbridge1$string$len + 333884
+13  chromedriver                        0x0000000102d765e0 cxxbridge1$str$ptr + 2481340
+14  chromedriver                        0x0000000102d79848 cxxbridge1$str$ptr + 2494244
+15  chromedriver                        0x0000000102d57234 cxxbridge1$str$ptr + 2353424
+16  chromedriver                        0x0000000102d7a104 cxxbridge1$str$ptr + 2496480
+17  chromedriver                        0x0000000102d482e4 cxxbridge1$str$ptr + 2292160
+18  chromedriver                        0x0000000102d99ff8 cxxbridge1$str$ptr + 2627284
+19  chromedriver                        0x0000000102d9a184 cxxbridge1$str$ptr + 2627680
+20  chromedriver                        0x0000000102dab090 cxxbridge1$str$ptr + 2697068
+21  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+22  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+
+2025-07-29 02:40:48,371 - __main__ - ERROR - ❌ FATAL ERROR in continuous applications: Message: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=138.0.7204.169)
+Stacktrace:
+0   chromedriver                        0x0000000102db355c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000102dab454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x00000001028fa3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x00000001028e51fc cxxbridge1$string$len + 4140
+4   chromedriver                        0x00000001028e4f74 cxxbridge1$string$len + 3492
+5   chromedriver                        0x00000001028e2d2c chromedriver + 191788
+6   chromedriver                        0x00000001028e38bc chromedriver + 194748
+7   chromedriver                        0x00000001028f0afc cxxbridge1$string$len + 51500
+8   chromedriver                        0x0000000102906a18 cxxbridge1$string$len + 141384
+9   chromedriver                        0x00000001028e3f18 chromedriver + 196376
+10  chromedriver                        0x0000000102906820 cxxbridge1$string$len + 140880
+11  chromedriver                        0x0000000102982a64 cxxbridge1$string$len + 649364
+12  chromedriver                        0x0000000102935a0c cxxbridge1$string$len + 333884
+13  chromedriver                        0x0000000102d765e0 cxxbridge1$str$ptr + 2481340
+14  chromedriver                        0x0000000102d79848 cxxbridge1$str$ptr + 2494244
+15  chromedriver                        0x0000000102d57234 cxxbridge1$str$ptr + 2353424
+16  chromedriver                        0x0000000102d7a104 cxxbridge1$str$ptr + 2496480
+17  chromedriver                        0x0000000102d482e4 cxxbridge1$str$ptr + 2292160
+18  chromedriver                        0x0000000102d99ff8 cxxbridge1$str$ptr + 2627284
+19  chromedriver                        0x0000000102d9a184 cxxbridge1$str$ptr + 2627680
+20  chromedriver                        0x0000000102dab090 cxxbridge1$str$ptr + 2697068
+21  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+22  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+
+2025-07-29 02:44:18,018 - __main__ - INFO - ✅ Browser closed successfully
+2025-07-29 02:44:40,653 - __main__ - INFO - 🧹 Cleaning up existing Chrome processes...
+2025-07-29 02:50:25,332 - __main__ - INFO - ✅ Chrome processes cleaned up
+2025-07-29 02:50:54,490 - __main__ - INFO - ✅ Cleanup completed
+2025-07-29 02:50:55,490 - __main__ - INFO - ================================================================================
+2025-07-29 02:51:03,551 - __main__ - INFO - 🎉 BOT EXECUTION COMPLETED SUCCESSFULLY
+2025-07-29 02:51:17,792 - __main__ - INFO - ================================================================================
+2025-07-29 02:51:18,647 - __main__ - INFO - 📝 Total Applications: 0
+2025-07-29 02:51:19,239 - __main__ - INFO - ⏰ Session Duration: 0:47:27.988720
+2025-07-29 03:24:08,353 - __main__ - INFO - 🧹 Cleaning up resources...
+2025-07-29 03:24:12,939 - __main__ - INFO - 🌐 Closing browser...
+2025-07-29 03:24:48,599 - urllib3.connectionpool - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1191cf4c0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e1de34faf1da3fd6afe6b91ab9d6319
+2025-07-29 03:26:08,566 - urllib3.connectionpool - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1191cf820>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e1de34faf1da3fd6afe6b91ab9d6319
+2025-07-29 03:26:26,369 - urllib3.connectionpool - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1191cfa30>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/7e1de34faf1da3fd6afe6b91ab9d6319
+2025-07-29 03:27:08,085 - __main__ - INFO - ✅ Browser closed successfully
+2025-07-29 03:27:19,496 - __main__ - INFO - 🧹 Cleaning up existing Chrome processes...
+2025-07-29 03:29:22,558 - __main__ - INFO - ✅ Chrome processes cleaned up
+2025-07-29 03:29:35,868 - __main__ - INFO - ✅ Cleanup completed
+2025-07-29 03:29:53,714 - __main__ - ERROR - ❌ Bot execution failed: Message: timeout: Timed out receiving message from renderer: 300.000
+  (Session info: chrome=138.0.7204.169)
+Stacktrace:
+0   chromedriver                        0x0000000102db355c cxxbridge1$str$ptr + 2731064
+1   chromedriver                        0x0000000102dab454 cxxbridge1$str$ptr + 2698032
+2   chromedriver                        0x00000001028fa3f8 cxxbridge1$string$len + 90664
+3   chromedriver                        0x00000001028e51fc cxxbridge1$string$len + 4140
+4   chromedriver                        0x00000001028e4f74 cxxbridge1$string$len + 3492
+5   chromedriver                        0x00000001028e2d2c chromedriver + 191788
+6   chromedriver                        0x00000001028e38bc chromedriver + 194748
+7   chromedriver                        0x00000001028f0afc cxxbridge1$string$len + 51500
+8   chromedriver                        0x0000000102906a18 cxxbridge1$string$len + 141384
+9   chromedriver                        0x00000001028e3f18 chromedriver + 196376
+10  chromedriver                        0x0000000102906820 cxxbridge1$string$len + 140880
+11  chromedriver                        0x0000000102982a64 cxxbridge1$string$len + 649364
+12  chromedriver                        0x0000000102935a0c cxxbridge1$string$len + 333884
+13  chromedriver                        0x0000000102d765e0 cxxbridge1$str$ptr + 2481340
+14  chromedriver                        0x0000000102d79848 cxxbridge1$str$ptr + 2494244
+15  chromedriver                        0x0000000102d57234 cxxbridge1$str$ptr + 2353424
+16  chromedriver                        0x0000000102d7a104 cxxbridge1$str$ptr + 2496480
+17  chromedriver                        0x0000000102d482e4 cxxbridge1$str$ptr + 2292160
+18  chromedriver                        0x0000000102d99ff8 cxxbridge1$str$ptr + 2627284
+19  chromedriver                        0x0000000102d9a184 cxxbridge1$str$ptr + 2627680
+20  chromedriver                        0x0000000102dab090 cxxbridge1$str$ptr + 2697068
+21  libsystem_pthread.dylib             0x00000001956c6c0c _pthread_start + 136
+22  libsystem_pthread.dylib             0x00000001956c1b80 thread_start + 8
+

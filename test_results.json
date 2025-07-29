@@ -1,0 +1,118 @@
+{
+  "summary": {
+    "total_tests": 15,
+    "passed": 13,
+    "failed": 1,
+    "warnings": 1,
+    "skipped": 0,
+    "success_rate": 86.66666666666667,
+    "duration_seconds": 1.197284
+  },
+  "results": [
+    {
+      "test": "Server Health Check",
+      "status": "PASS",
+      "details": "Frontend: 200, Backend: 200",
+      "timestamp": "2025-07-23T15:26:30.198165",
+      "error": null
+    },
+    {
+      "test": "User Registration",
+      "status": "PASS",
+      "details": "User test_ni998u2n@example.com registered successfully",
+      "timestamp": "2025-07-23T15:26:30.351240",
+      "error": null
+    },
+    {
+      "test": "User Login",
+      "status": "PASS",
+      "details": "User test_ni998u2n@example.com logged in successfully",
+      "timestamp": "2025-07-23T15:26:30.506471",
+      "error": null
+    },
+    {
+      "test": "Get Empty Profile",
+      "status": "PASS",
+      "details": "Profile structure correct, LinkedIn credentials empty as expected",
+      "timestamp": "2025-07-23T15:26:30.509782",
+      "error": null
+    },
+    {
+      "test": "Update LinkedIn Credentials",
+      "status": "PASS",
+      "details": "Profile with LinkedIn credentials updated successfully",
+      "timestamp": "2025-07-23T15:26:30.555816",
+      "error": null
+    },
+    {
+      "test": "Get Profile with Credentials",
+      "status": "PASS",
+      "details": "LinkedIn credentials encrypted/decrypted correctly",
+      "timestamp": "2025-07-23T15:26:30.596332",
+      "error": null
+    },
+    {
+      "test": "Job Preferences Storage",
+      "status": "PASS",
+      "details": "Job preferences stored and retrieved correctly",
+      "timestamp": "2025-07-23T15:26:30.639024",
+      "error": null
+    },
+    {
+      "test": "Agent Start Without Credentials",
+      "status": "PASS",
+      "details": "Correctly blocked agent start without LinkedIn credentials",
+      "timestamp": "2025-07-23T15:26:30.798081",
+      "error": null
+    },
+    {
+      "test": "Agent Start With Credentials",
+      "status": "FAIL",
+      "details": "Status: 415, Response: <!doctype html>\n<html lang=en>\n<title>415 Unsupported Media Type</title>\n<h1>Unsupported Media Type</h1>\n<p>Did not attempt to load JSON data because the request Content-Type was not &#39;application/json&#39;.</p>\n",
+      "timestamp": "2025-07-23T15:26:30.799741",
+      "error": null
+    },
+    {
+      "test": "Agent Status Check",
+      "status": "PASS",
+      "details": "Status: idle, Progress: 0%",
+      "timestamp": "2025-07-23T15:26:30.801130",
+      "error": null
+    },
+    {
+      "test": "Invalid LinkedIn Credentials",
+      "status": "PASS",
+      "details": "Correctly rejected invalid LinkedIn email format",
+      "timestamp": "2025-07-23T15:26:30.802758",
+      "error": null
+    },
+    {
+      "test": "Unauthorized Access Protection",
+      "status": "PASS",
+      "details": "Correctly blocked access without token",
+      "timestamp": "2025-07-23T15:26:30.804025",
+      "error": null
+    },
+    {
+      "test": "Multi-User Data Isolation",
+      "status": "PASS",
+      "details": "User data properly isolated between users",
+      "timestamp": "2025-07-23T15:26:31.144900",
+      "error": null
+    },
+    {
+      "test": "Rate Limiting Protection",
+      "status": "WARNING",
+      "details": "Rate limiting not detected (may not be configured)",
+      "timestamp": "2025-07-23T15:26:31.158556",
+      "error": null
+    },
+    {
+      "test": "Frontend Page Accessibility",
+      "status": "PASS",
+      "details": "All 6 pages accessible",
+      "timestamp": "2025-07-23T15:26:31.375071",
+      "error": null
+    }
+  ]
+}
