@@ -653,7 +653,7 @@ export default function HomePage() {
               <CardContent>
                 <ul className="text-sm space-y-2">
                   <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />Free: 10 applications/day</li>
-                  <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />Basic: 50 applications/day</li>
+                  <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />Basic: 60 applications/day</li>
                   <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-2" />Pro: 100+ applications/day</li>
                 </ul>
               </CardContent>
@@ -732,14 +732,14 @@ export default function HomePage() {
               </div>
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl mb-2">Basic</CardTitle>
-                <div className="text-4xl font-bold mb-2">$29<span className="text-lg font-normal">/month</span></div>
+                <div className="text-4xl font-bold mb-2">$9.99<span className="text-lg font-normal">/month</span></div>
                 <CardDescription>Great for active job seekers</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-3" />
-                    50 applications per day
+                    60 applications per day
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-3" />
@@ -764,7 +764,7 @@ export default function HomePage() {
             <Card className="border-2 border-purple-500 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl mb-2">Pro</CardTitle>
-                <div className="text-4xl font-bold mb-2">$49<span className="text-lg font-normal">/month</span></div>
+                <div className="text-4xl font-bold mb-2">$19.99<span className="text-lg font-normal">/month</span></div>
                 <CardDescription>For serious job hunters</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">

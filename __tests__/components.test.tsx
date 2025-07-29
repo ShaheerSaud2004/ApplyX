@@ -332,7 +332,7 @@ describe('Pricing Components', () => {
     )
 
     const features = [
-              '50 applications per day',
+              '60 applications per day',
       'AI resume tailoring',
       'Email support'
     ]
@@ -340,8 +340,8 @@ describe('Pricing Components', () => {
     render(<PricingCard plan="Basic" price={10} features={features} />)
 
     expect(screen.getByText('Basic')).toBeInTheDocument()
-    expect(screen.getByText('$10/month')).toBeInTheDocument()
-    expect(screen.getByText('✅ 50 applications per day')).toBeInTheDocument()
+    expect(screen.getByText('$9.99/month')).toBeInTheDocument()
+    expect(screen.getByText('✅ 60 applications per day')).toBeInTheDocument()
     expect(screen.getByText('✅ AI resume tailoring')).toBeInTheDocument()
     expect(screen.getByText('✅ Email support')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Choose Basic' })).toBeInTheDocument()
