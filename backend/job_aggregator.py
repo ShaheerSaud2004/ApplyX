@@ -89,7 +89,7 @@ class JobAggregator:
         
         self.job_boards = [
             'https://jobs.github.com/positions.json',
-            'https://remoteok.io/api',
+            # 'https://remoteok.io/api',  # Disabled due to data format issues
             'https://jobs.lever.co/lever',
         ]
 
@@ -362,53 +362,64 @@ class JobAggregator:
         """Fetch jobs from various job board APIs"""
         jobs = []
         
-        async with aiohttp.ClientSession() as session:
-            # RemoteOK API
-            try:
-                async with session.get('https://remoteok.io/api') as response:
-                    if response.status == 200:
-                        data = await response.json()
-                        if isinstance(data, list) and len(data) > 1:
-                            for job_data in data[1:]:  # Skip first element (metadata)
-                                if isinstance(job_data, dict):
-                                    job = self.parse_remoteok_job(job_data)
-                                    if job:
-                                        jobs.append(job)
-            except Exception as e:
-                logger.error(f"Error fetching RemoteOK jobs: {e}")
-            
-            # Add more job board APIs here
-            
+        # Job board APIs temporarily disabled for stability
+        # Future: Add more reliable job board APIs here
+        
+        # RemoteOK API - DISABLED due to data format issues
+        # async with aiohttp.ClientSession() as session:
+        #     try:
+        #         async with session.get('https://remoteok.io/api') as response:
+        #             if response.status == 200:
+        #                 data = await response.json()
+        #                 if isinstance(data, list) and len(data) > 1:
+        #                     for job_data in data[1:]:  # Skip first element (metadata)
+        #                         if isinstance(job_data, dict):
+        #                             job = self.parse_remoteok_job(job_data)
+        #                             if job:
+        #                                 jobs.append(job)
+        #     except Exception as e:
+        #         logger.error(f"Error fetching RemoteOK jobs: {e}")
+        
+        # Job board APIs temporarily disabled for stability
+        # TODO: Re-enable with better error handling
+        
         return jobs
 
     def parse_remoteok_job(self, job_data: Dict) -> Optional[JobListing]:
-        """Parse a job from RemoteOK API response"""
+        """Parse a job from RemoteOK API response - DISABLED"""
+        # RemoteOK parsing is disabled due to data format incompatibilities
+        logger.debug("RemoteOK job parsing is disabled")
+        return None
+
+    def parse_date_safely(self, date_value) -> str:
+        """Safely parse date from various formats (timestamp, string, etc.)"""
         try:
-            return JobListing(
-                title=job_data.get('position', 'Unknown Position'),
-                company=job_data.get('company', 'Unknown Company'),
-                location='Remote',
-                salary=job_data.get('salary_max', ''),
-                posted_date=datetime.datetime.fromtimestamp(
-                    job_data.get('date', 0)
-                ).isoformat() if job_data.get('date') else datetime.datetime.now().isoformat(),
-                url=job_data.get('url', ''),
-                category=self.categorize_job(
-                    job_data.get('position', ''), 
-                    job_data.get('description', '')
-                ),
-                description=job_data.get('description', ''),
-                is_remote=True,
-                experience_level=self.determine_experience_level(
-                    job_data.get('position', ''),
-                    job_data.get('description', '')
-                ),
-                source='RemoteOK',
-                tags=job_data.get('tags', [])
-            )
+            if date_value is None:
+                return datetime.datetime.now().isoformat()
+            
+            # If it's already a string, try to parse it
+            if isinstance(date_value, str):
+                try:
+                    # Try parsing as ISO format first
+                    return datetime.datetime.fromisoformat(date_value.replace('Z', '+00:00')).isoformat()
+                except:
+                    try:
+                        # Try parsing as timestamp string
+                        return datetime.datetime.fromtimestamp(float(date_value)).isoformat()
+                    except:
+                        # Default to current time if parsing fails
+                        return datetime.datetime.now().isoformat()
+            
+            # If it's a number (timestamp)
+            if isinstance(date_value, (int, float)):
+                return datetime.datetime.fromtimestamp(date_value).isoformat()
+            
+            # Default fallback
+            return datetime.datetime.now().isoformat()
+            
         except Exception as e:
-            logger.error(f"Error parsing RemoteOK job: {e}")
-            return None
+            logger.warning(f"Error parsing date {date_value}: {e}")
+            return datetime.datetime.now().isoformat()
 
     def fetch_company_careers_pages(self) -> List[JobListing]:
         """Fetch jobs from major company career pages"""

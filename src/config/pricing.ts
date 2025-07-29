@@ -5,9 +5,9 @@ export const PRICING_PLANS: Record<SubscriptionPlan, PlanDetails> = {
     id: SubscriptionPlan.FREE,
     name: 'Free',
     price: 0,
-    dailyApplications: 5,
+    dailyApplications: 10,
     features: [
-      '5 applications per day',
+      '10 applications per day',
       'Basic resume tailoring',
       'Application tracking',
       'Email support'
@@ -16,11 +16,11 @@ export const PRICING_PLANS: Record<SubscriptionPlan, PlanDetails> = {
   [SubscriptionPlan.BASIC]: {
     id: SubscriptionPlan.BASIC,
     name: 'Basic',
-    price: 10,
-    dailyApplications: 30,
+    price: 9.99,
+    dailyApplications: 60,
     stripePriceId: process.env.NEXT_PUBLIC_STRIPE_BASIC_PRICE_ID,
     features: [
-      '30 applications per day',
+      '60 applications per day',
       'Advanced AI resume tailoring',
       'Custom cover letters',
       'Application tracking',
@@ -31,11 +31,11 @@ export const PRICING_PLANS: Record<SubscriptionPlan, PlanDetails> = {
   [SubscriptionPlan.PRO]: {
     id: SubscriptionPlan.PRO,
     name: 'Pro',
-    price: 20,
-    dailyApplications: 50,
+    price: 19.99,
+    dailyApplications: 100,
     stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRO_PRICE_ID,
     features: [
-      '50 applications per day',
+      '100+ applications per day',
       'Premium AI resume tailoring',
       'Custom cover letters',
       'Application tracking',
