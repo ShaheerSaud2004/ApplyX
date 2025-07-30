@@ -10,7 +10,7 @@ pip install -r backend/requirements.txt
 
 # Install Node.js dependencies and build frontend
 echo "📦 Installing Node.js dependencies..."
-npm install
+cd /workspace && npm install
 
 echo "🔨 Building frontend..."
 npm run build
