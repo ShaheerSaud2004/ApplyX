@@ -1,0 +1,5 @@
+build_command: |
+  echo "🚀 Starting frontend build..."
+  npm install
+  npm run build
+  echo "✅ Frontend build completed!" 

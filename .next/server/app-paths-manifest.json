@@ -1,6 +1,1 @@
-{
-  "/page": "app/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/manual-apply/page": "app/manual-apply/page.js",
-  "/profile/page": "app/profile/page.js"
-}
+{}
