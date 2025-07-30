@@ -1,4 +1,13 @@
-import time, random, csv, pyautogui, traceback, os, re
+import time, random, csv, traceback, os, re
+
+# Conditional import for GUI-dependent modules
+pyautogui = None
+if os.environ.get('DISPLAY') or os.environ.get('RUNNING_LOCALLY'):
+    try:
+        import pyautogui
+    except ImportError as e:
+        print(f"Warning: Could not import pyautogui: {e}")
+        print("This is expected in headless environments like DigitalOcean")
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
@@ -2203,6 +2212,11 @@ class LinkedinEasyApply:
 
     def avoid_lock(self):
         if self.disable_lock:
+            return
+
+        # Skip pyautogui operations if not available (headless environment)
+        if pyautogui is None:
+            print("Warning: pyautogui not available - skipping lock avoidance")
             return
 
         pyautogui.keyDown('ctrl')
