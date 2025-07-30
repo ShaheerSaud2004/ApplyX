@@ -40,9 +40,21 @@ load_dotenv()
 
 # Import existing LinkedIn bot functionality
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from linkedineasyapply import LinkedinEasyApply
-from main_fast import ContinuousApplyBot
-from web_agent import WebPlatformLinkedInBot
+
+# Conditional imports for GUI-dependent modules (only import locally)
+LinkedinEasyApply = None
+ContinuousApplyBot = None
+WebPlatformLinkedInBot = None
+
+# Only import GUI-dependent modules if we're not in a headless environment
+if os.environ.get('DISPLAY') or os.environ.get('RUNNING_LOCALLY'):
+    try:
+        from linkedineasyapply import LinkedinEasyApply
+        from main_fast import ContinuousApplyBot
+        from web_agent import WebPlatformLinkedInBot
+    except ImportError as e:
+        print(f"Warning: Could not import GUI-dependent modules: {e}")
+        print("This is expected in headless environments like DigitalOcean")
 from enhanced_status_api import register_enhanced_status_routes
 from job_api import register_job_routes
 from email_service import email_service
@@ -1455,6 +1467,9 @@ def start_agent(current_user_id):
             log_activity("Configuration", f"✅ User configuration created for {linkedin_email}", "success")
             
             # Create web platform bot instance
+            if WebPlatformLinkedInBot is None:
+                raise Exception("Bot functionality is not available in this environment. Please run locally for full bot features.")
+            
             bot = WebPlatformLinkedInBot(current_user_id, user_config)
             active_bots[current_user_id] = bot
             

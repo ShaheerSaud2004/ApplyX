@@ -2,7 +2,6 @@
 -r backend/requirements.txt
 
 # Additional root-level dependencies
-pyautogui
 PyYAML
 validate_email
 twilio
