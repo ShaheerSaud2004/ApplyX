@@ -1,11 +1,11 @@
 name: easyapply-app
 services:
 - name: web
-  source_dir: /
+  source_dir: backend
   github:
     repo: your-username/your-repo-name
     branch: master
-  run_command: cd backend && gunicorn --bind 0.0.0.0:$PORT --workers 4 app:app
+  run_command: gunicorn --bind 0.0.0.0:$PORT --workers 4 app:app
   environment_slug: python
   instance_count: 1
   instance_size_slug: basic-xxs
