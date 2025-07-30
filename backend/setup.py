@@ -1,0 +1,28 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="easyapply-backend",
+    version="1.0.0",
+    packages=find_packages(),
+    install_requires=[
+        "Flask==2.3.3",
+        "Flask-CORS==4.0.0",
+        "stripe==6.6.0",
+        "schedule==1.2.0",
+        "psutil==5.9.5",
+        "beautifulsoup4==4.12.2",
+        "PyPDF2==3.0.1",
+        "python-docx==0.8.11",
+        "docx2txt==0.8",
+        "bs4==0.0.1",
+        "aiohttp==3.9.1",
+        "openai>=1.0.0",
+        "python-dotenv==1.0.0",
+        "requests==2.31.0",
+        "lxml==4.9.4",
+        "selenium==4.15.2",
+        "webdriver-manager==4.0.1",
+        "urllib3==2.0.7",
+    ],
+    python_requires=">=3.11",
+) 

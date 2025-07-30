@@ -1,8 +1,8 @@
-selenium
+# Root requirements - includes backend requirements
+-r backend/requirements.txt
+
+# Additional root-level dependencies
 pyautogui
-webdriver_manager
 PyYAML
 validate_email
-openai>=1.0.0
-pypdf>=3.0.0
 twilio

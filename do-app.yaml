@@ -1,0 +1,16 @@
+name: easyapply-app
+services:
+- name: web
+  source_dir: /
+  github:
+    repo: your-username/your-repo-name
+    branch: master
+  run_command: cd backend && python app.py
+  environment_slug: python
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  envs:
+  - key: PYTHON_VERSION
+    value: "3.11.9"
+  - key: PORT
+    value: "8000" 
