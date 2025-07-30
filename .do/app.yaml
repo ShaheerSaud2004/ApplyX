@@ -15,4 +15,6 @@ services:
   - key: PORT
     value: "8080"
   - key: NODE_ENV
-    value: "production" 
+    value: "production"
+  - key: NEXT_TELEMETRY_DISABLED
+    value: "1" 
