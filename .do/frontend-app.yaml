@@ -5,7 +5,7 @@ services:
   github:
     repo: your-username/your-repo-name
     branch: master
-  run_command: npm start
+  run_command: node .next/standalone/server.js
   environment_slug: node-js
   instance_count: 1
   instance_size_slug: basic-xxs

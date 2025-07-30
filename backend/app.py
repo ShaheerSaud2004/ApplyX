@@ -2327,6 +2327,50 @@ def get_user_plan(current_user_id):
     else:
         return jsonify({'error': 'User not found'}), 404
 
+@app.route('/api/pricing', methods=['GET'])
+def get_pricing():
+    """Get pricing information for the application"""
+    return jsonify({
+        'plans': [
+            {
+                'id': 'free',
+                'name': 'Free',
+                'price': 0,
+                'dailyQuota': 5,
+                'features': [
+                    '5 applications per day',
+                    'Basic job discovery',
+                    'Email support'
+                ]
+            },
+            {
+                'id': 'basic',
+                'name': 'Basic',
+                'price': 9.99,
+                'dailyQuota': 25,
+                'features': [
+                    '25 applications per day',
+                    'Advanced job discovery',
+                    'Priority support',
+                    'Resume optimization'
+                ]
+            },
+            {
+                'id': 'pro',
+                'name': 'Pro',
+                'price': 19.99,
+                'dailyQuota': 100,
+                'features': [
+                    '100 applications per day',
+                    'Unlimited job discovery',
+                    'Priority support',
+                    'AI-powered resume optimization',
+                    'Advanced analytics'
+                ]
+            }
+        ]
+    })
+
 @app.route('/api/user/auto-restart', methods=['GET', 'POST'])
 @token_required
 def manage_auto_restart(current_user_id):
