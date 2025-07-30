@@ -13,7 +13,15 @@ import os
 
 # Add the parent directory to Python path to import our modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from main_fast_user import EnhancedUserBot
+
+# Conditional import for GUI-dependent modules
+EnhancedUserBot = None
+if os.environ.get('DISPLAY') or os.environ.get('RUNNING_LOCALLY'):
+    try:
+        from main_fast_user import EnhancedUserBot
+    except ImportError as e:
+        print(f"Warning: Could not import EnhancedUserBot: {e}")
+        print("This is expected in headless environments like DigitalOcean")
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -244,6 +252,10 @@ class DailyApplicationScheduler:
             start_time = datetime.now()
             
             # Initialize and run the bot
+            if EnhancedUserBot is None:
+                logger.error(f"❌ Bot functionality not available for {user_data['email']} - skipping daily applications")
+                return
+            
             bot = EnhancedUserBot(user_id)
             applications_submitted = 0
             

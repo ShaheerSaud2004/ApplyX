@@ -36,7 +36,14 @@ import shutil
 # Add backend to path for imports
 sys.path.append(os.path.join(os.path.dirname(__file__), 'backend'))
 
-from linkedineasyapply import LinkedinEasyApply
+# Conditional import for GUI-dependent modules
+LinkedinEasyApply = None
+if os.environ.get('DISPLAY') or os.environ.get('RUNNING_LOCALLY'):
+    try:
+        from linkedineasyapply import LinkedinEasyApply
+    except ImportError as e:
+        print(f"Warning: Could not import LinkedinEasyApply: {e}")
+        print("This is expected in headless environments like DigitalOcean")
 
 # Enhanced logging setup
 logging.basicConfig(
@@ -755,6 +762,9 @@ class EnhancedUserBot:
             logger.info("✅ Proceeding with bot creation")
             
             # Use the OLD WORKING approach - pass config directly
+            if LinkedinEasyApply is None:
+                raise Exception("LinkedIn bot functionality is not available in this environment. Please run locally for full bot features.")
+            
             self.bot = LinkedinEasyApply(self.config, self.browser)
             
             # CRITICAL: Verify bot has credentials after creation
