@@ -1,6 +1,6 @@
 {
-  "/dashboard/page": "app/dashboard/page.js",
   "/page": "app/page.js",
-  "/profile/page": "app/profile/page.js",
-  "/manual-apply/page": "app/manual-apply/page.js"
+  "/dashboard/page": "app/dashboard/page.js",
+  "/manual-apply/page": "app/manual-apply/page.js",
+  "/profile/page": "app/profile/page.js"
 }

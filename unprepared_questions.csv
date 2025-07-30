@@ -1,0 +1,414 @@
+dropdown,"palo alto networks is a government contractor subject to the vietnam era veterans' readjustment assistance act of 1974, as amended by the jobs for veterans act of 2002, 38 u.s.c. 4212 (""vevraa""), which requires government contractors to take affirmative action to employ and advance in employment: (1) disabled veterans/ (2) recently separated veterans/ (3) active duty wartime or campaign badge veterans/ and (4) armed forces service medal veterans. if you believe you are a member of any of the categories of protected veterans listed above, please indicate by checking the appropriate box below. your decision to provide the relevant information is purely voluntary on your part, and refusal to provide such information will not subject you to any adverse treatment. the information will not be used in a manner inconsistent with vevraa, as amended. please select one of the options below [definitions](https://www.smartrecruiters.com/oneclick-ui/resources/html/ofccpveterans)
+palo alto networks is a government contractor subject to the vietnam era veterans' readjustment assistance act of 1974, as amended by the jobs for veterans act of 2002, 38 u.s.c. 4212 (""vevraa""), which requires government contractors to take affirmative action to employ and advance in employment: (1) disabled veterans/ (2) recently separated veterans/ (3) active duty wartime or campaign badge veterans/ and (4) armed forces service medal veterans. if you believe you are a member of any of the categories of protected veterans listed above, please indicate by checking the appropriate box below. your decision to provide the relevant information is purely voluntary on your part, and refusal to provide such information will not subject you to any adverse treatment. the information will not be used in a manner inconsistent with vevraa, as amended. please select one of the options below [definitions](https://www.smartrecruiters.com/oneclick-ui/resources/html/ofccpveterans)"
+dropdown,"do you consider yourself as a military spouse / domestic partner?
+do you consider yourself as a military spouse / domestic partner?"
+dropdown,"are you in the reserves?
+are you in the reserves?"
+radio,"i understand that the information i submit as part of my job application will be used in accordance with [palo alto network's candidate privacy notice](https://www.paloaltonetworks.com/legal-notices/privacy/privacy-notice.html). i understand the processing of my information as described in that policy including that, in limited circumstances, palo alto networks may share my contact information with trusted third parties, to assist in certain phases of the hiring process (such as conducting background checks)."
+numeric,how many years of work experience do you have with windows?
+numeric,how many years of work experience do you have with cisco systems products?
+numeric,how many years of work experience do you have with cisco application centric infrastructure (aci)?
+numeric,how many years of eng experience do you currently have?
+dropdown,"are you comfortable with a career that has commission as part of the compensation?
+are you comfortable with a career that has commission as part of the compensation?"
+dropdown,"will you be interested in consulting-based job?
+will you be interested in consulting-based job?"
+dropdown,"are you a usc, gc or tn-visa?
+are you a usc, gc or tn-visa?"
+dropdown,"are you willing to relocate across the us for projects?
+are you willing to relocate across the us for projects?"
+radio,are you open to working on w2?
+numeric,how many years of veterinary services experience do you currently have?
+numeric,how many years of work experience do you have with industrial robots?
+dropdown,"be able to lift 40+ pounds, be on your feet, quick thinker, and a passion for fixing robots
+be able to lift 40+ pounds, be on your feet, quick thinker, and a passion for fixing robots"
+numeric,how many years of work experience do you have with program coordination?
+numeric,how many years of work experience do you have with jira?
+numeric,how many years of work experience do you have with product operations?
+numeric,how many years of work experience do you have with consultative selling?
+numeric,how many years of work experience do you have with data centers?
+dropdown,"do you have prior experience providing desktop support in the financial services space? 
+do you have prior experience providing desktop support in the financial services space?"
+dropdown,"do you have prior experience with trade floor support or with market data products?
+do you have prior experience with trade floor support or with market data products?"
+dropdown,"do you have prior experience with windows or msft office migration projects?
+do you have prior experience with windows or msft office migration projects?"
+numeric,how many years of work experience do you have with adobe creative suite?
+numeric,how many years of work experience do you have with adobe indesign?
+dropdown,"are you a us citizen or green card holder?
+are you a us citizen or green card holder?"
+dropdown,"have you built at least two production-grade etl pipelines from scratch?
+have you built at least two production-grade etl pipelines from scratch?"
+dropdown,"do you have at least three years of experience working as a full-time data engineer?
+do you have at least three years of experience working as a full-time data engineer?"
+dropdown,"have you designed a data warehouse or lakehouse architecture from scratch?
+have you designed a data warehouse or lakehouse architecture from scratch?"
+dropdown,"have you been the primary decision-maker for selecting data infrastructure tools and technologies?
+have you been the primary decision-maker for selecting data infrastructure tools and technologies?"
+dropdown,"have you implemented data governance best practices, including access control, security, and lineage tracking?
+have you implemented data governance best practices, including access control, security, and lineage tracking?"
+dropdown,"have you set up and managed workflow automation tools like airflow, dagster, or prefect in production?
+have you set up and managed workflow automation tools like airflow, dagster, or prefect in production?"
+dropdown,"do you have strong experience with scaling out both cloud-hosted and on-prem industry applications?
+do you have strong experience with scaling out both cloud-hosted and on-prem industry applications?"
+dropdown,"have you completed the following level of education: bachelor's degree?
+have you completed the following level of education: bachelor's degree?"
+dropdown,"do you have at least 2 years of experience with software development and web technologies?
+do you have at least 2 years of experience with software development and web technologies?"
+dropdown,"do you have 2 years proven experience as a jr. full stack developer or similar role?
+do you have 2 years proven experience as a jr. full stack developer or similar role?"
+dropdown,"are you willing to stay up to date with the latest industry trends and technologies?
+are you willing to stay up to date with the latest industry trends and technologies?"
+dropdown,"do you have 2 years rest / http / web architecture understanding?
+do you have 2 years rest / http / web architecture understanding?"
+dropdown,"do you have knowledge of software security best practices?
+do you have knowledge of software security best practices?"
+dropdown,"do you have a minimum of 2+ years experience with queueing systems (rabbitmq / kafka / etc.)?
+do you have a minimum of 2+ years experience with queueing systems (rabbitmq / kafka / etc.)?"
+dropdown,"do you have a minimum of 2+ years experience with queueing systems (rabbitmq / kafka / etc.)?
+do you have a minimum of 2+ years experience with queueing systems (rabbitmq / kafka / etc.)?"
+dropdown,"do you have a minimum of 2+ years experience with mobile development?
+do you have a minimum of 2+ years experience with mobile development?"
+dropdown,"confirm that you currently actually reside in the san francisco bay area?
+confirm that you currently actually reside in the san francisco bay area?"
+dropdown,"are you willing to undergo a background check, in accordance with local law/regulations?
+are you willing to undergo a background check, in accordance with local law/regulations?"
+dropdown,"do you have a valid driver's license?
+do you have a valid driver's license?"
+dropdown,"are you comfortable working in a remote setting?
+are you comfortable working in a remote setting?"
+dropdown,"we must fill this position urgently. can you start immediately?
+we must fill this position urgently. can you start immediately?"
+dropdown,"do you currently live in the boston metro area?
+do you currently live in the boston metro area?"
+dropdown,"if you do not have experience with ros or ros2 you will not be considered at all. do you have experience with ros?
+if you do not have experience with ros or ros2 you will not be considered at all. do you have experience with ros?"
+numeric,how many years of work experience do you have with pytorch?
+dropdown,"are you comfortable with the responsibilities and expectations outlined in the job description?
+are you comfortable with the responsibilities and expectations outlined in the job description?"
+radio,do you have the following license or certification: security guard?
+dropdown,"are you age 25 or older? some guard posts require use of the company vehicle, and you must have a driving record of a certain number of years to qualify on the commercial insurance policy.
+are you age 25 or older? some guard posts require use of the company vehicle, and you must have a driving record of a certain number of years to qualify on the commercial insurance policy."
+dropdown,"have you had any traffic incidents or tickets documented on your record in the last 6 years?
+have you had any traffic incidents or tickets documented on your record in the last 6 years?"
+numeric,how many years of software development experience do you currently have?
+dropdown,"have you played any competitive sports?
+have you played any competitive sports?"
+radio,do you have the following license or certification: comptia security+?
+dropdown,"do you have any hands-on experience with computer hardware, such as assembling pcs, cabling, or troubleshooting devices?
+do you have any hands-on experience with computer hardware, such as assembling pcs, cabling, or troubleshooting devices?"
+dropdown,"do you have basic knowledge of networking concepts, such as ip addresses or switches, from school, projects, or hobbies?
+do you have basic knowledge of networking concepts, such as ip addresses or switches, from school, projects, or hobbies?"
+dropdown,"have you completed any it-related certifications, such as comptia a+ or network+?
+have you completed any it-related certifications, such as comptia a+ or network+?"
+dropdown,"have you ever learned a new technical skill independently, such as through online tutorials or personal projects?
+have you ever learned a new technical skill independently, such as through online tutorials or personal projects?"
+dropdown,"are you comfortable working in a small team where you might handle multiple tasks, like hardware setup and client support, with limited supervision?
+are you comfortable working in a small team where you might handle multiple tasks, like hardware setup and client support, with limited supervision?"
+numeric,how many years of work experience do you have with point of sale (pos) systems?
+numeric,how many years of work experience do you have with technical support?
+numeric,how many years of work experience do you have with sharepoint?
+numeric,how many years of work experience do you have with windows server?
+numeric,how many years of work experience do you have with windows?
+numeric,how many years of work experience do you have with sharepoint?
+numeric,how many years of work experience do you have with windows server?
+numeric,how many years of work experience do you have with windows?
+radio,are you prepared to take a skills verification test lasting up to 30 minutes as part of your application? 
+numeric,how many years of work experience do you have with network switches?
+numeric,how many years of work experience do you have with windows?
+dropdown,"does the compensation ($15/hr) work for you?
+does the compensation ($15/hr) work for you?"
+numeric,how many years of experience do you have using virtual reality (vr) headsets? can be personal or professional!
+radio,are you a us citizen?
+radio,"do you live within virginia, maryland, or dc?"
+radio,what is your poly type?
+radio,are you a us citizen?
+radio,"do you live within virginia, maryland, or dc?"
+radio,what is your poly type?
+numeric,how many years of work experience do you have with microsoft azure?
+numeric,how many years of work experience do you have with tensorflow?
+numeric,how many years of work experience do you have with pytorch?
+dropdown,"are you located in the boston metro area?
+are you located in the boston metro area?"
+dropdown,"are you a u.s. person as defined by itar (i.e., a u.s. citizen, u.s. national, lawful permanent resident, or a protected individual under 8 u.s.c. 1324b(a)(3))?
+are you a u.s. person as defined by itar (i.e., a u.s. citizen, u.s. national, lawful permanent resident, or a protected individual under 8 u.s.c. 1324b(a)(3))?"
+dropdown,please check one of the boxes below: 
+radio,are you a protected veteran? (definitions)
+radio,are you a veteran?
+dropdown,"are you a permanent resident, a citizen, or eligible for either f-1 opt/stem, tn, e-3 visa?
+are you a permanent resident, a citizen, or eligible for either f-1 opt/stem, tn, e-3 visa?"
+numeric,how many years of work experience do you have with microsoft entra id?
+numeric,how many years of work experience do you have with microsoft intune?
+numeric,how many years of work experience do you have with microsoft entra id?
+numeric,how many years of work experience do you have with microsoft intune?
+numeric,how many years of work experience do you have with generalized linear models?
+radio,have you completed the following level of education: master's degree?
+dropdown,"how did you hear about this job?
+how did you hear about this job?"
+dropdown,"are you a usc / gc or tn visa holder ?
+are you a usc / gc or tn visa holder ?"
+dropdown,"will you be interested in consulting-based job?
+will you be interested in consulting-based job?"
+radio,"do you live in one of the following states? arizona, arkansas, colorado, delaware, florida, georgia, illinois, indiana, maryland, massachusetts, minnesota, nevada, north carolina, oklahoma, oregon, south carolina, tennessee, texas, utah, virginia, washington, wisconsin"
+numeric,how many years of saas implementation experience do you have?
+text,what are your compensation expectations for this role?
+numeric,how many years of work experience do you have with databases?
+dropdown,"are you comfortable with the responsibilities and expectations outlined in the job description?
+are you comfortable with the responsibilities and expectations outlined in the job description?"
+numeric,how many years of work experience do you have with data center infrastructure?
+numeric,how many years of work experience do you have with hvac?
+numeric,how many years of work experience do you have with power distribution?
+dropdown,"are you willing and able to work directly for my company as a w2 employee?
+are you willing and able to work directly for my company as a w2 employee?"
+dropdown,"how did you hear about this position?
+how did you hear about this position?"
+text,what are your compensation expectations?
+radio,have you ever been employed by or applied for a job at wilson elser in the past? 
+dropdown,"how did you hear about this position?
+how did you hear about this position?"
+text,what are your compensation expectations?
+radio,have you ever been employed by or applied for a job at wilson elser in the past? 
+numeric,how many years of work experience do you have with windows?
+numeric,how many years of work experience do you have with windows?
+dropdown,"school
+school"
+dropdown,"degree
+degree"
+dropdown,"discipline
+discipline"
+text,please describe your experience identifying / mitigating smart contract vulnerabilities.
+radio,are you at least 18 years of age?
+radio,have you previously been employed by coinbase in any capacity?
+dropdown,"how did you hear about this job?
+how did you hear about this job?"
+dropdown,"please confirm receipt of the above linked global data privacy notice and us arbitration agreement.
+please confirm receipt of the above linked global data privacy notice and us arbitration agreement."
+radio,please indicate your sex:
+radio,how would you describe your racial/ethnic background?
+radio,are you a protected veteran? (definitions)
+dropdown,"are you comfortable with the responsibilities and expectations outlined in the job description?
+are you comfortable with the responsibilities and expectations outlined in the job description?"
+numeric,how many years of work experience do you have with desktop support?
+numeric,how many years of work experience do you have with computer networking?
+numeric,how many years of work experience do you have with active directory?
+text,desired salary
+dropdown,"can you work weekends?
+can you work weekends?"
+dropdown,"can you work evenings?
+can you work evenings?"
+radio,do you have the following license or certification: comptia security+?
+dropdown,"are you currently pursuing any additional certifications in cybersecurity or plan to do so in the near future?
+are you currently pursuing any additional certifications in cybersecurity or plan to do so in the near future?"
+dropdown,"have you taken any additional schooling, courses, or self-study in cybersecurity? 
+have you taken any additional schooling, courses, or self-study in cybersecurity?"
+dropdown,"are you a us citizen 
+are you a us citizen"
+dropdown,"do you have a passion for technology, particularly in cybersecurity? can you provide examples of what drew you to this field?
+do you have a passion for technology, particularly in cybersecurity? can you provide examples of what drew you to this field?"
+radio,do you have the following license or certification: comptia security+?
+radio,do you have the following license or certification: comptia security+?
+numeric,how many years of work experience do you have with computer network operations?
+numeric,how many years of work experience do you have with local area network (lan)?
+numeric,how many years of experience do you have working in it infrastructure or network support?
+dropdown,"how many a years of experience in fedramp il5 scoring and reporting?
+how many a years of experience in fedramp il5 scoring and reporting?"
+dropdown,"are you open to working nightshift- including weekends (11p-8a roughly, some flexibility) 
+are you open to working nightshift- including weekends (11p-8a roughly, some flexibility)"
+numeric,how many years of work experience do you have with yardi?
+numeric,how many years of work experience do you have with pytorch?
+dropdown,"from the below, please select all that you have had hands on work experience with.
+from the below, please select all that you have had hands on work experience with."
+dropdown,"do you currently hold a dod compliant 8570 iat certification? (like the security + ce, cysa+, casp + ce, or cissp, etc.)
+do you currently hold a dod compliant 8570 iat certification? (like the security + ce, cysa+, casp + ce, or cissp, etc.)"
+text,please share your desired salary range or compensation expectations for this position.
+dropdown,"have you ever executed a non-disclosure or a non-compete agreement with a previous employer? 
+have you ever executed a non-disclosure or a non-compete agreement with a previous employer?"
+dropdown,"to the best of your knowledge, are you aware of a non-disclosure or non-competition agreement currently in place that may affect your prospective employment with epsilon for the role in which you are applying? 
+to the best of your knowledge, are you aware of a non-disclosure or non-competition agreement currently in place that may affect your prospective employment with epsilon for the role in which you are applying?"
+dropdown,"are you comfortable with the responsibilities and expectations outlined in the job description?
+are you comfortable with the responsibilities and expectations outlined in the job description?"
+radio,are you a us citizen?
+radio,"do you live within virginia, maryland, or dc?"
+radio,what is your poly type?
+radio,are you a us citizen?
+radio,"do you live within virginia, maryland, or dc?"
+radio,what is your poly type?
+numeric,what are your salary expectations for this role?
+radio,"do you live in one of the following states? arizona, arkansas, colorado, delaware, florida, georgia, illinois, indiana, maryland, massachusetts, minnesota, nevada, north carolina, oklahoma, oregon, south carolina, tennessee, texas, utah, virginia, washington, wisconsin"
+numeric,how many years of saas implementation experience do you have?
+text,what are your compensation expectations for this role?
+dropdown,"are you a us citizen? 
+are you a us citizen?"
+dropdown,"atomus works with the aerospace and defense industry along with the us military. do you have a favorable view of defense contractors and the military?
+atomus works with the aerospace and defense industry along with the us military. do you have a favorable view of defense contractors and the military?"
+dropdown,"are you looking for a full time completely in person role? 8am to 5pm monday through friday in downtown san francisco?
+are you looking for a full time completely in person role? 8am to 5pm monday through friday in downtown san francisco?"
+dropdown,"were you a college athlete? (you played for your college's official team)
+were you a college athlete? (you played for your college's official team)"
+dropdown,"from the below, please select all that you have had hands on work experience with.
+from the below, please select all that you have had hands on work experience with."
+dropdown,"do you currently hold a dod compliant 8570 iat certification? (like the security + ce, cysa+, casp + ce, or cissp, etc.)
+do you currently hold a dod compliant 8570 iat certification? (like the security + ce, cysa+, casp + ce, or cissp, etc.)"
+text,please share your desired salary range or compensation expectations for this position.
+dropdown,"have you ever executed a non-disclosure or a non-compete agreement with a previous employer? 
+have you ever executed a non-disclosure or a non-compete agreement with a previous employer?"
+dropdown,"to the best of your knowledge, are you aware of a non-disclosure or non-competition agreement currently in place that may affect your prospective employment with epsilon for the role in which you are applying? 
+to the best of your knowledge, are you aware of a non-disclosure or non-competition agreement currently in place that may affect your prospective employment with epsilon for the role in which you are applying?"
+numeric,how many years of work experience do you have with fiber optics?
+text,desired salary
+dropdown,"can you work weekends?
+can you work weekends?"
+dropdown,"can you work evenings?
+can you work evenings?"
+dropdown,"do you currently hold a dod compliant 8570 iat certification? (like the security + ce, cysa+, casp + ce, or cissp, etc.)
+do you currently hold a dod compliant 8570 iat certification? (like the security + ce, cysa+, casp + ce, or cissp, etc.)"
+text,please share your desired salary range or compensation expectations for this position.
+dropdown,"have you ever executed a non-disclosure or a non-compete agreement with a previous employer? 
+have you ever executed a non-disclosure or a non-compete agreement with a previous employer?"
+dropdown,"to the best of your knowledge, are you aware of a non-disclosure or non-competition agreement currently in place that may affect your prospective employment with epsilon for the role in which you are applying? 
+to the best of your knowledge, are you aware of a non-disclosure or non-competition agreement currently in place that may affect your prospective employment with epsilon for the role in which you are applying?"
+text,desired salary
+radio,have you completed the following level of education: master's degree?
+radio,have you completed the following level of education: doctor of philosophy?
+dropdown,"school
+school"
+dropdown,"degree
+degree"
+dropdown,"discipline
+discipline"
+radio,are you at least 18 years of age?
+radio,have you previously been employed by coinbase in any capacity?
+dropdown,"how did you hear about this job?
+how did you hear about this job?"
+dropdown,"please confirm receipt of the above linked global data privacy notice and us arbitration agreement.
+please confirm receipt of the above linked global data privacy notice and us arbitration agreement."
+dropdown,"i understand that coinbase may use ai tools to assist in the application and interview process. 
+i understand that coinbase may use ai tools to assist in the application and interview process."
+radio,please indicate your sex:
+radio,how would you describe your racial/ethnic background?
+dropdown,"this role is 100% remote, however, you must be willing to occasionally hop on a google hangout for training and occasional feedback if/when applicable.
+this role is 100% remote, however, you must be willing to occasionally hop on a google hangout for training and occasional feedback if/when applicable."
+radio,have you completed the following level of education: doctor of philosophy?
+numeric,how many years of work experience do you have with numerical simulation?
+numeric,how many years of graphic design experience do you currently have?
+numeric,how many years of software development experience do you currently have?
+dropdown,"have attended undergraduate in us/uk/canada, europe, or india?
+have attended undergraduate in us/uk/canada, europe, or india?"
+dropdown,"have a statistics phd from a top us, european, or indian university.?
+have a statistics phd from a top us, european, or indian university.?"
+dropdown,"are you able to work on pacific timezone (pst)?
+are you able to work on pacific timezone (pst)?"
+dropdown,"how did you hear about this job?
+how did you hear about this job?"
+dropdown,"have you already applied to this role?
+have you already applied to this role?"
+dropdown,"we are accepting students who are graduating this year, fresh graduates and graduates from recent year. if not comply, applications will be rejected systematically.
+we are accepting students who are graduating this year, fresh graduates and graduates from recent year. if not comply, applications will be rejected systematically."
+dropdown,"are you pursuing or have a degree in business, economics, marketing, communication or advertising? our client is accepting these majors only. applications will be rejected systematically if not comply
+are you pursuing or have a degree in business, economics, marketing, communication or advertising? our client is accepting these majors only. applications will be rejected systematically if not comply"
+radio,have you completed the following level of education: master's degree?
+dropdown,"can you start immediately?
+can you start immediately?"
+dropdown,"are you comfortable working in a 100% commission-only role?
+are you comfortable working in a 100% commission-only role?"
+dropdown,"do you have experience selling services over $10,000 per contract?
+do you have experience selling services over $10,000 per contract?"
+numeric,how many years of work experience do you have with software as a service (saas)?
+numeric,how many years of hands-on experience do you have with kubernetes?
+dropdown,"does the opportunity to work at an early-stage start-up excite you?
+does the opportunity to work at an early-stage start-up excite you?"
+text,desired salary
+dropdown,"can you work weekends?
+can you work weekends?"
+dropdown,"can you work evenings?
+can you work evenings?"
+text,desired salary
+dropdown,"can you work weekends?
+can you work weekends?"
+dropdown,"can you work evenings?
+can you work evenings?"
+text,desired salary
+dropdown,"can you work weekends?
+can you work weekends?"
+dropdown,"can you work evenings?
+can you work evenings?"
+text,desired salary
+dropdown,"can you work weekends?
+can you work weekends?"
+dropdown,"can you work evenings?
+can you work evenings?"
+dropdown,"by clicking ""yes"" you agree to our privacy policy and data processing. providing accurate information is essential, as any dishonesty may lead to rejection of an application or termination.*
+by clicking ""yes"" you agree to our privacy policy and data processing. providing accurate information is essential, as any dishonesty may lead to rejection of an application or termination.*"
+numeric,how many years of software development experience do you currently have?
+dropdown,"did you read the boring stuff? 
+did you read the boring stuff?"
+numeric,how many years of financial services experience do you currently have?
+numeric,how many years of business development experience do you currently have?
+numeric,how many years of sales experience do you currently have?
+numeric,what is your expected salary / total compensation?
+numeric,how many years of work experience do you have with hardware verification?
+dropdown,"have you previously designed and/or facilitated a cybersecurity tabletop exercise (ttx) for enterprise or government clients?
+have you previously designed and/or facilitated a cybersecurity tabletop exercise (ttx) for enterprise or government clients?"
+dropdown,"do you hold any advanced cybersecurity certifications (e.g., cissp, gcih, gcia, gccc)?
+do you hold any advanced cybersecurity certifications (e.g., cissp, gcih, gcia, gccc)?"
+numeric,how many years of work experience do you have with activemq?
+numeric,how many years of experience do you have working with ibm mq?
+numeric,how many years of work experience do you have with shell scripting?
+numeric,how many years of work experience do you have with renewable energy?
+numeric,how many years of work experience do you have with distributed generation?
+numeric,how many years of work experience do you have with workflow automation?
+dropdown,"have you supported or worked on any utility programs related to ders, solar, energy efficiency, or evs?
+have you supported or worked on any utility programs related to ders, solar, energy efficiency, or evs?"
+numeric,how many years of work experience do you have with technical sales?
+numeric,how many years of aerospace industry experience do you currently have?
+numeric,how many years of domo experience do you have?
+numeric,how many years of work experience do you have with java?
+numeric,how many years of work experience do you have with xml?
+numeric,how many years of work experience do you have with agile development?
+numeric,how many years of work experience do you have with netsuite?
+numeric,how many years of work experience do you have with microsoft azure?
+numeric,how many years of work experience do you have with microsoft defender?
+numeric,how many years of work experience do you have with qualys?
+numeric,how many years of work experience do you have with .net framework?
+numeric,"the range on this job posting is $65,000 - $75,000 per year. what are your salary expectations?"
+numeric,how many years of work experience do you have with .net framework?
+numeric,"the range on this job posting is $65,000 - $75,000 per year. what are your salary expectations?"
+numeric,how many years of work experience do you have with blockchain?
+numeric,"how many years of experience do you have working on ""crypto listings"" ?"
+numeric,how many years of work experience do you have with teamcenter?
+numeric,how many years of work experience do you have with plm tools?
+numeric,how many years of work experience do you have with sap erp?
+numeric,how many years of work experience do you have with react.js?
+dropdown,"do you live in south africa ?
+do you live in south africa ?"
+numeric,how many years of work experience do you have with node.js?
+text,record a 2 minute loom talking about your experience and why you are a good fit for this role
+numeric,how many years of work experience do you have with global regulatory compliance?
+text,what is your salary expectation per month?
+radio,"do you have it troubleshooting understanding (e.g. resetting passwords, checking server/app status, setting up hardware)?"
+radio,which of the following tools have you used before?
+radio,can you communication technical issues clearly in writing?
+numeric,how many years of work experience do you have with data governance?
+numeric,how many years of work experience do you have with machine tools?
+numeric,how many years of work experience do you have with enterprise software?
+numeric,how many years of work experience do you have with data engineering?
+numeric,how many years of work experience do you have with yaml?
+numeric,"how many years of work experience do you have with extract, transform, load (etl)?"
+numeric,how many years of work experience do you have with salesforce.com?
+numeric,"how many years of work experience do you have with solution engineering, or solutions consulting for salesforce, certinia, or related saas platforms"
+numeric,how many years of work experience do you have with pre-sales?
+numeric,"could you please indicate the base salary expectations from a fulltime role (e.g. 60,000/per year)?"
+numeric,how many years of work experience do you have with powershell?
+numeric,how many years of work experience do you have with business relationship management?
+numeric,how many years of work experience do you have with it business analysis?
+numeric,how many years of work experience do you have with it infrastructure operations?
+numeric,how many years of strategy/planning experience do you currently have?
+dropdown,"are you brmp certified? 
+are you brmp certified?"
+numeric,how many years of work experience do you have with it compliance?
+numeric,how many years of work experience do you have with sarbanes-oxley act?
+numeric,how many years of work experience do you have with business analysis?
+numeric,how many years of work experience do you have with content management systems (cms)?
+numeric,how many years of work experience do you have with sharepoint?
+numeric,how many years of work experience do you have with google cloud platform (gcp)?
+numeric,how many years of work experience do you have with jenkins?
