@@ -1,2 +1,1 @@
-heroku/python
-heroku/nodejs-engine 
+heroku/python 
