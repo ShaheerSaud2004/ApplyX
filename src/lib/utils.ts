@@ -5,6 +5,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+// Utility function to fix API URLs by removing trailing slashes
+export function getApiUrl(endpoint: string): string {
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL?.endsWith('/') 
+    ? process.env.NEXT_PUBLIC_API_URL.slice(0, -1) 
+    : process.env.NEXT_PUBLIC_API_URL
+  return `${baseUrl}${endpoint}`
+}
+
 export function formatDate(date: Date): string {
   return new Intl.DateTimeFormat("en-US", {
     month: "long",

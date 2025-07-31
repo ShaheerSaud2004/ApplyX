@@ -33,6 +33,7 @@ import { ResumeUploadModal } from '@/components/ResumeUploadModal'
 import { LinkedInCredentialsModal } from '@/components/LinkedInCredentialsModal'
 import { EnhancedBotStatusDashboard } from '@/components/EnhancedBotStatusDashboard'
 import { LiveActivityLog } from '@/components/LiveActivityLog'
+import { getApiUrl } from '@/lib/utils'
 
 interface UserStats {
   totalApplications: number
@@ -129,7 +130,7 @@ export default function DashboardPage() {
       interval = setInterval(async () => {
         try {
           // Poll bot status
-          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bot/status`, {
+          const response = await fetch(getApiUrl('/api/bot/status'), {
             headers: { 'Authorization': `Bearer ${token}` }
           })
           
@@ -146,7 +147,7 @@ export default function DashboardPage() {
           }
           
           // Also update quota status and stats in real-time
-          const quotaResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user/plan`, {
+          const quotaResponse = await fetch(getApiUrl('/api/user/plan'), {
             headers: { 'Authorization': `Bearer ${token}` }
           })
           
@@ -157,10 +158,10 @@ export default function DashboardPage() {
 
           // Update application stats and recent applications in real-time
           const [statsResponse, appsResponse] = await Promise.all([
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/applications/stats`, {
+            fetch(getApiUrl('/api/applications/stats'), {
               headers: { 'Authorization': `Bearer ${token}` }
             }),
-            fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/applications?limit=5`, {
+            fetch(getApiUrl('/api/applications?limit=5'), {
               headers: { 'Authorization': `Bearer ${token}` }
             })
           ])
@@ -187,7 +188,7 @@ export default function DashboardPage() {
         interval = setInterval(async () => {
           try {
             // Update quota status periodically
-            const quotaResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user/plan`, {
+            const quotaResponse = await fetch(getApiUrl('/api/user/plan'), {
               headers: { 'Authorization': `Bearer ${token}` }
             })
             
@@ -198,10 +199,10 @@ export default function DashboardPage() {
 
             // Update application stats and recent applications periodically
             const [statsResponse, appsResponse] = await Promise.all([
-              fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/applications/stats`, {
+              fetch(getApiUrl('/api/applications/stats'), {
                 headers: { 'Authorization': `Bearer ${token}` }
               }),
-              fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/applications?limit=5`, {
+              fetch(getApiUrl('/api/applications?limit=5'), {
                 headers: { 'Authorization': `Bearer ${token}` }
               })
             ])
@@ -255,7 +256,7 @@ export default function DashboardPage() {
     }
     
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`, {
+      const response = await fetch(getApiUrl('/api/profile'), {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -281,7 +282,7 @@ export default function DashboardPage() {
   const loadDashboardData = async () => {
     try {
       // Load user plan/quota info
-      const planResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user/plan`, {
+      const planResponse = await fetch(getApiUrl('/api/user/plan'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       if (planResponse.ok) {
@@ -303,7 +304,7 @@ export default function DashboardPage() {
       }
 
       // Load applications stats
-      const statsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/applications/stats`, {
+      const statsResponse = await fetch(getApiUrl('/api/applications/stats'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       if (statsResponse.ok) {
@@ -312,7 +313,7 @@ export default function DashboardPage() {
       }
 
       // Load recent applications
-      const appsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/applications?limit=5`, {
+      const appsResponse = await fetch(getApiUrl('/api/applications?limit=5'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       if (appsResponse.ok) {
@@ -321,7 +322,7 @@ export default function DashboardPage() {
       }
 
       // Load agent status
-      const agentResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bot/status`, {
+      const agentResponse = await fetch(getApiUrl('/api/bot/status'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       if (agentResponse.ok) {
@@ -393,7 +394,7 @@ export default function DashboardPage() {
     setBotActionMessage('🚀 Starting LinkedIn job application bot...')
     
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bot/start`, {
+      const response = await fetch(getApiUrl('/api/bot/start'), {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       })
@@ -478,7 +479,7 @@ export default function DashboardPage() {
     setBotActionMessage('🛑 Stopping bot and cleaning up...')
     
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bot/stop`, {
+      const response = await fetch(getApiUrl('/api/bot/stop'), {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       })
@@ -527,7 +528,7 @@ export default function DashboardPage() {
 
     setIsResettingAccount(true)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/user/reset-account`, {
+      const response = await fetch(getApiUrl('/api/user/reset-account'), {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

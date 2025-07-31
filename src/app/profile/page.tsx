@@ -39,6 +39,7 @@ import {
 import Link from 'next/link'
 import { useAuth } from '@/components/AuthProvider'
 import { ResumeUploadModal } from '@/components/ResumeUploadModal'
+import { getApiUrl } from '@/lib/utils'
 
 interface UploadedResume {
   id: string
@@ -188,9 +189,9 @@ export default function ProfilePage() {
 
   const loadUserProfile = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
+          const response = await fetch(getApiUrl('/api/profile'), {
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
       
       if (response.ok) {
         const data = await response.json()
@@ -209,9 +210,9 @@ export default function ProfilePage() {
 
   const loadUploadedResumes = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/resumes`, {
-        headers: { 'Authorization': `Bearer ${token}` }
-      })
+          const response = await fetch(getApiUrl('/api/resumes'), {
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
       
       if (response.ok) {
         const data = await response.json()
@@ -225,7 +226,7 @@ export default function ProfilePage() {
   const parseResume = async (resumeId: string) => {
     setResumeParsing(true)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/resume/parse`, {
+      const response = await fetch(getApiUrl('/api/resume/parse'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -302,7 +303,7 @@ export default function ProfilePage() {
     setMessage({ type: '', text: '' })
     
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile/ai-complete`, {
+      const response = await fetch(getApiUrl('/api/profile/ai-complete'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -457,7 +458,7 @@ export default function ProfilePage() {
         eeoInfo
       }
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`, {
+      const response = await fetch(getApiUrl('/api/profile'), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -483,7 +484,7 @@ export default function ProfilePage() {
   const saveLinkedInCredentials = async () => {
     setLoading(true)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile/linkedin`, {
+      const response = await fetch(getApiUrl('/api/profile/linkedin'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
