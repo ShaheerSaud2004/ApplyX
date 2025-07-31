@@ -24,7 +24,8 @@ import {
   User,
   Shield,
   Trash2,
-  Menu
+  Menu,
+  X
 } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
@@ -37,7 +38,7 @@ import { LiveActivityLog } from '@/components/LiveActivityLog'
 import { getApiUrl } from '@/lib/utils'
 
 // Version tracking - update this with each change
-const APP_VERSION = "1.0.1"
+const APP_VERSION = "1.0.2"
 
 interface UserStats {
   totalApplications: number
@@ -104,6 +105,7 @@ export default function DashboardPage() {
   const [isStoppingBot, setIsStoppingBot] = useState(false)
   const [botActionMessage, setBotActionMessage] = useState<string>('')
   const [isResettingAccount, setIsResettingAccount] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     checkOnboardingStatus()
@@ -666,12 +668,70 @@ export default function DashboardPage() {
               <span className="font-medium">{user?.firstName} {user?.lastName}</span>
             </div>
 
+            {/* Mobile menu button */}
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+
             <Button variant="outline" size="sm" onClick={logout} className="hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-all text-xs md:text-sm">
               <LogOut className="h-4 w-4 md:mr-2" />
               <span className="hidden md:inline">Logout</span>
             </Button>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t bg-white/95 backdrop-blur-md">
+            <nav className="flex flex-col space-y-1 p-4">
+              <Link 
+                href="/dashboard" 
+                className="flex items-center px-3 py-2 text-sm font-medium text-gray-900 rounded-md hover:bg-gray-100 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Dashboard
+              </Link>
+              <Link 
+                href="/applications" 
+                className="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Applications
+              </Link>
+              <Link 
+                href="/manual-apply" 
+                className="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Manual Apply
+              </Link>
+              <Link 
+                href="/profile" 
+                className="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Profile
+              </Link>
+              {user?.isAdmin && (
+                <Link 
+                  href="/admin" 
+                  className="flex items-center px-3 py-2 text-sm font-medium text-blue-600 rounded-md hover:bg-blue-50 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Admin
+                </Link>
+              )}
+              <div className="flex items-center px-3 py-2 text-xs text-gray-500">
+                <span className="font-mono">v{APP_VERSION}</span>
+              </div>
+            </nav>
+          </div>
+        )}
       </header>
 
       <div className="flex-1 space-y-4 md:space-y-6 p-3 md:p-8 pt-4 md:pt-6">
@@ -711,23 +771,18 @@ export default function DashboardPage() {
               </div>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button 
-                  variant="outline" 
                   onClick={() => setShowResumeUpload(true)}
-                  className="bg-white/80 hover:bg-white border-blue-200 hover:border-blue-300 transition-all shadow-sm w-full sm:w-auto"
-                  size="sm"
+                  className="bg-white/80 backdrop-blur-sm border border-white/50 text-gray-700 hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   <Upload className="h-4 w-4 mr-2" />
                   Upload Resume
                 </Button>
                 <Button 
-                  asChild
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
-                  size="sm"
+                  onClick={() => setShowLinkedInModal(true)}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-none shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <Link href="/profile">
-                    <BrainCircuit className="h-4 w-4 mr-2" />
-                    Configure Agent
-                  </Link>
+                  <Settings className="h-4 w-4 mr-2" />
+                  Configure Agent
                 </Button>
               </div>
             </div>

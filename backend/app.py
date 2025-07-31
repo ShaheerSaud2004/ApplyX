@@ -69,10 +69,12 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 CORS(app, origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", 
                    "https://apply-9sp9tevcp-shaheers-projects-02efc33d.vercel.app",
                    "https://apply-x.vercel.app",
+                   "https://apply-x.vercel.app",
                    "https://*.vercel.app"], 
-     allow_headers=["Content-Type", "Authorization"], 
+     allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin"], 
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-     supports_credentials=True)
+     supports_credentials=True,
+     expose_headers=["Content-Type", "Authorization"])
 
 # Stripe configuration
 stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')

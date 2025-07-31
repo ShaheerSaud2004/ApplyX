@@ -297,25 +297,27 @@ export default function ManualApplyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-100">
       {/* Header */}
-      <header className="px-4 lg:px-6 h-16 flex items-center border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-        <div className="flex h-16 items-center px-4">
+      <header className="px-3 md:px-6 h-14 md:h-16 flex items-center border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div className="flex h-14 md:h-16 items-center px-3 md:px-4">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
-                <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                <svg className="h-4 w-4 md:h-5 md:w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg>
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-orange-500 to-red-500 rounded-full animate-pulse"></div>
+              <div className="absolute -top-0.5 -right-0.5 md:-top-1 md:-right-1 w-2 h-2 md:w-3 md:h-3 bg-gradient-to-br from-orange-500 to-red-500 rounded-full animate-pulse"></div>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="font-bold text-sm md:text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 ApplyX
               </span>
-              <span className="text-xs text-muted-foreground -mt-1">by Nebula.AI</span>
+              <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">by Nebula.AI</span>
             </div>
           </Link>
-          <nav className="ml-8 flex items-center space-x-6">
+          
+          {/* Desktop Navigation */}
+          <nav className="ml-4 md:ml-8 hidden md:flex items-center space-x-4 lg:space-x-6">
             <Link href="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Dashboard
             </Link>
@@ -323,74 +325,77 @@ export default function ManualApplyPage() {
               Applications
             </Link>
             <Link href="/manual-apply" className="text-sm font-medium text-purple-600 border-b-2 border-purple-600 pb-1">
-              Manual Apply Links
+              Manual Apply
             </Link>
             <Link href="/profile" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Profile
             </Link>
             {user?.isAdmin && (
               <Link href="/admin" className="text-sm font-medium text-purple-600 hover:text-purple-800 transition-colors">
-                Admin Panel
+                Admin
               </Link>
             )}
           </nav>
-          <div className="ml-auto flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm bg-white/50 rounded-full px-3 py-1 backdrop-blur-sm">
+          
+          <div className="ml-auto flex items-center space-x-2 md:space-x-4">
+            {/* User info - hidden on mobile */}
+            <div className="hidden lg:flex items-center space-x-2 text-sm bg-white/50 rounded-full px-3 py-1 backdrop-blur-sm">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <span className="font-medium">{user?.firstName} {user?.lastName}</span>
             </div>
-            <Button variant="outline" size="sm" onClick={logout} className="bg-white/50 backdrop-blur-sm hover:bg-white/80">
-              <LogOut className="h-4 w-4 mr-2" />
-              Logout
+            
+            <Button variant="outline" size="sm" onClick={logout} className="bg-white/50 backdrop-blur-sm hover:bg-white/80 text-xs md:text-sm">
+              <LogOut className="h-4 w-4 md:mr-2" />
+              <span className="hidden md:inline">Logout</span>
             </Button>
           </div>
         </div>
       </header>
 
-      <div className="flex-1 space-y-8 p-8 pt-8">
+      <div className="flex-1 space-y-6 md:space-y-8 p-4 md:p-8 pt-4 md:pt-8">
         {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 p-8 text-white shadow-2xl">
+        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 p-4 md:p-8 text-white shadow-2xl">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative z-10">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
               <div>
-                <h1 className="text-4xl font-bold mb-2">Manual Apply Links</h1>
-                <p className="text-purple-100 text-lg">Comprehensive job opportunities from top sources, updated daily</p>
+                <h1 className="text-2xl md:text-4xl font-bold mb-2">Manual Apply Links</h1>
+                <p className="text-purple-100 text-sm md:text-lg">Comprehensive job opportunities from top sources, updated daily</p>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
                 <Button 
                   variant="secondary" 
                   onClick={triggerJobUpdate}
                   disabled={updating}
-                  className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30"
+                  className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 text-sm"
                 >
                   <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
                   {updating ? 'Updating...' : 'Update Jobs'}
                 </Button>
-                <Button variant="secondary" onClick={resetFilters} className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30">
+                <Button variant="secondary" onClick={resetFilters} className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 text-sm">
                   Reset Filters
                 </Button>
               </div>
             </div>
           </div>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+          <div className="absolute top-0 right-0 w-16 h-16 md:w-32 md:h-32 bg-white/10 rounded-full -translate-y-8 md:-translate-y-16 translate-x-8 md:translate-x-16"></div>
+          <div className="absolute bottom-0 left-0 w-12 h-12 md:w-24 md:h-24 bg-white/10 rounded-full translate-y-6 md:translate-y-12 -translate-x-6 md:-translate-x-12"></div>
         </div>
 
         {/* Stats Overview */}
         {stats && (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-              <div className="flex items-center justify-between mb-4">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg">
-                  <Target className="h-6 w-6 text-white" />
+          <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="bg-white/70 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <div className="flex items-center justify-between mb-3 md:mb-4">
+                <div className="p-2 md:p-3 rounded-lg md:rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg">
+                  <Target className="h-5 w-5 md:h-6 md:w-6 text-white" />
                 </div>
-                <span className="text-sm font-medium text-muted-foreground">Total Jobs</span>
+                <span className="text-xs md:text-sm font-medium text-muted-foreground">Total Jobs</span>
               </div>
-              <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 {stats?.total_jobs?.toLocaleString() || '0'}
               </div>
-              <p className="text-sm text-muted-foreground mt-1">
+              <p className="text-xs md:text-sm text-muted-foreground mt-1">
                 From {stats?.sources ? Object.keys(stats.sources).length : 0} sources
               </p>
             </div>
@@ -439,14 +444,14 @@ export default function ManualApplyPage() {
         )}
 
         {/* Search and Advanced Filters */}
-        <div className="bg-white/70 backdrop-blur-md rounded-3xl p-8 border border-white/50 shadow-xl">
-          <div className="flex items-center mb-6">
-            <div className="p-3 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 shadow-lg mr-4">
-              <Search className="h-6 w-6 text-white" />
+        <div className="bg-white/70 backdrop-blur-md rounded-2xl md:rounded-3xl p-4 md:p-8 border border-white/50 shadow-xl">
+          <div className="flex items-center mb-4 md:mb-6">
+            <div className="p-2 md:p-3 rounded-lg md:rounded-xl bg-gradient-to-br from-indigo-500 to-purple-500 shadow-lg mr-3 md:mr-4">
+              <Search className="h-5 w-5 md:h-6 md:w-6 text-white" />
             </div>
             <div>
-              <h3 className="text-xl font-bold">Search & Filter Jobs</h3>
-              <p className="text-muted-foreground">Find your perfect opportunity</p>
+              <h3 className="text-lg md:text-xl font-bold">Search & Filter Jobs</h3>
+              <p className="text-sm md:text-base text-muted-foreground">Find your perfect opportunity</p>
             </div>
           </div>
 
