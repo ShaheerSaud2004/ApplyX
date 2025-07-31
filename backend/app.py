@@ -66,9 +66,13 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key-change-
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
-CORS(app, origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002"], 
+CORS(app, origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", 
+                   "https://apply-9sp9tevcp-shaheers-projects-02efc33d.vercel.app",
+                   "https://apply-x.vercel.app",
+                   "https://*.vercel.app"], 
      allow_headers=["Content-Type", "Authorization"], 
-     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"])
+     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+     supports_credentials=True)
 
 # Stripe configuration
 stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
