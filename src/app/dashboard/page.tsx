@@ -36,6 +36,9 @@ import { EnhancedBotStatusDashboard } from '@/components/EnhancedBotStatusDashbo
 import { LiveActivityLog } from '@/components/LiveActivityLog'
 import { getApiUrl } from '@/lib/utils'
 
+// Version tracking - update this with each change
+const APP_VERSION = "1.0.1"
+
 interface UserStats {
   totalApplications: number
   applicationsThisWeek: number
@@ -650,6 +653,11 @@ export default function DashboardPage() {
           </nav>
           
           <div className="ml-auto flex items-center space-x-2">
+            {/* Version display */}
+            <div className="hidden sm:flex items-center text-xs text-muted-foreground bg-gray-50 rounded-full px-2 py-1">
+              <span className="font-mono">v{APP_VERSION}</span>
+            </div>
+            
             {/* User info - hidden on mobile */}
             <div className="hidden lg:flex items-center space-x-2 text-sm bg-white/60 rounded-full px-3 py-1.5">
               <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
@@ -691,6 +699,15 @@ export default function DashboardPage() {
                   Your AI-powered job application assistant is ready to help you land your dream job. 
                   Let's make today count!
                 </p>
+                {/* Version display in welcome section */}
+                <div className="flex items-center space-x-3 pt-2">
+                  <span className="text-xs text-blue-600 bg-blue-100 rounded-full px-2 py-1 font-medium">
+                    Version {APP_VERSION}
+                  </span>
+                  <span className="text-xs text-gray-500">
+                    Last updated: {new Date().toLocaleDateString()}
+                  </span>
+                </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button 
