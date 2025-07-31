@@ -18,6 +18,105 @@ class EmailService:
         self.sender_password = os.getenv('SENDER_APP_PASSWORD')  # Your app password
         self.sender_name = os.getenv('SENDER_NAME', 'ApplyX Team')
         
+    def send_signup_confirmation_email(self, user_email, user_name):
+        """Send signup confirmation email to user"""
+        try:
+            subject = "🎉 Welcome to ApplyX - Account Created Successfully!"
+            
+            # Create HTML email content
+            html_content = f"""
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style>
+                    body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }}
+                    .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
+                    .header {{ background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }}
+                    .content {{ background: #f8fafc; padding: 30px; border-radius: 0 0 10px 10px; }}
+                    .button {{ display: inline-block; background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; }}
+                    .footer {{ text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }}
+                    .highlight {{ background: #fef3c7; border-left: 4px solid #f59e0b; padding: 15px; margin: 20px 0; }}
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="header">
+                        <h1>🚀 Welcome to ApplyX!</h1>
+                        <p>Your account has been created successfully</p>
+                    </div>
+                    <div class="content">
+                        <h2>Hi {user_name}!</h2>
+                        <p>Thank you for signing up for ApplyX! We're excited to have you join our community of job seekers using AI to streamline their application process.</p>
+                        
+                        <div class="highlight">
+                            <p><strong>📋 Next Steps:</strong></p>
+                            <p>Your account is currently pending admin approval. You'll receive another email once your account is approved and you can start using ApplyX.</p>
+                        </div>
+                        
+                        <p><strong>What to expect:</strong></p>
+                        <ul>
+                            <li>✅ Admin review within 24 hours</li>
+                            <li>📧 Approval notification email</li>
+                            <li>🚀 Access to AI-powered job applications</li>
+                            <li>📊 Dashboard with application tracking</li>
+                        </ul>
+                        
+                        <p>In the meantime, you can:</p>
+                        <ul>
+                            <li>📖 Read about our features on our website</li>
+                            <li>📧 Contact us if you have any questions</li>
+                            <li>👥 Follow us for updates and tips</li>
+                        </ul>
+                        
+                        <p>We'll be in touch soon!</p>
+                        
+                        <p>Best regards,<br>The ApplyX Team</p>
+                    </div>
+                    <div class="footer">
+                        <p>ApplyX - AI-Powered Job Applications by Nebula.AI</p>
+                        <p>This email was sent because you created an account with ApplyX.</p>
+                    </div>
+                </div>
+            </body>
+            </html>
+            """
+            
+            # Create plain text version
+            text_content = f"""
+            Hi {user_name}!
+
+            Thank you for signing up for ApplyX! We're excited to have you join our community of job seekers using AI to streamline their application process.
+
+            NEXT STEPS:
+            Your account is currently pending admin approval. You'll receive another email once your account is approved and you can start using ApplyX.
+
+            What to expect:
+            ✅ Admin review within 24 hours
+            📧 Approval notification email
+            🚀 Access to AI-powered job applications
+            📊 Dashboard with application tracking
+
+            In the meantime, you can:
+            📖 Read about our features on our website
+            📧 Contact us if you have any questions
+            👥 Follow us for updates and tips
+
+            We'll be in touch soon!
+
+            Best regards,
+            The ApplyX Team
+
+            ---
+            ApplyX - AI-Powered Job Applications by Nebula.AI
+            This email was sent because you created an account with ApplyX.
+            """
+            
+            return self._send_email(user_email, subject, html_content, text_content)
+            
+        except Exception as e:
+            logger.error(f"Error sending signup confirmation email to {user_email}: {e}")
+            return False
+
     def send_approval_email(self, user_email, user_name):
         """Send approval email to user"""
         try:

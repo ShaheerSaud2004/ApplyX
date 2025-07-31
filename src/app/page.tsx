@@ -717,8 +717,8 @@ export default function HomePage() {
                     Application tracking
                   </li>
                 </ul>
-                <Button className="w-full mt-6" variant="outline" onClick={openSignup}>
-                  Get Started Free
+                <Button className="w-full mt-6" variant="outline" asChild>
+                  <Link href="/checkout?plan=free">Get Started Free</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -754,8 +754,8 @@ export default function HomePage() {
                     Priority support
                   </li>
                 </ul>
-                <Button className="w-full mt-6 bg-blue-500 hover:bg-blue-600" onClick={openSignup}>
-                  Start Basic Plan
+                <Button className="w-full mt-6 bg-blue-500 hover:bg-blue-600" asChild>
+                  <Link href="/checkout?plan=basic">Start Basic Plan</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -790,8 +790,8 @@ export default function HomePage() {
                     1-on-1 support
                   </li>
                 </ul>
-                <Button className="w-full mt-6 bg-purple-500 hover:bg-purple-600" onClick={openSignup}>
-                  Start Pro Plan
+                <Button className="w-full mt-6 bg-purple-500 hover:bg-purple-600" asChild>
+                  <Link href="/checkout?plan=pro">Start Pro Plan</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -834,10 +834,10 @@ export default function HomePage() {
           <p className="text-xs text-gray-500">All rights reserved.</p>
         </div>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="#">
+          <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="/terms">
             Terms of Service
           </Link>
-          <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="#">
+          <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="/privacy">
             Privacy
           </Link>
         </nav>

@@ -490,6 +490,14 @@ def register():
     conn.commit()
     conn.close()
     
+    # Send signup confirmation email
+    try:
+        from email_service import email_service
+        user_name = f"{data.get('first_name', '')} {data.get('last_name', '')}".strip() or data['email']
+        email_service.send_signup_confirmation_email(data['email'], user_name)
+    except Exception as e:
+        print(f"Failed to send signup confirmation email: {e}")
+    
     # Return success response
     return jsonify({
         'message': 'Account created successfully! Your account is pending admin approval. You will receive an email once approved.',

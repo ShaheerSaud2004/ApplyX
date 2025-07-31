@@ -8,7 +8,8 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { useAuth } from '@/components/AuthProvider'
 import { getApiUrl } from '@/lib/utils'
-import { CheckCircle2, Mail, Clock } from 'lucide-react'
+import { CheckCircle2, Mail, Clock, X } from 'lucide-react'
+import Link from 'next/link'
 
 interface SignupModalProps {
   isOpen: boolean
@@ -99,7 +100,14 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
   return (
     <>
       <Dialog open={isOpen && !showSuccessModal} onOpenChange={onOpenChange}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md relative">
+          {/* Mobile Close Button */}
+          <button
+            onClick={() => onOpenChange(false)}
+            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors md:hidden"
+          >
+            <X className="h-5 w-5" />
+          </button>
           <DialogHeader className="space-y-3">
             <div className="flex justify-center">
               <div className="relative">
@@ -182,14 +190,22 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
               />
             </div>
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-start space-x-2">
               <Checkbox
                 id="terms"
                 checked={acceptTerms}
                 onCheckedChange={(checked) => setAcceptTerms(checked as boolean)}
+                className="mt-1"
               />
-              <Label htmlFor="terms" className="text-sm">
-                I agree to the <span className="text-blue-600 hover:underline cursor-pointer">Terms of Service</span> and <span className="text-blue-600 hover:underline cursor-pointer">Privacy Policy</span>
+              <Label htmlFor="terms" className="text-sm leading-relaxed">
+                I agree to the{' '}
+                <Link href="/terms" target="_blank" className="text-blue-600 hover:underline">
+                  Terms of Service
+                </Link>
+                {' '}and{' '}
+                <Link href="/privacy" target="_blank" className="text-blue-600 hover:underline">
+                  Privacy Policy
+                </Link>
               </Label>
             </div>
 
@@ -214,10 +230,19 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
           </div>
         </DialogContent>
       </Dialog>
+        </DialogContent>
+      </Dialog>
 
       {/* Success Modal for Waitlist */}
       <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md relative">
+          {/* Mobile Close Button */}
+          <button
+            onClick={() => setShowSuccessModal(false)}
+            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors md:hidden"
+          >
+            <X className="h-5 w-5" />
+          </button>
           <div className="text-center space-y-6 py-4">
             <div className="flex justify-center">
               <div className="relative">

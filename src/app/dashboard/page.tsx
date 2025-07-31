@@ -39,7 +39,7 @@ import { LiveActivityLog } from '@/components/LiveActivityLog'
 import { getApiUrl } from '@/lib/utils'
 
 // Version tracking - update this with each change
-const APP_VERSION = "1.0.5"
+const APP_VERSION = "1.0.6"
 
 interface UserStats {
   totalApplications: number
@@ -615,24 +615,31 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="flex h-14 md:h-16 items-center px-3 md:px-4">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="relative">
-              <div className="w-5 h-5 md:w-6 md:h-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded flex items-center justify-center shadow-lg">
-                <svg className="h-3 w-3 md:h-4 md:w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
-              </div>
-              <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-br from-orange-500 to-red-500 rounded-full animate-pulse"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-sm md:text-base bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                ApplyX
-              </span>
-              <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">by Nebula.AI</span>
-            </div>
-          </Link>
+                    <header className="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
+                <div className="flex h-14 md:h-16 items-center px-3 md:px-4">
+                  <Link href="/" className="flex items-center space-x-2">
+                    <div className="relative">
+                      <div className="w-5 h-5 md:w-6 md:h-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded flex items-center justify-center shadow-lg">
+                        <svg className="h-3 w-3 md:h-4 md:w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                      </div>
+                      <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-br from-orange-500 to-red-500 rounded-full animate-pulse"></div>
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="font-bold text-sm md:text-base bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        ApplyX
+                      </span>
+                      <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">by Nebula.AI</span>
+                    </div>
+                  </Link>
+                  
+                  {/* Mobile Back Button */}
+                  <Link href="/" className="ml-4 md:hidden">
+                    <Button variant="ghost" size="sm" className="text-xs">
+                      ← Home
+                    </Button>
+                  </Link>
           
           {/* Desktop Navigation */}
           <nav className="ml-4 md:ml-6 hidden md:flex items-center space-x-3 lg:space-x-6">
