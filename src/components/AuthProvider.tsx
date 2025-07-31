@@ -61,7 +61,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Login with email/password (for login pages)
   const loginWithCredentials = async (email: string, password: string) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL?.endsWith('/') 
+        ? process.env.NEXT_PUBLIC_API_URL.slice(0, -1) 
+        : process.env.NEXT_PUBLIC_API_URL
+      const response = await fetch(`${apiUrl}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -82,7 +85,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const register = async (userData: any) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`, {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL?.endsWith('/') 
+        ? process.env.NEXT_PUBLIC_API_URL.slice(0, -1) 
+        : process.env.NEXT_PUBLIC_API_URL
+      const response = await fetch(`${apiUrl}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData)
