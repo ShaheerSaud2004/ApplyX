@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { useAuth } from '@/components/AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 import Link from 'next/link'
 
 interface LoginModalProps {
@@ -30,7 +31,7 @@ export function LoginModal({ isOpen, onOpenChange, onSwitchToSignup }: LoginModa
     setError('')
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
+      const response = await fetch(getApiUrl('/api/auth/login'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useAuth } from '@/components/AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -106,7 +107,7 @@ export default function ApplicationsPage() {
       setLoading(true)
       const currentCount = applications.length
       
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/applications`, {
+              const response = await fetch(getApiUrl('/api/applications'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
 
@@ -152,7 +153,7 @@ export default function ApplicationsPage() {
 
     setUpdateLoading(true)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/applications/${editingApplication.id}`, {
+      const response = await fetch(getApiUrl(`/api/applications/${editingApplication.id}`), {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

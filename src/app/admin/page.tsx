@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '@/components/AuthProvider'
 import { useRouter } from 'next/navigation'
+import { getApiUrl } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -140,13 +141,13 @@ export default function AdminDashboard() {
   const fetchAdminData = async () => {
     try {
       const [usersRes, pendingRes, statsRes] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/users`, {
+        fetch(getApiUrl('/api/admin/users'), {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/users/pending`, {
+        fetch(getApiUrl('/api/admin/users/pending'), {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/stats`, {
+        fetch(getApiUrl('/api/admin/stats'), {
           headers: { 'Authorization': `Bearer ${token}` }
         })
       ])
@@ -176,7 +177,7 @@ export default function AdminDashboard() {
 
   const fetchAnalytics = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/analytics`, {
+      const response = await fetch(getApiUrl('/api/admin/analytics'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       if (response.ok) {
@@ -190,7 +191,7 @@ export default function AdminDashboard() {
 
   const fetchSystemHealth = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/system-health`, {
+      const response = await fetch(getApiUrl('/api/admin/system-health'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       if (response.ok) {
@@ -204,7 +205,7 @@ export default function AdminDashboard() {
 
   const fetchRecentActivity = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/recent-activity?limit=20`, {
+      const response = await fetch(getApiUrl('/api/admin/recent-activity?limit=20'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       if (response.ok) {
@@ -219,10 +220,10 @@ export default function AdminDashboard() {
   const fetchUserDetails = async (userId: string) => {
     try {
       const [appsRes, activityRes] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/users/${userId}/applications`, {
+        fetch(getApiUrl(`/api/admin/users/${userId}/applications`), {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/users/${userId}/activity?limit=20`, {
+        fetch(getApiUrl(`/api/admin/users/${userId}/activity?limit=20`), {
           headers: { 'Authorization': `Bearer ${token}` }
         })
       ])
@@ -244,7 +245,7 @@ export default function AdminDashboard() {
   const exportUsers = async () => {
     try {
       setActionLoading('export')
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/export/users`, {
+      const response = await fetch(getApiUrl('/api/admin/export/users'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       
@@ -271,7 +272,7 @@ export default function AdminDashboard() {
   const triggerDailyApplications = async () => {
     setIsTriggeringDailyApps(true)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/trigger-daily-applications`, {
+      const response = await fetch(getApiUrl('/api/admin/trigger-daily-applications'), {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -334,7 +335,7 @@ export default function AdminDashboard() {
   const approveUser = async (userId: string) => {
     setActionLoading(`approve-${userId}`)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/users/${userId}/approve`, {
+      const response = await fetch(getApiUrl(`/api/admin/users/${userId}/approve`), {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       })
@@ -358,7 +359,7 @@ export default function AdminDashboard() {
   const rejectUser = async (userId: string, reason: string = '') => {
     setActionLoading(`reject-${userId}`)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/users/${userId}/reject`, {
+      const response = await fetch(getApiUrl(`/api/admin/users/${userId}/reject`), {
         method: 'POST',
         headers: { 
           'Authorization': `Bearer ${token}`,
@@ -390,7 +391,7 @@ export default function AdminDashboard() {
 
     setActionLoading(`delete-${userId}`)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/users/${userId}/delete`, {
+      const response = await fetch(getApiUrl(`/api/admin/users/${userId}/delete`), {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       })
@@ -415,7 +416,7 @@ export default function AdminDashboard() {
   const updateUser = async (userId: string, userData: Partial<User>) => {
     setActionLoading('update-user')
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/users/${userId}`, {
+      const response = await fetch(getApiUrl(`/api/admin/users/${userId}`), {
         method: 'PUT',
         headers: { 
           'Authorization': `Bearer ${token}`,

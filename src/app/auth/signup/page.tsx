@@ -9,6 +9,7 @@ import { AlertCircle, CheckCircle, Eye, EyeOff } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/components/AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 
 export default function SignupPage() {
   const router = useRouter()
@@ -67,7 +68,7 @@ export default function SignupPage() {
     setMessage({ type: '', text: '' })
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`, {
+      const response = await fetch(getApiUrl('/api/auth/register'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

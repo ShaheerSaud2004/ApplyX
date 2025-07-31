@@ -47,6 +47,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { useAuth } from '@/components/AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 
 interface JobListing {
   id: string
@@ -136,13 +137,13 @@ export default function ManualApplyPage() {
       
       // Load categories, stats, and trending data in parallel
       const [categoriesRes, statsRes, trendingRes] = await Promise.all([
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/jobs/categories`, {
+        fetch(getApiUrl('/api/jobs/categories'), {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/jobs/stats`, {
+        fetch(getApiUrl('/api/jobs/stats'), {
           headers: { 'Authorization': `Bearer ${token}` }
         }),
-        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/jobs/trending`, {
+        fetch(getApiUrl('/api/jobs/trending'), {
           headers: { 'Authorization': `Bearer ${token}` }
         })
       ])
@@ -175,7 +176,7 @@ export default function ManualApplyPage() {
         limit: '20'
       })
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/jobs?${params}`, {
+              const response = await fetch(getApiUrl(`/api/jobs?${params}`), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       const data = await response.json()
@@ -194,7 +195,7 @@ export default function ManualApplyPage() {
   const triggerJobUpdate = async () => {
     try {
       setUpdating(true)
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/jobs/update`, { 
+      const response = await fetch(getApiUrl('/api/jobs/update'), { 
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       })
@@ -242,7 +243,7 @@ export default function ManualApplyPage() {
     try {
       setIsUpdatingJob(true)
       
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/jobs/${jobId}`, {
+              const response = await fetch(getApiUrl(`/api/jobs/${jobId}`), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

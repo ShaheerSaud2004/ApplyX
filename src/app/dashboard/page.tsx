@@ -267,11 +267,13 @@ export default function DashboardPage() {
         const data = await response.json()
         // Check if user has completed basic profile setup
         const hasBasicInfo = data.user?.firstName && data.user?.lastName
-        const hasJobPrefs = data.jobPreferences?.jobTitles
+        const hasJobPrefs = data.jobPreferences?.jobTitles || data.jobTitles
         const hasLinkedIn = data.linkedinCreds?.hasCredentials || (data.linkedinCreds?.email && data.linkedinCreds?.password)
+        const onboardingCompleted = data.onboardingCompleted || data.user?.onboardingCompleted
         
         setHasLinkedInCredentials(hasLinkedIn)
-        setNeedsOnboarding(!(hasBasicInfo && hasJobPrefs))
+        // User needs onboarding if they haven't completed it OR missing basic info/job prefs
+        setNeedsOnboarding(!onboardingCompleted && !(hasBasicInfo && hasJobPrefs))
       }
     } catch (error) {
       console.error('Error checking onboarding status:', error)
@@ -608,18 +610,18 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       {/* Header */}
       <header className="border-b bg-white/80 backdrop-blur-md sticky top-0 z-50">
-        <div className="flex h-16 items-center px-4">
+        <div className="flex h-14 md:h-16 items-center px-3 md:px-4">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative">
-              <div className="w-6 h-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded flex items-center justify-center shadow-lg">
-                <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-5 h-5 md:w-6 md:h-6 bg-gradient-to-br from-blue-600 to-purple-600 rounded flex items-center justify-center shadow-lg">
+                <svg className="h-3 w-3 md:h-4 md:w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg>
               </div>
-              <div className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-gradient-to-br from-orange-500 to-red-500 rounded-full animate-pulse"></div>
+              <div className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 md:w-2 md:h-2 bg-gradient-to-br from-orange-500 to-red-500 rounded-full animate-pulse"></div>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="font-bold text-sm md:text-base bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 ApplyX
               </span>
               <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">by Nebula.AI</span>
@@ -627,7 +629,7 @@ export default function DashboardPage() {
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="ml-6 hidden md:flex items-center space-x-4 lg:space-x-6">
+          <nav className="ml-4 md:ml-6 hidden md:flex items-center space-x-3 lg:space-x-6">
             <Link href="/dashboard" className="text-sm font-medium transition-colors hover:text-blue-600">
               Dashboard
             </Link>
@@ -647,21 +649,16 @@ export default function DashboardPage() {
             )}
           </nav>
           
-          <div className="ml-auto flex items-center space-x-2 md:space-x-4">
+          <div className="ml-auto flex items-center space-x-2">
             {/* User info - hidden on mobile */}
-            <div className="hidden sm:flex items-center space-x-2 text-sm bg-white/60 rounded-full px-3 py-1.5">
-              <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+            <div className="hidden lg:flex items-center space-x-2 text-sm bg-white/60 rounded-full px-3 py-1.5">
+              <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                 <User className="h-3 w-3 text-white" />
               </div>
               <span className="font-medium">{user?.firstName} {user?.lastName}</span>
             </div>
 
-            {/* Mobile menu button */}
-            <Button variant="outline" size="sm" className="md:hidden">
-              <Menu className="h-4 w-4" />
-            </Button>
-
-            <Button variant="outline" size="sm" onClick={logout} className="hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-all">
+            <Button variant="outline" size="sm" onClick={logout} className="hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-all text-xs md:text-sm">
               <LogOut className="h-4 w-4 md:mr-2" />
               <span className="hidden md:inline">Logout</span>
             </Button>
@@ -669,7 +666,7 @@ export default function DashboardPage() {
         </div>
       </header>
 
-      <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
+      <div className="flex-1 space-y-4 md:space-y-6 p-3 md:p-8 pt-4 md:pt-6">
         {/* Welcome Section */}
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-indigo-600/10 rounded-2xl"></div>
@@ -684,29 +681,31 @@ export default function DashboardPage() {
               <circle cx="100" cy="100" r="80" fill="url(#grad1)"/>
             </svg>
           </div>
-          <div className="relative p-4 md:p-8">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
+          <div className="relative p-3 md:p-6 lg:p-8">
+            <div className="flex flex-col space-y-4">
               <div className="space-y-2">
-                <h1 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
+                <h1 className="text-xl md:text-2xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                   Welcome back, {user?.firstName}! 👋
                 </h1>
-                <p className="text-base md:text-lg text-gray-600 max-w-2xl">
+                <p className="text-sm md:text-base lg:text-lg text-gray-600">
                   Your AI-powered job application assistant is ready to help you land your dream job. 
                   Let's make today count!
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button 
                   variant="outline" 
                   onClick={() => setShowResumeUpload(true)}
-                  className="bg-white/80 hover:bg-white border-blue-200 hover:border-blue-300 transition-all shadow-sm"
+                  className="bg-white/80 hover:bg-white border-blue-200 hover:border-blue-300 transition-all shadow-sm w-full sm:w-auto"
+                  size="sm"
                 >
                   <Upload className="h-4 w-4 mr-2" />
                   Upload Resume
                 </Button>
                 <Button 
                   asChild
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl transition-all w-full sm:w-auto"
+                  size="sm"
                 >
                   <Link href="/profile">
                     <BrainCircuit className="h-4 w-4 mr-2" />

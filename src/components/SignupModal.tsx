@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { useAuth } from '@/components/AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 import { CheckCircle2, Mail, Clock } from 'lucide-react'
 
 interface SignupModalProps {
@@ -46,7 +47,7 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`, {
+      const response = await fetch(getApiUrl('/api/auth/register'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

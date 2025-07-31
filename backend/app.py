@@ -2259,6 +2259,11 @@ def get_profile(current_user_id):
         }
     }
     
+    # Check if onboarding is completed (user has basic info and job preferences)
+    has_basic_info = response_data['user']['firstName'] and response_data['user']['lastName']
+    has_job_prefs = bool(response_data['jobPreferences']['jobTitles'])
+    response_data['onboardingCompleted'] = has_basic_info and has_job_prefs
+    
     return jsonify(response_data)
 
 @app.route('/api/linkedin/verify', methods=['POST'])
@@ -2725,6 +2730,50 @@ def update_profile(current_user_id):
                     eeo_info.get('disability', False),
                     current_time
                 ))
+        
+        # Handle onboarding data from the onboarding wizard
+        job_titles = data.get('jobTitles', '')
+        location = data.get('location', '')
+        experience_level = data.get('experienceLevel', '')
+        onboarding_completed = data.get('onboardingCompleted', False)
+        
+        if job_titles or location or experience_level or onboarding_completed:
+            # Check if preferences exist
+            cursor.execute('SELECT id FROM user_preferences WHERE user_id = ?', (current_user_id,))
+            exists = cursor.fetchone()
+            
+            if exists and job_titles:
+                # Update existing preferences with onboarding data
+                cursor.execute('''
+                    UPDATE user_preferences 
+                    SET job_titles = ?, updated_at = ?
+                    WHERE user_id = ?
+                ''', (json.dumps([job_titles]), datetime.now().isoformat(), current_user_id))
+            elif job_titles:
+                # Create new preferences with onboarding data
+                cursor.execute('''
+                    INSERT INTO user_preferences 
+                    (id, user_id, job_titles, locations, remote, experience, salary_min, skills, created_at)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (
+                    str(uuid.uuid4()),
+                    current_user_id,
+                    json.dumps([job_titles]),
+                    json.dumps([location]) if location else '[]',
+                    False,
+                    json.dumps([experience_level]) if experience_level else '[]',
+                    0,
+                    '',
+                    datetime.now().isoformat()
+                ))
+            
+            # Update onboarding completion status
+            if onboarding_completed:
+                cursor.execute('''
+                    UPDATE users 
+                    SET updated_at = ?
+                    WHERE id = ?
+                ''', (datetime.now().isoformat(), current_user_id))
         
         # IMPORTANT: Also update the JSON fields that the bot reads from
         job_preferences_json = json.dumps(data.get('jobPreferences', {}))

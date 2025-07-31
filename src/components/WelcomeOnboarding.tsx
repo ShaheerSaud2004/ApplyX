@@ -8,6 +8,8 @@ import { Label } from '@/components/ui/label'
 import { Progress } from '@/components/ui/progress'
 import { CheckCircle, ArrowRight, Bot, Target, Upload } from 'lucide-react'
 import { ResumeUploadModal } from './ResumeUploadModal'
+import { useAuth } from './AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 
 interface WelcomeOnboardingProps {
   onComplete?: () => void
@@ -18,8 +20,10 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({
   onComplete,
   onSkip
 }) => {
+  const { token } = useAuth()
   const [currentStep, setCurrentStep] = useState(1)
   const [showResumeUpload, setShowResumeUpload] = useState(false)
+  const [isCompleting, setIsCompleting] = useState(false)
   const [formData, setFormData] = useState({
     jobPreferences: '',
     location: '',
@@ -31,11 +35,44 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({
   const totalSteps = 4
   const progress = (currentStep / totalSteps) * 100
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (currentStep < totalSteps) {
       setCurrentStep(currentStep + 1)
     } else {
+      await handleComplete()
+    }
+  }
+
+  const handleComplete = async () => {
+    setIsCompleting(true)
+    try {
+      // Save job preferences to backend
+      if (formData.jobPreferences) {
+        const response = await fetch(getApiUrl('/api/profile'), {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            jobTitles: formData.jobPreferences,
+            location: formData.location,
+            experienceLevel: formData.experience,
+            onboardingCompleted: true
+          })
+        })
+
+        if (!response.ok) {
+          console.error('Failed to save onboarding data')
+        }
+      }
+      
       onComplete?.()
+    } catch (error) {
+      console.error('Error completing onboarding:', error)
+      onComplete?.() // Still complete even if save fails
+    } finally {
+      setIsCompleting(false)
     }
   }
 
@@ -184,8 +221,8 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-4">
-        <Card className="w-full max-w-md">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-3 md:p-4">
+        <Card className="w-full max-w-md mx-auto">
           <CardHeader>
             <div className="flex justify-between items-center mb-2">
               <CardTitle className="text-lg">Setup Progress</CardTitle>
@@ -205,10 +242,19 @@ export const WelcomeOnboarding: React.FC<WelcomeOnboardingProps> = ({
               </Button>
               <Button 
                 onClick={handleNext}
-                disabled={currentStep === 3 && !formData.resumeUploaded}
+                disabled={currentStep === 3 && !formData.resumeUploaded || isCompleting}
               >
-                {currentStep === totalSteps ? 'Complete' : 'Next'}
-                <ArrowRight className="w-4 h-4 ml-1" />
+                {isCompleting ? (
+                  <>
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                    Saving...
+                  </>
+                ) : (
+                  <>
+                    {currentStep === totalSteps ? 'Complete Setup' : 'Next'}
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </>
+                )}
               </Button>
             </div>
           </CardContent>
