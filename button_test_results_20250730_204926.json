@@ -1,0 +1,134 @@
+[
+  {
+    "test": "Login Button",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Register Button",
+    "success": true,
+    "details": "Status: 400",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Logout Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Start Bot Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Stop Bot Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Upload Resume Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Save Profile Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Add LinkedIn Credentials Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Clear Activity Log Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "AI Complete Profile Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Upgrade Plan Button",
+    "success": true,
+    "details": "Status: 200",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Form Validation - Invalid Email",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Form Validation - Missing Fields",
+    "success": true,
+    "details": "Status: 400",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Button States",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Modal Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Dropdown Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Checkbox Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Text Input Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Textarea Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "File Upload Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Error Handling - Empty Fields",
+    "success": true,
+    "details": "Status: 400",
+    "timestamp": "20:49:26"
+  },
+  {
+    "test": "Accessibility - Keyboard Navigation",
+    "success": false,
+    "details": "Responses: [405, 405, 401]",
+    "timestamp": "20:49:26"
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "test": "Frontend Page: /",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5b970>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Page: /dashboard",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /dashboard (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5bb50>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Page: /profile",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /profile (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5bfd0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Page: /applications",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /applications (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b853d0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Page: /manual-apply",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /manual-apply (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b857c0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Page: /auth/login",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5bfd0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Page: /auth/signup",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /auth/signup (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5bd60>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Page: /auth/forgot-password",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /auth/forgot-password (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5b880>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Page: /admin",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /admin (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b85940>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Page: /pricing",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /pricing (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b85550>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Asset: /favicon.ico",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /favicon.ico (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b85c10>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Asset: /favicon-16x16.png",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /favicon-16x16.png (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b85f70>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Asset: /favicon-32x32.png",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /favicon-32x32.png (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b933a0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Asset: /site.webmanifest",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /site.webmanifest (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b93730>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend-Backend Integration",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b93d00>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Login Page Load",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b93d00>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Signup Page Load",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /auth/signup (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b934c0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Dashboard Page Load",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /dashboard (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b93130>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Profile Page Load",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /profile (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b931f0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Applications Page Load",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /applications (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b85430>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Admin Page Load",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /admin (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b85820>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Pricing Page Load",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /pricing (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b859d0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Responsive Design: Mobile",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b85ac0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Responsive Design: Tablet",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5b8e0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Responsive Design: Desktop",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5bb20>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Frontend Performance",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101ba10a0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Security Headers",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101ba1460>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "404 Error Page",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: /nonexistent-page (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5be80>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Meta Tags",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5be50>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "JavaScript Loading",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b5bac0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "CSS Loading",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b85760>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Accessibility Features",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b851f0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Mobile Optimization",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=3000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101b85d60>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  }
+]

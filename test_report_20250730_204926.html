@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApplyX Test Results - 20250730_204926</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; }
+        .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .summary-card { background: #f8f9fa; padding: 20px; border-radius: 8px; text-align: center; }
+        .success { color: #28a745; }
+        .failure { color: #dc3545; }
+        .warning { color: #ffc107; }
+        .test-result { margin-bottom: 20px; padding: 15px; border-radius: 8px; border-left: 4px solid; }
+        .test-result.passed { background: #d4edda; border-color: #28a745; }
+        .test-result.failed { background: #f8d7da; border-color: #dc3545; }
+        .output { background: #f8f9fa; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 12px; max-height: 200px; overflow-y: auto; }
+        .error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 ApplyX Test Results</h1>
+            <p>Generated on 2025-07-30 20:49:26</p>
+        </div>
+        
+        <div class="summary">
+            <div class="summary-card">
+                <h3>Total Tests</h3>
+                <p style="font-size: 2em; font-weight: bold;">3</p>
+            </div>
+            <div class="summary-card">
+                <h3>Passed</h3>
+                <p style="font-size: 2em; font-weight: bold; color: #28a745;">3</p>
+            </div>
+            <div class="summary-card">
+                <h3>Failed</h3>
+                <p style="font-size: 2em; font-weight: bold; color: #dc3545;">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Success Rate</h3>
+                <p style="font-size: 2em; font-weight: bold; color: #28a745;">100.0%</p>
+            </div>
+        </div>
+        
+        <h2>Test Results</h2>
+
+        <div class="test-result passed">
+            <h3>✅ Comprehensive Functionality Tests</h3>
+            <p><strong>Status:</strong> Passed</p>
+            <p><strong>Return Code:</strong> 0</p>
+
+            <div class="error">
+                <strong>Error:</strong> /Users/shaheersaud/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+            </div>
+
+            <details>
+                <summary>View Output</summary>
+                <div class="output">🚀 Starting Comprehensive Functionality Tests...
+============================================================
+[20:49:21] ✅ PASS Backend Health Check - Status: 200
+[20:49:21] ❌ FAIL API Endpoint: /api/auth/login - Status: 405
+[20:49:22] ❌ FAIL API Endpoint: /api/auth/register - Status: 405
+[20:49:22] ✅ PASS API Endpoint: /api/user/plan - Status: 401
+[20:49:22] ✅ PASS API Endpoint: /api/bot/status - Status: 401
+[20:49:22] ❌ FAIL API Endpoint: /api/bot/start - Status: 405
+[20:49:22] ❌ FAIL API Endpoint: /api/bot/stop - Status: 405
+[20:49:22] ✅ PASS API Endpoint: /api/profile - Status: 401
+[20:49:22] ✅ PASS API Endpoint: /api/resumes - Status: 401
+[20:49:22] ✅ PASS API Endpoint: /api/applications - Status: 401
+[20:49:22] ✅ PASS API Endpoint: /api/pricing - Status: 200
+[20:49:22] ✅ PASS User Registration - Status: 400
+[20:49:22] ✅ PASS User Login - Status: 401
+[20:49:22] ❌ FAIL Bot Status Check - No auth token
+[20:49:22] ❌ FAIL Profile Get - No auth token
+[20:49:22] ❌ FAIL Resume List - No auth token
+[20:49:22] ❌ FAIL Applications List - No auth token
+[20:49:22] ✅ PASS Pricing Endpoint - Status: 200
+[20:49:22] ✅ PASS CORS Preflight - Status: 200
+[20:49:22] ✅ PASS 404 Error Handling - Status: 404
+[20:49:22] ✅ PASS Invalid JSON Handling - Status: 400
+[20:49:23] ✅ PASS Rate Limiting - Responses: [401, 401, 401, 401, 401]...
+[20:49:23] ✅ PASS Database Connectivity - Status: 401
+[20:49:23] ❌ FAIL File Operations - No auth token
+[20:49:23] ✅ PASS WebSocket Functionality - Not implemented - requires WebSocket client
+[20:49:24] ✅ PASS Background Jobs - Status: 200
+[20:49:24] ✅ PASS Email Functionality - Status: 404
+============================================================
+
+📊 TEST SUMMARY:
+Total Tests: 27
+✅ Passed: 18
+❌ Failed: 9
+Success Rate: 66.7%
+
+🔍 FAILED TESTS:
+  - API Endpoint: /api/auth/login: Status: 405
+  - API Endpoint: /api/auth/register: Status: 405
+  - API Endpoint: /api/bot/start: Status: 405
+  - API Endpoint: /api/bot/stop: Status: 405
+  - Bot Status Check: No auth token
+  - Profile Get: No auth token
+  - Resume List: No auth token
+  - Applications List: No auth token
+  - File Operations: No auth token
+
+💾 Results saved to: test_results_20250730_204924.json
+</div>
+            </details>
+
+        </div>
+
+        <div class="test-result passed">
+            <h3>✅ Frontend Component Tests</h3>
+            <p><strong>Status:</strong> Passed</p>
+            <p><strong>Return Code:</strong> 0</p>
+
+            <div class="error">
+                <strong>Error:</strong> /Users/shaheersaud/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+            </div>
+
+            <details>
+                <summary>View Output</summary>
+                <div class="output">🚀 Starting Frontend Component Tests...
+============================================================
+[20:49:24] ❌ FAIL Frontend Page: / - Status: 401
+[20:49:24] ❌ FAIL Frontend Page: /dashboard - Status: 401
+[20:49:24] ❌ FAIL Frontend Page: /profile - Status: 401
+[20:49:24] ❌ FAIL Frontend Page: /applications - Status: 401
+[20:49:24] ❌ FAIL Frontend Page: /manual-apply - Status: 401
+[20:49:24] ❌ FAIL Frontend Page: /auth/login - Status: 401
+[20:49:24] ❌ FAIL Frontend Page: /auth/signup - Status: 401
+[20:49:24] ❌ FAIL Frontend Page: /auth/forgot-password - Status: 401
+[20:49:24] ❌ FAIL Frontend Page: /admin - Status: 401
+[20:49:24] ❌ FAIL Frontend Page: /pricing - Status: 401
+[20:49:24] ❌ FAIL Frontend Asset: /favicon.ico - Status: 401
+[20:49:24] ❌ FAIL Frontend Asset: /favicon-16x16.png - Status: 401
+[20:49:24] ❌ FAIL Frontend Asset: /favicon-32x32.png - Status: 401
+[20:49:24] ❌ FAIL Frontend Asset: /site.webmanifest - Status: 401
+[20:49:24] ❌ FAIL Frontend-Backend Integration - Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101ad6ac0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+[20:49:25] ❌ FAIL Login Page Load - Status: 401
+[20:49:25] ❌ FAIL Signup Page Load - Status: 401
+[20:49:25] ❌ FAIL Dashboard Page Load - Status: 401
+[20:49:25] ❌ FAIL Profile Page Load - Status: 401
+[20:49:25] ❌ FAIL Applications Page Load - Status: 401
+[20:49:25] ❌ FAIL Admin Page Load - Status: 401
+[20:49:25] ❌ FAIL Pricing Page Load - Status: 401
+[20:49:25] ❌ FAIL Responsive Design: Mobile - Status: 401
+[20:49:25] ❌ FAIL Responsive Design: Tablet - Status: 401
+[20:49:25] ❌ FAIL Responsive Design: Desktop - Status: 401
+[20:49:25] ❌ FAIL Frontend Performance - Load Time: 0.04s
+[20:49:25] ✅ PASS Security Headers - Found: ['X-Frame-Options']
+[20:49:25] ❌ FAIL 404 Error Page - Status: 401
+[20:49:25] ✅ PASS Meta Tags - Found: ['viewport', 'title', 'charset']
+[20:49:25] ✅ PASS JavaScript Loading - Found: ['window.', 'document.']...
+[20:49:25] ✅ PASS CSS Loading - Found: ['css', 'style']...
+[20:49:25] ❌ FAIL Accessibility Features - Found: []...
+[20:49:25] ✅ PASS Mobile Optimization - Found: ['viewport']
+============================================================
+
+📊 FRONTEND TEST SUMMARY:
+Total Tests: 33
+✅ Passed: 5
+❌ Failed: 28
+Success Rate: 15.2%
+
+🔍 FAILED TESTS:
+  - Frontend Page: /: Status: 401
+  - Frontend Page: /dashboard: Status: 401
+  - Frontend Page: /profile: Status: 401
+  - Frontend Page: /applications: Status: 401
+  - Frontend Page: /manual-apply: Status: 401
+  - Frontend Page: /auth/login: Status: 401
+  - Frontend Page: /auth/signup: Status: 401
+  - Frontend Page: /auth/forgot-password: Status: 401
+  - Frontend Page: /admin: Status: 401
+  - Frontend Page: /pricing: Status: 401
+  - Frontend Asset: /favicon.ico: Status: 401
+  - Frontend Asset: /favicon-16x16.png: Status: 401
+  - Frontend Asset: /favicon-32x32.png: Status: 401
+  - Frontend Asset: /site.webmanifest: Status: 401
+  - Frontend-Backend Integration: Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101ad6ac0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+  - Login Page Load: Status: 401
+  - Signup Page Load: Status: 401
+  - Dashboard Page Load: Status: 401
+  - Profile Page Load: Status: 401
+  - Applications Page Load: Status: 401
+  - Admin Page Load: Status: 401
+  - Pricing Page Load: Status: 401
+  - Responsive Design: Mobile: Status: 401
+  - Responsive Design: Tablet: Status: 401
+  - Responsive Design: Desktop: Status: 401
+  - Frontend Performance: Load Time: 0.04s
+  - 404 Error Page: Status: 401
+  - Accessibility Features: Found: []...
+
+💾 Results saved to: frontend_test_results_20250730_204925.json
+</div>
+            </details>
+
+        </div>
+
+        <div class="test-result passed">
+            <h3>✅ Button and Interaction Tests</h3>
+            <p><strong>Status:</strong> Passed</p>
+            <p><strong>Return Code:</strong> 0</p>
+
+            <div class="error">
+                <strong>Error:</strong> /Users/shaheersaud/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+            </div>
+
+            <details>
+                <summary>View Output</summary>
+                <div class="output">🚀 Starting Button and Interaction Tests...
+============================================================
+[20:49:26] ✅ PASS Login Button - Status: 401
+[20:49:26] ✅ PASS Register Button - Status: 400
+[20:49:26] ❌ FAIL Logout Button - No auth token
+[20:49:26] ❌ FAIL Start Bot Button - No auth token
+[20:49:26] ❌ FAIL Stop Bot Button - No auth token
+[20:49:26] ❌ FAIL Upload Resume Button - No auth token
+[20:49:26] ❌ FAIL Save Profile Button - No auth token
+[20:49:26] ❌ FAIL Add LinkedIn Credentials Button - No auth token
+[20:49:26] ❌ FAIL Clear Activity Log Button - No auth token
+[20:49:26] ❌ FAIL AI Complete Profile Button - No auth token
+[20:49:26] ✅ PASS Upgrade Plan Button - Status: 200
+[20:49:26] ✅ PASS Form Validation - Invalid Email - Status: 401
+[20:49:26] ✅ PASS Form Validation - Missing Fields - Status: 400
+[20:49:26] ❌ FAIL Button States - No auth token
+[20:49:26] ❌ FAIL Modal Interactions - No auth token
+[20:49:26] ❌ FAIL Dropdown Interactions - No auth token
+[20:49:26] ❌ FAIL Checkbox Interactions - No auth token
+[20:49:26] ❌ FAIL Text Input Interactions - No auth token
+[20:49:26] ❌ FAIL Textarea Interactions - No auth token
+[20:49:26] ❌ FAIL File Upload Interactions - No auth token
+[20:49:26] ✅ PASS Error Handling - Empty Fields - Status: 400
+[20:49:26] ❌ FAIL Accessibility - Keyboard Navigation - Responses: [405, 405, 401]
+============================================================
+
+📊 BUTTON TEST SUMMARY:
+Total Tests: 22
+✅ Passed: 6
+❌ Failed: 16
+Success Rate: 27.3%
+
+🔍 FAILED TESTS:
+  - Logout Button: No auth token
+  - Start Bot Button: No auth token
+  - Stop Bot Button: No auth token
+  - Upload Resume Button: No auth token
+  - Save Profile Button: No auth token
+  - Add LinkedIn Credentials Button: No auth token
+  - Clear Activity Log Button: No auth token
+  - AI Complete Profile Button: No auth token
+  - Button States: No auth token
+  - Modal Interactions: No auth token
+  - Dropdown Interactions: No auth token
+  - Checkbox Interactions: No auth token
+  - Text Input Interactions: No auth token
+  - Textarea Interactions: No auth token
+  - File Upload Interactions: No auth token
+  - Accessibility - Keyboard Navigation: Responses: [405, 405, 401]
+
+💾 Results saved to: button_test_results_20250730_204926.json
+</div>
+            </details>
+
+        </div>
+
+    </div>
+</body>
+</html>

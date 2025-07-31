@@ -1,0 +1,200 @@
+[
+  {
+    "test": "Frontend Page: /",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Page: /dashboard",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Page: /profile",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Page: /applications",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Page: /manual-apply",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Page: /auth/login",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Page: /auth/signup",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Page: /auth/forgot-password",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Page: /admin",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Page: /pricing",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Asset: /favicon.ico",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Asset: /favicon-16x16.png",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Asset: /favicon-32x32.png",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend Asset: /site.webmanifest",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Frontend-Backend Integration",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101ad6ac0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Login Page Load",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Signup Page Load",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Dashboard Page Load",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Profile Page Load",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Applications Page Load",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Admin Page Load",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Pricing Page Load",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Responsive Design: Mobile",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Responsive Design: Tablet",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Responsive Design: Desktop",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Frontend Performance",
+    "success": false,
+    "details": "Load Time: 0.04s",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Security Headers",
+    "success": true,
+    "details": "Found: ['X-Frame-Options']",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "404 Error Page",
+    "success": false,
+    "details": "Status: 401",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Meta Tags",
+    "success": true,
+    "details": "Found: ['viewport', 'title', 'charset']",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "JavaScript Loading",
+    "success": true,
+    "details": "Found: ['window.', 'document.']...",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "CSS Loading",
+    "success": true,
+    "details": "Found: ['css', 'style']...",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Accessibility Features",
+    "success": false,
+    "details": "Found: []...",
+    "timestamp": "20:49:25"
+  },
+  {
+    "test": "Mobile Optimization",
+    "success": true,
+    "details": "Found: ['viewport']",
+    "timestamp": "20:49:25"
+  }
+]

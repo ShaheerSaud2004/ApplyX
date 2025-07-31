@@ -1,0 +1,134 @@
+[
+  {
+    "test": "Login Button",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101128940>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Register Button",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/auth/register (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101128b50>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Logout Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Start Bot Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Stop Bot Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Upload Resume Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Save Profile Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Add LinkedIn Credentials Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Clear Activity Log Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "AI Complete Profile Button",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Upgrade Plan Button",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/pricing (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101128ee0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Form Validation - Invalid Email",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10114f2e0>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Form Validation - Missing Fields",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101115e50>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Button States",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Modal Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Dropdown Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Checkbox Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Text Input Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Textarea Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "File Upload Interactions",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Error Handling - Empty Fields",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101128e20>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  },
+  {
+    "test": "Accessibility - Keyboard Navigation",
+    "success": false,
+    "details": "Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /api/auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x101128a90>: Failed to establish a new connection: [Errno 61] Connection refused'))",
+    "timestamp": "20:48:33"
+  }
+]

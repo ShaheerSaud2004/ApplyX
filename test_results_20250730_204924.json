@@ -1,0 +1,164 @@
+[
+  {
+    "test": "Backend Health Check",
+    "success": true,
+    "details": "Status: 200",
+    "timestamp": "20:49:21"
+  },
+  {
+    "test": "API Endpoint: /api/auth/login",
+    "success": false,
+    "details": "Status: 405",
+    "timestamp": "20:49:21"
+  },
+  {
+    "test": "API Endpoint: /api/auth/register",
+    "success": false,
+    "details": "Status: 405",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "API Endpoint: /api/user/plan",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "API Endpoint: /api/bot/status",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "API Endpoint: /api/bot/start",
+    "success": false,
+    "details": "Status: 405",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "API Endpoint: /api/bot/stop",
+    "success": false,
+    "details": "Status: 405",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "API Endpoint: /api/profile",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "API Endpoint: /api/resumes",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "API Endpoint: /api/applications",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "API Endpoint: /api/pricing",
+    "success": true,
+    "details": "Status: 200",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "User Registration",
+    "success": true,
+    "details": "Status: 400",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "User Login",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "Bot Status Check",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "Profile Get",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "Resume List",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "Applications List",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "Pricing Endpoint",
+    "success": true,
+    "details": "Status: 200",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "CORS Preflight",
+    "success": true,
+    "details": "Status: 200",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "404 Error Handling",
+    "success": true,
+    "details": "Status: 404",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "Invalid JSON Handling",
+    "success": true,
+    "details": "Status: 400",
+    "timestamp": "20:49:22"
+  },
+  {
+    "test": "Rate Limiting",
+    "success": true,
+    "details": "Responses: [401, 401, 401, 401, 401]...",
+    "timestamp": "20:49:23"
+  },
+  {
+    "test": "Database Connectivity",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "20:49:23"
+  },
+  {
+    "test": "File Operations",
+    "success": false,
+    "details": "No auth token",
+    "timestamp": "20:49:23"
+  },
+  {
+    "test": "WebSocket Functionality",
+    "success": true,
+    "details": "Not implemented - requires WebSocket client",
+    "timestamp": "20:49:23"
+  },
+  {
+    "test": "Background Jobs",
+    "success": true,
+    "details": "Status: 200",
+    "timestamp": "20:49:24"
+  },
+  {
+    "test": "Email Functionality",
+    "success": true,
+    "details": "Status: 404",
+    "timestamp": "20:49:24"
+  }
+]
