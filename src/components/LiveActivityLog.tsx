@@ -19,6 +19,7 @@ import {
   EyeOff
 } from 'lucide-react'
 import { useAuth } from './AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 
 interface ActivityLog {
   id: number
@@ -65,7 +66,7 @@ export function LiveActivityLog({
 
     try {
       setIsLoading(true)
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bot/activity/log?limit=100`, {
+      const response = await fetch(getApiUrl('/api/bot/activity/log?limit=100'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
 
@@ -139,7 +140,7 @@ export function LiveActivityLog({
   const clearLogs = async () => {
     try {
       // Clear logs from backend database
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/activity/clear`, {
+      const response = await fetch(getApiUrl('/api/activity/clear'), {
         method: 'POST',
         headers: { 
           'Authorization': `Bearer ${token}`,

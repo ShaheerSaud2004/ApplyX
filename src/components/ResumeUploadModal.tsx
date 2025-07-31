@@ -22,6 +22,7 @@ import {
   Trash2
 } from 'lucide-react'
 import { useAuth } from './AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 
 interface ResumeUploadModalProps {
   isOpen: boolean
@@ -60,7 +61,7 @@ export function ResumeUploadModal({ isOpen, onOpenChange, onUploadSuccess }: Res
     
     setLoadingResumes(true)
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/resumes`, {
+      const response = await fetch(getApiUrl('/api/resumes'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
       
@@ -182,7 +183,7 @@ export function ResumeUploadModal({ isOpen, onOpenChange, onUploadSuccess }: Res
         setUploading(false)
       })
 
-      xhr.open('POST', `${process.env.NEXT_PUBLIC_API_URL}/api/upload/resume`)
+      xhr.open('POST', getApiUrl('/api/upload/resume'))
       xhr.setRequestHeader('Authorization', `Bearer ${token}`)
       xhr.send(formData)
 

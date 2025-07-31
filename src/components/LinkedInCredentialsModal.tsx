@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/dialog'
 import { AlertCircle, CheckCircle, Shield, Eye, EyeOff } from 'lucide-react'
 import { useAuth } from './AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 
 interface LinkedInCredentialsModalProps {
   isOpen: boolean
@@ -46,7 +47,7 @@ export function LinkedInCredentialsModal({
     setVerificationStatus('none')
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/linkedin/verify`, {
+      const response = await fetch(getApiUrl('/api/linkedin/verify'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +89,7 @@ export function LinkedInCredentialsModal({
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`, {
+      const response = await fetch(getApiUrl('/api/profile'), {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

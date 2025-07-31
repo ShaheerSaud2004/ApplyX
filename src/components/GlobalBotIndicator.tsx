@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { useAuth } from './AuthProvider'
 import { PersistentBotIndicator } from './PersistentBotIndicator'
+import { getApiUrl } from '@/lib/utils'
 
 export function GlobalBotIndicator() {
   const { token, isAuthenticated } = useAuth()
@@ -19,7 +20,7 @@ export function GlobalBotIndicator() {
     // Check bot status
     const checkBotStatus = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bot/status`, {
+        const response = await fetch(getApiUrl('/api/bot/status'), {
           headers: { 'Authorization': `Bearer ${token}` }
         })
 

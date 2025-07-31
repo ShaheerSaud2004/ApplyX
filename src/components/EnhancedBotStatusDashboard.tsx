@@ -23,6 +23,7 @@ import {
   Eye
 } from 'lucide-react'
 import { useAuth } from './AuthProvider'
+import { getApiUrl } from '@/lib/utils'
 
 interface BotStatus {
   status: 'running' | 'stopped' | 'error' | 'paused'
@@ -111,7 +112,7 @@ export function EnhancedBotStatusDashboard({
 
   const fetchBotStatus = async () => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bot/status`, {
+      const response = await fetch(getApiUrl('/api/bot/status'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
 
@@ -162,7 +163,7 @@ export function EnhancedBotStatusDashboard({
     setError('')
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bot/stop`, {
+      const response = await fetch(getApiUrl('/api/bot/stop'), {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` }
       })
@@ -190,7 +191,7 @@ export function EnhancedBotStatusDashboard({
     setError('')
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/bot/clear-status`, {
+      const response = await fetch(getApiUrl('/api/bot/clear-status'), {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
