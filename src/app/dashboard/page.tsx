@@ -39,7 +39,7 @@ import { LiveActivityLog } from '@/components/LiveActivityLog'
 import { getApiUrl } from '@/lib/utils'
 
 // Version tracking - update this with each change
-const APP_VERSION = "1.0.7"
+const APP_VERSION = "1.0.8"
 
 interface UserStats {
   totalApplications: number

@@ -25,12 +25,31 @@ export default function SignupPage() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState({ type: '', text: '' })
+  const [passwordRequirements, setPasswordRequirements] = useState({
+    length: false,
+    uppercase: false,
+    lowercase: false,
+    number: false,
+    special: false
+  })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     })
+    
+    // Update password requirements when password field changes
+    if (name === 'password') {
+      setPasswordRequirements({
+        length: value.length >= 8,
+        uppercase: /[A-Z]/.test(value),
+        lowercase: /[a-z]/.test(value),
+        number: /\d/.test(value),
+        special: /[!@#$%^&*(),.?":{}|<>]/.test(value)
+      })
+    }
   }
 
   const validateForm = () => {
@@ -44,8 +63,10 @@ export default function SignupPage() {
       return false
     }
 
-    if (formData.password.length < 8) {
-      setMessage({ type: 'error', text: 'Password must be at least 8 characters long' })
+    // Check password requirements
+    const allRequirementsMet = Object.values(passwordRequirements).every(req => req)
+    if (!allRequirementsMet) {
+      setMessage({ type: 'error', text: 'Please ensure your password meets all requirements' })
       return false
     }
 
@@ -203,6 +224,33 @@ export default function SignupPage() {
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </Button>
+              </div>
+              
+              {/* Password Requirements */}
+              <div className="mt-2 space-y-1">
+                <p className="text-xs font-medium text-gray-600 mb-2">Password Requirements:</p>
+                <div className="space-y-1">
+                  <div className={`flex items-center text-xs ${passwordRequirements.length ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.length ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    At least 8 characters
+                  </div>
+                  <div className={`flex items-center text-xs ${passwordRequirements.uppercase ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.uppercase ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    One uppercase letter (A-Z)
+                  </div>
+                  <div className={`flex items-center text-xs ${passwordRequirements.lowercase ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.lowercase ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    One lowercase letter (a-z)
+                  </div>
+                  <div className={`flex items-center text-xs ${passwordRequirements.number ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.number ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    One number (0-9)
+                  </div>
+                  <div className={`flex items-center text-xs ${passwordRequirements.special ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.special ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    One special character (!@#$%^&*)
+                  </div>
+                </div>
               </div>
             </div>
 

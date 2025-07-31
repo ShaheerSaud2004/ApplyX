@@ -28,6 +28,13 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [emailError, setEmailError] = useState('')
   const [isEmailValid, setIsEmailValid] = useState(false)
+  const [passwordRequirements, setPasswordRequirements] = useState({
+    length: false,
+    uppercase: false,
+    lowercase: false,
+    number: false,
+    special: false
+  })
 
   const { login } = useAuth()
 
@@ -78,6 +85,20 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
     validateEmail(newEmail)
   }
 
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newPassword = e.target.value
+    setPassword(newPassword)
+    
+    // Update password requirements
+    setPasswordRequirements({
+      length: newPassword.length >= 8,
+      uppercase: /[A-Z]/.test(newPassword),
+      lowercase: /[a-z]/.test(newPassword),
+      number: /\d/.test(newPassword),
+      special: /[!@#$%^&*(),.?":{}|<>]/.test(newPassword)
+    })
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
@@ -86,6 +107,14 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
     // Validation
     if (!validateEmail(email)) {
       setError('Please fix the email validation errors')
+      setIsLoading(false)
+      return
+    }
+
+    // Check password requirements
+    const allRequirementsMet = Object.values(passwordRequirements).every(req => req)
+    if (!allRequirementsMet) {
+      setError('Please ensure your password meets all requirements')
       setIsLoading(false)
       return
     }
@@ -232,10 +261,37 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
                 type="password"
                 placeholder="Create a password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={handlePasswordChange}
                 required
                 className="w-full"
               />
+              
+              {/* Password Requirements */}
+              <div className="mt-2 space-y-1">
+                <p className="text-xs font-medium text-gray-600 mb-2">Password Requirements:</p>
+                <div className="space-y-1">
+                  <div className={`flex items-center text-xs ${passwordRequirements.length ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.length ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    At least 8 characters
+                  </div>
+                  <div className={`flex items-center text-xs ${passwordRequirements.uppercase ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.uppercase ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    One uppercase letter (A-Z)
+                  </div>
+                  <div className={`flex items-center text-xs ${passwordRequirements.lowercase ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.lowercase ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    One lowercase letter (a-z)
+                  </div>
+                  <div className={`flex items-center text-xs ${passwordRequirements.number ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.number ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    One number (0-9)
+                  </div>
+                  <div className={`flex items-center text-xs ${passwordRequirements.special ? 'text-green-600' : 'text-gray-500'}`}>
+                    <div className={`w-2 h-2 rounded-full mr-2 ${passwordRequirements.special ? 'bg-green-500' : 'bg-gray-300'}`}></div>
+                    One special character (!@#$%^&*)
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="space-y-2">
