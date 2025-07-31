@@ -42,8 +42,8 @@ export function GlobalBotIndicator() {
     // Initial check
     checkBotStatus()
 
-    // Poll every 30 seconds for status updates (less frequent than dashboard)
-    const interval = setInterval(checkBotStatus, 30000)
+    // Poll every 60 seconds for status updates (less frequent for better performance)
+    const interval = setInterval(checkBotStatus, 60000)
 
     return () => clearInterval(interval)
   }, [token, isAuthenticated])

@@ -99,11 +99,11 @@ export function LiveActivityLog({
 
     if (!isPaused) {
       if (isRunning) {
-        // Poll every 2 seconds when bot is running for real-time updates
-        interval = setInterval(fetchActivityLogs, 2000)
+        // Poll every 10 seconds when bot is running (reduced for better performance)
+        interval = setInterval(fetchActivityLogs, 10000)
       } else {
-        // Poll every 5 seconds when bot is stopped to still catch any activity
-        interval = setInterval(fetchActivityLogs, 5000)
+        // Poll every 60 seconds when bot is stopped
+        interval = setInterval(fetchActivityLogs, 60000)
       }
     }
 

@@ -105,7 +105,7 @@ export function EnhancedBotStatusDashboard({
       if (botStatus?.status === 'running') {
         fetchBotStatus()
       }
-    }, 3000)
+    }, 60000)
 
     return () => clearInterval(interval)
   }, [token, botStatus?.status, realTimeEnabled])

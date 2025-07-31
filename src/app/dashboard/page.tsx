@@ -127,7 +127,7 @@ export default function DashboardPage() {
     let interval: NodeJS.Timeout | null = null
 
     if (agentRunning && token) {
-      // Poll every 2 seconds when bot is running
+      // Poll every 5 seconds when bot is running (reduced frequency)
       interval = setInterval(async () => {
         try {
           // Poll bot status
@@ -180,7 +180,7 @@ export default function DashboardPage() {
         } catch (error) {
           console.error('Error polling bot status:', error)
         }
-      }, 2000) // Poll every 2 seconds for real-time updates
+      }, 5000) // Poll every 5 seconds for better performance
       
       setPollingInterval(interval)
     } else {
@@ -220,7 +220,7 @@ export default function DashboardPage() {
           } catch (error) {
             console.error('Error polling quota status:', error)
           }
-        }, 10000) // Poll every 10 seconds when bot is not running
+        }, 120000) // Poll every 2 minutes when bot is not running
         
         setPollingInterval(interval)
       } else if (interval) {

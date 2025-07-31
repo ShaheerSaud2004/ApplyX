@@ -47,13 +47,10 @@ class DailyJobScheduler:
             
         logger.info("🚀 Starting daily job scheduler...")
         
-        # Schedule daily updates at 8:00 AM
+        # Schedule daily updates at 8:00 AM only (removed frequent 6-hour updates)
         schedule.every().day.at("08:00").do(self.run_update)
         
-        # Also schedule every 6 hours for more frequent updates
-        schedule.every(6).hours.do(self.run_update)
-        
-        # Initial update on startup
+        # Run initial update only once on startup
         logger.info("🔄 Running initial job update...")
         self.run_update()
         
@@ -68,7 +65,7 @@ class DailyJobScheduler:
         scheduler_thread = threading.Thread(target=scheduler_loop, daemon=True)
         scheduler_thread.start()
         
-        logger.info("✅ Daily job scheduler started! Updates at 8:00 AM and every 6 hours")
+        logger.info("✅ Daily job scheduler started! Updates once daily at 8:00 AM")
     
     def stop_scheduler(self):
         """Stop the scheduler"""
