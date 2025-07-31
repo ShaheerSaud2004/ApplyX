@@ -19,30 +19,30 @@ function AuthenticatedNav({ onLoginOpen, onSignupOpen }: AuthenticatedNavProps) 
   if (isAuthenticated) {
     return (
       <>
-        <Link className="text-sm font-medium hover:underline underline-offset-4 transition-colors" href="/dashboard">
+        <Link className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 transition-colors hidden sm:block" href="/dashboard">
           Dashboard
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4 transition-colors" href="/applications">
+        <Link className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 transition-colors hidden sm:block" href="/applications">
           Applications
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4 transition-colors" href="/manual-apply">
+        <Link className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 transition-colors hidden sm:block" href="/manual-apply">
           Manual Apply Links
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4 transition-colors" href="/profile">
+        <Link className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 transition-colors hidden sm:block" href="/profile">
           Profile
         </Link>
         {user?.isAdmin && (
-          <Link className="text-sm font-medium hover:underline underline-offset-4 transition-colors text-blue-600" href="/admin">
+          <Link className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 transition-colors text-blue-600 hidden sm:block" href="/admin">
             Admin
           </Link>
         )}
-        <div className="flex items-center gap-3">
-          <span className="text-sm text-muted-foreground">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <span className="text-xs sm:text-sm text-muted-foreground hidden sm:block">
             Welcome, {user?.firstName}
           </span>
           <button
             onClick={logout}
-            className="text-sm font-medium hover:underline underline-offset-4 text-red-600 transition-colors"
+            className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 text-red-600 transition-colors"
           >
             Logout
           </button>
@@ -55,14 +55,14 @@ function AuthenticatedNav({ onLoginOpen, onSignupOpen }: AuthenticatedNavProps) 
     <>
       <button
         onClick={onLoginOpen}
-        className="text-sm font-medium hover:underline underline-offset-4 transition-colors"
+        className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 transition-colors"
       >
         Sign In
       </button>
       <Button
         size="sm"
         onClick={onSignupOpen}
-        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-200"
+        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-200 text-xs sm:text-sm px-2 sm:px-3"
       >
         Sign Up
       </Button>
@@ -470,37 +470,37 @@ export default function HomePage() {
       `}</style>
 
       {/* Header */}
-      <header className="px-4 lg:px-6 h-14 flex items-center border-b relative z-20 bg-white/80 backdrop-blur-sm">
+      <header className="px-3 sm:px-4 lg:px-6 h-14 flex items-center border-b relative z-20 bg-white/80 backdrop-blur-sm">
         <Link className="flex items-center justify-center" href="/">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-1 sm:space-x-2">
             <div className="relative">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <Zap className="h-5 w-5 text-white" />
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <Zap className="h-3 w-3 sm:h-5 sm:w-5 text-white" />
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-orange-500 to-red-500 rounded-full"></div>
+              <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-br from-orange-500 to-red-500 rounded-full"></div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 ApplyX
               </span>
-              <span className="text-xs text-muted-foreground -mt-1">by Nebula.AI</span>
+              <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">by Nebula.AI</span>
             </div>
           </div>
         </Link>
-        <nav className="ml-auto flex items-center gap-6">
+        <nav className="ml-auto flex items-center gap-2 sm:gap-4 lg:gap-6">
           <button
             onClick={() => smoothScrollTo('features')}
-            className="text-sm font-medium hover:underline underline-offset-4 transition-colors cursor-pointer"
+            className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 transition-colors cursor-pointer hidden sm:block"
           >
             Features
           </button>
           <button
             onClick={() => smoothScrollTo('pricing')}
-            className="text-sm font-medium hover:underline underline-offset-4 transition-colors cursor-pointer"
+            className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 transition-colors cursor-pointer hidden sm:block"
           >
             Pricing
           </button>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <AuthenticatedNav onLoginOpen={openLogin} onSignupOpen={openSignup} />
           </div>
         </nav>
