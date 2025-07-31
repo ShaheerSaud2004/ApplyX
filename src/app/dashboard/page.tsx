@@ -25,7 +25,8 @@ import {
   Shield,
   Trash2,
   Menu,
-  X
+  X,
+  Settings
 } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
@@ -38,7 +39,7 @@ import { LiveActivityLog } from '@/components/LiveActivityLog'
 import { getApiUrl } from '@/lib/utils'
 
 // Version tracking - update this with each change
-const APP_VERSION = "1.0.3"
+const APP_VERSION = "1.0.4"
 
 interface UserStats {
   totalApplications: number
