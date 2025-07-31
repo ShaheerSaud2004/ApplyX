@@ -20,6 +20,10 @@ from dotenv import load_dotenv
 import logging
 from pathlib import Path
 
+# Import security enhancements
+from security_enhancements import security_manager, secure_route, validate_json_input, require_https
+from security_middleware import security_middleware
+
 # Load email configuration from environment file
 email_config_path = os.path.join(os.path.dirname(__file__), '..', 'email_config.sh')
 if os.path.exists(email_config_path):
@@ -62,9 +66,27 @@ from daily_job_scheduler import start_job_scheduler
 from daily_application_scheduler import start_daily_application_scheduler
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key-change-this')
+
+# Enhanced security configuration
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+if not app.config['SECRET_KEY']:
+    raise ValueError("SECRET_KEY environment variable must be set for security")
+
+# Generate a secure encryption key if not provided
+if not os.environ.get('ENCRYPTION_KEY'):
+    from cryptography.fernet import Fernet
+    encryption_key = Fernet.generate_key()
+    app.config['ENCRYPTION_KEY'] = encryption_key
+    print("⚠️  ENCRYPTION_KEY not set. Generated new key. Please set this in production.")
+
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
+
+# Additional security settings
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Strict'
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
 
 CORS(app, origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", 
                    "https://apply-9sp9tevcp-shaheers-projects-02efc33d.vercel.app",
@@ -93,9 +115,12 @@ bot_status = {}
 
 logger = logging.getLogger(__name__)
 
-# Global CORS handler to ensure all routes have proper headers
+# Global security and CORS handler
 @app.after_request
 def after_request(response):
+    # Add security headers
+    response = security_middleware.add_security_headers(response)
+    
     # Get the origin from the request
     origin = request.headers.get('Origin')
     
@@ -372,19 +397,41 @@ def init_db():
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
+        # Check if IP is blocked
+        if request.remote_addr in security_middleware.blocked_ips:
+            return jsonify({'error': 'Access denied'}), 403
+        
+        # Check for suspicious patterns in request
+        request_data = str(request.get_data())
+        if security_middleware.check_suspicious_patterns(request_data):
+            security_middleware.log_suspicious_activity(
+                request.remote_addr, 'suspicious_patterns', {'data': request_data[:200]}
+            )
+            return jsonify({'error': 'Invalid request'}), 400
+        
+        # Check request anomalies
+        anomalies = security_middleware.check_request_anomalies({})
+        if any(anomalies.values()):
+            security_middleware.log_suspicious_activity(
+                request.remote_addr, 'request_anomalies', anomalies
+            )
+        
         token = request.headers.get('Authorization')
         if not token:
             return jsonify({'error': 'Token is missing'}), 401
         
-        try:
-            if token.startswith('Bearer '):
-                token = token[7:]
-            data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
-            current_user_id = data['user_id']
-        except jwt.ExpiredSignatureError:
-            return jsonify({'error': 'Token has expired'}), 401
-        except jwt.InvalidTokenError:
-            return jsonify({'error': 'Token is invalid'}), 401
+        # Use enhanced token validation
+        is_valid, payload = security_manager.validate_token(token)
+        if not is_valid:
+            return jsonify({'error': payload.get('error', 'Invalid token')}), 401
+        
+        current_user_id = payload['user_id']
+        
+        # Log successful authentication
+        security_manager.log_security_event('successful_auth', {
+            'user_id': current_user_id,
+            'ip': request.remote_addr
+        }, current_user_id)
         
         return f(current_user_id, *args, **kwargs)
     return decorated
@@ -430,37 +477,48 @@ def home():
     })
 
 @app.route('/api/auth/register', methods=['POST'])
+@secure_route
+@validate_json_input
 def register():
-    try:
-        from validation import validate_user_registration, sanitize_input
-        from rate_limiter import auth_rate_limit
-    except ImportError:
-        pass  # Use fallback validation
+    # Check rate limiting for registration
+    if not security_manager.check_rate_limit(f"register:{request.remote_addr}", limit=5, window=300):
+        return jsonify({'error': 'Too many registration attempts. Please try again later.'}), 429
+    
+    # Check for suspicious patterns
+    request_data = str(request.get_data())
+    if security_middleware.check_suspicious_patterns(request_data):
+        security_middleware.log_suspicious_activity(
+            request.remote_addr, 'registration_attack', {'data': request_data[:200]}
+        )
+        return jsonify({'error': 'Invalid request'}), 400
     
     data = request.get_json()
     
     if not data:
         return jsonify({'error': 'No data provided'}), 400
     
-    # Validate registration data
-    try:
-        is_valid, error_msg = validate_user_registration(data)
-        if not is_valid:
-            return jsonify({'error': error_msg}), 400
-    except:
-        # Fallback validation
-        if not data.get('email') or not data.get('password'):
-            return jsonify({'error': 'Email and password are required'}), 400
+    # Enhanced input validation
+    email = data.get('email', '').strip()
+    password = data.get('password', '')
+    first_name = data.get('first_name', '').strip()
+    last_name = data.get('last_name', '').strip()
     
-    # Sanitize inputs
-    try:
-        data['email'] = sanitize_input(data['email'])
-        if data.get('first_name'):
-            data['first_name'] = sanitize_input(data['first_name'])
-        if data.get('last_name'):
-            data['last_name'] = sanitize_input(data['last_name'])
-    except:
-        pass  # Continue with original data if sanitize fails
+    # Validate email
+    is_valid_email, email_message = security_manager.validate_email(email)
+    if not is_valid_email:
+        return jsonify({'error': email_message}), 400
+    
+    # Validate password strength
+    is_valid_password, password_message = security_manager.validate_password_strength(password)
+    if not is_valid_password:
+        return jsonify({'error': password_message}), 400
+    
+    # Validate names
+    is_valid_first_name, _ = security_manager.validate_input(first_name, max_length=50)
+    is_valid_last_name, _ = security_manager.validate_input(last_name, max_length=50)
+    
+    if not is_valid_first_name or not is_valid_last_name:
+        return jsonify({'error': 'Invalid name format'}), 400
     
     conn = sqlite3.connect('easyapply.db')
     cursor = conn.cursor()
@@ -471,9 +529,9 @@ def register():
         conn.close()
         return jsonify({'error': 'Email already registered'}), 409
     
-    # Create new user
+    # Create new user with enhanced security
     user_id = str(uuid.uuid4())
-    password_hash = generate_password_hash(data['password'])
+    password_hash = security_manager.hash_password(password)  # Use enhanced password hashing
     referral_code = generate_referral_code(user_id)
     
     cursor.execute('''
@@ -513,16 +571,40 @@ def register():
     }), 201
 
 @app.route('/api/auth/login', methods=['POST'])
+@secure_route
+@validate_json_input
 def login():
-    try:
-        from rate_limiter import auth_rate_limit
-    except ImportError:
-        pass
+    # Check login attempts
+    identifier = f"login:{request.remote_addr}"
+    can_attempt, attempts = security_manager.check_login_attempts(identifier)
+    
+    if not can_attempt:
+        return jsonify({
+            'error': 'Too many failed login attempts',
+            'message': f'Account temporarily locked. Try again in {security_manager.lockout_duration // 60} minutes.'
+        }), 429
+    
+    # Check for suspicious patterns
+    request_data = str(request.get_data())
+    if security_middleware.check_suspicious_patterns(request_data):
+        security_middleware.log_suspicious_activity(
+            request.remote_addr, 'login_attack', {'data': request_data[:200]}
+        )
+        security_manager.record_failed_login(identifier)
+        return jsonify({'error': 'Invalid request'}), 400
     
     data = request.get_json()
     
     if not data or not data.get('email') or not data.get('password'):
+        security_manager.record_failed_login(identifier)
         return jsonify({'error': 'Email and password are required'}), 400
+    
+    # Validate email format
+    email = data.get('email', '').strip()
+    is_valid_email, email_message = security_manager.validate_email(email)
+    if not is_valid_email:
+        security_manager.record_failed_login(identifier)
+        return jsonify({'error': email_message}), 400
     
     conn = sqlite3.connect('easyapply.db')
     cursor = conn.cursor()
@@ -532,23 +614,21 @@ def login():
     
     if not user:
         conn.close()
+        security_manager.record_failed_login(identifier)
         return jsonify({'error': 'Invalid credentials'}), 401
     
-    # Check password with error handling for different hash formats
-    try:
-        password_valid = check_password_hash(user[1], data['password'])
-    except (TypeError, ValueError) as e:
-        # Handle old or incompatible password hash formats
-        print(f"Password hash check failed for user {data['email']}: {e}")
-        # Regenerate password hash for this user
-        from werkzeug.security import generate_password_hash
-        new_hash = generate_password_hash(data['password'], method='pbkdf2:sha256:260000')
-        cursor.execute('UPDATE users SET password_hash = ? WHERE email = ?', (new_hash, data['email']))
-        conn.commit()
-        password_valid = True  # Accept the login since they provided the correct password
+    # Enhanced password verification
+    password = data.get('password', '')
+    password_valid = security_manager.verify_password(password, user[1])
     
     if not password_valid:
         conn.close()
+        security_manager.record_failed_login(identifier)
+        security_manager.log_security_event('failed_login', {
+            'email': email,
+            'ip': request.remote_addr,
+            'attempts': attempts + 1
+        })
         return jsonify({'error': 'Invalid credentials'}), 401
     
     # Check user approval status
@@ -575,15 +655,18 @@ def login():
     
     conn.close()
     
-    # Generate token
-    token = jwt.encode({
-        'user_id': user[0],
-        'exp': datetime.utcnow() + timedelta(days=30)
-    }, app.config['SECRET_KEY'], algorithm='HS256')
+    # Reset failed login attempts on successful login
+    security_manager.reset_login_attempts(identifier)
     
-    # Ensure token is a string (PyJWT 2.x returns string, but let's be safe)
-    if isinstance(token, bytes):
-        token = token.decode('utf-8')
+    # Generate secure token with shorter expiration
+    token = security_manager.generate_secure_token(user[0])
+    
+    # Log successful login
+    security_manager.log_security_event('successful_login', {
+        'user_id': user[0],
+        'email': email,
+        'ip': request.remote_addr
+    }, user[0])
     
     return jsonify({
         'token': token,
