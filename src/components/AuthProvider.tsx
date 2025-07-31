@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { getApiUrl } from '@/lib/utils'
 
 interface User {
   id: string
@@ -61,10 +62,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Login with email/password (for login pages)
   const loginWithCredentials = async (email: string, password: string) => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL?.endsWith('/') 
-        ? process.env.NEXT_PUBLIC_API_URL.slice(0, -1) 
-        : process.env.NEXT_PUBLIC_API_URL
-      const response = await fetch(`${apiUrl}/api/auth/login`, {
+      const response = await fetch(getApiUrl('/api/auth/login'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -85,10 +83,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const register = async (userData: any) => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL?.endsWith('/') 
-        ? process.env.NEXT_PUBLIC_API_URL.slice(0, -1) 
-        : process.env.NEXT_PUBLIC_API_URL
-      const response = await fetch(`${apiUrl}/api/auth/register`, {
+      const response = await fetch(getApiUrl('/api/auth/register'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(userData)

@@ -70,11 +70,14 @@ CORS(app, origins=["http://localhost:3000", "http://localhost:3001", "http://loc
                    "https://apply-9sp9tevcp-shaheers-projects-02efc33d.vercel.app",
                    "https://apply-x.vercel.app",
                    "https://apply-x.vercel.app",
+                   "https://*.vercel.app",
+                   "https://vercel.app",
                    "https://*.vercel.app"], 
-     allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin"], 
-     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+     allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods"], 
+     methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"],
      supports_credentials=True,
-     expose_headers=["Content-Type", "Authorization"])
+     expose_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers"],
+     max_age=86400)
 
 # Stripe configuration
 stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
@@ -89,6 +92,34 @@ active_bots = {}
 bot_status = {}
 
 logger = logging.getLogger(__name__)
+
+# Global CORS handler to ensure all routes have proper headers
+@app.after_request
+def after_request(response):
+    # Get the origin from the request
+    origin = request.headers.get('Origin')
+    
+    # Allow specific origins or all for development
+    allowed_origins = [
+        "http://localhost:3000",
+        "http://localhost:3001", 
+        "http://localhost:3002",
+        "https://apply-9sp9tevcp-shaheers-projects-02efc33d.vercel.app",
+        "https://apply-x.vercel.app",
+        "https://vercel.app"
+    ]
+    
+    # Check if origin is allowed or if it's a Vercel domain
+    if origin and (origin in allowed_origins or origin.endswith('.vercel.app')):
+        response.headers.add('Access-Control-Allow-Origin', origin)
+    else:
+        response.headers.add('Access-Control-Allow-Origin', '*')
+    
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,X-Requested-With,Accept,Origin,Access-Control-Allow-Origin,Access-Control-Allow-Headers,Access-Control-Allow-Methods')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS,HEAD')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    response.headers.add('Access-Control-Max-Age', '86400')
+    return response
 
 def safe_split_to_list(value, delimiter=','):
     """Safely convert string or list to a list of trimmed strings"""
@@ -4219,4 +4250,6 @@ if __name__ == '__main__':
         print(f"⚠️ Auto-restart scheduler disabled (missing dependencies): {e}")
     
     print("🚀 Starting ApplyX Backend Server...")
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080))) 
+    port = int(os.environ.get('PORT', 8080))
+    print(f"🌐 Server starting on port {port}")
+    app.run(debug=True, host='0.0.0.0', port=port) 
