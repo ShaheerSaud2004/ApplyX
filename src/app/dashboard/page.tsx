@@ -621,10 +621,12 @@ export default function DashboardPage() {
               <span className="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 ApplyX
               </span>
-              <span className="text-xs text-muted-foreground -mt-1">by Nebula.AI</span>
+              <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">by Nebula.AI</span>
             </div>
           </Link>
-          <nav className="ml-6 flex items-center space-x-4 lg:space-x-6">
+          
+          {/* Desktop Navigation */}
+          <nav className="ml-6 hidden md:flex items-center space-x-4 lg:space-x-6">
             <Link href="/dashboard" className="text-sm font-medium transition-colors hover:text-blue-600">
               Dashboard
             </Link>
@@ -632,38 +634,45 @@ export default function DashboardPage() {
               Applications
             </Link>
             <Link href="/manual-apply" className="text-sm font-medium text-muted-foreground transition-colors hover:text-blue-600">
-              Manual Apply Links
+              Manual Apply
             </Link>
             <Link href="/profile" className="text-sm font-medium text-muted-foreground transition-colors hover:text-blue-600">
               Profile
             </Link>
             {user?.isAdmin && (
               <Link href="/admin" className="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">
-                Admin Panel
+                Admin
               </Link>
             )}
           </nav>
-          <div className="ml-auto flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm bg-white/60 rounded-full px-3 py-1.5">
+          
+          <div className="ml-auto flex items-center space-x-2 md:space-x-4">
+            {/* User info - hidden on mobile */}
+            <div className="hidden sm:flex items-center space-x-2 text-sm bg-white/60 rounded-full px-3 py-1.5">
               <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
                 <User className="h-3 w-3 text-white" />
               </div>
               <span className="font-medium">{user?.firstName} {user?.lastName}</span>
             </div>
 
+            {/* Mobile menu button */}
+            <Button variant="outline" size="sm" className="md:hidden">
+              <Menu className="h-4 w-4" />
+            </Button>
+
             <Button variant="outline" size="sm" onClick={logout} className="hover:bg-red-50 hover:border-red-200 hover:text-red-600 transition-all">
-              <LogOut className="h-4 w-4 mr-2" />
-              Logout
+              <LogOut className="h-4 w-4 md:mr-2" />
+              <span className="hidden md:inline">Logout</span>
             </Button>
           </div>
         </div>
       </header>
 
-      <div className="flex-1 space-y-6 p-8 pt-6">
+      <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
         {/* Welcome Section */}
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-indigo-600/10 rounded-2xl"></div>
-          <div className="absolute top-0 right-0 w-64 h-64 opacity-10">
+          <div className="absolute top-0 right-0 w-32 h-32 md:w-64 md:h-64 opacity-10">
             <svg viewBox="0 0 200 200" className="w-full h-full">
               <defs>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -674,18 +683,18 @@ export default function DashboardPage() {
               <circle cx="100" cy="100" r="80" fill="url(#grad1)"/>
             </svg>
           </div>
-          <div className="relative p-8">
-            <div className="flex items-center justify-between">
+          <div className="relative p-4 md:p-8">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
               <div className="space-y-2">
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
+                <h1 className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
                   Welcome back, {user?.firstName}! 👋
                 </h1>
-                <p className="text-lg text-gray-600 max-w-2xl">
+                <p className="text-base md:text-lg text-gray-600 max-w-2xl">
                   Your AI-powered job application assistant is ready to help you land your dream job. 
                   Let's make today count!
                 </p>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
                 <Button 
                   variant="outline" 
                   onClick={() => setShowResumeUpload(true)}
@@ -737,7 +746,7 @@ export default function DashboardPage() {
         {userPlan && (
           <Card className="overflow-hidden border-0 shadow-lg bg-gradient-to-br from-white to-blue-50/50 transform transition-all duration-200 hover:scale-[1.02] hover:shadow-xl">
             <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
                 <div>
                   <CardTitle className="flex items-center gap-2 text-lg">
                     <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg shadow-md">
@@ -749,7 +758,7 @@ export default function DashboardPage() {
                     {userPlan.dailyUsage}/{userPlan.dailyQuota} applications used today
                   </CardDescription>
                 </div>
-                <div className="text-right bg-white/60 rounded-xl p-4 border border-blue-100">
+                <div className="text-center md:text-right bg-white/60 rounded-xl p-4 border border-blue-100">
                   <div className="text-sm text-muted-foreground">Current Plan</div>
                   <div className="font-bold text-lg capitalize bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     {userPlan.plan}
@@ -779,7 +788,7 @@ export default function DashboardPage() {
                     </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="text-center p-4 bg-white/80 rounded-xl border border-blue-100">
                     <p className="text-sm text-muted-foreground mb-1">Remaining Today</p>
                     <p className="text-2xl font-bold text-green-600">{userPlan.dailyQuota - userPlan.dailyUsage}</p>
@@ -801,7 +810,7 @@ export default function DashboardPage() {
         {/* LinkedIn Credentials Warning */}
         {!hasLinkedInCredentials && (
           <Card className="border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50 shadow-lg transform transition-all duration-200 hover:scale-[1.01] hover:shadow-xl">
-            <CardContent className="flex items-center justify-between p-6">
+            <CardContent className="flex flex-col md:flex-row md:items-center md:justify-between p-6 space-y-4 md:space-y-0">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full shadow-md">
                   <AlertCircle className="h-6 w-6 text-white" />
@@ -813,7 +822,7 @@ export default function DashboardPage() {
               </div>
               <Button 
                 onClick={() => setShowLinkedInModal(true)} 
-                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all text-white border-0"
+                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 shadow-lg hover:shadow-xl transition-all text-white border-0 w-full md:w-auto"
               >
                 🔗 Add LinkedIn Credentials
               </Button>
@@ -823,7 +832,7 @@ export default function DashboardPage() {
 
         {/* Stats Grid - Only show if user has application data */}
         {hasApplicationData && stats ? (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             <Card className="overflow-hidden border-0 shadow-lg bg-gradient-to-br from-white to-blue-50/30 transform transition-all duration-200 hover:scale-105 hover:shadow-xl">
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium text-gray-600">Total Applications</CardTitle>

@@ -252,10 +252,12 @@ export default function ApplicationsPage() {
               <span className="font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 ApplyX
               </span>
-              <span className="text-xs text-muted-foreground -mt-1">by Nebula.AI</span>
+              <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">by Nebula.AI</span>
             </div>
           </Link>
-          <nav className="ml-8 flex items-center space-x-6">
+          
+          {/* Desktop Navigation */}
+          <nav className="ml-8 hidden md:flex items-center space-x-6">
             <Link href="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Dashboard
             </Link>
@@ -263,40 +265,42 @@ export default function ApplicationsPage() {
               Applications
             </Link>
             <Link href="/manual-apply" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Manual Apply Links
+              Manual Apply
             </Link>
             <Link href="/profile" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Profile
             </Link>
             {user?.isAdmin && (
               <Link href="/admin" className="text-sm font-medium text-purple-600 hover:text-purple-800 transition-colors">
-                Admin Panel
+                Admin
               </Link>
             )}
           </nav>
-          <div className="ml-auto flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm bg-white/50 rounded-full px-3 py-1 backdrop-blur-sm">
+          
+          <div className="ml-auto flex items-center space-x-2 md:space-x-4">
+            {/* User info - hidden on mobile */}
+            <div className="hidden sm:flex items-center space-x-2 text-sm bg-white/50 rounded-full px-3 py-1 backdrop-blur-sm">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <span className="font-medium">{user?.firstName} {user?.lastName}</span>
             </div>
 
             <Button variant="outline" size="sm" onClick={logout} className="bg-white/50 backdrop-blur-sm hover:bg-white/80">
-              <LogOut className="h-4 w-4 mr-2" />
-              Logout
+              <LogOut className="h-4 w-4 md:mr-2" />
+              <span className="hidden md:inline">Logout</span>
             </Button>
           </div>
         </div>
       </header>
 
-      <div className="flex-1 space-y-8 p-8 pt-8">
+      <div className="flex-1 space-y-6 md:space-y-8 p-4 md:p-8 pt-8">
         {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 p-8 text-white shadow-2xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 p-6 md:p-8 text-white shadow-2xl">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative z-10">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
               <div>
-                <h1 className="text-4xl font-bold mb-2">Job Applications</h1>
-                <p className="text-blue-100 text-lg">Track your career journey with beautiful insights</p>
+                <h1 className="text-2xl md:text-4xl font-bold mb-2">Job Applications</h1>
+                <p className="text-blue-100 text-base md:text-lg">Track your career journey with beautiful insights</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Button variant="secondary" onClick={loadApplications} className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30">
