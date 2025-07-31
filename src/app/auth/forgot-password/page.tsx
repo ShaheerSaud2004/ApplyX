@@ -14,6 +14,55 @@ export default function ForgotPasswordPage() {
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState({ type: '', text: '' })
   const [emailSent, setEmailSent] = useState(false)
+  const [emailError, setEmailError] = useState('')
+  const [isEmailValid, setIsEmailValid] = useState(false)
+
+  // Email validation function
+  const validateEmail = (email: string) => {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    
+    if (!email) {
+      setEmailError('Email is required')
+      setIsEmailValid(false)
+      return false
+    }
+    
+    if (!emailPattern.test(email)) {
+      setEmailError('Please enter a valid email address')
+      setIsEmailValid(false)
+      return false
+    }
+    
+    // Additional checks
+    if (email.includes('..')) {
+      setEmailError('Email cannot contain consecutive dots')
+      setIsEmailValid(false)
+      return false
+    }
+    
+    if (email.startsWith('.') || email.startsWith('@') || email.endsWith('.')) {
+      setEmailError('Invalid email format')
+      setIsEmailValid(false)
+      return false
+    }
+    
+    const [localPart, domainPart] = email.split('@')
+    if (!localPart || !domainPart || !domainPart.includes('.')) {
+      setEmailError('Invalid email format')
+      setIsEmailValid(false)
+      return false
+    }
+    
+    setEmailError('')
+    setIsEmailValid(true)
+    return true
+  }
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = e.target.value
+    setEmail(newEmail)
+    validateEmail(newEmail)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -21,7 +70,7 @@ export default function ForgotPasswordPage() {
     setMessage({ type: '', text: '' })
 
     // Validate email
-    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+    if (!validateEmail(email)) {
       setMessage({ type: 'error', text: 'Please enter a valid email address' })
       setLoading(false)
       return
@@ -114,10 +163,16 @@ export default function ForgotPasswordPage() {
                     type="email"
                     required
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={handleEmailChange}
                     placeholder="Enter your email address"
-                    className="w-full"
+                    className={`w-full ${emailError ? 'border-red-500 focus:border-red-500' : isEmailValid ? 'border-green-500 focus:border-green-500' : ''}`}
                   />
+                  {emailError && (
+                    <p className="text-red-500 text-sm mt-1">{emailError}</p>
+                  )}
+                  {isEmailValid && !emailError && (
+                    <p className="text-green-500 text-sm mt-1">✓ Valid email address</p>
+                  )}
                 </div>
 
                 <Button 

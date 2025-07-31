@@ -22,13 +22,49 @@ export function LoginModal({ isOpen, onOpenChange, onSwitchToSignup }: LoginModa
   const [rememberMe, setRememberMe] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const [emailError, setEmailError] = useState('')
+  const [isEmailValid, setIsEmailValid] = useState(false)
 
   const { login } = useAuth()
+
+  // Email validation function
+  const validateEmail = (email: string) => {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    
+    if (!email) {
+      setEmailError('Email is required')
+      setIsEmailValid(false)
+      return false
+    }
+    
+    if (!emailPattern.test(email)) {
+      setEmailError('Please enter a valid email address')
+      setIsEmailValid(false)
+      return false
+    }
+    
+    setEmailError('')
+    setIsEmailValid(true)
+    return true
+  }
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = e.target.value
+    setEmail(newEmail)
+    validateEmail(newEmail)
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
     setError('')
+
+    // Validate email before submitting
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address')
+      setIsLoading(false)
+      return
+    }
 
     try {
       const response = await fetch(getApiUrl('/api/auth/login'), {
@@ -103,10 +139,16 @@ export function LoginModal({ isOpen, onOpenChange, onSwitchToSignup }: LoginModa
               type="email"
               placeholder="Enter your email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleEmailChange}
               required
-              className="w-full"
+              className={`w-full ${emailError ? 'border-red-500 focus:border-red-500' : isEmailValid ? 'border-green-500 focus:border-green-500' : ''}`}
             />
+            {emailError && (
+              <p className="text-red-500 text-sm mt-1">{emailError}</p>
+            )}
+            {isEmailValid && !emailError && (
+              <p className="text-green-500 text-sm mt-1">✓ Valid email address</p>
+            )}
           </div>
 
           <div className="space-y-2">
