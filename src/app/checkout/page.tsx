@@ -97,7 +97,7 @@ export default function CheckoutPage() {
       </header>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-8 max-w-4xl">
         <div className="grid gap-8 md:grid-cols-2">
           {/* Plan Summary */}
           <Card className="border-2 border-blue-500 shadow-xl">

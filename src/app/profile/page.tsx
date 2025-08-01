@@ -520,24 +520,24 @@ export default function ProfilePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-pink-100">
       {/* Header */}
-      <header className="px-4 lg:px-6 h-16 flex items-center border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+      <header className="px-3 sm:px-4 lg:px-6 h-14 sm:h-16 flex items-center border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <div className="container flex items-center">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
-                <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                <svg className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
                 </svg>
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse"></div>
             </div>
-            <span className="font-bold text-lg md:text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="font-bold text-base sm:text-lg md:text-xl bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               ApplyX
             </span>
           </Link>
           <div className="ml-auto flex items-center space-x-2 md:space-x-4">
             <Link href="/dashboard">
-              <Button variant="ghost" size="sm" className="text-sm">Dashboard</Button>
+              <Button variant="ghost" size="sm" className="text-xs sm:text-sm">Dashboard</Button>
             </Link>
           </div>
         </div>
@@ -547,57 +547,57 @@ export default function ProfilePage() {
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 opacity-90"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-white/20 rounded-full blur-xl"></div>
-          <div className="absolute top-20 right-20 w-32 h-32 bg-yellow-300/20 rounded-full blur-xl"></div>
-          <div className="absolute bottom-10 left-1/3 w-24 h-24 bg-blue-300/20 rounded-full blur-xl"></div>
+          <div className="absolute top-6 sm:top-10 left-6 sm:left-10 w-12 h-12 sm:w-20 sm:h-20 bg-white/20 rounded-full blur-xl"></div>
+          <div className="absolute top-12 sm:top-20 right-12 sm:right-20 w-20 h-20 sm:w-32 sm:h-32 bg-yellow-300/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-6 sm:bottom-10 left-1/3 w-16 h-16 sm:w-24 sm:h-24 bg-blue-300/20 rounded-full blur-xl"></div>
         </div>
-        <div className="relative px-4 py-8 md:py-12 mx-auto max-w-7xl lg:px-6">
+        <div className="relative px-3 sm:px-4 py-6 sm:py-8 md:py-12 mx-auto max-w-7xl lg:px-6">
           <div className="text-center">
-            <div className="flex items-center justify-center mb-4">
-              <Sparkles className="h-6 w-6 md:h-8 md:w-8 text-yellow-300 mr-2" />
-              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">
+            <div className="flex items-center justify-center mb-3 sm:mb-4">
+              <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-yellow-300 mr-1 sm:mr-2" />
+              <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-white">
                 Complete Your Profile
               </h1>
-              <Sparkles className="h-6 w-6 md:h-8 md:w-8 text-yellow-300 ml-2" />
+              <Sparkles className="h-5 w-5 sm:h-6 sm:w-6 md:h-8 md:w-8 text-yellow-300 ml-1 sm:ml-2" />
             </div>
-            <p className="text-base md:text-xl text-white/90 max-w-3xl mx-auto px-4">
+            <p className="text-sm sm:text-base md:text-xl text-white/90 max-w-3xl mx-auto px-2 sm:px-4">
               Set up your comprehensive job application profile with resume parsing, 
               skills tracking, and automated question responses.
             </p>
             
             {/* Action Buttons */}
-            <div className="mt-6 md:mt-8 flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-4">
+            <div className="mt-4 sm:mt-6 md:mt-8 flex flex-col sm:flex-row justify-center gap-2 sm:gap-3 md:gap-4 px-2 sm:px-4">
               <Button 
                 onClick={() => setShowResumeModal(true)}
-                className="bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm w-full sm:w-auto"
+                className="bg-white/20 text-white border-white/30 hover:bg-white/30 backdrop-blur-sm w-full sm:w-auto text-sm sm:text-base"
                 size="lg"
               >
-                <Upload className="h-5 w-5 mr-2" />
+                <Upload className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
                 Upload & Parse Resume
               </Button>
               <Button 
                 onClick={aiCompleteProfile}
                 disabled={loading || uploadedResumes.length === 0}
-                className="bg-gradient-to-r from-purple-500 to-pink-600 text-white hover:from-purple-600 hover:to-pink-700 backdrop-blur-sm w-full sm:w-auto"
+                className="bg-gradient-to-r from-purple-500 to-pink-600 text-white hover:from-purple-600 hover:to-pink-700 backdrop-blur-sm w-full sm:w-auto text-sm sm:text-base"
                 size="lg"
               >
-                <Sparkles className="h-5 w-5 mr-2" />
+                <Sparkles className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
                 {loading ? 'AI Working...' : 'AI Smart Fill'}
               </Button>
               <Button 
                 onClick={saveProfile}
                 disabled={loading}
-                className="bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 w-full sm:w-auto"
+                className="bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 w-full sm:w-auto text-sm sm:text-base"
                 size="lg"
               >
-                <Save className="h-5 w-5 mr-2" />
+                <Save className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2" />
                 {loading ? 'Saving...' : 'Save Profile'}
               </Button>
             </div>
             
             {/* AI Smart Fill Description */}
-            <div className="mt-6 text-center">
-              <p className="text-white/80 text-sm max-w-2xl mx-auto">
+            <div className="mt-4 sm:mt-6 text-center">
+              <p className="text-white/80 text-xs sm:text-sm max-w-2xl mx-auto px-2">
                 ✨ <strong>AI Smart Fill:</strong> Upload your resume and let our AI automatically complete your entire profile! 
                 It will analyze your resume and intelligently fill in all sections including skills, job preferences, and experience levels. 
                 Just review and modify the suggestions before saving.

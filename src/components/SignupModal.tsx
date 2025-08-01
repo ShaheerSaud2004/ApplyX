@@ -10,6 +10,7 @@ import { useAuth } from '@/components/AuthProvider'
 import { getApiUrl } from '@/lib/utils'
 import { CheckCircle2, Mail, Clock, X } from 'lucide-react'
 import Link from 'next/link'
+import { PrivacyPolicyModal } from './PrivacyPolicyModal'
 
 interface SignupModalProps {
   isOpen: boolean
@@ -35,6 +36,7 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
     number: false,
     special: false
   })
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false)
 
   const { login } = useAuth()
 
@@ -320,9 +322,13 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
                   Terms of Service
                 </Link>
                 {' '}and{' '}
-                <Link href="/privacy" target="_blank" className="text-blue-600 hover:underline">
+                <button 
+                  type="button"
+                  onClick={() => setIsPrivacyModalOpen(true)}
+                  className="text-blue-600 hover:underline cursor-pointer"
+                >
                   Privacy Policy
-                </Link>
+                </button>
               </Label>
             </div>
 
@@ -419,6 +425,12 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
           </div>
         </DialogContent>
       </Dialog>
+      
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicyModal 
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
+      />
     </>
   )
 } 

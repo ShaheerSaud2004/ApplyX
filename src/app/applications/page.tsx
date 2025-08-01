@@ -238,19 +238,19 @@ export default function ApplicationsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
       {/* Header */}
-      <header className="px-4 lg:px-6 h-16 flex items-center border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+      <header className="px-3 sm:px-4 lg:px-6 h-14 sm:h-16 flex items-center border-b bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         <div className="container flex items-center">
           <Link href="/" className="flex items-center space-x-2">
             <div className="relative">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
-                <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-lg">
+                <svg className="h-4 w-4 sm:h-5 sm:w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg>
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-br from-orange-500 to-red-500 rounded-full animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-br from-orange-500 to-red-500 rounded-full animate-pulse"></div>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="font-bold text-base sm:text-lg bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 ApplyX
               </span>
               <span className="text-xs text-muted-foreground -mt-1 hidden sm:block">by Nebula.AI</span>
@@ -258,7 +258,7 @@ export default function ApplicationsPage() {
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="ml-8 hidden md:flex items-center space-x-6">
+          <nav className="ml-4 sm:ml-8 hidden md:flex items-center space-x-4 sm:space-x-6">
             <Link href="/dashboard" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Dashboard
             </Link>
@@ -293,45 +293,45 @@ export default function ApplicationsPage() {
         </div>
       </header>
 
-      <div className="flex-1 space-y-6 md:space-y-8 p-4 md:p-8 pt-8">
+      <div className="flex-1 space-y-4 sm:space-y-6 md:space-y-8 p-3 sm:p-4 md:p-8 pt-6 sm:pt-8">
         {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 p-6 md:p-8 text-white shadow-2xl">
+        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 p-4 sm:p-6 md:p-8 text-white shadow-2xl">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
               <div>
-                <h1 className="text-2xl md:text-4xl font-bold mb-2">Job Applications</h1>
-                <p className="text-blue-100 text-base md:text-lg">Track your career journey with beautiful insights</p>
+                <h1 className="text-xl sm:text-2xl md:text-4xl font-bold mb-2">Job Applications</h1>
+                <p className="text-blue-100 text-sm sm:text-base md:text-lg">Track your career journey with beautiful insights</p>
               </div>
-              <div className="flex items-center space-x-3">
-                <Button variant="secondary" onClick={loadApplications} className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30">
-                  <RefreshCw className="h-4 w-4 mr-2" />
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <Button variant="secondary" onClick={loadApplications} className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 text-xs sm:text-sm">
+                  <RefreshCw className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                   Refresh
                 </Button>
-                <Button variant="secondary" className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30">
-                  <Download className="h-4 w-4 mr-2" />
+                <Button variant="secondary" className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 text-xs sm:text-sm">
+                  <Download className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
                   Export
                 </Button>
               </div>
             </div>
           </div>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
+          <div className="absolute top-0 right-0 w-20 h-20 sm:w-32 sm:h-32 bg-white/10 rounded-full -translate-y-8 sm:-translate-y-16 translate-x-8 sm:translate-x-16"></div>
+          <div className="absolute bottom-0 left-0 w-16 h-16 sm:w-24 sm:h-24 bg-white/10 rounded-full translate-y-6 sm:translate-y-12 -translate-x-6 sm:-translate-x-12"></div>
         </div>
 
         {/* Statistics Cards */}
-        <div className="grid gap-6 md:grid-cols-6">
-          <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-            <div className="flex items-center justify-between mb-4">
-              <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
-                <Building2 className="h-6 w-6 text-white" />
+        <div className="grid gap-4 sm:gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-6">
+          <div className="bg-white/70 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <div className="p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
+                <Building2 className="h-4 w-4 sm:h-6 sm:w-6 text-white" />
               </div>
-              <span className="text-sm font-medium text-muted-foreground">Total</span>
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground">Total</span>
             </div>
-            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               {stats.total}
             </div>
-            <p className="text-sm text-muted-foreground mt-1">Applications submitted</p>
+            <p className="text-xs sm:text-sm text-muted-foreground mt-1">Applications submitted</p>
           </div>
           
           <div className="bg-white/70 backdrop-blur-md rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">

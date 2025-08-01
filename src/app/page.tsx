@@ -7,6 +7,7 @@ import { ArrowRight, Bot, FileText, Target, TrendingUp, Users, Zap, CheckCircle 
 import Link from 'next/link'
 import { useAuth } from '@/components/AuthProvider'
 import { AuthModals, useAuthModals } from '@/components/AuthModals'
+import { PrivacyPolicyModal } from '@/components/PrivacyPolicyModal'
 
 interface AuthenticatedNavProps {
   onLoginOpen: () => void
@@ -191,6 +192,8 @@ export default function HomePage() {
     closeLogin,
     closeSignup
   } = useAuthModals()
+  
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false)
 
   return (
     <div className="flex flex-col min-h-screen relative">
@@ -470,7 +473,7 @@ export default function HomePage() {
       `}</style>
 
       {/* Header */}
-      <header className="px-3 sm:px-4 lg:px-6 h-14 flex items-center border-b relative z-20 bg-white/80 backdrop-blur-sm">
+      <header className="px-3 sm:px-4 lg:px-6 h-14 sm:h-16 flex items-center border-b relative z-20 bg-white/80 backdrop-blur-sm">
         <Link className="flex items-center justify-center" href="/">
           <div className="flex items-center space-x-1 sm:space-x-2">
             <div className="relative">
@@ -500,6 +503,12 @@ export default function HomePage() {
           >
             Pricing
           </button>
+          <button
+            onClick={() => setIsPrivacyModalOpen(true)}
+            className="text-xs sm:text-sm font-medium hover:underline underline-offset-4 transition-colors cursor-pointer hidden sm:block"
+          >
+            Privacy Policy
+          </button>
           <div className="flex items-center gap-2 sm:gap-4">
             <AuthenticatedNav onLoginOpen={openLogin} onSignupOpen={openSignup} />
           </div>
@@ -507,15 +516,15 @@ export default function HomePage() {
       </header>
 
       {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 relative z-10">
+      <section className="w-full py-8 sm:py-12 md:py-24 lg:py-32 xl:py-48 relative z-10">
         <div className="container px-4 md:px-6 relative z-10">
           <div className="flex flex-col items-center space-y-4 text-center">
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/60 backdrop-blur-sm border border-blue-200">
                 <Bot className="h-4 w-4 text-blue-600 mr-2" />
                 <span className="text-sm font-medium text-blue-900">AI-Powered Job Application Engine</span>
               </div>
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl px-2">
                 <span className="bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
                   Apply to 100+ jobs
                 </span>
@@ -524,11 +533,11 @@ export default function HomePage() {
                   while you sleep
                 </span>
               </h1>
-              <p className="mx-auto max-w-[600px] text-lg text-gray-600 leading-relaxed">
+              <p className="mx-auto max-w-[600px] text-base sm:text-lg text-gray-600 leading-relaxed px-4">
                 ApplyX's AI agent finds perfect job matches, tailors your resume with precision,
                 and submits applications 24/7. Land your dream job faster than ever.
               </p>
-              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm text-gray-500 px-4">
                 <div className="flex items-center">
                   <CheckCircle className="h-4 w-4 text-green-500 mr-1" />
                   <span>No manual work</span>
@@ -551,19 +560,19 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="w-full py-12 md:py-24 lg:py-32 relative z-10 scroll-mt-16">
+      <section id="features" className="w-full py-8 sm:py-12 md:py-24 lg:py-32 relative z-10 scroll-mt-16">
         <div className="container px-4 md:px-6">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+          <div className="text-center space-y-4 mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl px-2">
               <span className="bg-gradient-to-r from-gray-900 to-blue-900 bg-clip-text text-transparent">
                 Why Choose ApplyX?
               </span>
             </h2>
-            <p className="max-w-[700px] mx-auto text-lg text-gray-600 leading-relaxed">
+            <p className="max-w-[700px] mx-auto text-base sm:text-lg text-gray-600 leading-relaxed px-4">
               The complete AI-powered job application platform that works 24/7 to land you interviews
             </p>
           </div>
-          <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
+          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 hover:scale-105">
               <CardHeader className="text-center">
                 <div className="mx-auto w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
@@ -682,19 +691,19 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="w-full py-12 md:py-24 lg:py-32 relative z-10 scroll-mt-16">
+      <section id="pricing" className="w-full py-8 sm:py-12 md:py-24 lg:py-32 relative z-10 scroll-mt-16">
         <div className="container px-4 md:px-6">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+          <div className="text-center space-y-4 mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl px-2">
               <span className="bg-gradient-to-r from-gray-900 to-purple-900 bg-clip-text text-transparent">
                 Simple, Transparent Pricing
               </span>
             </h2>
-            <p className="max-w-[700px] mx-auto text-lg text-gray-600 leading-relaxed">
+            <p className="max-w-[700px] mx-auto text-base sm:text-lg text-gray-600 leading-relaxed px-4">
               Choose the perfect plan for your job search needs
             </p>
           </div>
-          <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+          <div className="grid gap-6 sm:gap-8 grid-cols-1 md:grid-cols-3 max-w-5xl mx-auto">
             {/* Free Plan */}
             <Card className="border-2 border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center pb-8">
@@ -837,9 +846,12 @@ export default function HomePage() {
           <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="/terms">
             Terms of Service
           </Link>
-          <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="/privacy">
-            Privacy
-          </Link>
+          <button 
+            onClick={() => setIsPrivacyModalOpen(true)}
+            className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600 cursor-pointer"
+          >
+            Privacy Policy
+          </button>
         </nav>
       </footer>
 
@@ -852,6 +864,12 @@ export default function HomePage() {
           onSignupClose={closeSignup}
         />
       </div>
+      
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicyModal 
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
+      />
     </div>
   )
 } 

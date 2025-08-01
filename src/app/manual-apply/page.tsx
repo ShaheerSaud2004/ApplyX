@@ -352,34 +352,34 @@ export default function ManualApplyPage() {
         </div>
       </header>
 
-      <div className="flex-1 space-y-6 md:space-y-8 p-4 md:p-8 pt-4 md:pt-8">
+      <div className="flex-1 space-y-4 sm:space-y-6 md:space-y-8 p-3 sm:p-4 md:p-8 pt-4 sm:pt-6 md:pt-8">
         {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 p-4 md:p-8 text-white shadow-2xl">
+        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 p-4 sm:p-6 md:p-8 text-white shadow-2xl">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="relative z-10">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
               <div>
-                <h1 className="text-2xl md:text-4xl font-bold mb-2">Manual Apply Links</h1>
-                <p className="text-purple-100 text-sm md:text-lg">Comprehensive job opportunities from top sources, updated daily</p>
+                <h1 className="text-xl sm:text-2xl md:text-4xl font-bold mb-2">Manual Apply Links</h1>
+                <p className="text-purple-100 text-sm sm:text-base md:text-lg">Comprehensive job opportunities from top sources, updated daily</p>
               </div>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">
                 <Button 
                   variant="secondary" 
                   onClick={triggerJobUpdate}
                   disabled={updating}
-                  className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 text-sm"
+                  className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 text-xs sm:text-sm"
                 >
-                  <RefreshCw className={`h-4 w-4 mr-2 ${updating ? 'animate-spin' : ''}`} />
+                  <RefreshCw className={`h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2 ${updating ? 'animate-spin' : ''}`} />
                   {updating ? 'Updating...' : 'Update Jobs'}
                 </Button>
-                <Button variant="secondary" onClick={resetFilters} className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 text-sm">
+                <Button variant="secondary" onClick={resetFilters} className="bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30 text-xs sm:text-sm">
                   Reset Filters
                 </Button>
               </div>
             </div>
           </div>
-          <div className="absolute top-0 right-0 w-16 h-16 md:w-32 md:h-32 bg-white/10 rounded-full -translate-y-8 md:-translate-y-16 translate-x-8 md:translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-12 h-12 md:w-24 md:h-24 bg-white/10 rounded-full translate-y-6 md:translate-y-12 -translate-x-6 md:-translate-x-12"></div>
+          <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 md:w-32 md:h-32 bg-white/10 rounded-full -translate-y-6 sm:-translate-y-8 md:-translate-y-16 translate-x-6 sm:translate-x-8 md:translate-x-16"></div>
+          <div className="absolute bottom-0 left-0 w-8 h-8 sm:w-12 sm:h-12 md:w-24 md:h-24 bg-white/10 rounded-full translate-y-4 sm:translate-y-6 md:translate-y-12 -translate-x-4 sm:-translate-x-6 md:-translate-x-12"></div>
         </div>
 
         {/* Stats Overview */}

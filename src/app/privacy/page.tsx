@@ -21,9 +21,9 @@ export default function PrivacyPage() {
       </header>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-          <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-8 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Privacy Policy</h1>
           
           <div className="prose prose-gray max-w-none space-y-6">
             <section>

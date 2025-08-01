@@ -21,14 +21,14 @@ export default function TermsPage() {
       </header>
 
       {/* Content */}
-      <div className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-          <h1 className="text-3xl font-bold mb-6">Terms of Service</h1>
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-8 max-w-4xl">
+        <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 md:p-8">
+          <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Terms of Service</h1>
           
           <div className="prose prose-gray max-w-none space-y-6">
             <section>
-              <h2 className="text-xl font-semibold mb-3">1. Acceptance of Terms</h2>
-              <p className="text-gray-600 leading-relaxed">
+              <h2 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">1. Acceptance of Terms</h2>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 By accessing and using ApplyX ("the Service"), you accept and agree to be bound by the terms and provision of this agreement.
               </p>
             </section>
