@@ -2550,6 +2550,7 @@ def manage_auto_restart(current_user_id):
 def update_profile(current_user_id):
     """Update user profile including LinkedIn credentials"""
     try:
+        import json
         data = request.get_json()
         
         if not data:
@@ -2619,8 +2620,6 @@ def update_profile(current_user_id):
         # Update job preferences
         preferences = data.get('jobPreferences', {})
         if preferences:
-            import json
-            
             # Convert lists to JSON strings for SQLite storage
             job_titles = preferences.get('jobTitles', [])
             job_titles_json = json.dumps(job_titles) if isinstance(job_titles, list) else str(job_titles)

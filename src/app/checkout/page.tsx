@@ -237,6 +237,25 @@ export default function CheckoutPage() {
           </Card>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-white/80 backdrop-blur-sm relative z-10 mt-auto">
+        <div className="flex items-center space-x-2">
+          <p className="text-xs text-gray-500">© 2024 ApplyX</p>
+          <span className="text-xs text-gray-300">•</span>
+          <p className="text-xs text-gray-500">A product of Nebula.AI</p>
+          <span className="text-xs text-gray-300">•</span>
+          <p className="text-xs text-gray-500">All rights reserved.</p>
+        </div>
+        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
+          <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="/terms">
+            Terms of Service
+          </Link>
+          <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="/privacy">
+            Privacy Policy
+          </Link>
+        </nav>
+      </footer>
     </div>
   )
 } 

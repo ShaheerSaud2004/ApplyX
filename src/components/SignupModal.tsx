@@ -186,7 +186,7 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
   return (
     <>
       <Dialog open={isOpen && !showSuccessModal} onOpenChange={onOpenChange}>
-        <DialogContent className="sm:max-w-md relative">
+        <DialogContent className="w-[95vw] max-w-md mx-auto relative max-h-[90vh] overflow-y-auto">
           {/* Mobile Close Button */}
           <button
             onClick={() => onOpenChange(false)}

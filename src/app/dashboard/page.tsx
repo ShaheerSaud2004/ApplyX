@@ -742,7 +742,7 @@ export default function DashboardPage() {
         )}
       </header>
 
-      <div className="flex-1 space-y-4 md:space-y-6 p-3 md:p-8 pt-4 md:pt-6">
+      <div className="flex-1 space-y-8 md:space-y-10 p-3 md:p-8 pt-4 md:pt-6">
         {/* Welcome Section */}
         <div className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-purple-600/10 to-indigo-600/10 rounded-2xl"></div>
