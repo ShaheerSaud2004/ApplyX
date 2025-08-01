@@ -353,8 +353,6 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
           </div>
         </DialogContent>
       </Dialog>
-        </DialogContent>
-      </Dialog>
 
       {/* Success Modal for Waitlist */}
       <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
