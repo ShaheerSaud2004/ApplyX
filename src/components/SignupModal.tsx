@@ -364,8 +364,11 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
       </Dialog>
 
       {/* Success Modal for Waitlist */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 z-[99998] bg-black/50 backdrop-blur-sm" onClick={() => setShowSuccessModal(false)} />
+      )}
       <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
-        <DialogContent className="sm:max-w-md relative">
+        <DialogContent className="fixed left-[50%] top-[50%] z-[99999] grid w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white p-6 shadow-2xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-lg">
           {/* Mobile Close Button */}
           <button
             onClick={() => setShowSuccessModal(false)}
