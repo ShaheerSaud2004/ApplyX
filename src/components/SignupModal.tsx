@@ -11,6 +11,7 @@ import { getApiUrl } from '@/lib/utils'
 import { CheckCircle2, Mail, Clock, X } from 'lucide-react'
 import Link from 'next/link'
 import { PrivacyPolicyModal } from './PrivacyPolicyModal'
+import { TermsOfServiceModal } from './TermsOfServiceModal'
 
 interface SignupModalProps {
   isOpen: boolean
@@ -37,6 +38,7 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
     special: false
   })
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false)
+  const [isTermsModalOpen, setIsTermsModalOpen] = useState(false)
 
   const { login } = useAuth()
 
@@ -321,9 +323,13 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
               />
               <Label htmlFor="terms" className="text-sm leading-relaxed">
                 I agree to the{' '}
-                <Link href="/terms" target="_blank" className="text-blue-600 hover:underline">
+                <button 
+                  type="button"
+                  onClick={() => setIsTermsModalOpen(true)}
+                  className="text-blue-600 hover:underline cursor-pointer"
+                >
                   Terms of Service
-                </Link>
+                </button>
                 {' '}and{' '}
                 <button 
                   type="button"
@@ -431,6 +437,12 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
       <PrivacyPolicyModal 
         isOpen={isPrivacyModalOpen}
         onClose={() => setIsPrivacyModalOpen(false)}
+      />
+      
+      {/* Terms of Service Modal */}
+      <TermsOfServiceModal 
+        isOpen={isTermsModalOpen}
+        onClose={() => setIsTermsModalOpen(false)}
       />
     </>
   )
