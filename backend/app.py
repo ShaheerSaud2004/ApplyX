@@ -2549,8 +2549,9 @@ def manage_auto_restart(current_user_id):
 @token_required
 def update_profile(current_user_id):
     """Update user profile including LinkedIn credentials"""
+    import json  # Move import to top to avoid scope issues
+    
     try:
-        import json
         data = request.get_json()
         
         if not data:
@@ -2583,8 +2584,16 @@ def update_profile(current_user_id):
                 current_user_id
             ))
         
-        # Update LinkedIn credentials (encrypted)
+        # Update LinkedIn credentials (encrypted) - handle both data structures
         linkedin_creds = data.get('linkedinCreds', {})
+        
+        # Check if credentials are sent directly (from LinkedInCredentialsModal)
+        if not linkedin_creds and data.get('linkedin_email') and data.get('linkedin_password'):
+            linkedin_creds = {
+                'email': data.get('linkedin_email'),
+                'password': data.get('linkedin_password')
+            }
+        
         if linkedin_creds and linkedin_creds.get('email') and linkedin_creds.get('password'):
             try:
                 from security import encrypt_data, validate_linkedin_credentials
