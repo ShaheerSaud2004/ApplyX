@@ -91,14 +91,12 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
 CORS(app, origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", 
                    "https://apply-9sp9tevcp-shaheers-projects-02efc33d.vercel.app",
                    "https://apply-x.vercel.app",
-                   "https://apply-x.vercel.app",
-                   "https://*.vercel.app",
-                   "https://vercel.app",
+                   "https://applyx.vercel.app",
                    "https://*.vercel.app"], 
-     allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Access-Control-Allow-Methods"], 
+     allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin"], 
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"],
      supports_credentials=True,
-     expose_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers"],
+     expose_headers=["Content-Type", "Authorization"],
      max_age=86400)
 
 # Stripe configuration
@@ -115,35 +113,11 @@ bot_status = {}
 
 logger = logging.getLogger(__name__)
 
-# Global security and CORS handler
+# Global security handler
 @app.after_request
 def after_request(response):
-    # Add security headers
+    # Add security headers only (CORS is handled by flask-cors extension)
     response = security_middleware.add_security_headers(response)
-    
-    # Get the origin from the request
-    origin = request.headers.get('Origin')
-    
-    # Allow specific origins or all for development
-    allowed_origins = [
-        "http://localhost:3000",
-        "http://localhost:3001", 
-        "http://localhost:3002",
-        "https://apply-9sp9tevcp-shaheers-projects-02efc33d.vercel.app",
-        "https://apply-x.vercel.app",
-        "https://vercel.app"
-    ]
-    
-    # Check if origin is allowed or if it's a Vercel domain
-    if origin and (origin in allowed_origins or origin.endswith('.vercel.app')):
-        response.headers.add('Access-Control-Allow-Origin', origin)
-    else:
-        response.headers.add('Access-Control-Allow-Origin', '*')
-    
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,X-Requested-With,Accept,Origin,Access-Control-Allow-Origin,Access-Control-Allow-Headers,Access-Control-Allow-Methods')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS,HEAD')
-    response.headers.add('Access-Control-Allow-Credentials', 'true')
-    response.headers.add('Access-Control-Max-Age', '86400')
     return response
 
 def safe_split_to_list(value, delimiter=','):

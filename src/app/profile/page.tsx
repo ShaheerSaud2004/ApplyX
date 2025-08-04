@@ -484,13 +484,16 @@ export default function ProfilePage() {
   const saveLinkedInCredentials = async () => {
     setLoading(true)
     try {
-      const response = await fetch(getApiUrl('/api/profile/linkedin'), {
-        method: 'POST',
+      const response = await fetch(getApiUrl('/api/profile'), {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify(linkedinCreds)
+        body: JSON.stringify({
+          linkedin_email: linkedinCreds.email,
+          linkedin_password: linkedinCreds.password
+        })
       })
 
       if (response.ok) {
