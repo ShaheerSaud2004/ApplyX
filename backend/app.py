@@ -404,7 +404,17 @@ def token_required(f):
         # Use enhanced token validation
         is_valid, payload = security_manager.validate_token(token)
         if not is_valid:
-            return jsonify({'error': payload.get('error', 'Invalid token')}), 401
+            error_msg = payload.get('error', 'Invalid token')
+            # Add helpful message for token issues
+            if 'Invalid token' in error_msg:
+                error_msg = 'Session expired or invalid. Please log in again.'
+            elif 'Token has expired' in error_msg:
+                error_msg = 'Session has expired. Please log in again.'
+            return jsonify({
+                'error': error_msg,
+                'code': 'TOKEN_INVALID',
+                'action': 'LOGOUT_REQUIRED'
+            }), 401
         
         current_user_id = payload['user_id']
         

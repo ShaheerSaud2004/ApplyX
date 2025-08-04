@@ -26,7 +26,7 @@ export function LinkedInCredentialsModal({
   onOpenChange, 
   onCredentialsSaved 
 }: LinkedInCredentialsModalProps) {
-  const { token } = useAuth()
+  const { token, logout } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -66,6 +66,16 @@ export function LinkedInCredentialsModal({
         setSuccess(data.message)
       } else {
         setVerificationStatus('failed')
+        
+        // Handle authentication errors
+        if (response.status === 401 && data.code === 'TOKEN_INVALID') {
+          setError('Session expired. Logging out...')
+          setTimeout(() => {
+            logout()
+          }, 1500)
+          return
+        }
+        
         setError(data.message || 'Verification failed')
       }
     } catch (err) {
@@ -113,6 +123,16 @@ export function LinkedInCredentialsModal({
         }, 1500)
       } else {
         const errorData = await response.json()
+        
+        // Handle authentication errors
+        if (response.status === 401 && errorData.code === 'TOKEN_INVALID') {
+          setError('Session expired. Logging out...')
+          setTimeout(() => {
+            logout()
+          }, 1500)
+          return
+        }
+        
         setError(errorData.error || 'Failed to save credentials')
       }
     } catch (err) {
