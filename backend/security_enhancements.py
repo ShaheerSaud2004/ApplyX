@@ -56,13 +56,42 @@ class SecurityManager:
         if additional_data:
             payload.update(additional_data)
             
-        return jwt.encode(payload, current_app.config['SECRET_KEY'], algorithm='HS256')
+        # Get SECRET_KEY safely with fallback
+        try:
+            secret_key = current_app.config.get('SECRET_KEY')
+            if not secret_key:
+                secret_key = os.environ.get('SECRET_KEY')
+            if not secret_key:
+                # Generate a temporary secret key as emergency fallback
+                secret_key = secrets.token_hex(32)
+                logger.warning("No SECRET_KEY found, using temporary key")
+        except RuntimeError:
+            # Handle case where we're outside application context
+            secret_key = os.environ.get('SECRET_KEY')
+            if not secret_key:
+                secret_key = secrets.token_hex(32)
+                logger.warning("Outside app context, using temporary key")
+        
+        return jwt.encode(payload, secret_key, algorithm='HS256')
     
     def validate_token(self, token: str) -> Tuple[bool, dict]:
         """Validate JWT token with additional security checks"""
         try:
+            # Get SECRET_KEY safely with fallback
+            try:
+                secret_key = current_app.config.get('SECRET_KEY')
+                if not secret_key:
+                    secret_key = os.environ.get('SECRET_KEY')
+                if not secret_key:
+                    return False, {'error': 'Server configuration error'}
+            except RuntimeError:
+                # Handle case where we're outside application context
+                secret_key = os.environ.get('SECRET_KEY')
+                if not secret_key:
+                    return False, {'error': 'Server configuration error'}
+            
             # Decode token
-            payload = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=['HS256'])
+            payload = jwt.decode(token, secret_key, algorithms=['HS256'])
             
             # Check if token is blacklisted
             if payload.get('jti') in self.session_tokens.get('blacklisted', set()):

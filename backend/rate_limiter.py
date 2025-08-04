@@ -73,9 +73,22 @@ def rate_limit(limit: int = 60, window: int = 60, per: str = 'ip'):
                     token = auth_header[7:] if auth_header.startswith('Bearer ') else auth_header
                     try:
                         import jwt
+                        import os
                         from flask import current_app
-                        data = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=['HS256'])
-                        key = f"user:{data['user_id']}"
+                        
+                        # Get SECRET_KEY safely
+                        try:
+                            secret_key = current_app.config.get('SECRET_KEY')
+                            if not secret_key:
+                                secret_key = os.environ.get('SECRET_KEY')
+                        except RuntimeError:
+                            secret_key = os.environ.get('SECRET_KEY')
+                        
+                        if secret_key:
+                            data = jwt.decode(token, secret_key, algorithms=['HS256'])
+                            key = f"user:{data['user_id']}"
+                        else:
+                            key = f"ip:{request.remote_addr}"
                     except:
                         key = f"ip:{request.remote_addr}"
                 else:
