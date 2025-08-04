@@ -2526,8 +2526,6 @@ def manage_auto_restart(current_user_id):
 @token_required
 def update_profile(current_user_id):
     """Update user profile including LinkedIn credentials"""
-    import json  # Move import to top to avoid scope issues
-    
     try:
         data = request.get_json()
         
