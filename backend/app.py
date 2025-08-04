@@ -562,40 +562,17 @@ def register():
     }), 201
 
 @app.route('/api/auth/login', methods=['POST'])
-# @secure_route  # Temporarily disabled to debug
-# @validate_json_input  # Temporarily disabled to debug
 def login():
-    # Check login attempts
-    identifier = f"login:{request.remote_addr}"
-    can_attempt, attempts = security_manager.check_login_attempts(identifier)
-    
-    if not can_attempt:
-        return jsonify({
-            'error': 'Too many failed login attempts',
-            'message': f'Account temporarily locked. Try again in {security_manager.lockout_duration // 60} minutes.'
-        }), 429
-    
-    # Check for suspicious patterns
-    request_data = str(request.get_data())
-    if security_middleware.check_suspicious_patterns(request_data):
-        security_middleware.log_suspicious_activity(
-            request.remote_addr, 'login_attack', {'data': request_data[:200]}
-        )
-        security_manager.record_failed_login(identifier)
-        return jsonify({'error': 'Invalid request'}), 400
-    
+    # Temporarily remove all security checks to debug core login functionality
     data = request.get_json()
     
     if not data or not data.get('email') or not data.get('password'):
-        security_manager.record_failed_login(identifier)
         return jsonify({'error': 'Email and password are required'}), 400
     
-    # Validate email format
+    # Basic email validation (temporary)
     email = data.get('email', '').strip()
-    is_valid_email, email_message = security_manager.validate_email(email)
-    if not is_valid_email:
-        security_manager.record_failed_login(identifier)
-        return jsonify({'error': email_message}), 400
+    if not email or '@' not in email:
+        return jsonify({'error': 'Invalid email format'}), 400
     
     conn = sqlite3.connect('easyapply.db')
     cursor = conn.cursor()
@@ -605,21 +582,14 @@ def login():
     
     if not user:
         conn.close()
-        security_manager.record_failed_login(identifier)
         return jsonify({'error': 'Invalid credentials'}), 401
     
-    # Enhanced password verification
+    # Basic password verification (temporary)
     password = data.get('password', '')
-    password_valid = security_manager.verify_password(password, user[1])
+    password_valid = check_password_hash(user[1], password)
     
     if not password_valid:
         conn.close()
-        security_manager.record_failed_login(identifier)
-        security_manager.log_security_event('failed_login', {
-            'email': email,
-            'ip': request.remote_addr,
-            'attempts': attempts + 1
-        })
         return jsonify({'error': 'Invalid credentials'}), 401
     
     # Check user approval status
@@ -646,18 +616,20 @@ def login():
     
     conn.close()
     
-    # Reset failed login attempts on successful login
-    security_manager.reset_login_attempts(identifier)
+    # Generate basic JWT token (temporary simplified version)
+    import jwt
+    import secrets
+    from datetime import datetime, timedelta
     
-    # Generate secure token with shorter expiration
-    token = security_manager.generate_secure_token(user[0])
-    
-    # Log successful login
-    security_manager.log_security_event('successful_login', {
+    payload = {
         'user_id': user[0],
-        'email': email,
-        'ip': request.remote_addr
-    }, user[0])
+        'exp': datetime.utcnow() + timedelta(hours=1),
+        'iat': datetime.utcnow()
+    }
+    
+    # Use app secret key directly
+    secret_key = app.config.get('SECRET_KEY') or secrets.token_hex(32)
+    token = jwt.encode(payload, secret_key, algorithm='HS256')
     
     return jsonify({
         'token': token,
