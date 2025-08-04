@@ -397,6 +397,10 @@ def token_required(f):
         if not token:
             return jsonify({'error': 'Token is missing'}), 401
         
+        # Strip "Bearer " prefix if present
+        if token.startswith('Bearer '):
+            token = token[7:]
+        
         # Use enhanced token validation
         is_valid, payload = security_manager.validate_token(token)
         if not is_valid:

@@ -68,11 +68,12 @@ def rate_limit(limit: int = 60, window: int = 60, per: str = 'ip'):
             elif per == 'user':
                 # Extract user ID from JWT token if available
                 auth_header = request.headers.get('Authorization')
-                if auth_header and auth_header.startswith('Bearer '):
+                if auth_header:
+                    # Strip "Bearer " prefix if present
+                    token = auth_header[7:] if auth_header.startswith('Bearer ') else auth_header
                     try:
                         import jwt
                         from flask import current_app
-                        token = auth_header[7:]
                         data = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=['HS256'])
                         key = f"user:{data['user_id']}"
                     except:

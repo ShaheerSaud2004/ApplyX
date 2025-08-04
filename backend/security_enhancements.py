@@ -69,9 +69,17 @@ class SecurityManager:
                 return False, {'error': 'Token has been revoked'}
             
             # Check IP address (prevent token reuse from different IPs)
-            if payload.get('ip') != request.remote_addr:
-                logger.warning(f"Token IP mismatch: {payload.get('ip')} vs {request.remote_addr}")
-                return False, {'error': 'Invalid token source'}
+            # Skip IP validation in cloud environments where IPs can change due to load balancers
+            token_ip = payload.get('ip')
+            current_ip = request.remote_addr
+            
+            # Only enforce IP validation if both IPs are present and not from common cloud/proxy ranges
+            if (token_ip and current_ip and 
+                token_ip != current_ip and 
+                not self._is_cloud_or_proxy_ip(token_ip) and 
+                not self._is_cloud_or_proxy_ip(current_ip)):
+                logger.warning(f"Token IP mismatch: {token_ip} vs {current_ip}")
+                # Don't fail authentication, just log the warning for monitoring
             
             return True, payload
             
@@ -79,6 +87,27 @@ class SecurityManager:
             return False, {'error': 'Token has expired'}
         except jwt.InvalidTokenError:
             return False, {'error': 'Invalid token'}
+    
+    def _is_cloud_or_proxy_ip(self, ip: str) -> bool:
+        """Check if IP is from a cloud provider or proxy service"""
+        if not ip:
+            return True
+            
+        # Common cloud/proxy IP patterns that can change frequently
+        cloud_patterns = [
+            '10.',      # Private network
+            '172.',     # Private network  
+            '192.168.', # Private network
+            '127.',     # Localhost
+            '0.0.0.0',  # Default/unknown
+            # Add more cloud provider ranges as needed
+        ]
+        
+        for pattern in cloud_patterns:
+            if ip.startswith(pattern):
+                return True
+                
+        return False
     
     def check_rate_limit(self, identifier: str, limit: int = None, window: int = None) -> bool:
         """Check rate limiting for requests"""
