@@ -70,7 +70,9 @@ app = Flask(__name__)
 # Enhanced security configuration
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 if not app.config['SECRET_KEY']:
-    raise ValueError("SECRET_KEY environment variable must be set for security")
+    # Generate a secure secret key for production deployments
+    app.config['SECRET_KEY'] = secrets.token_hex(32)
+    print("⚠️  SECRET_KEY not set. Generated new key. Please set this in production for consistency.")
 
 # Generate a secure encryption key if not provided
 if not os.environ.get('ENCRYPTION_KEY'):
@@ -83,9 +85,10 @@ app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 
 # Additional security settings
-app.config['SESSION_COOKIE_SECURE'] = True
+# Only require secure cookies in production (HTTPS)
+app.config['SESSION_COOKIE_SECURE'] = os.environ.get('FLASK_ENV') == 'production'
 app.config['SESSION_COOKIE_HTTPONLY'] = True
-app.config['SESSION_COOKIE_SAMESITE'] = 'Strict'
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'  # Changed from Strict for better compatibility
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
 
 CORS(app, origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", 
