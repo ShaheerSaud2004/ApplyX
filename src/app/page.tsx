@@ -110,6 +110,21 @@ export default function HomePage() {
     }
   }
 
+  // Beta banner (dismissible, persisted)
+  const [showBeta, setShowBeta] = useState(true)
+  React.useEffect(() => {
+    try {
+      const dismissed = localStorage.getItem('applyx_beta_dismissed') === '1'
+      if (dismissed) setShowBeta(false)
+    } catch {}
+  }, [])
+  const dismissBeta = () => {
+    try {
+      localStorage.setItem('applyx_beta_dismissed', '1')
+    } catch {}
+    setShowBeta(false)
+  }
+
   // Show loading or redirect if user is authenticated
   if (isLoading) {
     return (
@@ -169,6 +184,17 @@ export default function HomePage() {
           </div>
         </nav>
       </header>
+
+      {/* Beta banner */}
+      {showBeta && (
+        <div className="relative z-20 bg-amber-50 border-b border-amber-200">
+          <div className="container px-4 md:px-6 py-2 flex items-center justify-center gap-3 text-amber-900 text-sm">
+            <span className="font-semibold">Beta</span>
+            <span>ApplyX is in public beta — features may change.</span>
+            <button onClick={dismissBeta} className="ml-2 underline text-amber-700">Dismiss</button>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="w-full py-12 sm:py-16 md:py-24 lg:py-32 xl:py-40 relative z-10">
@@ -259,9 +285,9 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <ul className="text-sm sm:text-base space-y-3">
-                  <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />Keyword optimization</li>
-                  <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />Custom cover letters</li>
+                  <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />Resume keyword optimization</li>
                   <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />ATS-friendly formatting</li>
+                  <li className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />Dynamic cover letter generation</li>
                 </ul>
               </CardContent>
             </Card>
