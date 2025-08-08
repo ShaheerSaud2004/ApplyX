@@ -8,7 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog'
 import { useAuth } from '@/components/AuthProvider'
 import { getApiUrl } from '@/lib/utils'
-import { CheckCircle2, Mail, Clock, X } from 'lucide-react'
+import { CheckCircle2, Mail, Clock, X, Chrome } from 'lucide-react'
 import Link from 'next/link'
 import { PrivacyPolicyModal } from './PrivacyPolicyModal'
 import { TermsOfServiceModal } from './TermsOfServiceModal'
@@ -20,7 +20,8 @@ interface SignupModalProps {
 }
 
 export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupModalProps) {
-  const [name, setName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -39,6 +40,7 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
   })
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false)
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false)
+  const [showNotImplementedModal, setShowNotImplementedModal] = useState(false)
 
   const { login } = useAuth()
 
@@ -109,6 +111,12 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
     setError('')
 
     // Validation
+    if (!firstName.trim() || !lastName.trim()) {
+      setError('First name and last name are required')
+      setIsLoading(false)
+      return
+    }
+
     if (!validateEmail(email)) {
       setError('Please fix the email validation errors')
       setIsLoading(false)
@@ -141,7 +149,7 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ firstName: firstName.trim(), lastName: lastName.trim(), email, password }),
       })
 
       if (response.ok) {
@@ -154,7 +162,8 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
           setShowSuccessModal(true)
           
           // Clear form
-          setName('')
+          setFirstName('')
+          setLastName('')
           setEmail('')
           setPassword('')
           setConfirmPassword('')
@@ -163,7 +172,8 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
           // Old flow for auto-approved users (if any)
           login(data.token, data.user)
           onOpenChange(false)
-          setName('')
+          setFirstName('')
+          setLastName('')
           setEmail('')
           setPassword('')
           setConfirmPassword('')
@@ -192,13 +202,6 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
       )}
       <Dialog open={isOpen && !showSuccessModal} onOpenChange={onOpenChange}>
         <DialogContent className="fixed left-[50%] top-[50%] z-[9999] grid w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white p-6 shadow-2xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-lg max-h-[90vh] overflow-y-auto">
-          {/* Mobile Close Button */}
-          <button
-            onClick={() => onOpenChange(false)}
-            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors md:hidden"
-          >
-            <X className="h-5 w-5" />
-          </button>
           <DialogHeader className="space-y-3">
             <div className="flex justify-center">
               <div className="relative">
@@ -211,9 +214,9 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
               </div>
             </div>
             <div className="text-center">
-              <DialogTitle className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 ApplyX
-              </DialogTitle>
+              </h2>
               <p className="text-xs text-muted-foreground">by Nebula.AI</p>
             </div>
             <DialogTitle className="text-2xl font-bold text-center">Join the Future of Job Applications</DialogTitle>
@@ -229,17 +232,31 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
               </div>
             )}
 
-            <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
-              <Input
-                id="name"
-                type="text"
-                placeholder="Enter your full name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                className="w-full"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="firstName">First Name</Label>
+                <Input
+                  id="firstName"
+                  type="text"
+                  placeholder="Enter your first name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  className="w-full"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="lastName">Last Name</Label>
+                <Input
+                  id="lastName"
+                  type="text"
+                  placeholder="Enter your last name"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  className="w-full"
+                />
+              </div>
             </div>
 
             <div className="space-y-2">
@@ -348,6 +365,25 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
             >
               {isLoading ? 'Creating Account...' : 'Create Account'}
             </Button>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-white px-2 text-muted-foreground">Or continue with</span>
+              </div>
+            </div>
+
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setShowNotImplementedModal(true)}
+              className="w-full border-2 border-gray-200 hover:border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-all duration-200"
+            >
+              <Chrome className="mr-2 h-4 w-4" />
+              Continue with Google
+            </Button>
           </form>
 
           <div className="text-center text-sm">
@@ -369,13 +405,6 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
       )}
       <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
         <DialogContent className="fixed left-[50%] top-[50%] z-[99999] grid w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white p-6 shadow-2xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-lg">
-          {/* Mobile Close Button */}
-          <button
-            onClick={() => setShowSuccessModal(false)}
-            className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors md:hidden"
-          >
-            <X className="h-5 w-5" />
-          </button>
           <div className="text-center space-y-6 py-4">
             <div className="flex justify-center">
               <div className="relative">
@@ -447,6 +476,35 @@ export function SignupModal({ isOpen, onOpenChange, onSwitchToLogin }: SignupMod
         isOpen={isTermsModalOpen}
         onClose={() => setIsTermsModalOpen(false)}
       />
+
+      {/* Not Implemented Modal */}
+      <Dialog open={showNotImplementedModal} onOpenChange={setShowNotImplementedModal}>
+        <DialogContent className="fixed left-[50%] top-[50%] z-[99999] grid w-[95vw] max-w-md translate-x-[-50%] translate-y-[-50%] gap-4 border bg-white p-6 shadow-2xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] rounded-lg">
+          <div className="text-center space-y-4 py-4">
+            <div className="flex justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                <Chrome className="h-6 w-6 text-white" />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <h2 className="text-xl font-bold text-gray-900">
+                Coming Soon!
+              </h2>
+              <p className="text-gray-600 text-sm">
+                Google sign-in is not implemented yet. Please use email registration for now.
+              </p>
+            </div>
+
+            <Button 
+              onClick={() => setShowNotImplementedModal(false)}
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+            >
+              Got it
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   )
 } 

@@ -1,0 +1,104 @@
+[
+  {
+    "test": "Backend Health Check",
+    "success": true,
+    "details": "Status: healthy",
+    "timestamp": "2025-08-06T20:21:11.764626"
+  },
+  {
+    "test": "Frontend Access",
+    "success": false,
+    "details": "Status code: 404",
+    "timestamp": "2025-08-06T20:21:11.794889"
+  },
+  {
+    "test": "Pricing API",
+    "success": true,
+    "details": "Status: 200",
+    "timestamp": "2025-08-06T20:21:11.796799"
+  },
+  {
+    "test": "User Plan API",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "2025-08-06T20:21:11.802633"
+  },
+  {
+    "test": "Bot Status API",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "2025-08-06T20:21:11.804753"
+  },
+  {
+    "test": "Free Plan Quota",
+    "success": true,
+    "details": "Quota correctly set to 10",
+    "timestamp": "2025-08-06T20:21:11.807103"
+  },
+  {
+    "test": "Chrome Directories Cleaned",
+    "success": true,
+    "details": "All Chrome directories moved to backup",
+    "timestamp": "2025-08-06T20:21:11.807191"
+  },
+  {
+    "test": "Log Files Cleaned",
+    "success": true,
+    "details": "All log files moved to backup",
+    "timestamp": "2025-08-06T20:21:12.179088"
+  },
+  {
+    "test": "Cache Cleaned",
+    "success": false,
+    "details": "Next.js cache still exists",
+    "timestamp": "2025-08-06T20:21:12.179112"
+  },
+  {
+    "test": "File: src/app/layout.tsx",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:21:12.179123"
+  },
+  {
+    "test": "File: src/components/AuthModals.tsx",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:21:12.179129"
+  },
+  {
+    "test": "File: backend/app.py",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:21:12.179134"
+  },
+  {
+    "test": "File: package.json",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:21:12.179139"
+  },
+  {
+    "test": "File: requirements.txt",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:21:12.179146"
+  },
+  {
+    "test": "Requirements Cleanup",
+    "success": false,
+    "details": "Duplicate flask-cors still present",
+    "timestamp": "2025-08-06T20:21:12.180001"
+  },
+  {
+    "test": "Requirements Cleanup",
+    "success": true,
+    "details": "bs4 removed",
+    "timestamp": "2025-08-06T20:21:12.180008"
+  },
+  {
+    "test": "Requirements Cleanup",
+    "success": true,
+    "details": "docx2txt removed",
+    "timestamp": "2025-08-06T20:21:12.180011"
+  }
+]

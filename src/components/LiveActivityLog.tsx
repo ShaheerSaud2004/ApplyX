@@ -35,14 +35,16 @@ interface LiveActivityLogProps {
   isRunning?: boolean
   autoScroll?: boolean
   maxHeight?: string
+  onReset?: () => void
 }
 
-export function LiveActivityLog({ 
+export const LiveActivityLog = React.forwardRef<{ reset: () => void }, LiveActivityLogProps>(({ 
   className, 
   isRunning = false, 
   autoScroll = true,
-  maxHeight = "400px"
-}: LiveActivityLogProps) {
+  maxHeight = "400px",
+  onReset
+}, ref) => {
   const { token } = useAuth()
   const [activities, setActivities] = useState<ActivityLog[]>([])
   const [isLoading, setIsLoading] = useState(false)
@@ -168,6 +170,44 @@ export function LiveActivityLog({
       setActivities([])
     }
   }
+
+  // Reset function that can be called externally
+  const resetActivityLog = async () => {
+    console.log('🔄 Resetting live activity log...')
+    setActivities([])
+    setError('')
+    setIsPaused(false)
+    
+    // Clear backend logs
+    try {
+      const response = await fetch(getApiUrl('/api/activity/clear'), {
+        method: 'POST',
+        headers: { 
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        const result = await response.json()
+        console.log(`✅ Reset complete: Cleared ${result.deleted_count} activity log entries`)
+      } else {
+        console.warn('Failed to clear backend logs during reset')
+      }
+    } catch (error) {
+      console.warn('Error clearing backend logs during reset:', error)
+    }
+    
+    // Call external reset callback if provided
+    if (onReset) {
+      onReset()
+    }
+  }
+
+  // Expose reset function to parent component
+  React.useImperativeHandle(ref, () => ({
+    reset: resetActivityLog
+  }))
 
   // Export logs as text
   const exportLogs = () => {
@@ -371,4 +411,6 @@ export function LiveActivityLog({
       </CardContent>
     </Card>
   )
-} 
+})
+
+LiveActivityLog.displayName = 'LiveActivityLog' 

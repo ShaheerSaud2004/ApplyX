@@ -159,6 +159,7 @@ export default function ProfilePage() {
   const [uploadedResumes, setUploadedResumes] = useState<UploadedResume[]>([])
   const [activeTab, setActiveTab] = useState('personal')
   const [resumeParsing, setResumeParsing] = useState(false)
+  const [aiProvider, setAiProvider] = useState<'openai' | 'local' | 'none'>('none')
 
   // Skills and technologies for dropdowns
   const availableSkills = [
@@ -186,6 +187,20 @@ export default function ProfilePage() {
       loadUploadedResumes()
     }
   }, [token])
+
+  useEffect(() => {
+    // Probe AI configuration so we can hide the OpenAI banner if local LLM exists
+    const fetchAiConfig = async () => {
+      try {
+        const r = await fetch(getApiUrl('/api/ai/config'))
+        if (r.ok) {
+          const data = await r.json()
+          setAiProvider((data.provider as any) || 'none')
+        }
+      } catch {}
+    }
+    fetchAiConfig()
+  }, [])
 
   const loadUserProfile = async () => {
     try {
@@ -625,6 +640,16 @@ export default function ProfilePage() {
                 <AlertCircle className="h-5 w-5 mr-2" />
               )}
               {message.text}
+            </div>
+          </div>
+        )}
+
+        {/* AI provider warning (only if none configured) */}
+        {aiProvider === 'none' && (
+          <div className="mb-6 p-3 rounded-lg border bg-amber-50 border-amber-200 text-amber-900">
+            <div className="flex items-center">
+              <AlertCircle className="h-5 w-5 mr-2" />
+              OpenAI/Local AI not configured. Set OPENAI_API_KEY or run a local OpenAI-compatible server and set LOCAL_AI_BASE_URL.
             </div>
           </div>
         )}

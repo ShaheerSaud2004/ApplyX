@@ -34,7 +34,9 @@ import {
   AlertTriangle,
   FileText,
   Zap,
-  LogOut
+  LogOut,
+  User,
+  Briefcase
 } from 'lucide-react'
 
 interface User {
@@ -500,6 +502,14 @@ export default function AdminDashboard() {
             )}
             </div>
           <div className="flex items-center space-x-3">
+            <Button
+              onClick={() => router.push('/dashboard')}
+              variant="outline"
+              className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 border-blue-200"
+            >
+              <Briefcase className="h-4 w-4" />
+              <span>Switch to User Mode</span>
+            </Button>
             <Button
               onClick={manualRefresh}
               disabled={loading}

@@ -10,6 +10,10 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
+  // Ensure static assets are served correctly
+  assetPrefix: process.env.NODE_ENV === 'production' ? undefined : '',
+  // Disable static optimization for development
+  staticPageGenerationTimeout: 120,
 }
 
 module.exports = nextConfig 

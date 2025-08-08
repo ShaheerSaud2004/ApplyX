@@ -1,0 +1,908 @@
+{
+  "summary": {
+    "total_tests": 110,
+    "passed": 9,
+    "failed": 90,
+    "warnings": 11,
+    "success_rate": 8.181818181818182,
+    "duration": "0:00:01.583988",
+    "timestamp": "2025-08-06T09:04:23.452610"
+  },
+  "test_results": [
+    {
+      "test": "001_Server_Health_Check",
+      "status": "FAIL",
+      "details": "Status: 404",
+      "timestamp": "2025-08-06T09:04:21.872896",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.895278",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.899193",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "003_User_Registration_Duplicate",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.899228",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_1",
+      "status": "FAIL",
+      "details": "Invalid email invalid accepted",
+      "timestamp": "2025-08-06T09:04:21.901543",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_2",
+      "status": "FAIL",
+      "details": "Invalid email test@ accepted",
+      "timestamp": "2025-08-06T09:04:21.903532",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_3",
+      "status": "FAIL",
+      "details": "Invalid email @domain.com accepted",
+      "timestamp": "2025-08-06T09:04:21.904926",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_4",
+      "status": "FAIL",
+      "details": "Invalid email test..test@domain.com accepted",
+      "timestamp": "2025-08-06T09:04:21.906531",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "004_Invalid_Email_5",
+      "status": "FAIL",
+      "details": "Invalid email  accepted",
+      "timestamp": "2025-08-06T09:04:21.908342",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_1",
+      "status": "WARN",
+      "details": "Weak password accepted (consider strengthening validation)",
+      "timestamp": "2025-08-06T09:04:21.909573",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_2",
+      "status": "WARN",
+      "details": "Weak password accepted (consider strengthening validation)",
+      "timestamp": "2025-08-06T09:04:21.911279",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_3",
+      "status": "WARN",
+      "details": "Weak password accepted (consider strengthening validation)",
+      "timestamp": "2025-08-06T09:04:21.913389",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_4",
+      "status": "WARN",
+      "details": "Weak password accepted (consider strengthening validation)",
+      "timestamp": "2025-08-06T09:04:21.915343",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "005_Weak_Password_5",
+      "status": "WARN",
+      "details": "Weak password accepted (consider strengthening validation)",
+      "timestamp": "2025-08-06T09:04:21.916421",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.917410",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "006_User_Login_Valid",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.917426",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "007_Invalid_Login_1",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.918636",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "007_Invalid_Login_2",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.919953",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "007_Invalid_Login_3",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.921104",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "007_Invalid_Login_4",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.921995",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.922874",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "008_JWT_Token_Validation",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.922886",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "009_Protected_profile",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.923845",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_applications",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.924942",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_stats",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.926496",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_start",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.929209",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_stop",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.931285",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "009_Protected_status",
+      "status": "FAIL",
+      "details": "Expected 401, got 404",
+      "timestamp": "2025-08-06T09:04:21.932438",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "010_SQL_Injection_1",
+      "status": "WARN",
+      "details": "Unexpected status: 404",
+      "timestamp": "2025-08-06T09:04:21.933548",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "010_SQL_Injection_2",
+      "status": "WARN",
+      "details": "Unexpected status: 404",
+      "timestamp": "2025-08-06T09:04:21.934544",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "010_SQL_Injection_3",
+      "status": "WARN",
+      "details": "Unexpected status: 404",
+      "timestamp": "2025-08-06T09:04:21.935440",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "010_SQL_Injection_4",
+      "status": "WARN",
+      "details": "Unexpected status: 404",
+      "timestamp": "2025-08-06T09:04:21.936221",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.937235",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "011_Profile_Get_Empty",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.937247",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.938111",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "012_Profile_Update_Basic",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.938122",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.939274",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "013_LinkedIn_Credentials_Encryption",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.939289",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.940260",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "014_Job_Preferences_Storage",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.940272",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.941104",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "015_Profile_Data_Validation",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.941117",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.941903",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "016_Agent_Status_Check",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.941914",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.943102",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "017_Agent_Start_Without_Credentials",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.943138",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.945250",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.948566",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "013_LinkedIn_Credentials_Encryption",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.948598",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "018_Agent_Start_With_Credentials",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.948635",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.949921",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "019_Agent_Stop",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.949934",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.951064",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "020_Daily_Quota_System",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.951081",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.952109",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "021_Applications_Get_Empty",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.952125",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.953078",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "022_Dashboard_Stats_Empty",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.953095",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.954296",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "023_Applications_Pagination",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.954310",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.955215",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "024_Application_Status_Update",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.955228",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.956244",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "025_Resume_Upload_Valid_PDF",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.956258",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.957184",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "026_Invalid_File_Type_1",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.957196",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.957944",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "026_Invalid_File_Type_2",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.957954",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.959126",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "026_Invalid_File_Type_3",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.959144",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.960917",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "027_Resume_Upload_Large_File",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.960944",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "028_Multi_User_Data_Isolation",
+      "status": "FAIL",
+      "details": "Could not create test users",
+      "timestamp": "2025-08-06T09:04:21.964469",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "029_Concurrent_User_Sessions",
+      "status": "FAIL",
+      "details": "Could not create enough test users",
+      "timestamp": "2025-08-06T09:04:21.969150",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.970134",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "030_Response_Time_Performance",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.970147",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.971049",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "031_Load_Testing_Basic",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:21.971062",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+      "timestamp": "2025-08-06T09:04:21.972126",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "032_Memory_Usage_Stability",
+      "status": "FAIL",
+      "details": "Request 1 failed",
+      "timestamp": "2025-08-06T09:04:21.972884",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_1",
+      "status": "FAIL",
+      "details": "Unexpected status: 500",
+      "timestamp": "2025-08-06T09:04:21.975030",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_2",
+      "status": "FAIL",
+      "details": "Unexpected status: 500",
+      "timestamp": "2025-08-06T09:04:21.977303",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_3",
+      "status": "FAIL",
+      "details": "Unexpected status: 500",
+      "timestamp": "2025-08-06T09:04:21.979736",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_4",
+      "status": "FAIL",
+      "details": "Unexpected status: 404",
+      "timestamp": "2025-08-06T09:04:21.982480",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "033_Malformed_JSON_5",
+      "status": "FAIL",
+      "details": "Unexpected status: 500",
+      "timestamp": "2025-08-06T09:04:21.983850",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "034_Large_Payload_Handling",
+      "status": "WARN",
+      "details": "Large payload status: 404",
+      "timestamp": "2025-08-06T09:04:21.989819",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "035_CORS_Headers",
+      "status": "PASS",
+      "details": "CORS headers present",
+      "timestamp": "2025-08-06T09:04:21.990889",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "036_Rate_Limiting",
+      "status": "PASS",
+      "details": "Rate limiting active",
+      "timestamp": "2025-08-06T09:04:22.434930",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "037_Frontend_Main_Page",
+      "status": "PASS",
+      "details": "Main page accessible",
+      "timestamp": "2025-08-06T09:04:22.452768",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "038_Frontend_login",
+      "status": "PASS",
+      "details": "Page /auth/login accessible",
+      "timestamp": "2025-08-06T09:04:22.823621",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "038_Frontend_signup",
+      "status": "PASS",
+      "details": "Page /auth/signup accessible",
+      "timestamp": "2025-08-06T09:04:22.938769",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "039_Frontend_Dashboard_Redirect",
+      "status": "PASS",
+      "details": "Dashboard auth working",
+      "timestamp": "2025-08-06T09:04:23.194575",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "040_Database_Connection",
+      "status": "PASS",
+      "details": "Database has required tables: ['users', 'job_applications', 'agent_tasks', 'agent_status', 'billing_events', 'usage_logs', 'referrals', 'user_preferences', 'enhanced_bot_status', 'bot_activity_log', 'sqlite_sequence', 'bot_error_log', 'resumes', 'activity_log', 'persistent_bot_sessions', 'enhanced_bot_sessions', 'enhanced_activity_log', 'enhanced_applications', 'user_personal_details', 'user_work_authorization', 'user_skills_experience', 'user_eeo_info', 'password_resets']",
+      "timestamp": "2025-08-06T09:04:23.196416",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "041_Complete_User_Journey",
+      "status": "FAIL",
+      "details": "Registration failed",
+      "timestamp": "2025-08-06T09:04:23.198687",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "042_XSS_Prevention_1",
+      "status": "FAIL",
+      "details": "Unexpected status: 429",
+      "timestamp": "2025-08-06T09:04:23.200203",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "042_XSS_Prevention_2",
+      "status": "FAIL",
+      "details": "Unexpected status: 429",
+      "timestamp": "2025-08-06T09:04:23.201375",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "042_XSS_Prevention_3",
+      "status": "FAIL",
+      "details": "Unexpected status: 429",
+      "timestamp": "2025-08-06T09:04:23.202396",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "042_XSS_Prevention_4",
+      "status": "FAIL",
+      "details": "Unexpected status: 429",
+      "timestamp": "2025-08-06T09:04:23.203822",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "043_CSRF_Protection",
+      "status": "WARN",
+      "details": "Consider implementing CSRF protection",
+      "timestamp": "2025-08-06T09:04:23.204944",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "002_User_Registration_Valid",
+      "status": "FAIL",
+      "details": "Status: 429, Response: Too many requests, please try again later.",
+      "timestamp": "2025-08-06T09:04:23.206082",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "044_Password_Security",
+      "status": "FAIL",
+      "details": "",
+      "timestamp": "2025-08-06T09:04:23.206096",
+      "error": "list index out of range",
+      "duration": null
+    },
+    {
+      "test": "045_Concurrent_Registrations",
+      "status": "FAIL",
+      "details": "Low success rate: 0.0%",
+      "timestamp": "2025-08-06T09:04:23.219088",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "046_Database_Transaction_Integrity",
+      "status": "FAIL",
+      "details": "Could not create test user",
+      "timestamp": "2025-08-06T09:04:23.220649",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "047_API_Versioning_1",
+      "status": "FAIL",
+      "details": "Version compatibility issue: 429",
+      "timestamp": "2025-08-06T09:04:23.221614",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "047_API_Versioning_2",
+      "status": "FAIL",
+      "details": "Version compatibility issue: 429",
+      "timestamp": "2025-08-06T09:04:23.222917",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "047_API_Versioning_3",
+      "status": "FAIL",
+      "details": "Version compatibility issue: 429",
+      "timestamp": "2025-08-06T09:04:23.224091",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "047_API_Versioning_4",
+      "status": "FAIL",
+      "details": "Version compatibility issue: 429",
+      "timestamp": "2025-08-06T09:04:23.225210",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "048_LinkedIn_Bot_Integration",
+      "status": "PASS",
+      "details": "LinkedIn bot modules accessible",
+      "timestamp": "2025-08-06T09:04:23.443099",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "049_Config_File_Validation",
+      "status": "FAIL",
+      "details": "Missing config keys: ['email', 'password', 'positions', 'locations']",
+      "timestamp": "2025-08-06T09:04:23.452306",
+      "error": null,
+      "duration": null
+    },
+    {
+      "test": "050_Environment_Variables",
+      "status": "PASS",
+      "details": "Required environment variables present",
+      "timestamp": "2025-08-06T09:04:23.452362",
+      "error": null,
+      "duration": null
+    }
+  ],
+  "configuration": {
+    "backend_url": "http://localhost:5001",
+    "frontend_url": "http://localhost:3000",
+    "test_config": {
+      "max_concurrent_users": 10,
+      "load_test_duration": 30,
+      "performance_threshold": 2.0,
+      "rate_limit_requests": 100,
+      "test_file_sizes": [
+        1024,
+        102400,
+        5242880
+      ]
+    }
+  }
+}

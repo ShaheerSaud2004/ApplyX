@@ -107,6 +107,8 @@ export default function DashboardPage() {
   const [botActionMessage, setBotActionMessage] = useState<string>('')
   const [isResettingAccount, setIsResettingAccount] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isRefreshing, setIsRefreshing] = useState(false)
+  const [timeUntilReset, setTimeUntilReset] = useState('')
 
   useEffect(() => {
     checkOnboardingStatus()
@@ -127,6 +129,30 @@ export default function DashboardPage() {
       return () => clearTimeout(timer)
     }
   }, [botActionMessage])
+
+  // Calculate countdown timer for quota reset
+  useEffect(() => {
+    const updateCountdown = () => {
+      const now = new Date()
+      const midnight = new Date(now)
+      midnight.setHours(24, 0, 0, 0)
+      const timeUntilMidnight = midnight.getTime() - now.getTime()
+      
+      const hours = Math.floor(timeUntilMidnight / (1000 * 60 * 60))
+      const minutes = Math.floor((timeUntilMidnight % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((timeUntilMidnight % (1000 * 60)) / 1000)
+      
+      setTimeUntilReset(`${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`)
+    }
+
+    // Update immediately
+    updateCountdown()
+    
+    // Update every second
+    const interval = setInterval(updateCountdown, 1000)
+    
+    return () => clearInterval(interval)
+  }, [])
 
   // Real-time polling for bot status when running
   useEffect(() => {
@@ -226,7 +252,7 @@ export default function DashboardPage() {
           } catch (error) {
             console.error('Error polling quota status:', error)
           }
-        }, 120000) // Poll every 2 minutes when bot is not running
+        }, 30000) // Poll every 30 seconds when bot is not running
         
         setPollingInterval(interval)
       } else if (interval) {
@@ -288,8 +314,20 @@ export default function DashboardPage() {
     }
   }
 
+  const handleManualRefresh = async () => {
+    setIsRefreshing(true)
+    try {
+      await loadDashboardData()
+    } catch (error) {
+      console.error('Error refreshing dashboard:', error)
+    } finally {
+      setIsRefreshing(false)
+    }
+  }
+
   const loadDashboardData = async () => {
     try {
+      console.log('🔍 Loading dashboard data with token:', token ? 'Token exists' : 'No token')
       // Load user plan/quota info
       const planResponse = await fetch(getApiUrl('/api/user/plan'), {
         headers: { 'Authorization': `Bearer ${token}` }
@@ -322,12 +360,17 @@ export default function DashboardPage() {
       }
 
       // Load recent applications
+      console.log('🔍 Fetching applications from:', getApiUrl('/api/applications?limit=5'))
       const appsResponse = await fetch(getApiUrl('/api/applications?limit=5'), {
         headers: { 'Authorization': `Bearer ${token}` }
       })
+      console.log('🔍 Applications response status:', appsResponse.status)
       if (appsResponse.ok) {
         const appsData = await appsResponse.json()
+        console.log('🔍 Applications data:', appsData)
         setRecentApplications(appsData.applications || [])
+      } else {
+        console.error('❌ Applications fetch failed:', appsResponse.status, await appsResponse.text())
       }
 
       // Load agent status
@@ -451,7 +494,15 @@ export default function DashboardPage() {
         
         // Handle different error types
         if (errorData.code === 'QUOTA_EXCEEDED') {
-          setBotActionMessage(`🚫 Daily quota exceeded (${errorData.quota_info?.daily_usage}/${errorData.quota_info?.daily_quota}). Bot will automatically restart at midnight when quota resets. 🌙`)
+          // Calculate time until midnight
+          const now = new Date()
+          const midnight = new Date(now)
+          midnight.setHours(24, 0, 0, 0)
+          const timeUntilMidnight = midnight.getTime() - now.getTime()
+          const hours = Math.floor(timeUntilMidnight / (1000 * 60 * 60))
+          const minutes = Math.floor((timeUntilMidnight % (1000 * 60 * 60)) / (1000 * 60))
+          
+          setBotActionMessage(`🚫 Daily quota reached! (${errorData.quota_info?.daily_usage}/${errorData.quota_info?.daily_quota} applications used). Bot will automatically restart in ${hours}h ${minutes}m when quota resets at midnight. 🌙`)
         } else if (errorData.code === 'LINKEDIN_CREDENTIALS_MISSING') {
           setHasLinkedInCredentials(false)
           setShowLinkedInModal(true)
@@ -792,6 +843,15 @@ export default function DashboardPage() {
                   <Settings className="h-4 w-4 mr-2" />
                   Configure Agent
                 </Button>
+                <Button 
+                  onClick={handleManualRefresh}
+                  disabled={isRefreshing}
+                  variant="outline"
+                  className="bg-white/80 backdrop-blur-sm border border-blue-200 text-blue-700 hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <RefreshCw className={`h-4 w-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
+                  {isRefreshing ? 'Refreshing...' : 'Refresh Data'}
+                </Button>
               </div>
             </div>
           </div>
@@ -809,6 +869,8 @@ export default function DashboardPage() {
             isStartingBot={isStartingBot}
             isStoppingBot={isStoppingBot}
             actionMessage={botActionMessage}
+            userPlan={userPlan}
+            timeUntilReset={timeUntilReset}
           />
         </div>
 
@@ -824,18 +886,38 @@ export default function DashboardPage() {
 
         {/* Quota Status Card */}
         {userPlan && (
-          <Card className="overflow-hidden border-0 shadow-lg bg-gradient-to-br from-white to-blue-50/50 transform transition-all duration-200 hover:scale-[1.02] hover:shadow-xl">
+          <Card className={`overflow-hidden border-0 shadow-lg transform transition-all duration-200 hover:scale-[1.02] hover:shadow-xl ${
+            userPlan.dailyUsage >= userPlan.dailyQuota 
+              ? 'bg-gradient-to-br from-red-50 to-orange-50 border-red-200' 
+              : 'bg-gradient-to-br from-white to-blue-50/50'
+          }`}>
             <CardHeader className="pb-3">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
                 <div>
-                  <CardTitle className="flex items-center gap-2 text-lg">
+                  <CardTitle className="flex items-center justify-between text-lg">
+                    <div className="flex items-center gap-2">
                     <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg shadow-md">
                       <Target className="h-5 w-5 text-white" />
                     </div>
                     Daily Quota Status
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={handleManualRefresh}
+                      disabled={isRefreshing}
+                      className="h-8 w-8 p-0 hover:bg-blue-50"
+                    >
+                      <RefreshCw className={`h-4 w-4 text-blue-600 ${isRefreshing ? 'animate-spin' : ''}`} />
+                    </Button>
                   </CardTitle>
                   <CardDescription className="text-base mt-1">
                     {userPlan.dailyUsage}/{userPlan.dailyQuota} applications used today
+                    {userPlan.dailyUsage >= userPlan.dailyQuota && (
+                      <span className="block text-red-600 font-semibold mt-1">
+                        🚫 Quota reached! Auto-restart at midnight
+                      </span>
+                    )}
                   </CardDescription>
                 </div>
                 <div className="text-center md:text-right bg-white/60 rounded-xl p-4 border border-blue-100">
@@ -861,9 +943,17 @@ export default function DashboardPage() {
                   <div className="relative">
                     <Progress 
                       value={(userPlan.dailyUsage / userPlan.dailyQuota) * 100} 
-                      className="h-3 bg-blue-50"
+                      className={`h-3 ${
+                        userPlan.dailyUsage >= userPlan.dailyQuota 
+                          ? 'bg-red-50' 
+                          : 'bg-blue-50'
+                      }`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-80" 
+                    <div className={`absolute inset-0 rounded-full opacity-80 ${
+                      userPlan.dailyUsage >= userPlan.dailyQuota
+                        ? 'bg-gradient-to-r from-red-500 to-orange-500'
+                        : 'bg-gradient-to-r from-blue-500 to-purple-500'
+                    }`} 
                          style={{width: `${(userPlan.dailyUsage / userPlan.dailyQuota) * 100}%`}}>
                     </div>
                   </div>
@@ -871,15 +961,36 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="text-center p-4 bg-white/80 rounded-xl border border-blue-100">
                     <p className="text-sm text-muted-foreground mb-1">Remaining Today</p>
+                    {userPlan.dailyUsage >= userPlan.dailyQuota ? (
+                      <div>
+                        <p className="text-2xl font-bold text-red-600">0</p>
+                        <p className="text-xs text-red-500">Quota reached</p>
+                      </div>
+                    ) : (
                     <p className="text-2xl font-bold text-green-600">{userPlan.dailyQuota - userPlan.dailyUsage}</p>
+                    )}
                   </div>
                   <div className="text-center p-4 bg-white/80 rounded-xl border border-blue-100">
                     <p className="text-sm text-muted-foreground mb-1">Quota Resets</p>
+                    {userPlan.dailyUsage >= userPlan.dailyQuota ? (
+                      <div>
+                        <p className="text-lg font-bold text-red-600">In {timeUntilReset}</p>
+                        <p className="text-xs text-muted-foreground">Auto-restart</p>
+                      </div>
+                    ) : (
                     <p className="text-lg font-bold text-purple-600">Midnight</p>
+                    )}
                   </div>
                   <div className="text-center p-4 bg-white/80 rounded-xl border border-blue-100">
                     <p className="text-sm text-muted-foreground mb-1">Plan Status</p>
+                    {userPlan.dailyUsage >= userPlan.dailyQuota ? (
+                      <div>
+                        <p className="text-lg font-bold text-orange-600">⏸️ Paused</p>
+                        <p className="text-xs text-muted-foreground">Until reset</p>
+                      </div>
+                    ) : (
                     <p className="text-lg font-bold text-green-600">✅ Active</p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -1002,15 +1113,29 @@ export default function DashboardPage() {
               <Button 
                 onClick={handleStartAgent} 
                 disabled={!userPlan || userPlan.dailyUsage >= userPlan.dailyQuota}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-xl hover:shadow-2xl transition-all text-lg px-8 py-3 h-auto"
+                className={`shadow-xl hover:shadow-2xl transition-all text-lg px-8 py-3 h-auto ${
+                  userPlan && userPlan.dailyUsage >= userPlan.dailyQuota
+                    ? 'bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
+                }`}
               >
                 <Play className="h-5 w-5 mr-2" />
-                🎯 Start Applying to Jobs
+                {userPlan && userPlan.dailyUsage >= userPlan.dailyQuota 
+                  ? '🚫 Quota Reached - Wait for Reset' 
+                  : '🎯 Start Applying to Jobs'
+                }
               </Button>
               {!hasLinkedInCredentials && (
                 <p className="text-sm text-muted-foreground mt-3 bg-white/60 px-3 py-1 rounded-full">
                   💡 LinkedIn credentials will be requested when you start
                 </p>
+              )}
+              {userPlan && userPlan.dailyUsage >= userPlan.dailyQuota && (
+                <div className="mt-3 p-3 bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-lg">
+                  <p className="text-sm text-red-700 font-medium text-center">
+                    ⏰ Auto-restart in {timeUntilReset} • Quota resets at midnight
+                  </p>
+                </div>
               )}
             </CardContent>
           </Card>

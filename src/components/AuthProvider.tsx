@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { getApiUrl } from '@/lib/utils'
+import { RoleSelectionModal } from './RoleSelectionModal'
 
 interface User {
   id: string
@@ -21,6 +22,7 @@ export interface AuthContextType {
   logout: () => void
   isLoading: boolean
   isAuthenticated: boolean
+  showRoleSelection: (user: User) => void
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
@@ -29,19 +31,52 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [token, setToken] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [showRoleModal, setShowRoleModal] = useState(false)
+  const [roleSelectionUser, setRoleSelectionUser] = useState<User | null>(null)
   const router = useRouter()
 
   useEffect(() => {
-    // Check for stored auth data on mount
-    const storedToken = localStorage.getItem('token')
-    const storedUser = localStorage.getItem('user')
-
-    if (storedToken && storedUser) {
-      setToken(storedToken)
-      setUser(JSON.parse(storedUser))
+    // Check for existing token on mount
+    const existingToken = localStorage.getItem('token')
+    const existingUser = localStorage.getItem('user')
+    
+    if (existingToken && existingUser) {
+      try {
+        const user = JSON.parse(existingUser)
+        setToken(existingToken)
+        setUser(user)
+      } catch (error) {
+        console.error('Error parsing stored user data:', error)
+        localStorage.removeItem('token')
+        localStorage.removeItem('user')
+      }
+    } else {
+      // Optional dev auto-login only if explicitly enabled
+      const devAutoLogin = process.env.NEXT_PUBLIC_DEV_AUTO_LOGIN === '1'
+      const devUserJson = process.env.NEXT_PUBLIC_DEV_USER_JSON
+      if (devAutoLogin && devUserJson) {
+        try {
+          const defaultUser = JSON.parse(devUserJson)
+          setToken('development-token')
+          setUser(defaultUser)
+          localStorage.setItem('token', 'development-token')
+          localStorage.setItem('user', JSON.stringify(defaultUser))
+        } catch (err) {
+          console.warn('Invalid NEXT_PUBLIC_DEV_USER_JSON; skipping dev auto-login')
+        }
+      }
     }
+    
     setIsLoading(false)
   }, [])
+
+  // Prevent automatic navigation when role selection modal is open
+  useEffect(() => {
+    if (showRoleModal && roleSelectionUser) {
+      // Modal is open, don't allow automatic navigation
+      return
+    }
+  }, [showRoleModal, roleSelectionUser])
 
   // Direct login with token and user data (for modals, forms)
   const login = (token: string, user: User) => {
@@ -50,13 +85,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('token', token)
     localStorage.setItem('user', JSON.stringify(user))
 
-    // Admin users should always go to admin panel, no profile checks
+    // Show role selection for admin users
     if (user.isAdmin) {
-      console.log('Admin user detected, redirecting to admin panel')
-      router.push('/admin')
+      console.log('Admin user detected, showing role selection')
+      setRoleSelectionUser(user)
+      setShowRoleModal(true)
+      // Don't redirect automatically - let the modal handle navigation
     } else {
       router.push('/dashboard')
     }
+  }
+
+  // Show role selection modal
+  const showRoleSelection = (user: User) => {
+    setRoleSelectionUser(user)
+    setShowRoleModal(true)
   }
 
   // Login with email/password (for login pages)
@@ -125,9 +168,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       register,
       logout,
       isLoading,
-      isAuthenticated: !!user && !!token
+      isAuthenticated: !!user && !!token,
+      showRoleSelection
     }}>
       {children}
+      
+      {/* Role Selection Modal */}
+      {roleSelectionUser && (
+        <RoleSelectionModal
+          isOpen={showRoleModal}
+          onClose={() => {
+            setShowRoleModal(false)
+            setRoleSelectionUser(null)
+          }}
+          user={roleSelectionUser}
+        />
+      )}
     </AuthContext.Provider>
   )
 }

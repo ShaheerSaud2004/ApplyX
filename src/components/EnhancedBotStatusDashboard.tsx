@@ -49,6 +49,13 @@ interface BotStatus {
   }[]
 }
 
+interface UserPlan {
+  plan: string
+  dailyQuota: number
+  dailyUsage: number
+  subscriptionStatus: string
+}
+
 interface EnhancedBotStatusProps {
   className?: string
   onStartAgent?: () => void  // Callback to handle agent start with LinkedIn credential check
@@ -60,6 +67,8 @@ interface EnhancedBotStatusProps {
   isStartingBot?: boolean   // Loading state when starting bot
   isStoppingBot?: boolean   // Loading state when stopping bot
   actionMessage?: string    // Current action message
+  userPlan?: UserPlan | null // User's quota information
+  timeUntilReset?: string   // Countdown timer for quota reset
 }
 
 export function EnhancedBotStatusDashboard({
@@ -72,7 +81,9 @@ export function EnhancedBotStatusDashboard({
   realTimeEnabled,
   isStartingBot = false,
   isStoppingBot = false,
-  actionMessage
+  actionMessage,
+  userPlan,
+  timeUntilReset
 }: EnhancedBotStatusProps) {
   const { token } = useAuth()
   const [localBotStatus, setLocalBotStatus] = useState<BotStatus | null>(null)
@@ -301,7 +312,7 @@ export function EnhancedBotStatusDashboard({
               onClick={toggleBot}
               variant={botStatus.status === 'running' ? "destructive" : "default"}
               size="sm"
-              disabled={isAnyLoading || (botStatus.status === 'stopped' && !hasLinkedInCredentials)}
+              disabled={isAnyLoading || (botStatus.status === 'stopped' && !hasLinkedInCredentials) || (!!userPlan && userPlan.dailyUsage >= userPlan.dailyQuota)}
             >
               {isAnyLoading ? (
                 <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
@@ -314,7 +325,8 @@ export function EnhancedBotStatusDashboard({
                 isStoppingBot ? 'Stopping Bot...' :
                   isLoading ? 'Loading...' :
                     botStatus.status === 'running' ? 'Stop Agent' :
-                      !hasLinkedInCredentials ? 'Add LinkedIn Credentials' : 'Start Agent'}
+                      !hasLinkedInCredentials ? 'Add LinkedIn Credentials' :
+                        !!userPlan && userPlan.dailyUsage >= userPlan.dailyQuota ? 'Quota Reached' : 'Start Agent'}
             </Button>
 
             {/* Debug button - only show if there's potential status confusion */}
@@ -356,6 +368,23 @@ export function EnhancedBotStatusDashboard({
           <div className="flex items-center gap-2 p-3 bg-blue-50 border border-blue-200 rounded-md">
             <Bot className="h-4 w-4 text-blue-500" />
             <span className="text-sm text-blue-700">{actionMessage}</span>
+          </div>
+        )}
+
+        {/* Quota Exceeded Message */}
+        {userPlan && userPlan.dailyUsage >= userPlan.dailyQuota && !isRunning && (
+          <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-md">
+            <AlertCircle className="h-4 w-4 text-red-500" />
+            <div className="flex-1">
+              <span className="text-sm text-red-700 font-medium">
+                🚫 Daily quota reached ({userPlan.dailyUsage}/{userPlan.dailyQuota})
+              </span>
+              {timeUntilReset && (
+                <p className="text-xs text-red-600 mt-1">
+                  Auto-restart in {timeUntilReset} • Quota resets at midnight
+                </p>
+              )}
+            </div>
           </div>
         )}
 

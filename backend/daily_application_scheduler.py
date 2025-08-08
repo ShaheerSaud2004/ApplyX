@@ -56,7 +56,7 @@ class DailyApplicationScheduler:
                     'first_name': row[2],
                     'last_name': row[3],
                     'subscription_plan': row[4],
-                    'daily_quota': row[5] or 5,  # Default to 5 if None
+                    'daily_quota': row[5] or 10,  # Default to 10 if None
                     'daily_usage': row[6] or 0,  # Default to 0 if None
                     'linkedin_email_encrypted': row[7],
                     'linkedin_password_encrypted': row[8]

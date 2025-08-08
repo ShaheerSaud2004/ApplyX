@@ -204,7 +204,7 @@ export function LoginModal({ isOpen, onOpenChange, onSwitchToSignup }: LoginModa
           variant="outline"
           className="w-full"
           onClick={() => {
-            // Google login placeholder
+            alert('Google sign-in is not implemented yet. Please use email login.')
           }}
         >
           <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24">

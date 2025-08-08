@@ -28,7 +28,7 @@ class BotSession:
         self.start_time = datetime.now()
         self.last_activity = datetime.now()
         self.applications_count = 0
-        self.daily_quota = bot_config.get('daily_quota', 5)
+        self.daily_quota = bot_config.get('daily_quota', 10)
         self.is_running = False
         self.restart_count = 0
         self.max_restarts = 10
@@ -91,7 +91,7 @@ class EnhancedBotManager:
                 start_time TIMESTAMP,
                 end_time TIMESTAMP,
                 applications_count INTEGER DEFAULT 0,
-                daily_quota INTEGER DEFAULT 5,
+                daily_quota INTEGER DEFAULT 10,
                 restart_count INTEGER DEFAULT 0,
                 status TEXT DEFAULT 'pending',
                 config TEXT,
@@ -378,9 +378,31 @@ class EnhancedBotManager:
                     except Exception as e:
                         logger.error(f"Error in application callback: {e}")
                 
-                # Check quota
+                # Check quota and send email if reached
                 if session.has_reached_quota():
                     session.update_activity(f"Daily quota of {session.daily_quota} applications reached!")
+                    
+                    # Get user info and applications for email
+                    try:
+                        from app import get_user_by_id
+                        user = get_user_by_id(user_id)
+                        if user:
+                            # Get today's applications for this user
+                            applications_summary = self._get_today_applications_summary(user_id)
+                            
+                            # Send quota completion email
+                            from email_service import EmailService
+                            email_service = EmailService()
+                            email_service.send_quota_completion_email(
+                                user.get('email', ''),
+                                user.get('name', 'User'),
+                                applications_summary
+                            )
+                            logger.info(f"Sent quota completion email to user {user_id}")
+                    except Exception as e:
+                        logger.error(f"Error sending quota completion email: {e}")
+                    
+                    # Stop the bot session
                     self.stop_bot_session(user_id, "Daily quota reached")
                     
         except Exception as e:
@@ -693,6 +715,37 @@ class EnhancedBotManager:
             
         except Exception as e:
             logger.error(f"Error during emergency cleanup: {e}")
+
+    def _get_today_applications_summary(self, user_id: str) -> List[Dict[str, Any]]:
+        """Get summary of today's applications for a user"""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            
+            # Get today's applications
+            cursor.execute('''
+                SELECT job_title, company, location, applied_at
+                FROM applications 
+                WHERE user_id = ? 
+                AND DATE(applied_at) = DATE('now')
+                ORDER BY applied_at DESC
+            ''', (user_id,))
+            
+            applications = []
+            for row in cursor.fetchall():
+                applications.append({
+                    'title': row[0] or 'Unknown Position',
+                    'company': row[1] or 'Unknown Company', 
+                    'location': row[2] or 'Unknown Location',
+                    'applied_at': row[3] or 'Unknown Time'
+                })
+            
+            conn.close()
+            return applications
+            
+        except Exception as e:
+            logger.error(f"Error getting applications summary for user {user_id}: {e}")
+            return []
 
 # Global instance
 enhanced_bot_manager = EnhancedBotManager()

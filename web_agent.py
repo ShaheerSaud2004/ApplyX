@@ -55,6 +55,12 @@ class WebPlatformLinkedInBot:
         self.status_callback = None
         self.db_path = 'backend/easyapply.db'
         
+        # Timeout tracking for auto-restart
+        self.last_application_time = datetime.now()
+        self.timeout_minutes = 4  # Restart if no application in 4 minutes
+        self.restart_count = 0
+        self.max_restarts = 5  # Maximum number of auto-restarts
+        
         # Enhanced bot manager integration
         self.application_callback = None
         self.activity_logger = None
@@ -628,6 +634,32 @@ class WebPlatformLinkedInBot:
             return False
         return True
 
+    def check_timeout_and_restart(self):
+        """Check if bot has been inactive for too long and restart if needed"""
+        time_since_last_application = datetime.now() - self.last_application_time
+        timeout_seconds = self.timeout_minutes * 60
+        
+        if time_since_last_application.total_seconds() > timeout_seconds:
+            if self.restart_count < self.max_restarts:
+                print(f"⏰ TIMEOUT DETECTED: No application in {self.timeout_minutes} minutes")
+                print(f"🔄 Auto-restarting bot (attempt {self.restart_count + 1}/{self.max_restarts})")
+                self.log_activity("Timeout", f"Auto-restarting bot after {self.timeout_minutes} minutes of inactivity", "warning")
+                
+                # Increment restart count
+                self.restart_count += 1
+                
+                # Reset timeout timer
+                self.last_application_time = datetime.now()
+                
+                print(f"✅ Bot restart initiated (attempt {self.restart_count})")
+                return True
+            else:
+                print(f"❌ MAX RESTARTS REACHED: {self.max_restarts} restarts attempted")
+                self.log_activity("Fatal", f"Bot stopped after {self.max_restarts} auto-restarts", "error")
+                self.stop_requested = True
+                return False
+        return False
+
     def run_applications(self, max_applications=10, continuous=False):
         """Run job applications with web platform integration"""
         self.update_status('running', 0, 'Initializing browser and LinkedIn session...')
@@ -708,6 +740,10 @@ class WebPlatformLinkedInBot:
                 print(f"🎯    👤 User ID: {self.user_id}")
                 print(f"🎯    🕐 Timestamp: {datetime.now()}")
                 print(f"🎯 ===============================================")
+                
+                # Update last application time for timeout tracking
+                self.last_application_time = datetime.now()
+                print(f"⏰ Updated last application time: {self.last_application_time}")
                 
                 # Check quota before processing application
                 print(f"🎯 🔍 CHECKING DAILY QUOTA...")
@@ -842,7 +878,16 @@ class WebPlatformLinkedInBot:
         applications_made = 0
         
         try:
+            # Initialize timeout tracking
+            self.last_application_time = datetime.now()
+            print(f"⏰ Timeout tracking initialized - will restart if no application in {self.timeout_minutes} minutes")
+            
             while not self.stop_requested and applications_made < max_applications:
+                # Check for timeout and restart if needed
+                if self.check_timeout_and_restart():
+                    print("🔄 Bot restarted due to timeout, continuing...")
+                    continue
+                
                 # Apply to one job at a time
                 batch_applications = bot.start_applying(max_applications=1)
                 

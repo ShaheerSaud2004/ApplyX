@@ -215,8 +215,8 @@ class PersistentBotManager:
             subscription_plan = user_data[5] or 'free'
             
             # Create enhanced bot configuration
-            quota_map = {'free': 5, 'basic': 30, 'pro': 50}
-            daily_quota = quota_map.get(subscription_plan, 5)
+            quota_map = {'free': 10, 'basic': 30, 'pro': 50}
+            daily_quota = quota_map.get(subscription_plan, 10)
             
             enhanced_config = {
                 'email': linkedin_email,
@@ -327,10 +327,14 @@ class PersistentBotManager:
     def _start_heartbeat_monitor(self, user_id: str):
         """Start heartbeat monitoring for session persistence"""
         def heartbeat_loop():
-            while user_id in self.enhanced_manager.running_bots:
+            while user_id in self.enhanced_manager.active_sessions:
                 try:
                     # Update heartbeat and session info
-                    session_info = self.enhanced_manager.running_bots[user_id]
+                    session_info = self.enhanced_manager.active_sessions[user_id]
+                    
+                    # Get session data safely - session_info is a BotSession object
+                    applications_made = getattr(session_info, 'applications_made', 0)
+                    status = getattr(session_info, 'status', 'running')
                     
                     conn = sqlite3.connect(self.db_path)
                     cursor = conn.cursor()
@@ -341,8 +345,8 @@ class PersistentBotManager:
                         WHERE user_id = ? AND is_active = 1
                     ''', (
                         datetime.now().isoformat(),
-                        session_info['applications_made'],
-                        session_info['status'],
+                        applications_made,
+                        status,
                         datetime.now().isoformat(),
                         user_id
                     ))

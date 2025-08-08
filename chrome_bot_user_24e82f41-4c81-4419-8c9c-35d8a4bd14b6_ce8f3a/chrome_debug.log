@@ -1,5 +1,0 @@
-[30045:774079:0724/201307.205296:INFO:components/enterprise/browser/controller/chrome_browser_cloud_management_controller.cc:202] No machine level policy manager exists.
-[30045:774079:0724/201308.601637:INFO:CONSOLE:5] "🚫 MEGA SCROLL PREVENTION: Starting comprehensive scroll blocking...", source:  (5)
-[30045:774079:0724/201308.601720:INFO:CONSOLE:63] "🚫 MEGA SCROLL PREVENTION ACTIVATED - ALL scrolling completely disabled!", source:  (63)
-[30053:774187:0724/201308.653542:WARNING:net/extras/sqlite/sqlite_persistent_store_backend_base.cc:176] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:226 to client_task_runner_.
-[30053:774187:0724/201308.653704:WARNING:net/extras/sqlite/sqlite_persistent_store_backend_base.cc:176] Failed to post task from FlushAndNotifyInBackground@net/extras/sqlite/sqlite_persistent_store_backend_base.cc:226 to client_task_runner_.

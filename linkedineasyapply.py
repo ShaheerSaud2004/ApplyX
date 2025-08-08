@@ -649,6 +649,36 @@ class LinkedinEasyApply:
             self.browser.get("https://www.linkedin.com/feed/")
             print("🚀 LINKEDIN BOT: Successfully navigated to LinkedIn feed URL")
             
+            # Handle any browser popups (like "Save password?")
+            print("🚀 LINKEDIN BOT: 🔍 Checking for browser popups...")
+            try:
+                # Check for "Save password?" popup
+                save_password_popup = self.browser.find_element(By.CSS_SELECTOR, '[role="dialog"]')
+                if save_password_popup:
+                    print("🚀 LINKEDIN BOT: 🚫 Found password save popup, dismissing...")
+                    try:
+                        # Try to find and click "Never" button
+                        never_button = self.browser.find_element(By.XPATH, "//button[contains(text(), 'Never')]")
+                        never_button.click()
+                        print("🚀 LINKEDIN BOT: ✅ Clicked 'Never' button")
+                    except:
+                        try:
+                            # Try to find and click "Don't save" button
+                            dont_save_button = self.browser.find_element(By.XPATH, "//button[contains(text(), 'Don') and contains(text(), 'save')]")
+                            dont_save_button.click()
+                            print("🚀 LINKEDIN BOT: ✅ Clicked 'Don't save' button")
+                        except:
+                            # If no specific button found, try to close the popup
+                            try:
+                                close_button = self.browser.find_element(By.CSS_SELECTOR, '[aria-label="Close"]')
+                                close_button.click()
+                                print("🚀 LINKEDIN BOT: ✅ Closed popup with close button")
+                            except:
+                                print("🚀 LINKEDIN BOT: ⚠️ Could not dismiss popup, continuing anyway")
+                    time.sleep(2)  # Wait for popup to close
+            except:
+                print("🚀 LINKEDIN BOT: ✅ No popups detected")
+            
             # Apply scroll prevention immediately after page load
             self._re_disable_scrolling()
             print("🚀 LINKEDIN BOT: Applied scroll prevention measures")
@@ -849,6 +879,38 @@ class LinkedinEasyApply:
             login_button.click()
 
         print("🔐 LINKEDIN BOT: Login button clicked - waiting for authentication...")
+        
+        # Handle any browser popups (like "Save password?") after login
+        print("🔐 LINKEDIN BOT: 🔍 Checking for browser popups after login...")
+        try:
+            # Wait a moment for any popups to appear
+            time.sleep(2)
+            # Check for "Save password?" popup
+            save_password_popup = self.browser.find_element(By.CSS_SELECTOR, '[role="dialog"]')
+            if save_password_popup:
+                print("🔐 LINKEDIN BOT: 🚫 Found password save popup, dismissing...")
+                try:
+                    # Try to find and click "Never" button
+                    never_button = self.browser.find_element(By.XPATH, "//button[contains(text(), 'Never')]")
+                    never_button.click()
+                    print("🔐 LINKEDIN BOT: ✅ Clicked 'Never' button")
+                except:
+                    try:
+                        # Try to find and click "Don't save" button
+                        dont_save_button = self.browser.find_element(By.XPATH, "//button[contains(text(), 'Don') and contains(text(), 'save')]")
+                        dont_save_button.click()
+                        print("🔐 LINKEDIN BOT: ✅ Clicked 'Don't save' button")
+                    except:
+                        # If no specific button found, try to close the popup
+                        try:
+                            close_button = self.browser.find_element(By.CSS_SELECTOR, '[aria-label="Close"]')
+                            close_button.click()
+                            print("🔐 LINKEDIN BOT: ✅ Closed popup with close button")
+                        except:
+                            print("🔐 LINKEDIN BOT: ⚠️ Could not dismiss popup, continuing anyway")
+                time.sleep(2)  # Wait for popup to close
+        except:
+            print("🔐 LINKEDIN BOT: ✅ No popups detected after login")
 
         # Wait for the feed page to load after login
         print("🔐 LINKEDIN BOT: Waiting for LinkedIn feed page to load...")
@@ -1352,6 +1414,36 @@ class LinkedinEasyApply:
         print("💼 LINKEDIN BOT: 🚀 Clicking Easy Apply button to start application...")
         easy_apply_button.click()
         print("💼 LINKEDIN BOT: ✅ Easy Apply button clicked - application modal should be opening...")
+        
+        # Handle any browser popups (like "Save password?")
+        print("💼 LINKEDIN BOT: 🔍 Checking for browser popups...")
+        try:
+            # Check for "Save password?" popup
+            save_password_popup = self.browser.find_element(By.CSS_SELECTOR, '[role="dialog"]')
+            if save_password_popup:
+                print("💼 LINKEDIN BOT: 🚫 Found password save popup, dismissing...")
+                try:
+                    # Try to find and click "Never" button
+                    never_button = self.browser.find_element(By.XPATH, "//button[contains(text(), 'Never')]")
+                    never_button.click()
+                    print("💼 LINKEDIN BOT: ✅ Clicked 'Never' button")
+                except:
+                    try:
+                        # Try to find and click "Don't save" button
+                        dont_save_button = self.browser.find_element(By.XPATH, "//button[contains(text(), 'Don') and contains(text(), 'save')]")
+                        dont_save_button.click()
+                        print("💼 LINKEDIN BOT: ✅ Clicked 'Don't save' button")
+                    except:
+                        # If no specific button found, try to close the popup
+                        try:
+                            close_button = self.browser.find_element(By.CSS_SELECTOR, '[aria-label="Close"]')
+                            close_button.click()
+                            print("💼 LINKEDIN BOT: ✅ Closed popup with close button")
+                        except:
+                            print("💼 LINKEDIN BOT: ⚠️ Could not dismiss popup, continuing anyway")
+                time.sleep(2)  # Wait for popup to close
+        except:
+            print("💼 LINKEDIN BOT: ✅ No popups detected")
 
         button_text = ""
         submit_application_text = 'submit application'

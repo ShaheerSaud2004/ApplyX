@@ -1,2 +1,0 @@
-[30180:777648:0724/201357.382972:ERROR:chrome/browser/process_singleton_posix.cc:340] Failed to create /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/chrome_bot_user_24e82f41-4c81-4419-8c9c-35d8a4bd14b6/SingletonLock: File exists (17)
-[30180:777648:0724/201357.383131:ERROR:chrome/app/chrome_main_delegate.cc:530] Failed to create a ProcessSingleton for your profile directory. This means that running multiple instances would start multiple browser processes rather than opening a new window in the existing process. Aborting now to avoid profile corruption.

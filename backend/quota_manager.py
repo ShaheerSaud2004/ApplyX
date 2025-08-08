@@ -115,7 +115,7 @@ def check_and_reset_daily_quota(user_id):
         # Reset usage if it's a new day
         if last_reset_date < today:
             # Update quota based on current subscription plan
-            plan_quota = SUBSCRIPTION_PLANS.get(subscription_plan or 'free', {}).get('daily_quota', 5)
+            plan_quota = SUBSCRIPTION_PLANS.get(subscription_plan or 'free', {}).get('daily_quota', 10)
             cursor.execute('''
                 UPDATE users 
                 SET daily_usage = 0, daily_quota = ?, last_usage_reset = ?
@@ -201,8 +201,8 @@ def get_user_quota_status(user_id):
             daily_usage, daily_quota, subscription_plan = result
             return {
                 'daily_usage': daily_usage or 0,
-                'daily_quota': daily_quota or 5,
-                'remaining': (daily_quota or 5) - (daily_usage or 0),
+                            'daily_quota': daily_quota or 10,
+            'remaining': (daily_quota or 10) - (daily_usage or 0),
                 'subscription_plan': subscription_plan or 'free'
             }
         

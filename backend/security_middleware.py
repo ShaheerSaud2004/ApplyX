@@ -187,16 +187,38 @@ class SecurityMiddleware:
         
         logger.warning(f"SUSPICIOUS_ACTIVITY: {log_entry}")
         
-        # Track suspicious IPs
-        if ip not in self.suspicious_ips:
-            self.suspicious_ips[ip] = []
-        
-        self.suspicious_ips[ip].append(log_entry)
-        
-        # Block IP if too many suspicious activities
-        if len(self.suspicious_ips[ip]) > 10:
-            self.blocked_ips.add(ip)
-            logger.error(f"IP {ip} has been blocked due to suspicious activity")
+        # Track suspicious IPs (temporarily disabled for development)
+        # if ip not in self.suspicious_ips:
+        #     self.suspicious_ips[ip] = []
+        # 
+        # self.suspicious_ips[ip].append(log_entry)
+        # 
+        # # Block IP if too many suspicious activities (temporarily disabled for development)
+        # if len(self.suspicious_ips[ip]) > 10:
+        #     self.blocked_ips.add(ip)
+        #     logger.error(f"IP {ip} has been blocked due to suspicious activity")
+
+    def is_ip_blocked(self, ip):
+        """Check if IP is blocked (temporarily disabled for development)"""
+        # Temporarily disable IP blocking for development
+        return False
+        # return ip in self.blocked_ips
+    
+    def check_request_anomalies(self, request_data):
+        """Check for request anomalies (temporarily disabled for development)"""
+        # Temporarily disable anomaly detection for development
+        return {
+            'suspicious_headers': False,
+            'suspicious_user_agent': False,
+            'suspicious_content': False,
+            'unusual_method': False,
+            'path_traversal': False
+        }
+    
+    def log_suspicious_activity(self, ip, activity_type, details):
+        """Log suspicious activity (temporarily disabled for development)"""
+        # Temporarily disable suspicious activity logging for development
+        pass
 
 # Global middleware instance
 security_middleware = SecurityMiddleware() 

@@ -265,6 +265,106 @@ class EmailService:
             logger.error(f"Error sending rejection email to {user_email}: {e}")
             return False
 
+    def send_admin_notification_email(self, user_email, user_name, user_id):
+        """Send notification email to admin about new user registration"""
+        try:
+            admin_email = "shaheersaud2004@gmail.com"
+            subject = "🔔 New User Registration - Action Required"
+            
+            # Create HTML email content
+            html_content = f"""
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <style>
+                    body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; }}
+                    .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
+                    .header {{ background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }}
+                    .content {{ background: #f8fafc; padding: 30px; border-radius: 0 0 10px 10px; }}
+                    .button {{ display: inline-block; background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 5px; }}
+                    .button.reject {{ background: linear-gradient(135deg, #ef4444, #dc2626); }}
+                    .footer {{ text-align: center; padding: 20px; color: #6b7280; font-size: 14px; }}
+                    .user-info {{ background: #f3f4f6; padding: 15px; border-radius: 6px; margin: 20px 0; }}
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="header">
+                        <h1>🔔 New User Registration</h1>
+                        <p>Action Required - Review and Approve</p>
+                    </div>
+                    <div class="content">
+                        <h2>Hi Admin,</h2>
+                        <p>A new user has registered for ApplyX and requires your approval.</p>
+                        
+                        <div class="user-info">
+                            <h3>User Information:</h3>
+                            <p><strong>Name:</strong> {user_name}</p>
+                            <p><strong>Email:</strong> {user_email}</p>
+                            <p><strong>User ID:</strong> {user_id}</p>
+                            <p><strong>Registration Date:</strong> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
+                        </div>
+                        
+                        <p><strong>Action Required:</strong></p>
+                        <p>Please review this user's information and approve or reject their account.</p>
+                        
+                        <div style="text-align: center; margin: 30px 0;">
+                            <a href="http://localhost:3000/admin" class="button">View Admin Dashboard</a>
+                            <br><br>
+                            <p><strong>Quick Actions:</strong></p>
+                            <a href="http://localhost:5001/api/admin/users/{user_id}/approve" class="button">✅ Approve User</a>
+                            <a href="http://localhost:5001/api/admin/users/{user_id}/reject" class="button reject">❌ Reject User</a>
+                        </div>
+                        
+                        <p><strong>Note:</strong> The user will receive an email notification once you approve or reject their account.</p>
+                        
+                        <p>Best regards,<br>ApplyX System</p>
+                    </div>
+                    <div class="footer">
+                        <p>ApplyX - AI-Powered Job Applications by Nebula.AI</p>
+                        <p>This email was sent automatically by the ApplyX system.</p>
+                    </div>
+                </div>
+            </body>
+            </html>
+            """
+            
+            # Create plain text version
+            text_content = f"""
+            Hi Admin,
+
+            A new user has registered for ApplyX and requires your approval.
+
+            USER INFORMATION:
+            Name: {user_name}
+            Email: {user_email}
+            User ID: {user_id}
+            Registration Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+            ACTION REQUIRED:
+            Please review this user's information and approve or reject their account.
+
+            Quick Actions:
+            - View Admin Dashboard: http://localhost:3000/admin
+            - Approve User: http://localhost:5001/api/admin/users/{user_id}/approve
+            - Reject User: http://localhost:5001/api/admin/users/{user_id}/reject
+
+            Note: The user will receive an email notification once you approve or reject their account.
+
+            Best regards,
+            ApplyX System
+
+            ---
+            ApplyX - AI-Powered Job Applications by Nebula.AI
+            This email was sent automatically by the ApplyX system.
+            """
+            
+            return self._send_email(admin_email, subject, html_content, text_content)
+            
+        except Exception as e:
+            logger.error(f"Error sending admin notification email: {e}")
+            return False
+
     def _send_email(self, to_email, subject, html_content, text_content):
         """Internal method to send email"""
         try:

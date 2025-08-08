@@ -1,0 +1,1136 @@
+{
+  "master_summary": {
+    "timestamp": "2025-08-06T09:04:37.067257",
+    "total_tests": 140,
+    "success_rate": 22.857142857142858,
+    "duration": "0:00:20.282194",
+    "backend_url": "http://localhost:5001",
+    "frontend_url": "http://localhost:3000"
+  },
+  "suite_results": [
+    {
+      "suite": "Backend API Tests",
+      "results": [
+        {
+          "test": "001_Server_Health_Check",
+          "status": "FAIL",
+          "details": "Status: 404",
+          "timestamp": "2025-08-06T09:04:21.872896",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.895278",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.899193",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "003_User_Registration_Duplicate",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.899228",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_1",
+          "status": "FAIL",
+          "details": "Invalid email invalid accepted",
+          "timestamp": "2025-08-06T09:04:21.901543",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_2",
+          "status": "FAIL",
+          "details": "Invalid email test@ accepted",
+          "timestamp": "2025-08-06T09:04:21.903532",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_3",
+          "status": "FAIL",
+          "details": "Invalid email @domain.com accepted",
+          "timestamp": "2025-08-06T09:04:21.904926",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_4",
+          "status": "FAIL",
+          "details": "Invalid email test..test@domain.com accepted",
+          "timestamp": "2025-08-06T09:04:21.906531",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "004_Invalid_Email_5",
+          "status": "FAIL",
+          "details": "Invalid email  accepted",
+          "timestamp": "2025-08-06T09:04:21.908342",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_1",
+          "status": "WARN",
+          "details": "Weak password accepted (consider strengthening validation)",
+          "timestamp": "2025-08-06T09:04:21.909573",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_2",
+          "status": "WARN",
+          "details": "Weak password accepted (consider strengthening validation)",
+          "timestamp": "2025-08-06T09:04:21.911279",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_3",
+          "status": "WARN",
+          "details": "Weak password accepted (consider strengthening validation)",
+          "timestamp": "2025-08-06T09:04:21.913389",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_4",
+          "status": "WARN",
+          "details": "Weak password accepted (consider strengthening validation)",
+          "timestamp": "2025-08-06T09:04:21.915343",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "005_Weak_Password_5",
+          "status": "WARN",
+          "details": "Weak password accepted (consider strengthening validation)",
+          "timestamp": "2025-08-06T09:04:21.916421",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.917410",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "006_User_Login_Valid",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.917426",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "007_Invalid_Login_1",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.918636",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "007_Invalid_Login_2",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.919953",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "007_Invalid_Login_3",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.921104",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "007_Invalid_Login_4",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.921995",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.922874",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "008_JWT_Token_Validation",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.922886",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "009_Protected_profile",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.923845",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_applications",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.924942",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_stats",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.926496",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_start",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.929209",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_stop",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.931285",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "009_Protected_status",
+          "status": "FAIL",
+          "details": "Expected 401, got 404",
+          "timestamp": "2025-08-06T09:04:21.932438",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "010_SQL_Injection_1",
+          "status": "WARN",
+          "details": "Unexpected status: 404",
+          "timestamp": "2025-08-06T09:04:21.933548",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "010_SQL_Injection_2",
+          "status": "WARN",
+          "details": "Unexpected status: 404",
+          "timestamp": "2025-08-06T09:04:21.934544",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "010_SQL_Injection_3",
+          "status": "WARN",
+          "details": "Unexpected status: 404",
+          "timestamp": "2025-08-06T09:04:21.935440",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "010_SQL_Injection_4",
+          "status": "WARN",
+          "details": "Unexpected status: 404",
+          "timestamp": "2025-08-06T09:04:21.936221",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.937235",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "011_Profile_Get_Empty",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.937247",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.938111",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "012_Profile_Update_Basic",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.938122",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.939274",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "013_LinkedIn_Credentials_Encryption",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.939289",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.940260",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "014_Job_Preferences_Storage",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.940272",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.941104",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "015_Profile_Data_Validation",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.941117",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.941903",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "016_Agent_Status_Check",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.941914",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.943102",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "017_Agent_Start_Without_Credentials",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.943138",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.945250",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.948566",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "013_LinkedIn_Credentials_Encryption",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.948598",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "018_Agent_Start_With_Credentials",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.948635",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.949921",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "019_Agent_Stop",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.949934",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.951064",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "020_Daily_Quota_System",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.951081",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.952109",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "021_Applications_Get_Empty",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.952125",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.953078",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "022_Dashboard_Stats_Empty",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.953095",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.954296",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "023_Applications_Pagination",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.954310",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.955215",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "024_Application_Status_Update",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.955228",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.956244",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "025_Resume_Upload_Valid_PDF",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.956258",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.957184",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "026_Invalid_File_Type_1",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.957196",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.957944",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "026_Invalid_File_Type_2",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.957954",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.959126",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "026_Invalid_File_Type_3",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.959144",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.960917",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "027_Resume_Upload_Large_File",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.960944",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "028_Multi_User_Data_Isolation",
+          "status": "FAIL",
+          "details": "Could not create test users",
+          "timestamp": "2025-08-06T09:04:21.964469",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "029_Concurrent_User_Sessions",
+          "status": "FAIL",
+          "details": "Could not create enough test users",
+          "timestamp": "2025-08-06T09:04:21.969150",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.970134",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "030_Response_Time_Performance",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.970147",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.971049",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "031_Load_Testing_Basic",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:21.971062",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 404, Response: {\"error\":\"Route not found\"}",
+          "timestamp": "2025-08-06T09:04:21.972126",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "032_Memory_Usage_Stability",
+          "status": "FAIL",
+          "details": "Request 1 failed",
+          "timestamp": "2025-08-06T09:04:21.972884",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_1",
+          "status": "FAIL",
+          "details": "Unexpected status: 500",
+          "timestamp": "2025-08-06T09:04:21.975030",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_2",
+          "status": "FAIL",
+          "details": "Unexpected status: 500",
+          "timestamp": "2025-08-06T09:04:21.977303",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_3",
+          "status": "FAIL",
+          "details": "Unexpected status: 500",
+          "timestamp": "2025-08-06T09:04:21.979736",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_4",
+          "status": "FAIL",
+          "details": "Unexpected status: 404",
+          "timestamp": "2025-08-06T09:04:21.982480",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "033_Malformed_JSON_5",
+          "status": "FAIL",
+          "details": "Unexpected status: 500",
+          "timestamp": "2025-08-06T09:04:21.983850",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "034_Large_Payload_Handling",
+          "status": "WARN",
+          "details": "Large payload status: 404",
+          "timestamp": "2025-08-06T09:04:21.989819",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "035_CORS_Headers",
+          "status": "PASS",
+          "details": "CORS headers present",
+          "timestamp": "2025-08-06T09:04:21.990889",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "036_Rate_Limiting",
+          "status": "PASS",
+          "details": "Rate limiting active",
+          "timestamp": "2025-08-06T09:04:22.434930",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "037_Frontend_Main_Page",
+          "status": "PASS",
+          "details": "Main page accessible",
+          "timestamp": "2025-08-06T09:04:22.452768",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "038_Frontend_login",
+          "status": "PASS",
+          "details": "Page /auth/login accessible",
+          "timestamp": "2025-08-06T09:04:22.823621",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "038_Frontend_signup",
+          "status": "PASS",
+          "details": "Page /auth/signup accessible",
+          "timestamp": "2025-08-06T09:04:22.938769",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "039_Frontend_Dashboard_Redirect",
+          "status": "PASS",
+          "details": "Dashboard auth working",
+          "timestamp": "2025-08-06T09:04:23.194575",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "040_Database_Connection",
+          "status": "PASS",
+          "details": "Database has required tables: ['users', 'job_applications', 'agent_tasks', 'agent_status', 'billing_events', 'usage_logs', 'referrals', 'user_preferences', 'enhanced_bot_status', 'bot_activity_log', 'sqlite_sequence', 'bot_error_log', 'resumes', 'activity_log', 'persistent_bot_sessions', 'enhanced_bot_sessions', 'enhanced_activity_log', 'enhanced_applications', 'user_personal_details', 'user_work_authorization', 'user_skills_experience', 'user_eeo_info', 'password_resets']",
+          "timestamp": "2025-08-06T09:04:23.196416",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "041_Complete_User_Journey",
+          "status": "FAIL",
+          "details": "Registration failed",
+          "timestamp": "2025-08-06T09:04:23.198687",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "042_XSS_Prevention_1",
+          "status": "FAIL",
+          "details": "Unexpected status: 429",
+          "timestamp": "2025-08-06T09:04:23.200203",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "042_XSS_Prevention_2",
+          "status": "FAIL",
+          "details": "Unexpected status: 429",
+          "timestamp": "2025-08-06T09:04:23.201375",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "042_XSS_Prevention_3",
+          "status": "FAIL",
+          "details": "Unexpected status: 429",
+          "timestamp": "2025-08-06T09:04:23.202396",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "042_XSS_Prevention_4",
+          "status": "FAIL",
+          "details": "Unexpected status: 429",
+          "timestamp": "2025-08-06T09:04:23.203822",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "043_CSRF_Protection",
+          "status": "WARN",
+          "details": "Consider implementing CSRF protection",
+          "timestamp": "2025-08-06T09:04:23.204944",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "002_User_Registration_Valid",
+          "status": "FAIL",
+          "details": "Status: 429, Response: Too many requests, please try again later.",
+          "timestamp": "2025-08-06T09:04:23.206082",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "044_Password_Security",
+          "status": "FAIL",
+          "details": "",
+          "timestamp": "2025-08-06T09:04:23.206096",
+          "error": "list index out of range",
+          "duration": null
+        },
+        {
+          "test": "045_Concurrent_Registrations",
+          "status": "FAIL",
+          "details": "Low success rate: 0.0%",
+          "timestamp": "2025-08-06T09:04:23.219088",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "046_Database_Transaction_Integrity",
+          "status": "FAIL",
+          "details": "Could not create test user",
+          "timestamp": "2025-08-06T09:04:23.220649",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "047_API_Versioning_1",
+          "status": "FAIL",
+          "details": "Version compatibility issue: 429",
+          "timestamp": "2025-08-06T09:04:23.221614",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "047_API_Versioning_2",
+          "status": "FAIL",
+          "details": "Version compatibility issue: 429",
+          "timestamp": "2025-08-06T09:04:23.222917",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "047_API_Versioning_3",
+          "status": "FAIL",
+          "details": "Version compatibility issue: 429",
+          "timestamp": "2025-08-06T09:04:23.224091",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "047_API_Versioning_4",
+          "status": "FAIL",
+          "details": "Version compatibility issue: 429",
+          "timestamp": "2025-08-06T09:04:23.225210",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "048_LinkedIn_Bot_Integration",
+          "status": "PASS",
+          "details": "LinkedIn bot modules accessible",
+          "timestamp": "2025-08-06T09:04:23.443099",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "049_Config_File_Validation",
+          "status": "FAIL",
+          "details": "Missing config keys: ['email', 'password', 'positions', 'locations']",
+          "timestamp": "2025-08-06T09:04:23.452306",
+          "error": null,
+          "duration": null
+        },
+        {
+          "test": "050_Environment_Variables",
+          "status": "PASS",
+          "details": "Required environment variables present",
+          "timestamp": "2025-08-06T09:04:23.452362",
+          "error": null,
+          "duration": null
+        }
+      ],
+      "timestamp": "2025-08-06T09:04:23.453287",
+      "passed": 9,
+      "failed": 90,
+      "warnings": 11,
+      "total": 110
+    },
+    {
+      "suite": "Frontend Component Tests",
+      "results": [
+        {
+          "test": "051_React_Component_Compilation",
+          "status": "PASS",
+          "details": "React components compile successfully",
+          "timestamp": "2025-08-06T09:04:32.776141",
+          "error": null
+        },
+        {
+          "test": "052_TypeScript_Validation",
+          "status": "PASS",
+          "details": "TypeScript validation passed",
+          "timestamp": "2025-08-06T09:04:35.211700",
+          "error": null
+        },
+        {
+          "test": "053_ESLint_Code_Quality",
+          "status": "PASS",
+          "details": "ESLint completed",
+          "timestamp": "2025-08-06T09:04:35.487435",
+          "error": null
+        },
+        {
+          "test": "054_Dependency_Vulnerabilities",
+          "status": "WARN",
+          "details": "Vulnerabilities: 1 critical, 2 high",
+          "timestamp": "2025-08-06T09:04:36.977550",
+          "error": null
+        },
+        {
+          "test": "055_Component_Imports",
+          "status": "PASS",
+          "details": "All critical components found",
+          "timestamp": "2025-08-06T09:04:36.977676",
+          "error": null
+        },
+        {
+          "test": "056_Package_JSON_Integrity",
+          "status": "PASS",
+          "details": "Package.json is properly configured",
+          "timestamp": "2025-08-06T09:04:36.977822",
+          "error": null
+        },
+        {
+          "test": "057_Environment_Config",
+          "status": "PASS",
+          "details": "Environment config found in .env.local",
+          "timestamp": "2025-08-06T09:04:36.977873",
+          "error": null
+        },
+        {
+          "test": "058_Tailwind_Config",
+          "status": "PASS",
+          "details": "Tailwind config found: tailwind.config.js",
+          "timestamp": "2025-08-06T09:04:36.977891",
+          "error": null
+        },
+        {
+          "test": "059_Next_Config",
+          "status": "PASS",
+          "details": "Next.js config found: next.config.js",
+          "timestamp": "2025-08-06T09:04:36.977903",
+          "error": null
+        },
+        {
+          "test": "060_Static_Assets",
+          "status": "WARN",
+          "details": "Missing assets: ['src/app/favicon.ico']",
+          "timestamp": "2025-08-06T09:04:36.977927",
+          "error": null
+        }
+      ],
+      "timestamp": "2025-08-06T09:04:36.977950",
+      "passed": 8,
+      "failed": 0,
+      "warnings": 2,
+      "total": 10
+    },
+    {
+      "suite": "Bot Functionality Tests",
+      "results": [
+        {
+          "test": "061_Bot_Import_linkedineasyapply",
+          "status": "PASS",
+          "details": "Module linkedineasyapply imported successfully",
+          "timestamp": "2025-08-06T09:04:36.978016",
+          "error": null
+        },
+        {
+          "test": "061_Bot_Import_main_fast",
+          "status": "PASS",
+          "details": "Module main_fast imported successfully",
+          "timestamp": "2025-08-06T09:04:36.978033",
+          "error": null
+        },
+        {
+          "test": "061_Bot_Import_easyapplybot.utils",
+          "status": "PASS",
+          "details": "Module easyapplybot.utils imported successfully",
+          "timestamp": "2025-08-06T09:04:36.980569",
+          "error": null
+        },
+        {
+          "test": "062_Config_File_Validation",
+          "status": "FAIL",
+          "details": "Missing fields: ['email', 'password']",
+          "timestamp": "2025-08-06T09:04:36.990387",
+          "error": null
+        },
+        {
+          "test": "063_Resume_File_Validation",
+          "status": "PASS",
+          "details": "Resume file found: /Users/shaheersaud/EASYAPPLYLINKEDINJULY17/Shaheer_Saud_Resume.pdf (186000 bytes)",
+          "timestamp": "2025-08-06T09:04:37.013830",
+          "error": null
+        },
+        {
+          "test": "064_ChromeDriver_Availability",
+          "status": "PASS",
+          "details": "ChromeDriver found: ./chromedriver (15794896 bytes)",
+          "timestamp": "2025-08-06T09:04:37.013898",
+          "error": null
+        },
+        {
+          "test": "065_Selenium_Dependencies",
+          "status": "PASS",
+          "details": "Selenium version 4.15.2 available",
+          "timestamp": "2025-08-06T09:04:37.013915",
+          "error": null
+        },
+        {
+          "test": "066_OpenAI_Integration",
+          "status": "WARN",
+          "details": "OpenAI API key not configured or invalid",
+          "timestamp": "2025-08-06T09:04:37.022719",
+          "error": null
+        },
+        {
+          "test": "067_Job_Search_Parameters",
+          "status": "PASS",
+          "details": "Positions configured; Locations configured; Experience levels configured; Job types configured",
+          "timestamp": "2025-08-06T09:04:37.031812",
+          "error": null
+        },
+        {
+          "test": "068_Application_Responses",
+          "status": "PASS",
+          "details": "Application responses properly configured",
+          "timestamp": "2025-08-06T09:04:37.040573",
+          "error": null
+        },
+        {
+          "test": "069_Database_Integration",
+          "status": "PASS",
+          "details": "Bot database integration working",
+          "timestamp": "2025-08-06T09:04:37.041512",
+          "error": null
+        },
+        {
+          "test": "070_Output_File_Management",
+          "status": "PASS",
+          "details": "Output directory accessible: ~/Documents/Applications/EasyApplyBot/EasyApplyBot/",
+          "timestamp": "2025-08-06T09:04:37.051026",
+          "error": null
+        },
+        {
+          "test": "071_Bot_Error_Handling",
+          "status": "PASS",
+          "details": "Error handling working: ['Empty email', 'No positions']",
+          "timestamp": "2025-08-06T09:04:37.051948",
+          "error": null
+        },
+        {
+          "test": "072_LinkedIn_URL_Validation",
+          "status": "PASS",
+          "details": "All URL validations passed",
+          "timestamp": "2025-08-06T09:04:37.052013",
+          "error": null
+        },
+        {
+          "test": "073_Application_Quota_Management",
+          "status": "PASS",
+          "details": "All quota management tests passed",
+          "timestamp": "2025-08-06T09:04:37.052030",
+          "error": null
+        },
+        {
+          "test": "074_Bot_Performance_Limits",
+          "status": "PASS",
+          "details": "Anti-lock measures enabled for safety",
+          "timestamp": "2025-08-06T09:04:37.061350",
+          "error": null
+        },
+        {
+          "test": "075_Web_Agent_Integration",
+          "status": "PASS",
+          "details": "Web agent found and importable: web_agent.py",
+          "timestamp": "2025-08-06T09:04:37.061816",
+          "error": null
+        }
+      ],
+      "timestamp": "2025-08-06T09:04:37.061845",
+      "passed": 15,
+      "failed": 1,
+      "warnings": 1,
+      "total": 17
+    },
+    {
+      "suite": "Integration Tests",
+      "results": [
+        {
+          "test": "076_Full_Integration_Workflow",
+          "status": "FAIL",
+          "details": "User registration failed"
+        },
+        {
+          "test": "077_Database_Consistency",
+          "status": "FAIL",
+          "details": "Integrity issues: [('user_personal_details', 1, 'users', 0), ('user_personal_details', 2, 'users', 0), ('user_personal_details', 3, 'users', 0), ('user_personal_details', 4, 'users', 0), ('user_personal_details', 5, 'users', 0), ('user_personal_details', 6, 'users', 0), ('user_personal_details', 7, 'users', 0), ('user_personal_details', 8, 'users', 0), ('user_personal_details', 9, 'users', 0), ('user_personal_details', 10, 'users', 0), ('user_personal_details', 11, 'users', 0), ('user_personal_details', 12, 'users', 0), ('user_personal_details', 13, 'users', 0), ('user_personal_details', 14, 'users', 0), ('user_personal_details', 15, 'users', 0), ('user_personal_details', 16, 'users', 0), ('user_personal_details', 17, 'users', 0), ('user_personal_details', 18, 'users', 0), ('user_personal_details', 19, 'users', 0), ('user_personal_details', 20, 'users', 0), ('user_personal_details', 21, 'users', 0), ('user_personal_details', 22, 'users', 0), ('user_personal_details', 23, 'users', 0), ('user_personal_details', 24, 'users', 0), ('user_personal_details', 25, 'users', 0), ('user_personal_details', 26, 'users', 0), ('user_personal_details', 27, 'users', 0), ('user_personal_details', 28, 'users', 0), ('user_personal_details', 29, 'users', 0), ('user_personal_details', 30, 'users', 0), ('user_personal_details', 31, 'users', 0), ('user_personal_details', 32, 'users', 0), ('user_personal_details', 33, 'users', 0), ('user_personal_details', 34, 'users', 0), ('user_personal_details', 35, 'users', 0), ('user_personal_details', 36, 'users', 0), ('user_personal_details', 37, 'users', 0), ('user_personal_details', 38, 'users', 0), ('user_personal_details', 39, 'users', 0), ('user_personal_details', 40, 'users', 0), ('user_personal_details', 41, 'users', 0), ('user_personal_details', 42, 'users', 0), ('user_personal_details', 43, 'users', 0), ('user_personal_details', 44, 'users', 0), ('user_personal_details', 45, 'users', 0), ('user_personal_details', 46, 'users', 0), ('user_personal_details', 47, 'users', 0), ('user_personal_details', 48, 'users', 0), ('user_personal_details', 49, 'users', 0), ('user_personal_details', 50, 'users', 0), ('user_personal_details', 51, 'users', 0), ('user_personal_details', 52, 'users', 0), ('user_personal_details', 53, 'users', 0), ('user_personal_details', 54, 'users', 0), ('user_personal_details', 55, 'users', 0), ('user_personal_details', 56, 'users', 0), ('user_personal_details', 57, 'users', 0), ('user_personal_details', 58, 'users', 0), ('user_personal_details', 59, 'users', 0), ('user_personal_details', 60, 'users', 0), ('user_personal_details', 61, 'users', 0), ('user_personal_details', 62, 'users', 0), ('user_personal_details', 63, 'users', 0), ('user_personal_details', 64, 'users', 0), ('user_personal_details', 65, 'users', 0), ('user_personal_details', 66, 'users', 0), ('user_personal_details', 67, 'users', 0), ('user_personal_details', 68, 'users', 0), ('user_personal_details', 69, 'users', 0), ('user_personal_details', 70, 'users', 0), ('user_personal_details', 71, 'users', 0), ('user_personal_details', 72, 'users', 0), ('user_personal_details', 73, 'users', 0), ('user_personal_details', 74, 'users', 0), ('user_personal_details', 75, 'users', 0), ('user_personal_details', 76, 'users', 0), ('user_personal_details', 77, 'users', 0), ('user_personal_details', 78, 'users', 0), ('user_personal_details', 79, 'users', 0), ('user_personal_details', 80, 'users', 0), ('user_personal_details', 81, 'users', 0), ('user_personal_details', 82, 'users', 0), ('user_personal_details', 83, 'users', 0), ('user_personal_details', 84, 'users', 0), ('user_personal_details', 85, 'users', 0), ('user_personal_details', 86, 'users', 0), ('user_personal_details', 87, 'users', 0), ('user_personal_details', 88, 'users', 0), ('user_personal_details', 89, 'users', 0), ('user_personal_details', 90, 'users', 0), ('user_personal_details', 91, 'users', 0), ('user_personal_details', 92, 'users', 0), ('user_personal_details', 93, 'users', 0), ('user_personal_details', 94, 'users', 0), ('user_personal_details', 95, 'users', 0), ('user_personal_details', 96, 'users', 0), ('user_personal_details', 97, 'users', 0), ('user_personal_details', 98, 'users', 0), ('user_personal_details', 99, 'users', 0), ('user_personal_details', 100, 'users', 0), ('user_personal_details', 101, 'users', 0), ('user_personal_details', 102, 'users', 0), ('user_personal_details', 103, 'users', 0), ('user_personal_details', 104, 'users', 0), ('user_personal_details', 105, 'users', 0), ('user_personal_details', 106, 'users', 0), ('user_personal_details', 107, 'users', 0), ('user_personal_details', 108, 'users', 0), ('user_personal_details', 109, 'users', 0), ('user_personal_details', 110, 'users', 0), ('user_personal_details', 111, 'users', 0), ('user_personal_details', 112, 'users', 0), ('user_personal_details', 113, 'users', 0), ('user_personal_details', 114, 'users', 0), ('user_personal_details', 115, 'users', 0), ('user_personal_details', 116, 'users', 0), ('user_personal_details', 117, 'users', 0), ('user_personal_details', 118, 'users', 0), ('user_personal_details', 119, 'users', 0), ('user_personal_details', 120, 'users', 0), ('user_personal_details', 121, 'users', 0), ('user_personal_details', 122, 'users', 0), ('user_personal_details', 123, 'users', 0), ('user_personal_details', 124, 'users', 0), ('user_personal_details', 125, 'users', 0), ('user_personal_details', 126, 'users', 0), ('user_personal_details', 127, 'users', 0), ('user_personal_details', 128, 'users', 0), ('user_personal_details', 129, 'users', 0), ('user_personal_details', 130, 'users', 0), ('user_personal_details', 131, 'users', 0), ('user_personal_details', 132, 'users', 0), ('user_personal_details', 133, 'users', 0), ('user_personal_details', 134, 'users', 0), ('user_personal_details', 135, 'users', 0), ('user_personal_details', 136, 'users', 0), ('user_personal_details', 137, 'users', 0), ('user_personal_details', 138, 'users', 0), ('user_personal_details', 139, 'users', 0), ('user_personal_details', 140, 'users', 0), ('user_personal_details', 141, 'users', 0), ('user_personal_details', 142, 'users', 0), ('user_personal_details', 143, 'users', 0), ('user_personal_details', 144, 'users', 0), ('user_personal_details', 145, 'users', 0), ('user_personal_details', 146, 'users', 0), ('user_personal_details', 147, 'users', 0), ('user_personal_details', 148, 'users', 0), ('user_personal_details', 149, 'users', 0), ('user_personal_details', 150, 'users', 0), ('user_personal_details', 151, 'users', 0), ('user_personal_details', 152, 'users', 0), ('user_personal_details', 153, 'users', 0), ('user_personal_details', 154, 'users', 0), ('user_personal_details', 155, 'users', 0), ('user_personal_details', 156, 'users', 0), ('user_personal_details', 157, 'users', 0), ('user_personal_details', 158, 'users', 0), ('user_personal_details', 159, 'users', 0), ('user_personal_details', 160, 'users', 0), ('user_personal_details', 161, 'users', 0), ('user_personal_details', 162, 'users', 0), ('user_personal_details', 163, 'users', 0), ('user_personal_details', 164, 'users', 0), ('user_personal_details', 165, 'users', 0), ('user_personal_details', 166, 'users', 0), ('user_personal_details', 167, 'users', 0), ('user_personal_details', 168, 'users', 0), ('user_personal_details', 169, 'users', 0), ('user_personal_details', 170, 'users', 0), ('user_personal_details', 171, 'users', 0), ('user_personal_details', 172, 'users', 0), ('user_personal_details', 173, 'users', 0), ('user_personal_details', 174, 'users', 0), ('user_personal_details', 175, 'users', 0), ('user_personal_details', 176, 'users', 0), ('user_personal_details', 177, 'users', 0), ('user_personal_details', 178, 'users', 0), ('user_personal_details', 179, 'users', 0), ('user_personal_details', 180, 'users', 0), ('user_personal_details', 181, 'users', 0), ('user_personal_details', 182, 'users', 0), ('user_personal_details', 183, 'users', 0), ('user_personal_details', 184, 'users', 0), ('user_personal_details', 185, 'users', 0), ('user_personal_details', 186, 'users', 0), ('user_personal_details', 187, 'users', 0), ('user_personal_details', 188, 'users', 0), ('user_personal_details', 189, 'users', 0), ('user_personal_details', 190, 'users', 0), ('user_personal_details', 191, 'users', 0), ('user_personal_details', 192, 'users', 0), ('user_personal_details', 193, 'users', 0), ('user_personal_details', 194, 'users', 0), ('user_personal_details', 195, 'users', 0), ('user_personal_details', 196, 'users', 0), ('user_personal_details', 197, 'users', 0), ('user_personal_details', 198, 'users', 0), ('user_personal_details', 199, 'users', 0), ('user_personal_details', 200, 'users', 0), ('user_personal_details', 201, 'users', 0), ('user_personal_details', 202, 'users', 0), ('user_personal_details', 203, 'users', 0), ('user_personal_details', 204, 'users', 0), ('user_personal_details', 205, 'users', 0), ('user_personal_details', 206, 'users', 0), ('user_personal_details', 207, 'users', 0), ('user_personal_details', 208, 'users', 0), ('user_personal_details', 209, 'users', 0), ('user_personal_details', 210, 'users', 0), ('user_personal_details', 211, 'users', 0), ('user_personal_details', 212, 'users', 0), ('user_personal_details', 213, 'users', 0), ('user_personal_details', 214, 'users', 0), ('user_personal_details', 215, 'users', 0), ('user_personal_details', 216, 'users', 0), ('user_personal_details', 217, 'users', 0), ('user_personal_details', 218, 'users', 0), ('user_personal_details', 219, 'users', 0), ('user_personal_details', 220, 'users', 0), ('user_personal_details', 221, 'users', 0), ('user_personal_details', 222, 'users', 0), ('user_personal_details', 223, 'users', 0), ('user_personal_details', 224, 'users', 0), ('user_personal_details', 226, 'users', 0), ('user_personal_details', 227, 'users', 0), ('user_personal_details', 228, 'users', 0), ('user_personal_details', 229, 'users', 0), ('user_personal_details', 230, 'users', 0), ('user_personal_details', 232, 'users', 0), ('user_personal_details', 233, 'users', 0), ('user_personal_details', 234, 'users', 0), ('user_personal_details', 235, 'users', 0), ('user_personal_details', 236, 'users', 0), ('user_personal_details', 237, 'users', 0), ('user_personal_details', 238, 'users', 0), ('user_personal_details', 239, 'users', 0), ('user_personal_details', 240, 'users', 0), ('user_personal_details', 241, 'users', 0), ('user_personal_details', 242, 'users', 0), ('user_personal_details', 243, 'users', 0), ('user_personal_details', 244, 'users', 0), ('user_personal_details', 245, 'users', 0), ('user_personal_details', 246, 'users', 0), ('user_personal_details', 247, 'users', 0), ('user_personal_details', 248, 'users', 0), ('user_personal_details', 249, 'users', 0), ('user_personal_details', 250, 'users', 0), ('user_personal_details', 251, 'users', 0), ('user_personal_details', 252, 'users', 0), ('user_personal_details', 253, 'users', 0), ('user_personal_details', 254, 'users', 0), ('user_personal_details', 255, 'users', 0), ('user_personal_details', 256, 'users', 0), ('user_personal_details', 257, 'users', 0), ('user_personal_details', 258, 'users', 0), ('user_personal_details', 259, 'users', 0), ('user_personal_details', 260, 'users', 0), ('user_personal_details', 261, 'users', 0), ('user_personal_details', 262, 'users', 0), ('user_personal_details', 263, 'users', 0), ('user_personal_details', 264, 'users', 0), ('user_personal_details', 265, 'users', 0), ('user_personal_details', 266, 'users', 0), ('user_personal_details', 267, 'users', 0), ('user_personal_details', 268, 'users', 0), ('user_personal_details', 269, 'users', 0), ('user_personal_details', 270, 'users', 0), ('user_personal_details', 271, 'users', 0), ('user_personal_details', 272, 'users', 0), ('user_personal_details', 273, 'users', 0), ('user_personal_details', 274, 'users', 0), ('user_personal_details', 275, 'users', 0), ('user_personal_details', 276, 'users', 0), ('user_personal_details', 277, 'users', 0), ('user_personal_details', 278, 'users', 0), ('user_personal_details', 279, 'users', 0), ('user_personal_details', 280, 'users', 0), ('user_personal_details', 281, 'users', 0), ('user_personal_details', 282, 'users', 0), ('user_personal_details', 283, 'users', 0), ('user_personal_details', 284, 'users', 0), ('user_personal_details', 285, 'users', 0), ('user_personal_details', 286, 'users', 0), ('user_skills_experience', 1, 'users', 0), ('user_skills_experience', 2, 'users', 0), ('user_skills_experience', 3, 'users', 0), ('user_skills_experience', 4, 'users', 0), ('user_skills_experience', 5, 'users', 0), ('user_skills_experience', 6, 'users', 0), ('user_skills_experience', 7, 'users', 0), ('user_skills_experience', 8, 'users', 0), ('user_skills_experience', 9, 'users', 0), ('user_skills_experience', 10, 'users', 0), ('user_skills_experience', 11, 'users', 0), ('user_skills_experience', 12, 'users', 0), ('user_skills_experience', 13, 'users', 0), ('user_skills_experience', 14, 'users', 0), ('user_skills_experience', 15, 'users', 0), ('user_skills_experience', 16, 'users', 0), ('user_skills_experience', 17, 'users', 0), ('user_skills_experience', 18, 'users', 0), ('user_skills_experience', 19, 'users', 0), ('user_skills_experience', 20, 'users', 0), ('user_skills_experience', 21, 'users', 0), ('user_skills_experience', 22, 'users', 0), ('user_skills_experience', 23, 'users', 0), ('user_skills_experience', 24, 'users', 0), ('user_skills_experience', 25, 'users', 0), ('user_skills_experience', 26, 'users', 0), ('user_skills_experience', 27, 'users', 0), ('user_skills_experience', 28, 'users', 0), ('user_skills_experience', 29, 'users', 0), ('user_skills_experience', 30, 'users', 0), ('user_skills_experience', 31, 'users', 0), ('user_skills_experience', 32, 'users', 0), ('user_skills_experience', 33, 'users', 0), ('user_skills_experience', 34, 'users', 0), ('user_skills_experience', 35, 'users', 0), ('user_skills_experience', 36, 'users', 0), ('user_skills_experience', 37, 'users', 0), ('user_skills_experience', 38, 'users', 0), ('user_skills_experience', 39, 'users', 0), ('user_skills_experience', 40, 'users', 0), ('user_skills_experience', 41, 'users', 0), ('user_skills_experience', 42, 'users', 0), ('user_skills_experience', 43, 'users', 0), ('user_skills_experience', 44, 'users', 0), ('user_skills_experience', 45, 'users', 0), ('user_skills_experience', 46, 'users', 0), ('user_skills_experience', 47, 'users', 0), ('user_skills_experience', 48, 'users', 0), ('user_skills_experience', 49, 'users', 0), ('user_skills_experience', 50, 'users', 0), ('user_skills_experience', 51, 'users', 0), ('user_skills_experience', 52, 'users', 0), ('user_skills_experience', 53, 'users', 0), ('user_skills_experience', 54, 'users', 0), ('user_skills_experience', 55, 'users', 0), ('user_skills_experience', 56, 'users', 0), ('user_skills_experience', 57, 'users', 0), ('user_skills_experience', 58, 'users', 0), ('user_skills_experience', 59, 'users', 0), ('user_skills_experience', 60, 'users', 0), ('user_skills_experience', 61, 'users', 0), ('user_skills_experience', 62, 'users', 0), ('user_skills_experience', 63, 'users', 0), ('user_skills_experience', 64, 'users', 0), ('user_skills_experience', 65, 'users', 0), ('user_skills_experience', 66, 'users', 0), ('user_skills_experience', 67, 'users', 0), ('user_skills_experience', 68, 'users', 0), ('user_skills_experience', 69, 'users', 0), ('user_skills_experience', 70, 'users', 0), ('user_skills_experience', 71, 'users', 0), ('user_skills_experience', 72, 'users', 0), ('user_skills_experience', 73, 'users', 0), ('user_skills_experience', 74, 'users', 0), ('user_skills_experience', 75, 'users', 0), ('user_skills_experience', 76, 'users', 0), ('user_skills_experience', 77, 'users', 0), ('user_skills_experience', 78, 'users', 0), ('user_skills_experience', 79, 'users', 0), ('user_skills_experience', 80, 'users', 0), ('user_skills_experience', 81, 'users', 0), ('user_skills_experience', 82, 'users', 0), ('user_skills_experience', 83, 'users', 0), ('user_skills_experience', 84, 'users', 0), ('user_skills_experience', 85, 'users', 0), ('user_skills_experience', 86, 'users', 0), ('user_skills_experience', 87, 'users', 0), ('user_skills_experience', 88, 'users', 0), ('user_skills_experience', 89, 'users', 0), ('user_skills_experience', 90, 'users', 0), ('user_skills_experience', 91, 'users', 0), ('user_skills_experience', 92, 'users', 0), ('user_skills_experience', 93, 'users', 0), ('user_skills_experience', 94, 'users', 0), ('user_skills_experience', 95, 'users', 0), ('user_skills_experience', 96, 'users', 0), ('user_skills_experience', 97, 'users', 0), ('user_skills_experience', 98, 'users', 0), ('user_skills_experience', 99, 'users', 0), ('user_skills_experience', 100, 'users', 0), ('user_skills_experience', 101, 'users', 0), ('user_skills_experience', 102, 'users', 0), ('user_skills_experience', 103, 'users', 0), ('user_skills_experience', 104, 'users', 0), ('user_skills_experience', 105, 'users', 0), ('user_skills_experience', 106, 'users', 0), ('user_skills_experience', 107, 'users', 0), ('user_skills_experience', 108, 'users', 0), ('user_skills_experience', 109, 'users', 0), ('user_skills_experience', 110, 'users', 0), ('user_skills_experience', 111, 'users', 0), ('user_skills_experience', 112, 'users', 0), ('user_skills_experience', 113, 'users', 0), ('user_skills_experience', 114, 'users', 0), ('user_skills_experience', 115, 'users', 0), ('user_skills_experience', 116, 'users', 0), ('user_skills_experience', 117, 'users', 0), ('user_skills_experience', 118, 'users', 0), ('user_skills_experience', 119, 'users', 0), ('user_skills_experience', 120, 'users', 0), ('user_skills_experience', 121, 'users', 0), ('user_skills_experience', 122, 'users', 0), ('user_skills_experience', 123, 'users', 0), ('user_skills_experience', 124, 'users', 0), ('user_skills_experience', 125, 'users', 0), ('user_skills_experience', 126, 'users', 0), ('user_skills_experience', 127, 'users', 0), ('user_skills_experience', 128, 'users', 0), ('user_skills_experience', 129, 'users', 0), ('user_skills_experience', 130, 'users', 0), ('user_skills_experience', 131, 'users', 0), ('user_skills_experience', 132, 'users', 0), ('user_skills_experience', 133, 'users', 0), ('user_skills_experience', 134, 'users', 0), ('user_skills_experience', 135, 'users', 0), ('user_skills_experience', 136, 'users', 0), ('user_skills_experience', 137, 'users', 0), ('user_skills_experience', 138, 'users', 0), ('user_skills_experience', 139, 'users', 0), ('user_skills_experience', 140, 'users', 0), ('user_skills_experience', 141, 'users', 0), ('user_skills_experience', 142, 'users', 0), ('user_skills_experience', 143, 'users', 0), ('user_skills_experience', 144, 'users', 0), ('user_skills_experience', 145, 'users', 0), ('user_skills_experience', 146, 'users', 0), ('user_skills_experience', 147, 'users', 0), ('user_skills_experience', 148, 'users', 0), ('user_skills_experience', 149, 'users', 0), ('user_skills_experience', 150, 'users', 0), ('user_skills_experience', 151, 'users', 0), ('user_skills_experience', 152, 'users', 0), ('user_skills_experience', 153, 'users', 0), ('user_skills_experience', 154, 'users', 0), ('user_skills_experience', 155, 'users', 0), ('user_skills_experience', 156, 'users', 0), ('user_skills_experience', 157, 'users', 0), ('user_skills_experience', 158, 'users', 0), ('user_skills_experience', 159, 'users', 0), ('user_skills_experience', 160, 'users', 0), ('user_skills_experience', 161, 'users', 0), ('user_skills_experience', 162, 'users', 0), ('user_skills_experience', 163, 'users', 0), ('user_skills_experience', 164, 'users', 0), ('user_skills_experience', 165, 'users', 0), ('user_skills_experience', 166, 'users', 0), ('user_skills_experience', 167, 'users', 0), ('user_skills_experience', 168, 'users', 0), ('user_skills_experience', 169, 'users', 0), ('user_skills_experience', 170, 'users', 0), ('user_skills_experience', 171, 'users', 0), ('user_skills_experience', 172, 'users', 0), ('user_skills_experience', 173, 'users', 0), ('user_skills_experience', 174, 'users', 0), ('user_skills_experience', 175, 'users', 0), ('user_skills_experience', 176, 'users', 0), ('user_skills_experience', 177, 'users', 0), ('user_skills_experience', 178, 'users', 0), ('user_skills_experience', 179, 'users', 0), ('user_skills_experience', 180, 'users', 0), ('user_skills_experience', 181, 'users', 0), ('user_skills_experience', 182, 'users', 0), ('user_skills_experience', 183, 'users', 0), ('user_skills_experience', 184, 'users', 0), ('user_skills_experience', 185, 'users', 0), ('user_skills_experience', 186, 'users', 0), ('user_skills_experience', 187, 'users', 0), ('user_skills_experience', 188, 'users', 0), ('user_skills_experience', 189, 'users', 0), ('user_skills_experience', 190, 'users', 0), ('user_skills_experience', 191, 'users', 0), ('user_skills_experience', 192, 'users', 0), ('user_skills_experience', 193, 'users', 0), ('user_skills_experience', 194, 'users', 0), ('user_skills_experience', 195, 'users', 0), ('user_skills_experience', 196, 'users', 0), ('user_skills_experience', 197, 'users', 0), ('user_skills_experience', 198, 'users', 0), ('user_skills_experience', 199, 'users', 0), ('user_skills_experience', 200, 'users', 0), ('user_skills_experience', 201, 'users', 0), ('user_skills_experience', 202, 'users', 0), ('user_skills_experience', 203, 'users', 0), ('user_skills_experience', 204, 'users', 0), ('user_skills_experience', 205, 'users', 0), ('user_skills_experience', 206, 'users', 0), ('user_skills_experience', 207, 'users', 0), ('user_skills_experience', 208, 'users', 0), ('user_skills_experience', 209, 'users', 0), ('user_skills_experience', 210, 'users', 0), ('user_skills_experience', 211, 'users', 0), ('user_skills_experience', 212, 'users', 0), ('user_skills_experience', 213, 'users', 0), ('user_skills_experience', 214, 'users', 0), ('user_skills_experience', 215, 'users', 0), ('user_skills_experience', 216, 'users', 0), ('user_skills_experience', 217, 'users', 0), ('user_skills_experience', 218, 'users', 0), ('user_skills_experience', 219, 'users', 0), ('user_skills_experience', 220, 'users', 0), ('user_skills_experience', 221, 'users', 0), ('user_skills_experience', 222, 'users', 0), ('user_skills_experience', 223, 'users', 0), ('user_skills_experience', 224, 'users', 0), ('user_skills_experience', 226, 'users', 0), ('user_skills_experience', 227, 'users', 0), ('user_skills_experience', 228, 'users', 0), ('user_skills_experience', 229, 'users', 0), ('user_skills_experience', 230, 'users', 0), ('user_skills_experience', 232, 'users', 0), ('user_skills_experience', 233, 'users', 0), ('user_skills_experience', 234, 'users', 0), ('user_skills_experience', 235, 'users', 0), ('user_skills_experience', 236, 'users', 0), ('user_skills_experience', 237, 'users', 0), ('user_skills_experience', 238, 'users', 0), ('user_skills_experience', 239, 'users', 0), ('user_skills_experience', 240, 'users', 0), ('user_skills_experience', 241, 'users', 0), ('user_skills_experience', 242, 'users', 0), ('user_skills_experience', 243, 'users', 0), ('user_skills_experience', 244, 'users', 0), ('user_skills_experience', 245, 'users', 0), ('user_skills_experience', 246, 'users', 0), ('user_skills_experience', 247, 'users', 0), ('user_skills_experience', 248, 'users', 0), ('user_skills_experience', 249, 'users', 0), ('user_skills_experience', 250, 'users', 0), ('user_skills_experience', 251, 'users', 0), ('user_skills_experience', 252, 'users', 0), ('user_skills_experience', 253, 'users', 0), ('user_skills_experience', 254, 'users', 0), ('user_skills_experience', 255, 'users', 0), ('user_skills_experience', 256, 'users', 0), ('user_skills_experience', 257, 'users', 0), ('user_skills_experience', 258, 'users', 0), ('user_skills_experience', 259, 'users', 0), ('user_skills_experience', 260, 'users', 0), ('user_skills_experience', 261, 'users', 0), ('user_skills_experience', 262, 'users', 0), ('user_skills_experience', 263, 'users', 0), ('user_skills_experience', 264, 'users', 0), ('user_skills_experience', 265, 'users', 0), ('user_skills_experience', 266, 'users', 0), ('user_skills_experience', 267, 'users', 0), ('user_skills_experience', 268, 'users', 0), ('user_skills_experience', 269, 'users', 0), ('user_skills_experience', 270, 'users', 0), ('user_skills_experience', 271, 'users', 0), ('user_skills_experience', 272, 'users', 0), ('user_skills_experience', 273, 'users', 0), ('user_skills_experience', 274, 'users', 0), ('user_skills_experience', 275, 'users', 0), ('user_skills_experience', 276, 'users', 0), ('user_skills_experience', 277, 'users', 0), ('user_skills_experience', 278, 'users', 0), ('user_skills_experience', 279, 'users', 0), ('user_skills_experience', 280, 'users', 0), ('user_skills_experience', 281, 'users', 0), ('user_skills_experience', 282, 'users', 0), ('user_skills_experience', 283, 'users', 0), ('user_skills_experience', 284, 'users', 0), ('user_skills_experience', 285, 'users', 0), ('user_skills_experience', 286, 'users', 0), ('bot_error_log', 1, 'users', 0), ('user_eeo_info', 1, 'users', 0), ('user_eeo_info', 2, 'users', 0), ('user_eeo_info', 3, 'users', 0), ('user_eeo_info', 4, 'users', 0), ('user_eeo_info', 5, 'users', 0), ('user_eeo_info', 6, 'users', 0), ('user_eeo_info', 7, 'users', 0), ('user_eeo_info', 8, 'users', 0), ('user_eeo_info', 9, 'users', 0), ('user_eeo_info', 10, 'users', 0), ('user_eeo_info', 11, 'users', 0), ('user_eeo_info', 12, 'users', 0), ('user_eeo_info', 13, 'users', 0), ('user_eeo_info', 14, 'users', 0), ('user_eeo_info', 15, 'users', 0), ('user_eeo_info', 16, 'users', 0), ('user_eeo_info', 17, 'users', 0), ('user_eeo_info', 18, 'users', 0), ('user_eeo_info', 19, 'users', 0), ('user_eeo_info', 20, 'users', 0), ('user_eeo_info', 21, 'users', 0), ('user_eeo_info', 22, 'users', 0), ('user_eeo_info', 23, 'users', 0), ('user_eeo_info', 24, 'users', 0), ('user_eeo_info', 25, 'users', 0), ('user_eeo_info', 26, 'users', 0), ('user_eeo_info', 27, 'users', 0), ('user_eeo_info', 28, 'users', 0), ('user_eeo_info', 29, 'users', 0), ('user_eeo_info', 30, 'users', 0), ('user_eeo_info', 31, 'users', 0), ('user_eeo_info', 32, 'users', 0), ('user_eeo_info', 33, 'users', 0), ('user_eeo_info', 34, 'users', 0), ('user_eeo_info', 35, 'users', 0), ('user_eeo_info', 36, 'users', 0), ('user_eeo_info', 37, 'users', 0), ('user_eeo_info', 38, 'users', 0), ('user_eeo_info', 39, 'users', 0), ('user_eeo_info', 40, 'users', 0), ('user_eeo_info', 41, 'users', 0), ('user_eeo_info', 42, 'users', 0), ('user_eeo_info', 43, 'users', 0), ('user_eeo_info', 44, 'users', 0), ('user_eeo_info', 45, 'users', 0), ('user_eeo_info', 46, 'users', 0), ('user_eeo_info', 47, 'users', 0), ('user_eeo_info', 48, 'users', 0), ('user_eeo_info', 49, 'users', 0), ('user_eeo_info', 50, 'users', 0), ('user_eeo_info', 51, 'users', 0), ('user_eeo_info', 52, 'users', 0), ('user_eeo_info', 53, 'users', 0), ('user_eeo_info', 54, 'users', 0), ('user_eeo_info', 55, 'users', 0), ('user_eeo_info', 56, 'users', 0), ('user_eeo_info', 57, 'users', 0), ('user_eeo_info', 58, 'users', 0), ('user_eeo_info', 59, 'users', 0), ('user_eeo_info', 60, 'users', 0), ('user_eeo_info', 61, 'users', 0), ('user_eeo_info', 62, 'users', 0), ('user_eeo_info', 63, 'users', 0), ('user_eeo_info', 64, 'users', 0), ('user_eeo_info', 65, 'users', 0), ('user_eeo_info', 66, 'users', 0), ('user_eeo_info', 67, 'users', 0), ('user_eeo_info', 68, 'users', 0), ('user_eeo_info', 69, 'users', 0), ('user_eeo_info', 70, 'users', 0), ('user_eeo_info', 71, 'users', 0), ('user_eeo_info', 72, 'users', 0), ('user_eeo_info', 73, 'users', 0), ('user_eeo_info', 74, 'users', 0), ('user_eeo_info', 75, 'users', 0), ('user_eeo_info', 76, 'users', 0), ('user_eeo_info', 77, 'users', 0), ('user_eeo_info', 78, 'users', 0), ('user_eeo_info', 79, 'users', 0), ('user_eeo_info', 80, 'users', 0), ('user_eeo_info', 81, 'users', 0), ('user_eeo_info', 82, 'users', 0), ('user_eeo_info', 83, 'users', 0), ('user_eeo_info', 84, 'users', 0), ('user_eeo_info', 85, 'users', 0), ('user_eeo_info', 86, 'users', 0), ('user_eeo_info', 87, 'users', 0), ('user_eeo_info', 88, 'users', 0), ('user_eeo_info', 89, 'users', 0), ('user_eeo_info', 90, 'users', 0), ('user_eeo_info', 91, 'users', 0), ('user_eeo_info', 92, 'users', 0), ('user_eeo_info', 93, 'users', 0), ('user_eeo_info', 94, 'users', 0), ('user_eeo_info', 95, 'users', 0), ('user_eeo_info', 96, 'users', 0), ('user_eeo_info', 97, 'users', 0), ('user_eeo_info', 98, 'users', 0), ('user_eeo_info', 99, 'users', 0), ('user_eeo_info', 100, 'users', 0), ('user_eeo_info', 101, 'users', 0), ('user_eeo_info', 102, 'users', 0), ('user_eeo_info', 103, 'users', 0), ('user_eeo_info', 104, 'users', 0), ('user_eeo_info', 105, 'users', 0), ('user_eeo_info', 106, 'users', 0), ('user_eeo_info', 107, 'users', 0), ('user_eeo_info', 108, 'users', 0), ('user_eeo_info', 109, 'users', 0), ('user_eeo_info', 110, 'users', 0), ('user_eeo_info', 111, 'users', 0), ('user_eeo_info', 112, 'users', 0), ('user_eeo_info', 113, 'users', 0), ('user_eeo_info', 114, 'users', 0), ('user_eeo_info', 115, 'users', 0), ('user_eeo_info', 116, 'users', 0), ('user_eeo_info', 117, 'users', 0), ('user_eeo_info', 118, 'users', 0), ('user_eeo_info', 119, 'users', 0), ('user_eeo_info', 120, 'users', 0), ('user_eeo_info', 121, 'users', 0), ('user_eeo_info', 122, 'users', 0), ('user_eeo_info', 123, 'users', 0), ('user_eeo_info', 124, 'users', 0), ('user_eeo_info', 125, 'users', 0), ('user_eeo_info', 126, 'users', 0), ('user_eeo_info', 127, 'users', 0), ('user_eeo_info', 128, 'users', 0), ('user_eeo_info', 129, 'users', 0), ('user_eeo_info', 130, 'users', 0), ('user_eeo_info', 131, 'users', 0), ('user_eeo_info', 132, 'users', 0), ('user_eeo_info', 133, 'users', 0), ('user_eeo_info', 134, 'users', 0), ('user_eeo_info', 135, 'users', 0), ('user_eeo_info', 136, 'users', 0), ('user_eeo_info', 137, 'users', 0), ('user_eeo_info', 138, 'users', 0), ('user_eeo_info', 139, 'users', 0), ('user_eeo_info', 140, 'users', 0), ('user_eeo_info', 141, 'users', 0), ('user_eeo_info', 142, 'users', 0), ('user_eeo_info', 143, 'users', 0), ('user_eeo_info', 144, 'users', 0), ('user_eeo_info', 145, 'users', 0), ('user_eeo_info', 146, 'users', 0), ('user_eeo_info', 147, 'users', 0), ('user_eeo_info', 148, 'users', 0), ('user_eeo_info', 149, 'users', 0), ('user_eeo_info', 150, 'users', 0), ('user_eeo_info', 151, 'users', 0), ('user_eeo_info', 152, 'users', 0), ('user_eeo_info', 153, 'users', 0), ('user_eeo_info', 154, 'users', 0), ('user_eeo_info', 155, 'users', 0), ('user_eeo_info', 156, 'users', 0), ('user_eeo_info', 157, 'users', 0), ('user_eeo_info', 158, 'users', 0), ('user_eeo_info', 159, 'users', 0), ('user_eeo_info', 160, 'users', 0), ('user_eeo_info', 161, 'users', 0), ('user_eeo_info', 162, 'users', 0), ('user_eeo_info', 163, 'users', 0), ('user_eeo_info', 164, 'users', 0), ('user_eeo_info', 165, 'users', 0), ('user_eeo_info', 166, 'users', 0), ('user_eeo_info', 167, 'users', 0), ('user_eeo_info', 168, 'users', 0), ('user_eeo_info', 169, 'users', 0), ('user_eeo_info', 170, 'users', 0), ('user_eeo_info', 171, 'users', 0), ('user_eeo_info', 172, 'users', 0), ('user_eeo_info', 173, 'users', 0), ('user_eeo_info', 174, 'users', 0), ('user_eeo_info', 175, 'users', 0), ('user_eeo_info', 176, 'users', 0), ('user_eeo_info', 177, 'users', 0), ('user_eeo_info', 178, 'users', 0), ('user_eeo_info', 179, 'users', 0), ('user_eeo_info', 180, 'users', 0), ('user_eeo_info', 181, 'users', 0), ('user_eeo_info', 182, 'users', 0), ('user_eeo_info', 183, 'users', 0), ('user_eeo_info', 184, 'users', 0), ('user_eeo_info', 185, 'users', 0), ('user_eeo_info', 186, 'users', 0), ('user_eeo_info', 187, 'users', 0), ('user_eeo_info', 188, 'users', 0), ('user_eeo_info', 189, 'users', 0), ('user_eeo_info', 190, 'users', 0), ('user_eeo_info', 191, 'users', 0), ('user_eeo_info', 192, 'users', 0), ('user_eeo_info', 193, 'users', 0), ('user_eeo_info', 194, 'users', 0), ('user_eeo_info', 195, 'users', 0), ('user_eeo_info', 196, 'users', 0), ('user_eeo_info', 197, 'users', 0), ('user_eeo_info', 198, 'users', 0), ('user_eeo_info', 199, 'users', 0), ('user_eeo_info', 200, 'users', 0), ('user_eeo_info', 201, 'users', 0), ('user_eeo_info', 202, 'users', 0), ('user_eeo_info', 203, 'users', 0), ('user_eeo_info', 204, 'users', 0), ('user_eeo_info', 205, 'users', 0), ('user_eeo_info', 206, 'users', 0), ('user_eeo_info', 207, 'users', 0), ('user_eeo_info', 208, 'users', 0), ('user_eeo_info', 209, 'users', 0), ('user_eeo_info', 210, 'users', 0), ('user_eeo_info', 211, 'users', 0), ('user_eeo_info', 212, 'users', 0), ('user_eeo_info', 213, 'users', 0), ('user_eeo_info', 214, 'users', 0), ('user_eeo_info', 215, 'users', 0), ('user_eeo_info', 216, 'users', 0), ('user_eeo_info', 217, 'users', 0), ('user_eeo_info', 218, 'users', 0), ('user_eeo_info', 219, 'users', 0), ('user_eeo_info', 220, 'users', 0), ('user_eeo_info', 221, 'users', 0), ('user_eeo_info', 222, 'users', 0), ('user_eeo_info', 223, 'users', 0), ('user_eeo_info', 224, 'users', 0), ('user_eeo_info', 226, 'users', 0), ('user_eeo_info', 227, 'users', 0), ('user_eeo_info', 228, 'users', 0), ('user_eeo_info', 229, 'users', 0), ('user_eeo_info', 230, 'users', 0), ('user_eeo_info', 232, 'users', 0), ('user_eeo_info', 233, 'users', 0), ('user_eeo_info', 234, 'users', 0), ('user_eeo_info', 235, 'users', 0), ('user_eeo_info', 236, 'users', 0), ('user_eeo_info', 237, 'users', 0), ('user_eeo_info', 238, 'users', 0), ('user_eeo_info', 239, 'users', 0), ('user_eeo_info', 240, 'users', 0), ('user_eeo_info', 241, 'users', 0), ('user_eeo_info', 242, 'users', 0), ('user_eeo_info', 243, 'users', 0), ('user_eeo_info', 244, 'users', 0), ('user_eeo_info', 245, 'users', 0), ('user_eeo_info', 246, 'users', 0), ('user_eeo_info', 247, 'users', 0), ('user_eeo_info', 248, 'users', 0), ('user_eeo_info', 249, 'users', 0), ('user_eeo_info', 250, 'users', 0), ('user_eeo_info', 251, 'users', 0), ('user_eeo_info', 252, 'users', 0), ('user_eeo_info', 253, 'users', 0), ('user_eeo_info', 254, 'users', 0), ('user_eeo_info', 255, 'users', 0), ('user_eeo_info', 256, 'users', 0), ('user_eeo_info', 257, 'users', 0), ('user_eeo_info', 258, 'users', 0), ('user_eeo_info', 259, 'users', 0), ('user_eeo_info', 260, 'users', 0), ('user_eeo_info', 261, 'users', 0), ('user_eeo_info', 262, 'users', 0), ('user_eeo_info', 263, 'users', 0), ('user_eeo_info', 264, 'users', 0), ('user_eeo_info', 265, 'users', 0), ('user_eeo_info', 266, 'users', 0), ('user_eeo_info', 267, 'users', 0), ('user_eeo_info', 268, 'users', 0), ('user_eeo_info', 269, 'users', 0), ('user_eeo_info', 270, 'users', 0), ('user_eeo_info', 271, 'users', 0), ('user_eeo_info', 272, 'users', 0), ('user_eeo_info', 273, 'users', 0), ('user_eeo_info', 274, 'users', 0), ('user_eeo_info', 275, 'users', 0), ('user_eeo_info', 276, 'users', 0), ('user_eeo_info', 277, 'users', 0), ('user_eeo_info', 278, 'users', 0), ('user_eeo_info', 279, 'users', 0), ('user_eeo_info', 280, 'users', 0), ('user_eeo_info', 281, 'users', 0), ('user_eeo_info', 282, 'users', 0), ('user_eeo_info', 283, 'users', 0), ('user_eeo_info', 284, 'users', 0), ('user_eeo_info', 285, 'users', 0), ('user_eeo_info', 286, 'users', 0), ('activity_log', 17, 'users', 0), ('activity_log', 18, 'users', 0), ('bot_activity_log', 1, 'users', 0), ('bot_activity_log', 2, 'users', 0), ('bot_activity_log', 3, 'users', 0), ('bot_activity_log', 4, 'users', 0), ('bot_activity_log', 5, 'users', 0), ('bot_activity_log', 6, 'users', 0), ('bot_activity_log', 7, 'users', 0), ('bot_activity_log', 8, 'users', 0), ('bot_activity_log', 9, 'users', 0), ('bot_activity_log', 10, 'users', 0), ('bot_activity_log', 11, 'users', 0), ('bot_activity_log', 12, 'users', 0), ('bot_activity_log', 13, 'users', 0), ('bot_activity_log', 14, 'users', 0), ('bot_activity_log', 15, 'users', 0), ('bot_activity_log', 16, 'users', 0), ('bot_activity_log', 17, 'users', 0), ('bot_activity_log', 18, 'users', 0), ('bot_activity_log', 19, 'users', 0), ('bot_activity_log', 20, 'users', 0), ('bot_activity_log', 21, 'users', 0), ('bot_activity_log', 22, 'users', 0), ('bot_activity_log', 23, 'users', 0), ('bot_activity_log', 24, 'users', 0), ('bot_activity_log', 25, 'users', 0), ('bot_activity_log', 26, 'users', 0), ('bot_activity_log', 27, 'users', 0), ('bot_activity_log', 28, 'users', 0), ('user_work_authorization', 1, 'users', 0), ('user_work_authorization', 2, 'users', 0), ('user_work_authorization', 3, 'users', 0), ('user_work_authorization', 4, 'users', 0), ('user_work_authorization', 5, 'users', 0), ('user_work_authorization', 6, 'users', 0), ('user_work_authorization', 7, 'users', 0), ('user_work_authorization', 8, 'users', 0), ('user_work_authorization', 9, 'users', 0), ('user_work_authorization', 10, 'users', 0), ('user_work_authorization', 11, 'users', 0), ('user_work_authorization', 12, 'users', 0), ('user_work_authorization', 13, 'users', 0), ('user_work_authorization', 14, 'users', 0), ('user_work_authorization', 15, 'users', 0), ('user_work_authorization', 16, 'users', 0), ('user_work_authorization', 17, 'users', 0), ('user_work_authorization', 18, 'users', 0), ('user_work_authorization', 19, 'users', 0), ('user_work_authorization', 20, 'users', 0), ('user_work_authorization', 21, 'users', 0), ('user_work_authorization', 22, 'users', 0), ('user_work_authorization', 23, 'users', 0), ('user_work_authorization', 24, 'users', 0), ('user_work_authorization', 25, 'users', 0), ('user_work_authorization', 26, 'users', 0), ('user_work_authorization', 27, 'users', 0), ('user_work_authorization', 28, 'users', 0), ('user_work_authorization', 29, 'users', 0), ('user_work_authorization', 30, 'users', 0), ('user_work_authorization', 31, 'users', 0), ('user_work_authorization', 32, 'users', 0), ('user_work_authorization', 33, 'users', 0), ('user_work_authorization', 34, 'users', 0), ('user_work_authorization', 35, 'users', 0), ('user_work_authorization', 36, 'users', 0), ('user_work_authorization', 37, 'users', 0), ('user_work_authorization', 38, 'users', 0), ('user_work_authorization', 39, 'users', 0), ('user_work_authorization', 40, 'users', 0), ('user_work_authorization', 41, 'users', 0), ('user_work_authorization', 42, 'users', 0), ('user_work_authorization', 43, 'users', 0), ('user_work_authorization', 44, 'users', 0), ('user_work_authorization', 45, 'users', 0), ('user_work_authorization', 46, 'users', 0), ('user_work_authorization', 47, 'users', 0), ('user_work_authorization', 48, 'users', 0), ('user_work_authorization', 49, 'users', 0), ('user_work_authorization', 50, 'users', 0), ('user_work_authorization', 51, 'users', 0), ('user_work_authorization', 52, 'users', 0), ('user_work_authorization', 53, 'users', 0), ('user_work_authorization', 54, 'users', 0), ('user_work_authorization', 55, 'users', 0), ('user_work_authorization', 56, 'users', 0), ('user_work_authorization', 57, 'users', 0), ('user_work_authorization', 58, 'users', 0), ('user_work_authorization', 59, 'users', 0), ('user_work_authorization', 60, 'users', 0), ('user_work_authorization', 61, 'users', 0), ('user_work_authorization', 62, 'users', 0), ('user_work_authorization', 63, 'users', 0), ('user_work_authorization', 64, 'users', 0), ('user_work_authorization', 65, 'users', 0), ('user_work_authorization', 66, 'users', 0), ('user_work_authorization', 67, 'users', 0), ('user_work_authorization', 68, 'users', 0), ('user_work_authorization', 69, 'users', 0), ('user_work_authorization', 70, 'users', 0), ('user_work_authorization', 71, 'users', 0), ('user_work_authorization', 72, 'users', 0), ('user_work_authorization', 73, 'users', 0), ('user_work_authorization', 74, 'users', 0), ('user_work_authorization', 75, 'users', 0), ('user_work_authorization', 76, 'users', 0), ('user_work_authorization', 77, 'users', 0), ('user_work_authorization', 78, 'users', 0), ('user_work_authorization', 79, 'users', 0), ('user_work_authorization', 80, 'users', 0), ('user_work_authorization', 81, 'users', 0), ('user_work_authorization', 82, 'users', 0), ('user_work_authorization', 83, 'users', 0), ('user_work_authorization', 84, 'users', 0), ('user_work_authorization', 85, 'users', 0), ('user_work_authorization', 86, 'users', 0), ('user_work_authorization', 87, 'users', 0), ('user_work_authorization', 88, 'users', 0), ('user_work_authorization', 89, 'users', 0), ('user_work_authorization', 90, 'users', 0), ('user_work_authorization', 91, 'users', 0), ('user_work_authorization', 92, 'users', 0), ('user_work_authorization', 93, 'users', 0), ('user_work_authorization', 94, 'users', 0), ('user_work_authorization', 95, 'users', 0), ('user_work_authorization', 96, 'users', 0), ('user_work_authorization', 97, 'users', 0), ('user_work_authorization', 98, 'users', 0), ('user_work_authorization', 99, 'users', 0), ('user_work_authorization', 100, 'users', 0), ('user_work_authorization', 101, 'users', 0), ('user_work_authorization', 102, 'users', 0), ('user_work_authorization', 103, 'users', 0), ('user_work_authorization', 104, 'users', 0), ('user_work_authorization', 105, 'users', 0), ('user_work_authorization', 106, 'users', 0), ('user_work_authorization', 107, 'users', 0), ('user_work_authorization', 108, 'users', 0), ('user_work_authorization', 109, 'users', 0), ('user_work_authorization', 110, 'users', 0), ('user_work_authorization', 111, 'users', 0), ('user_work_authorization', 112, 'users', 0), ('user_work_authorization', 113, 'users', 0), ('user_work_authorization', 114, 'users', 0), ('user_work_authorization', 115, 'users', 0), ('user_work_authorization', 116, 'users', 0), ('user_work_authorization', 117, 'users', 0), ('user_work_authorization', 118, 'users', 0), ('user_work_authorization', 119, 'users', 0), ('user_work_authorization', 120, 'users', 0), ('user_work_authorization', 121, 'users', 0), ('user_work_authorization', 122, 'users', 0), ('user_work_authorization', 123, 'users', 0), ('user_work_authorization', 124, 'users', 0), ('user_work_authorization', 125, 'users', 0), ('user_work_authorization', 126, 'users', 0), ('user_work_authorization', 127, 'users', 0), ('user_work_authorization', 128, 'users', 0), ('user_work_authorization', 129, 'users', 0), ('user_work_authorization', 130, 'users', 0), ('user_work_authorization', 131, 'users', 0), ('user_work_authorization', 132, 'users', 0), ('user_work_authorization', 133, 'users', 0), ('user_work_authorization', 134, 'users', 0), ('user_work_authorization', 135, 'users', 0), ('user_work_authorization', 136, 'users', 0), ('user_work_authorization', 137, 'users', 0), ('user_work_authorization', 138, 'users', 0), ('user_work_authorization', 139, 'users', 0), ('user_work_authorization', 140, 'users', 0), ('user_work_authorization', 141, 'users', 0), ('user_work_authorization', 142, 'users', 0), ('user_work_authorization', 143, 'users', 0), ('user_work_authorization', 144, 'users', 0), ('user_work_authorization', 145, 'users', 0), ('user_work_authorization', 146, 'users', 0), ('user_work_authorization', 147, 'users', 0), ('user_work_authorization', 148, 'users', 0), ('user_work_authorization', 149, 'users', 0), ('user_work_authorization', 150, 'users', 0), ('user_work_authorization', 151, 'users', 0), ('user_work_authorization', 152, 'users', 0), ('user_work_authorization', 153, 'users', 0), ('user_work_authorization', 154, 'users', 0), ('user_work_authorization', 155, 'users', 0), ('user_work_authorization', 156, 'users', 0), ('user_work_authorization', 157, 'users', 0), ('user_work_authorization', 158, 'users', 0), ('user_work_authorization', 159, 'users', 0), ('user_work_authorization', 160, 'users', 0), ('user_work_authorization', 161, 'users', 0), ('user_work_authorization', 162, 'users', 0), ('user_work_authorization', 163, 'users', 0), ('user_work_authorization', 164, 'users', 0), ('user_work_authorization', 165, 'users', 0), ('user_work_authorization', 166, 'users', 0), ('user_work_authorization', 167, 'users', 0), ('user_work_authorization', 168, 'users', 0), ('user_work_authorization', 169, 'users', 0), ('user_work_authorization', 170, 'users', 0), ('user_work_authorization', 171, 'users', 0), ('user_work_authorization', 172, 'users', 0), ('user_work_authorization', 173, 'users', 0), ('user_work_authorization', 174, 'users', 0), ('user_work_authorization', 175, 'users', 0), ('user_work_authorization', 176, 'users', 0), ('user_work_authorization', 177, 'users', 0), ('user_work_authorization', 178, 'users', 0), ('user_work_authorization', 179, 'users', 0), ('user_work_authorization', 180, 'users', 0), ('user_work_authorization', 181, 'users', 0), ('user_work_authorization', 182, 'users', 0), ('user_work_authorization', 183, 'users', 0), ('user_work_authorization', 184, 'users', 0), ('user_work_authorization', 185, 'users', 0), ('user_work_authorization', 186, 'users', 0), ('user_work_authorization', 187, 'users', 0), ('user_work_authorization', 188, 'users', 0), ('user_work_authorization', 189, 'users', 0), ('user_work_authorization', 190, 'users', 0), ('user_work_authorization', 191, 'users', 0), ('user_work_authorization', 192, 'users', 0), ('user_work_authorization', 193, 'users', 0), ('user_work_authorization', 194, 'users', 0), ('user_work_authorization', 195, 'users', 0), ('user_work_authorization', 196, 'users', 0), ('user_work_authorization', 197, 'users', 0), ('user_work_authorization', 198, 'users', 0), ('user_work_authorization', 199, 'users', 0), ('user_work_authorization', 200, 'users', 0), ('user_work_authorization', 201, 'users', 0), ('user_work_authorization', 202, 'users', 0), ('user_work_authorization', 203, 'users', 0), ('user_work_authorization', 204, 'users', 0), ('user_work_authorization', 205, 'users', 0), ('user_work_authorization', 206, 'users', 0), ('user_work_authorization', 207, 'users', 0), ('user_work_authorization', 208, 'users', 0), ('user_work_authorization', 209, 'users', 0), ('user_work_authorization', 210, 'users', 0), ('user_work_authorization', 211, 'users', 0), ('user_work_authorization', 212, 'users', 0), ('user_work_authorization', 213, 'users', 0), ('user_work_authorization', 214, 'users', 0), ('user_work_authorization', 215, 'users', 0), ('user_work_authorization', 216, 'users', 0), ('user_work_authorization', 217, 'users', 0), ('user_work_authorization', 218, 'users', 0), ('user_work_authorization', 219, 'users', 0), ('user_work_authorization', 220, 'users', 0), ('user_work_authorization', 221, 'users', 0), ('user_work_authorization', 222, 'users', 0), ('user_work_authorization', 223, 'users', 0), ('user_work_authorization', 224, 'users', 0), ('user_work_authorization', 226, 'users', 0), ('user_work_authorization', 227, 'users', 0), ('user_work_authorization', 228, 'users', 0), ('user_work_authorization', 229, 'users', 0), ('user_work_authorization', 230, 'users', 0), ('user_work_authorization', 232, 'users', 0), ('user_work_authorization', 233, 'users', 0), ('user_work_authorization', 234, 'users', 0), ('user_work_authorization', 235, 'users', 0), ('user_work_authorization', 236, 'users', 0), ('user_work_authorization', 237, 'users', 0), ('user_work_authorization', 238, 'users', 0), ('user_work_authorization', 239, 'users', 0), ('user_work_authorization', 240, 'users', 0), ('user_work_authorization', 241, 'users', 0), ('user_work_authorization', 242, 'users', 0), ('user_work_authorization', 243, 'users', 0), ('user_work_authorization', 244, 'users', 0), ('user_work_authorization', 245, 'users', 0), ('user_work_authorization', 246, 'users', 0), ('user_work_authorization', 247, 'users', 0), ('user_work_authorization', 248, 'users', 0), ('user_work_authorization', 249, 'users', 0), ('user_work_authorization', 250, 'users', 0), ('user_work_authorization', 251, 'users', 0), ('user_work_authorization', 252, 'users', 0), ('user_work_authorization', 253, 'users', 0), ('user_work_authorization', 254, 'users', 0), ('user_work_authorization', 255, 'users', 0), ('user_work_authorization', 256, 'users', 0), ('user_work_authorization', 257, 'users', 0), ('user_work_authorization', 258, 'users', 0), ('user_work_authorization', 259, 'users', 0), ('user_work_authorization', 260, 'users', 0), ('user_work_authorization', 261, 'users', 0), ('user_work_authorization', 262, 'users', 0), ('user_work_authorization', 263, 'users', 0), ('user_work_authorization', 264, 'users', 0), ('user_work_authorization', 265, 'users', 0), ('user_work_authorization', 266, 'users', 0), ('user_work_authorization', 267, 'users', 0), ('user_work_authorization', 268, 'users', 0), ('user_work_authorization', 269, 'users', 0), ('user_work_authorization', 270, 'users', 0), ('user_work_authorization', 271, 'users', 0), ('user_work_authorization', 272, 'users', 0), ('user_work_authorization', 273, 'users', 0), ('user_work_authorization', 274, 'users', 0), ('user_work_authorization', 275, 'users', 0), ('user_work_authorization', 276, 'users', 0), ('user_work_authorization', 277, 'users', 0), ('user_work_authorization', 278, 'users', 0), ('user_work_authorization', 279, 'users', 0), ('user_work_authorization', 280, 'users', 0), ('user_work_authorization', 281, 'users', 0), ('user_work_authorization', 282, 'users', 0), ('user_work_authorization', 283, 'users', 0), ('user_work_authorization', 284, 'users', 0), ('user_work_authorization', 285, 'users', 0), ('user_work_authorization', 286, 'users', 0), ('job_applications', 5, 'users', 0), ('user_preferences', 1, 'users', 0), ('user_preferences', 2, 'users', 0), ('user_preferences', 3, 'users', 0), ('user_preferences', 4, 'users', 0), ('user_preferences', 5, 'users', 0), ('user_preferences', 6, 'users', 0), ('user_preferences', 7, 'users', 0), ('user_preferences', 8, 'users', 0), ('user_preferences', 9, 'users', 0), ('user_preferences', 10, 'users', 0), ('user_preferences', 11, 'users', 0), ('user_preferences', 12, 'users', 0), ('user_preferences', 13, 'users', 0), ('user_preferences', 14, 'users', 0), ('user_preferences', 15, 'users', 0), ('user_preferences', 16, 'users', 0), ('user_preferences', 17, 'users', 0), ('user_preferences', 18, 'users', 0)]"
+        },
+        {
+          "test": "078_Configuration_Validation",
+          "status": "WARN",
+          "details": "config.yaml: \u2713; package.json: \u2713; .env.example: \u2717"
+        }
+      ],
+      "timestamp": "2025-08-06T09:04:37.066815",
+      "passed": 0,
+      "failed": 2,
+      "warnings": 1,
+      "total": 3
+    }
+  ]
+}

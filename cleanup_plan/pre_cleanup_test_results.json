@@ -1,0 +1,80 @@
+[
+  {
+    "test": "Backend Health Check",
+    "success": true,
+    "details": "Status: healthy",
+    "timestamp": "2025-08-06T20:18:20.701051"
+  },
+  {
+    "test": "Frontend Access",
+    "success": true,
+    "details": "Homepage loads",
+    "timestamp": "2025-08-06T20:18:20.764533"
+  },
+  {
+    "test": "Pricing API",
+    "success": true,
+    "details": "Status: 200",
+    "timestamp": "2025-08-06T20:18:20.769379"
+  },
+  {
+    "test": "User Plan API",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "2025-08-06T20:18:20.789541"
+  },
+  {
+    "test": "Bot Status API",
+    "success": true,
+    "details": "Status: 401",
+    "timestamp": "2025-08-06T20:18:20.794395"
+  },
+  {
+    "test": "Free Plan Quota",
+    "success": true,
+    "details": "Quota correctly set to 10",
+    "timestamp": "2025-08-06T20:18:20.798073"
+  },
+  {
+    "test": "Email Configuration",
+    "success": true,
+    "details": "Email config file exists",
+    "timestamp": "2025-08-06T20:18:20.798141"
+  },
+  {
+    "test": "Database Connection",
+    "success": true,
+    "details": "Backend can access database",
+    "timestamp": "2025-08-06T20:18:20.803362"
+  },
+  {
+    "test": "File: src/app/layout.tsx",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:18:20.803520"
+  },
+  {
+    "test": "File: src/components/AuthModals.tsx",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:18:20.803572"
+  },
+  {
+    "test": "File: backend/app.py",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:18:20.803595"
+  },
+  {
+    "test": "File: package.json",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:18:20.803608"
+  },
+  {
+    "test": "File: requirements.txt",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:18:20.804070"
+  }
+]

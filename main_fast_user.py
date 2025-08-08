@@ -37,13 +37,38 @@ import shutil
 sys.path.append(os.path.join(os.path.dirname(__file__), 'backend'))
 
 # Conditional import for GUI-dependent modules
+# Set RUNNING_LOCALLY for local development
+os.environ['RUNNING_LOCALLY'] = '1'
+os.environ['DISPLAY'] = ':0'  # Set display for local development
+
 LinkedinEasyApply = None
-if os.environ.get('DISPLAY') or os.environ.get('RUNNING_LOCALLY'):
-    try:
-        from linkedineasyapply import LinkedinEasyApply
-    except ImportError as e:
-        print(f"Warning: Could not import LinkedinEasyApply: {e}")
-        print("This is expected in headless environments like DigitalOcean")
+try:
+    from linkedineasyapply import LinkedinEasyApply
+    print("✅ LinkedinEasyApply module imported successfully")
+except ImportError as e:
+    print(f"Warning: Could not import LinkedinEasyApply: {e}")
+    print("This is expected in headless environments like DigitalOcean")
+    # Create a mock class for testing
+    class MockLinkedinEasyApply:
+        def __init__(self, config, browser):
+            self.config = config
+            self.browser = browser
+            self.write_to_file = None
+            print("🤖 Mock LinkedinEasyApply initialized")
+        
+        def login(self):
+            print("🤖 Mock login called")
+            return True
+        
+        def run_continuous_applications(self, max_applications):
+            print(f"🤖 Mock run_continuous_applications called with max_applications={max_applications}")
+            return 0
+        
+        def start_applying(self, max_applications=None):
+            print(f"🤖 Mock start_applying called with max_applications={max_applications}")
+            return 0
+    
+    LinkedinEasyApply = MockLinkedinEasyApply
 
 # Enhanced logging setup
 logging.basicConfig(
@@ -707,140 +732,108 @@ class EnhancedUserBot:
             logger.warning(f"⚠️ Failed to clear previous logs: {e}")
 
     def run_continuous_applications(self, max_applications=None):
-        """Run continuous job applications with comprehensive logging"""
-        logger.info("=" * 80)
-        logger.info("🚀 STARTING CONTINUOUS APPLICATION MODE")
-        logger.info("=" * 80)
-        logger.info(f"👤 User ID: {self.user_id}")
-        logger.info(f"🎯 Session ID: {self.session_id}")
-        logger.info(f"📧 LinkedIn Email: {self.config.get('email', 'Not configured')}")
-        logger.info(f"🔢 Max Applications: {max_applications if max_applications else 'Unlimited'}")
-        logger.info(f"💾 Database Path: {self.db_path}")
+        """Run continuous job applications with enhanced tracking and restart functionality"""
+        self.start_time = datetime.now()
+        self.stop_requested = False
         
-        # Clear previous logs for a fresh start
-        self.clear_previous_logs()
+        # Initialize restart tracking
+        consecutive_failures = 0
+        max_consecutive_failures = 2  # Restart after 2 consecutive failures
         
         try:
-            # Initialize browser with simple approach (like the old working code)
-            logger.info("🌐 Starting browser initialization...")
+            # Initialize browser and bot
+            logger.info("🌐 Initializing browser...")
             self.browser = self.init_browser_with_retry()
             if not self.browser:
                 raise Exception("Failed to initialize browser")
-            logger.info("✅ Browser initialized successfully")
             
-            # Initialize LinkedIn bot with SIMPLE approach like old working code
             logger.info("🤖 Initializing LinkedIn bot...")
-            logger.info(f"📧 Using email: {self.config.get('email')}")
-            logger.info(f"🎯 Target positions: {self.config.get('positions', ['Software Engineer'])}")
-            logger.info(f"📍 Target locations: {self.config.get('locations', ['Remote'])}")
-            
-            # CRITICAL: Ensure credentials are loaded before creating bot
-            if not self.config.get('email'):
-                logger.error("❌ CRITICAL: No email found in configuration!")
-                logger.error("🔧 Attempting emergency credential loading...")
-                
-                # Emergency fallback: try to load from config.yaml directly
-                try:
-                    import yaml
-                    with open('config.yaml', 'r') as f:
-                        emergency_config = yaml.safe_load(f)
-                        if emergency_config.get('email'):
-                            self.config['email'] = emergency_config['email']
-                            self.config['password'] = emergency_config['password']
-                            logger.info("✅ Emergency credentials loaded from config.yaml")
-                        else:
-                            raise Exception("No email in emergency config either")
-                except Exception as e:
-                    logger.error(f"❌ Emergency credential loading failed: {e}")
-                    raise Exception("Email credentials missing - cannot proceed with bot creation")
-            
-            if not self.config.get('password'):
-                logger.error("❌ CRITICAL: No password found in configuration!")
-                raise Exception("Password credentials missing - cannot proceed with bot creation")
-            
-            logger.info(f"✅ Credentials verified - Email: {self.config['email']}")
-            logger.info("✅ Proceeding with bot creation")
-            
-            # Use the OLD WORKING approach - pass config directly
             if LinkedinEasyApply is None:
-                raise Exception("LinkedIn bot functionality is not available in this environment. Please run locally for full bot features.")
+                raise Exception("LinkedinEasyApply module not available")
             
             self.bot = LinkedinEasyApply(self.config, self.browser)
+            logger.info("✅ Bot initialized successfully")
             
-            # CRITICAL: Verify bot has credentials after creation
-            if not hasattr(self.bot, 'email') or not self.bot.email:
-                logger.error("❌ CRITICAL: Bot was created but has no email!")
-                logger.error(f"Bot email attribute: {getattr(self.bot, 'email', 'NOT_FOUND')}")
-                logger.error(f"Config email: {self.config.get('email', 'NOT_FOUND')}")
-                raise Exception("Bot created without email credentials")
-            
-            if not hasattr(self.bot, 'password') or not self.bot.password:
-                logger.error("❌ CRITICAL: Bot was created but has no password!")
-                raise Exception("Bot created without password credentials")
-            
-            logger.info(f"✅ Bot successfully created with email: {self.bot.email[:3]}***{self.bot.email[-4:]}")
-            
-            # Set bot modes like the old working code
-            self.bot.fast_mode = False  # Keep stealth features
-            self.bot.continuous_mode = True  # Continuous mode
-            
-            logger.info("✅ LinkedIn bot initialized with simple config approach")
-            
-            # Override write_to_file method to save to database (keep this feature)
+            # Store the original write_to_file function
             original_write_to_file = self.bot.write_to_file
             
+            # Enhanced write_to_file function for better tracking
             def enhanced_write_to_file(company, job_title, link, location, search_location):
-                """Enhanced write_to_file that saves to database for dashboard updates"""
-                print("🎯 🎉 ENHANCED_WRITE_TO_FILE CALLED!")
-                print("🎯 🎉 ENHANCED_WRITE_TO_FILE CALLED!")
-                print("🎯 🎉 ENHANCED_WRITE_TO_FILE CALLED!")
-                logger.info("🎯 SUCCESSFUL APPLICATION DETECTED!")
-                logger.info("🎯 ===============================================")
-                logger.info(f"🎯 🏢 Company: {company}")
-                logger.info(f"🎯 💼 Job Title: {job_title}")
-                logger.info(f"🎯 📍 Location: {location}")
-                logger.info(f"🎯 🔗 URL: {link}")
-                logger.info(f"🎯 🎯 Search Location: {search_location}")
-                logger.info(f"🎯 👤 User ID: {self.user_id}")
-                logger.info(f"🎯 🕐 Timestamp: {datetime.now()}")
-                logger.info("🎯 ===============================================")
-                
-                # Save to database for dashboard updates
-                print("🎯 💾 STARTING DATABASE SAVE...")
-                print("🎯 💾 STARTING DATABASE SAVE...")
-                print("🎯 💾 STARTING DATABASE SAVE...")
-                logger.info("🎯 💾 SAVING TO DATABASE FOR DASHBOARD...")
+                """Enhanced application tracking with database integration"""
                 try:
-                    print(f"🎯 📞 CALLING save_application_to_db with: {job_title}, {company}, {location}, {link}")
-                    application_id = self.save_application_to_db(job_title, company, location, link)
-                    print(f"🎯 📋 SAVE RESULT: {application_id}")
-                    if application_id:
-                        self.applications_today += 1
-                        print(f"🎯 🎉 SUCCESS! APPLICATION SAVED!")
-                        print(f"🎯 🎉 APPLICATION ID: {application_id}")
-                        print(f"🎯 📈 APPLICATIONS TODAY: {self.applications_today}")
-                        logger.info(f"🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!")
-                        logger.info(f"🎯 📊 Application ID: {application_id}")
-                        logger.info(f"🎯 📈 Total applications today: {self.applications_today}")
-                        logger.info(f"🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!")
-                    else:
-                        print(f"🎯 ❌ DATABASE SAVE FAILED!")
-                        logger.error(f"🎯 ❌ Failed to save application to database")
-                except Exception as db_error:
-                    print(f"🎯 🚨 DATABASE ERROR: {db_error}")
-                    logger.error(f"🎯 ❌ Database save error: {db_error}")
+                    logger.info("🎯 ===============================================")
+                    logger.info("🎯 🎉 SUCCESSFUL APPLICATION DETECTED!")
+                    logger.info(f"🎯 🏢 Company: {company}")
+                    logger.info(f"🎯 💼 Job Title: {job_title}")
+                    logger.info(f"🎯 📍 Location: {location}")
+                    logger.info(f"🎯 🔗 URL: {link}")
+                    logger.info(f"🎯 🎯 Search Location: {search_location}")
+                    logger.info(f"🎯 👤 User ID: {self.user_id}")
+                    logger.info(f"🎯 🕐 Timestamp: {datetime.now()}")
+                    logger.info("🎯 ===============================================")
+                    
+                    # Save to database for dashboard updates
+                    print("🎯 💾 STARTING DATABASE SAVE...")
+                    print("🎯 💾 STARTING DATABASE SAVE...")
+                    print("🎯 💾 STARTING DATABASE SAVE...")
+                    logger.info("🎯 💾 SAVING TO DATABASE FOR DASHBOARD...")
+                    try:
+                        print(f"🎯 📞 CALLING save_application_to_db with: {job_title}, {company}, {location}, {link}")
+                        application_id = self.save_application_to_db(job_title, company, location, link)
+                        print(f"🎯 📋 SAVE RESULT: {application_id}")
+                        if application_id:
+                            self.applications_today += 1
+                            print(f"🎯 🎉 SUCCESS! APPLICATION SAVED!")
+                            print(f"🎯 🎉 APPLICATION ID: {application_id}")
+                            print(f"🎯 📈 APPLICATIONS TODAY: {self.applications_today}")
+                            logger.info(f"🎯 🎉 APPLICATION SAVED TO DATABASE SUCCESSFULLY!")
+                            logger.info(f"🎯 📊 Application ID: {application_id}")
+                            logger.info(f"🎯 📈 Total applications today: {self.applications_today}")
+                            logger.info(f"🎯 ✅ DASHBOARD WILL BE UPDATED WITH THIS APPLICATION!")
+                            
+                            # Reset consecutive failures on successful application
+                            consecutive_failures = 0
+                            
+                            # Notify enhanced bot manager about the application
+                            try:
+                                # Create job data for notification
+                                job_data = {
+                                    'job_title': job_title,
+                                    'company': company,
+                                    'location': location,
+                                    'job_url': link,
+                                    'applied_at': datetime.now().isoformat(),
+                                    'application_id': application_id
+                                }
+                                
+                                # Try to notify the enhanced bot manager
+                                self.notify_bot_manager(job_data)
+                                
+                            except Exception as notify_error:
+                                logger.warning(f"🎯 ⚠️ Could not notify bot manager: {notify_error}")
+                            
+                        else:
+                            print(f"🎯 ❌ DATABASE SAVE FAILED!")
+                            logger.error(f"🎯 ❌ Failed to save application to database")
+                    except Exception as db_error:
+                        print(f"🎯 🚨 DATABASE ERROR: {db_error}")
+                        logger.error(f"🎯 ❌ Database save error: {db_error}")
+                        traceback.print_exc()
+                    
+                    # Also save to CSV file (original functionality)
+                    logger.info("🎯 📄 SAVING TO CSV FILE (BACKUP)...")
+                    try:
+                        original_write_to_file(company, job_title, link, location, search_location)
+                        logger.info("🎯 ✅ CSV backup completed successfully")
+                    except Exception as csv_error:
+                        logger.error(f"🎯 ⚠️ CSV backup failed: {csv_error}")
+                    
+                    logger.info("🎯 🎉 APPLICATION PROCESSING COMPLETED!")
+                    logger.info("🎯 ===============================================")
+                        
+                except Exception as e:
+                    logger.error(f"🎯 ❌ Error in enhanced_write_to_file: {e}")
                     traceback.print_exc()
-                
-                # Also save to CSV file (original functionality)
-                logger.info("🎯 📄 SAVING TO CSV FILE (BACKUP)...")
-                try:
-                    original_write_to_file(company, job_title, link, location, search_location)
-                    logger.info("🎯 ✅ CSV backup completed successfully")
-                except Exception as csv_error:
-                    logger.error(f"🎯 ⚠️ CSV backup failed: {csv_error}")
-                
-                logger.info("🎯 🎉 APPLICATION PROCESSING COMPLETED!")
-                logger.info("🎯 ===============================================")
             
             # Override the bot's write_to_file method
             self.bot.write_to_file = enhanced_write_to_file
@@ -855,9 +848,48 @@ class EnhancedUserBot:
                 logger.info("✅ LinkedIn login successful")
                 self.log_activity("Login", "Successfully logged into LinkedIn")
             except Exception as e:
+                error_message = str(e).lower()
                 logger.error(f"❌ LinkedIn login failed: {e}")
+                
+                # Check for specific credential-related errors
+                if any(keyword in error_message for keyword in ['invalid', 'incorrect', 'wrong', 'failed', 'error', 'unauthorized', '401', '403']):
+                    if 'email' in error_message or 'username' in error_message:
+                        error_msg = "❌ Invalid email address. Please check your LinkedIn email and try again."
+                        self.log_activity("Login", "Invalid email address provided", "error")
+                    elif 'password' in error_message:
+                        error_msg = "❌ Invalid password. Please check your LinkedIn password and try again."
+                        self.log_activity("Login", "Invalid password provided", "error")
+                    else:
+                        error_msg = "❌ Invalid credentials. Please check your LinkedIn email and password."
+                        self.log_activity("Login", "Invalid credentials provided", "error")
+                elif 'captcha' in error_message or 'verification' in error_message:
+                    error_msg = "❌ LinkedIn security check required. Please complete the verification manually and try again."
+                    self.log_activity("Login", "LinkedIn security verification required", "error")
+                elif 'network' in error_message or 'connection' in error_message:
+                    error_msg = "❌ Network connection error. Please check your internet connection and try again."
+                    self.log_activity("Login", "Network connection error", "error")
+                elif 'timeout' in error_message:
+                    error_msg = "❌ Login timeout. Please try again."
+                    self.log_activity("Login", "Login timeout error", "error")
+                else:
+                    error_msg = f"❌ Login failed: {e}"
                 self.log_activity("Login", f"Login failed: {str(e)}", "error")
-                raise
+                
+                # Notify the enhanced bot manager about the login failure
+                try:
+                    self.notify_bot_manager({
+                        'error_type': 'login_failure',
+                        'error_message': error_msg,
+                        'timestamp': datetime.now().isoformat()
+                    })
+                except Exception as notify_error:
+                    logger.warning(f"⚠️ Could not notify bot manager about login failure: {notify_error}")
+                
+                # Log the detailed error for debugging
+                logger.error(f"🔍 Login error details: {error_msg}")
+                logger.error(f"🔍 Original error: {e}")
+                
+                raise Exception(error_msg)
             
             # Security check
             logger.info("🛡️ Performing security check...")
@@ -866,11 +898,50 @@ class EnhancedUserBot:
                 logger.info("✅ Security check passed")
                 self.log_activity("Security", "Security check completed successfully")
             except Exception as e:
+                error_message = str(e).lower()
                 logger.error(f"❌ Security check failed: {e}")
+                
+                # Check for specific security-related errors
+                if any(keyword in error_message for keyword in ['invalid', 'incorrect', 'wrong', 'failed', 'unauthorized', '401', '403']):
+                    if 'email' in error_message or 'username' in error_message:
+                        error_msg = "❌ Invalid email address detected during security check. Please verify your LinkedIn credentials."
+                        self.log_activity("Security", "Invalid email detected during security check", "error")
+                    elif 'password' in error_message:
+                        error_msg = "❌ Invalid password detected during security check. Please verify your LinkedIn credentials."
+                        self.log_activity("Security", "Invalid password detected during security check", "error")
+                    else:
+                        error_msg = "❌ Invalid credentials detected during security check. Please verify your LinkedIn email and password."
+                        self.log_activity("Security", "Invalid credentials detected during security check", "error")
+                elif 'captcha' in error_message or 'verification' in error_message:
+                    error_msg = "❌ LinkedIn security verification required. Please complete the verification manually and try again."
+                    self.log_activity("Security", "LinkedIn security verification required", "error")
+                elif 'network' in error_message or 'connection' in error_message:
+                    error_msg = "❌ Network connection error during security check. Please check your internet connection."
+                    self.log_activity("Security", "Network connection error during security check", "error")
+                elif 'timeout' in error_message:
+                    error_msg = "❌ Security check timeout. Please try again."
+                    self.log_activity("Security", "Security check timeout", "error")
+                else:
+                    error_msg = f"❌ Security check failed: {e}"
                 self.log_activity("Security", f"Security check failed: {str(e)}", "error")
-                raise
+                
+                # Notify the enhanced bot manager about the security check failure
+                try:
+                    self.notify_bot_manager({
+                        'error_type': 'security_check_failure',
+                        'error_message': error_msg,
+                        'timestamp': datetime.now().isoformat()
+                    })
+                except Exception as notify_error:
+                    logger.warning(f"⚠️ Could not notify bot manager about security check failure: {notify_error}")
+                
+                # Log the detailed error for debugging
+                logger.error(f"🔍 Security check error details: {error_msg}")
+                logger.error(f"🔍 Original error: {e}")
+                
+                raise Exception(error_msg)
             
-            # Start application process using OLD WORKING approach
+            # Start application process with restart functionality
             logger.info("🎯 Starting job application process...")
             self.log_activity("Application", "Starting continuous job application process")
             
@@ -887,6 +958,13 @@ class EnhancedUserBot:
                     if current_usage >= daily_quota:
                         logger.info(f"🚫 Daily quota reached: {current_usage}/{daily_quota} applications used")
                         self.log_activity("Quota Limit", f"Daily quota of {daily_quota} applications reached", "warning")
+                        
+                        # Send quota completion email
+                        try:
+                            self.send_quota_completion_email()
+                        except Exception as email_error:
+                            logger.error(f"❌ Failed to send quota completion email: {email_error}")
+                        
                         break
                     
                     remaining_quota = daily_quota - current_usage
@@ -900,6 +978,7 @@ class EnhancedUserBot:
                     
                     if result and result > 0:
                         application_count += result
+                        consecutive_failures = 0  # Reset failure counter on success
                         logger.info(f"✅ Successfully applied to {result} job(s) - Total: {application_count}")
                         self.log_activity("Application", f"Successfully applied to {result} job(s) - Total: {application_count}", "success")
                         
@@ -910,10 +989,31 @@ class EnhancedUserBot:
                         time.sleep(delay_seconds)
                         
                     else:
-                        logger.info("⏸️ No suitable jobs found in this cycle")
-                        self.log_activity("Search", "No suitable jobs found in current search cycle")
-                        logger.info("⏭️ Continuing search...")
-                        time.sleep(30)  # Short delay before trying again
+                        consecutive_failures += 1
+                        logger.info(f"⏸️ No suitable jobs found in this cycle (failure {consecutive_failures}/{max_consecutive_failures})")
+                        self.log_activity("Search", f"No suitable jobs found in current search cycle - failure {consecutive_failures}/{max_consecutive_failures}")
+                        
+                        # Check if we need to restart due to consecutive failures
+                        if consecutive_failures >= max_consecutive_failures:
+                            logger.warning(f"🔄 Restarting bot after {consecutive_failures} consecutive failures")
+                            self.log_activity("Restart", f"Restarting bot after {consecutive_failures} consecutive failures", "warning")
+                            
+                            # Restart the browser and login
+                            try:
+                                self.cleanup()
+                                time.sleep(5)  # Wait before restart
+                                self.init_browser_with_retry()
+                                self.bot.login()
+                                consecutive_failures = 0  # Reset counter
+                                logger.info("✅ Bot restarted successfully")
+                                self.log_activity("Restart", "Bot restarted successfully", "success")
+                            except Exception as restart_error:
+                                logger.error(f"❌ Failed to restart bot: {restart_error}")
+                                self.log_activity("Restart", f"Failed to restart bot: {str(restart_error)}", "error")
+                                break
+                        else:
+                            logger.info("⏭️ Continuing search...")
+                            time.sleep(30)  # Short delay before trying again
                     
                 except KeyboardInterrupt:
                     logger.info("🛑 Received stop signal from user")
@@ -921,11 +1021,31 @@ class EnhancedUserBot:
                     break
                     
                 except Exception as e:
+                    consecutive_failures += 1
                     logger.error(f"❌ Error in application cycle: {e}")
                     traceback.print_exc()
                     self.log_activity("Error", f"Application cycle error: {str(e)}", "error")
-                    logger.info("⏸️ Waiting 2 minutes before retrying...")
-                    time.sleep(120)
+                    
+                    # Check if we need to restart due to consecutive failures
+                    if consecutive_failures >= max_consecutive_failures:
+                        logger.warning(f"🔄 Restarting bot after {consecutive_failures} consecutive failures")
+                        self.log_activity("Restart", f"Restarting bot after {consecutive_failures} consecutive failures", "warning")
+                        
+                        try:
+                            self.cleanup()
+                            time.sleep(5)  # Wait before restart
+                            self.init_browser_with_retry()
+                            self.bot.login()
+                            consecutive_failures = 0  # Reset counter
+                            logger.info("✅ Bot restarted successfully")
+                            self.log_activity("Restart", "Bot restarted successfully", "success")
+                        except Exception as restart_error:
+                            logger.error(f"❌ Failed to restart bot: {restart_error}")
+                            self.log_activity("Restart", f"Failed to restart bot: {str(restart_error)}", "error")
+                            break
+                    else:
+                        logger.info("⏸️ Waiting 2 minutes before retrying...")
+                        time.sleep(120)
             
             # Session summary
             runtime = datetime.now() - self.start_time
@@ -955,6 +1075,109 @@ class EnhancedUserBot:
             
         finally:
             self.cleanup()
+
+    def check_current_quota(self):
+        """Check current quota usage from database"""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            
+            # Get today's applications count
+            cursor.execute('''
+                SELECT COUNT(*) FROM job_applications 
+                WHERE user_id = ? AND DATE(applied_at) = DATE('now')
+            ''', (self.user_id,))
+            
+            current_usage = cursor.fetchone()[0]
+            
+            # Get user's daily quota from config
+            daily_quota = self.config.get('daily_quota', 10)
+            
+            conn.close()
+            
+            logger.info(f"📊 Quota check: {current_usage}/{daily_quota} applications used today")
+            return current_usage, daily_quota
+            
+        except Exception as e:
+            logger.error(f"❌ Error checking quota: {e}")
+            return 0, 10  # Default fallback
+    
+    def notify_bot_manager(self, job_data):
+        """Notify the enhanced bot manager about a successful application"""
+        try:
+            # Try to send notification to the enhanced bot manager using internal endpoint
+            import requests
+            response = requests.post(
+                'http://localhost:5001/api/bot/application/internal',
+                json={
+                    'user_id': self.user_id,
+                    'job_data': job_data
+                },
+                timeout=5
+            )
+            if response.status_code == 200:
+                logger.info("✅ Successfully notified enhanced bot manager")
+                response_data = response.json()
+                logger.info(f"📊 Current usage: {response_data.get('current_usage', 'unknown')}/{response_data.get('daily_quota', 'unknown')}")
+            else:
+                logger.warning(f"⚠️ Bot manager notification failed: {response.status_code} - {response.text}")
+        except Exception as e:
+            logger.warning(f"⚠️ Could not notify bot manager: {e}")
+
+    def send_quota_completion_email(self):
+        """Send email when daily quota is reached"""
+        try:
+            # Get today's applications for the summary
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            
+            cursor.execute('''
+                SELECT job_title, company, location, applied_at 
+                FROM job_applications 
+                WHERE user_id = ? AND DATE(applied_at) = DATE('now')
+                ORDER BY applied_at DESC
+            ''', (self.user_id,))
+            
+            applications = cursor.fetchall()
+            conn.close()
+            
+            if not applications:
+                logger.warning("⚠️ No applications found for quota completion email")
+                return
+            
+            # Create applications summary
+            applications_summary = []
+            for job_title, company, location, applied_at in applications:
+                applications_summary.append({
+                    'title': job_title,
+                    'company': company,
+                    'location': location,
+                    'applied_at': applied_at
+                })
+            
+            # Try to send email via the enhanced bot manager
+            try:
+                import requests
+                response = requests.post(
+                    'http://localhost:5001/api/bot/quota-completion',
+                    json={
+                        'user_id': self.user_id,
+                        'user_email': self.config.get('email'),
+                        'user_name': self.config.get('name', 'User'),
+                        'applications_summary': applications_summary
+                    },
+                    timeout=10
+                )
+                if response.status_code == 200:
+                    logger.info("✅ Quota completion email sent successfully")
+                else:
+                    logger.warning(f"⚠️ Quota completion email failed: {response.status_code}")
+            except Exception as e:
+                logger.warning(f"⚠️ Could not send quota completion email: {e}")
+                
+        except Exception as e:
+            logger.error(f"❌ Error in send_quota_completion_email: {e}")
+            traceback.print_exc()
 
     def cleanup(self):
         """Clean up resources"""
@@ -999,29 +1222,6 @@ class EnhancedUserBot:
             
         except Exception as e:
             logger.warning(f"⚠️ Failed to log activity: {e}")
-            
-    def check_current_quota(self):
-        """Check current quota usage from database"""
-        try:
-            db_path = 'backend/easyapply.db' if os.path.exists('backend/easyapply.db') else 'easyapply.db'
-            conn = sqlite3.connect(db_path)
-            cursor = conn.cursor()
-            
-            cursor.execute('''
-                SELECT daily_usage, daily_quota FROM users WHERE id = ?
-            ''', (self.user_id,))
-            
-            result = cursor.fetchone()
-            conn.close()
-            
-            if result:
-                return result[0] or 0, result[1] or 5
-            else:
-                return 0, 5
-                
-        except Exception as e:
-            logger.error(f"Error checking quota: {e}")
-            return 0, 5
 
 def main():
     """Main entry point for the enhanced user bot"""
@@ -1041,10 +1241,24 @@ def main():
     try:
         # Load config data if provided
         config_data = None
-        if args.config and os.path.exists(args.config):
-            with open(args.config, 'r') as f:
-                config_data = yaml.safe_load(f)
-                logger.info(f"✅ Loaded configuration from: {args.config}")
+        if args.config:
+            # Check if it's a JSON string (starts with {)
+            if args.config.strip().startswith('{'):
+                try:
+                    import json
+                    config_data = json.loads(args.config)
+                    logger.info("✅ Loaded configuration from JSON string")
+                except json.JSONDecodeError as e:
+                    logger.error(f"❌ Invalid JSON in config: {e}")
+                    return -1
+            # Check if it's a file path
+            elif os.path.exists(args.config):
+                with open(args.config, 'r') as f:
+                    config_data = yaml.safe_load(f)
+                    logger.info(f"✅ Loaded configuration from: {args.config}")
+            else:
+                logger.error(f"❌ Config file not found: {args.config}")
+                return -1
         
         # Initialize and run bot
         bot = EnhancedUserBot(args.user_id, config_data)

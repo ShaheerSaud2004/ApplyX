@@ -1,0 +1,512 @@
+[
+  {
+    "action": "Backup Creation",
+    "success": true,
+    "details": "Backup directory ready",
+    "timestamp": "2025-08-06T20:19:03.712072"
+  },
+  {
+    "action": "Move Chrome Directory: chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a_d6a41e",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:03.712649"
+  },
+  {
+    "action": "Move Chrome Directory: chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:03.712768"
+  },
+  {
+    "action": "Move Chrome Directory: chrome_bot_user_24e82f41-4c81-4419-8c9c-35d8a4bd14b6",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:03.712847"
+  },
+  {
+    "action": "Move Chrome Directory: chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a_65817a",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:03.712922"
+  },
+  {
+    "action": "Move Chrome Directory: chrome_bot_user_24e82f41-4c81-4419-8c9c-35d8a4bd14b6_70381b",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:03.712999"
+  },
+  {
+    "action": "Move Chrome Directory: chrome_bot_user_24e82f41-4c81-4419-8c9c-35d8a4bd14b6_ce8f3a",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:03.713076"
+  },
+  {
+    "action": "Move Chrome Directory: chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a_afd040",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:03.713155"
+  },
+  {
+    "action": "Move Chrome Directory: chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a_ddcb9d",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:03.713231"
+  },
+  {
+    "action": "Move Chrome Directory: chrome_bot_user_bf5acf53-8862-48af-b9ab-3b73d3c5527a_34f6e2",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:03.713307"
+  },
+  {
+    "action": "Move Log File: backend.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.727771"
+  },
+  {
+    "action": "Move Log File: frontend.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.728007"
+  },
+  {
+    "action": "Move Log File: lint.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.728270"
+  },
+  {
+    "action": "Move Log File: server_5002.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.728642"
+  },
+  {
+    "action": "Move Log File: server.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.728729"
+  },
+  {
+    "action": "Move Log File: chrome_debug.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.728820"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.728911"
+  },
+  {
+    "action": "Move Log File: 000004.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.729146"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.730202"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.730602"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.730750"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.730916"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.731047"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.731342"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.731589"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.732096"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.732343"
+  },
+  {
+    "action": "Move Log File: 000006.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.732618"
+  },
+  {
+    "action": "Move Log File: chrome_debug.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.733078"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.733248"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.733764"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.735190"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.735800"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.736219"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.736478"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.736611"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.736843"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.736969"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.737451"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.737841"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.738241"
+  },
+  {
+    "action": "Move Log File: chrome_debug.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.739399"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.739845"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.740248"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.741127"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.741400"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.741676"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.742020"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.742193"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.742552"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.742945"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.743491"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.743709"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.743938"
+  },
+  {
+    "action": "Move Log File: chrome_debug.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.744541"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.745066"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.745744"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.747490"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.747790"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.748099"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.748253"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.748511"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.748771"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.748902"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.749456"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.749614"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.749741"
+  },
+  {
+    "action": "Move Log File: chrome_debug.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.750147"
+  },
+  {
+    "action": "Move Log File: 000012.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.750257"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.750770"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.753814"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.754343"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.755110"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.755342"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.755467"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.755934"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.756069"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.757590"
+  },
+  {
+    "action": "Move Log File: 000003.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.757710"
+  },
+  {
+    "action": "Move Log File: 000013.log",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.757976"
+  },
+  {
+    "action": "Clean Cache: .next",
+    "success": true,
+    "details": "",
+    "timestamp": "2025-08-06T20:19:04.772558"
+  },
+  {
+    "action": "Remove Duplicate Dependencies",
+    "success": true,
+    "details": "Cleaned requirements.txt",
+    "timestamp": "2025-08-06T20:19:04.773178"
+  },
+  {
+    "action": "Move Test Files",
+    "success": true,
+    "details": "Moved 82 test files",
+    "timestamp": "2025-08-06T20:19:07.883183"
+  },
+  {
+    "action": "Clean Environment Files",
+    "success": true,
+    "details": "Removed duplicate variables",
+    "timestamp": "2025-08-06T20:19:07.885164"
+  },
+  {
+    "action": "Remove Unused Components",
+    "success": true,
+    "details": "Would remove 8 unused components",
+    "timestamp": "2025-08-06T20:19:07.885226"
+  }
+]
