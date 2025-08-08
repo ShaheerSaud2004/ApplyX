@@ -1311,13 +1311,11 @@ export default function DashboardPage() {
       />
 
       {/* LinkedIn Credentials Modal */}
-        {/* LinkedIn Credentials Modal */}
         <LinkedInCredentialsModal
           isOpen={showLinkedInModal}
           onOpenChange={setShowLinkedInModal}
           onCredentialsSaved={handleLinkedInCredentialsSaved}
         />
-      </div>
 
       {/* Footer (dashboard only) */}
       <div className="mt-8">
