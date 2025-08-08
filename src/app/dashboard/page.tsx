@@ -37,6 +37,7 @@ import { LinkedInCredentialsModal } from '@/components/LinkedInCredentialsModal'
 import { EnhancedBotStatusDashboard } from '@/components/EnhancedBotStatusDashboard'
 import { LiveActivityLog } from '@/components/LiveActivityLog'
 import { getApiUrl } from '@/lib/utils'
+import DashboardFooter from '@/components/DashboardFooter'
 
 // Version tracking - update this with each change
 const APP_VERSION = "1.0.9"
@@ -1317,5 +1318,11 @@ export default function DashboardPage() {
           onCredentialsSaved={handleLinkedInCredentialsSaved}
         />
       </div>
-    )
-  }
+
+      {/* Footer (dashboard only) */}
+      <div className="mt-8">
+        <DashboardFooter />
+      </div>
+    </div>
+  )
+}

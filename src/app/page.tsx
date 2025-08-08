@@ -515,25 +515,23 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-white/80 backdrop-blur-sm relative z-10">
-        <div className="flex items-center space-x-2">
-          <p className="text-xs text-gray-500">© 2024 ApplyX</p>
-          <span className="text-xs text-gray-300">•</span>
-          <p className="text-xs text-gray-500">A product of Nebula.AI</p>
-          <span className="text-xs text-gray-300">•</span>
-          <p className="text-xs text-gray-500">All rights reserved.</p>
+      <footer className="w-full border-t bg-white/80 backdrop-blur-sm relative z-10">
+        <div className="container px-4 md:px-6 py-3 flex items-center justify-between">
+          <p className="text-[11px] text-gray-500 whitespace-nowrap overflow-hidden text-ellipsis">
+            © 2024 ApplyX • Nebula.AI • All rights reserved.
+          </p>
+          <nav className="hidden sm:flex gap-4 sm:gap-6">
+            <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="/terms">
+              Terms of Service
+            </Link>
+            <button 
+              onClick={() => alert('Privacy Policy coming soon!')}
+              className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600 cursor-pointer"
+            >
+              Privacy Policy
+            </button>
+          </nav>
         </div>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600" href="/terms">
-            Terms of Service
-          </Link>
-          <button 
-            onClick={() => alert('Privacy Policy coming soon!')}
-            className="text-xs hover:underline underline-offset-4 text-gray-500 hover:text-blue-600 cursor-pointer"
-          >
-            Privacy Policy
-          </button>
-        </nav>
       </footer>
     </div>
   )

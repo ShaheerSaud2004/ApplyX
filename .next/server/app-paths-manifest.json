@@ -1,15 +1,15 @@
 {
   "/_not-found": "app/_not-found.js",
-  "/admin/page": "app/admin/page.js",
-  "/auth/login/page": "app/auth/login/page.js",
   "/applications/page": "app/applications/page.js",
-  "/manual-apply/page": "app/manual-apply/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
+  "/admin/page": "app/admin/page.js",
   "/checkout/page": "app/checkout/page.js",
+  "/auth/forgot-password/page": "app/auth/forgot-password/page.js",
+  "/page": "app/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
   "/auth/signup/page": "app/auth/signup/page.js",
   "/profile/page": "app/profile/page.js",
-  "/page": "app/page.js",
-  "/auth/forgot-password/page": "app/auth/forgot-password/page.js",
   "/privacy/page": "app/privacy/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/manual-apply/page": "app/manual-apply/page.js",
   "/terms/page": "app/terms/page.js"
 }
