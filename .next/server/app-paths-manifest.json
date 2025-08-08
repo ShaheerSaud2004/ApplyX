@@ -1,7 +1,15 @@
 {
-  "/dashboard/page": "app/dashboard/page.js",
+  "/_not-found": "app/_not-found.js",
+  "/auth/forgot-password/page": "app/auth/forgot-password/page.js",
   "/applications/page": "app/applications/page.js",
+  "/checkout/page": "app/checkout/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/auth/signup/page": "app/auth/signup/page.js",
   "/manual-apply/page": "app/manual-apply/page.js",
+  "/page": "app/page.js",
   "/admin/page": "app/admin/page.js",
-  "/profile/page": "app/profile/page.js"
+  "/auth/login/page": "app/auth/login/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/terms/page": "app/terms/page.js"
 }

@@ -71,3 +71,4 @@ chrome_bot*/
 
 # Virtual environment
 venv/
+.env

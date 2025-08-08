@@ -16,7 +16,7 @@ export const PRICING_PLANS: Record<SubscriptionPlan, PlanDetails> = {
   [SubscriptionPlan.BASIC]: {
     id: SubscriptionPlan.BASIC,
     name: 'Basic',
-    price: 9.99,
+    price: 4.99,
     dailyApplications: 60,
     stripePriceId: process.env.NEXT_PUBLIC_STRIPE_BASIC_PRICE_ID,
     features: [
@@ -31,7 +31,7 @@ export const PRICING_PLANS: Record<SubscriptionPlan, PlanDetails> = {
   [SubscriptionPlan.PRO]: {
     id: SubscriptionPlan.PRO,
     name: 'Pro',
-    price: 19.99,
+    price: 9.99,
     dailyApplications: 100,
     stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRO_PRICE_ID,
     features: [

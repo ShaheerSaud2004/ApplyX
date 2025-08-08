@@ -24,7 +24,7 @@ const plans = {
   },
   pro: {
     name: 'Pro',
-    price: 19.99,
+    price: 9.99,
     features: ['100+ applications per day', 'Premium AI features', 'Advanced analytics', 'Dedicated support']
   }
 }

@@ -55,9 +55,10 @@ function AuthenticatedNav({ onLoginOpen, onSignupOpen }: AuthenticatedNavProps) 
 
 interface CTAButtonsProps {
   onSignupOpen: () => void
+  onViewPricing: () => void
 }
 
-function CTAButtons({ onSignupOpen }: CTAButtonsProps) {
+function CTAButtons({ onSignupOpen, onViewPricing }: CTAButtonsProps) {
   return (
     <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto px-4 sm:px-0">
       <Button
@@ -67,8 +68,13 @@ function CTAButtons({ onSignupOpen }: CTAButtonsProps) {
       >
         Start Free Trial <ArrowRight className="ml-2 h-4 w-4" />
       </Button>
-      <Button variant="outline" size="lg" asChild className="border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-200 px-8 py-3 w-full sm:w-auto text-base">
-        <Link href="/pricing">View Pricing</Link>
+      <Button
+        variant="outline"
+        size="lg"
+        onClick={onViewPricing}
+        className="border-2 border-gray-300 hover:border-blue-500 hover:text-blue-600 transition-all duration-200 px-8 py-3 w-full sm:w-auto text-base"
+      >
+        View Pricing
       </Button>
     </div>
   )
@@ -202,7 +208,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="pt-4">
-              <CTAButtons onSignupOpen={openSignup} />
+              <CTAButtons onSignupOpen={openSignup} onViewPricing={() => scrollToSection('pricing')} />
             </div>
           </div>
         </div>
@@ -390,7 +396,7 @@ export default function HomePage() {
               </div>
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl mb-2">Basic</CardTitle>
-                <div className="text-4xl font-bold mb-2">$9.99<span className="text-lg font-normal">/month</span></div>
+                <div className="text-4xl font-bold mb-2">$4.99<span className="text-lg font-normal">/month</span></div>
                 <CardDescription>Great for active job seekers</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -422,7 +428,7 @@ export default function HomePage() {
             <Card className="border-2 border-purple-500 shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl mb-2">Pro</CardTitle>
-                <div className="text-4xl font-bold mb-2">$19.99<span className="text-lg font-normal">/month</span></div>
+                <div className="text-4xl font-bold mb-2">$9.99<span className="text-lg font-normal">/month</span></div>
                 <CardDescription>For serious job hunters</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -476,7 +482,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="pt-4">
-              <CTAButtons onSignupOpen={openSignup} />
+              <CTAButtons onSignupOpen={openSignup} onViewPricing={() => scrollToSection('pricing')} />
             </div>
           </div>
         </div>
