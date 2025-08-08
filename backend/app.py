@@ -114,12 +114,22 @@ app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'  # Changed from Strict for better compatibility
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1)
 
-CORS(app, origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", 
-                   "https://apply-9sp9tevcp-shaheers-projects-02efc33d.vercel.app",
-                   "https://apply-x.vercel.app",
-                   "https://applyx.vercel.app",
-                   "https://*.vercel.app"], 
-     allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin", "Access-Control-Allow-Origin"], 
+allowed_origins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:3002",
+    # Known Vercel deployments
+    "https://apply-9sp9tevcp-shaheers-projects-02efc33d.vercel.app",
+    "https://apply-x-git-main-shaheers-projects-02efc33d.vercel.app",
+    "https://apply-x.vercel.app",
+    "https://applyx.vercel.app",
+]
+frontend_env = os.environ.get('FRONTEND_URL')
+if frontend_env and frontend_env not in allowed_origins:
+    allowed_origins.append(frontend_env)
+
+CORS(app, origins=allowed_origins,
+     allow_headers=["Content-Type", "Authorization", "X-Requested-With", "Accept", "Origin", "Access-Control-Allow-Origin"],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"],
      supports_credentials=True,
      expose_headers=["Content-Type", "Authorization", "Access-Control-Allow-Origin"],
